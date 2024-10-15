@@ -7,7 +7,7 @@ import {
     DialogContainer
 } from "@/components/motion/dialog";
 import { cn } from "@/lib/utils";
-import ComponentRenderer from "./component-renderer";
+import ComponentPreview from "./component-preview";
 import ComponentCodePreview from "./component-code-preview";
 
 interface DemoDialogProps {
@@ -26,7 +26,7 @@ export default function ComponentCodePreviewDialog({
     return (
         <Dialog transition={{ type: "spring", bounce: 0.05, duration: 0.5 }}>
             <DialogTrigger style={{ borderRadius: "12px" }}>
-                <ComponentRenderer
+                <ComponentPreview
                     component={component}
                     className={cn(
                         "relative cursor-pointer aspect-square border bg-white",
@@ -43,15 +43,17 @@ export default function ComponentCodePreviewDialog({
                         "dark:border-zinc-50/10 dark:bg-zinc-900"
                     )}
                 >
-
-                    {/* <ComponentCodePreview component={component} filePath={path} /> */}
-
-                    {/* absolute components */}
-                    <DialogClose />
-
-                    <div className="absolute left-6 top-6 flex flex-col gap-1">
-                        <span className="font-medium">{name}</span>
-                        <span>{description}</span>
+                    <div className="h-full w-full p-4 md:p-6 lg:p-20 flex flex-col gap-6 justify-end">
+                        <div className="flex justify-between">
+                            <div>
+                                <p className="font-medium">{name}</p>
+                                <p className="text-gray-500">{description}</p>
+                            </div>
+                            <DialogClose />
+                        </div>
+                        <div className="flex-1 overflow-auto border rounded-lg">
+                            <ComponentCodePreview component={component} filePath={path} />
+                        </div>
                     </div>
                 </DialogContent>
             </DialogContainer>

@@ -10,7 +10,7 @@ type ComponentPreviewProps = {
     className?: string;
 };
 
-export default function ComponentRenderer({
+export default function ComponentPreview({
     component,
     hasReTrigger = false,
     className

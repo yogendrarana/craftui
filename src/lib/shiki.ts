@@ -2,12 +2,12 @@ import { bundledLanguages, createHighlighter } from "shiki/bundle/web";
 
 export const codeToHtml = async ({ code, lang }: { code: string; lang: string }) => {
     const highlighter = await createHighlighter({
-        themes: ["nord"],
+        themes: ["one-light"],
         langs: [...Object.keys(bundledLanguages)]
     });
 
     return highlighter.codeToHtml(code, {
-        lang: lang,
-        theme: "nord"
+        lang,
+        theme: "one-light"
     });
 };

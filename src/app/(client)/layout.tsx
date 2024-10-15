@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { fontSans } from "@/lib/fonts";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/provider/theme-provider";
-// import { PosthogProvider } from "@/components/provider/posthog-provider";
 
 // metadata
 export const metadata: Metadata = {
@@ -25,18 +24,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     fontSans.variable
                 )}
             >
-                {/* <PosthogProvider> */}
-                    <ThemeProvider
-                        attribute="class"
-                        defaultTheme="system"
-                        enableSystem
-                        disableTransitionOnChange
-                    >
-                        <TooltipProvider>
-                            <main className="flex-1">{children}</main>
-                        </TooltipProvider>
-                    </ThemeProvider>
-                {/* </PosthogProvider> */}
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    <TooltipProvider>
+                        <main className="flex-1">{children}</main>
+                    </TooltipProvider>
+                </ThemeProvider>
             </body>
 
             <Toaster richColors />

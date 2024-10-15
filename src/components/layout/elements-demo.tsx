@@ -3,21 +3,14 @@ import { cn } from "@/lib/utils";
 import { Components } from "@/content";
 import ComponentCodePreviewDialog from "@/components/component-code-preview-dialog";
 
-
 export default function ElementsDemo() {
-    const button = Components["button"][0];
     const input = Components["input"][0];
-    const checkbox = Components["checkbox"][0];
+    const button = Components["button"][0];
     const loader = Components["loader"][0];
     const toggle = Components["toggle"][0];
+    const checkbox = Components["checkbox"][0];
 
-    const elements = [
-        button,
-        toggle,
-        checkbox,
-        loader,
-        input
-    ]
+    const elements = [button, toggle, checkbox, loader, input];
 
     return (
         <div className={cn("space-y-3")}>
@@ -29,10 +22,10 @@ export default function ElementsDemo() {
                 {elements?.map((e, index) => {
                     return (
                         <ComponentCodePreviewDialog
-                            component={React.createElement(e.component)}
+                            key={index}
                             name={e.name}
                             description={e.description}
-                            key={index}
+                            component={React.createElement(e.component)}
                             path={e.path}
                         />
                     );

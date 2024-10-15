@@ -1,49 +1,40 @@
+// /app/components/CodePreview.jsx
 "use client";
 
 import React from "react";
-import { Check, Copy } from "lucide-react";
+import { toast } from "sonner";
+import { ScrollArea } from "./ui/scroll-area";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import BrutalistButton from "@/content/elements/button/brutalist-button";
 
-type CodePreviewProps = {
+interface CodePreviewProps {
     code: string;
-    children: React.ReactNode;
-};
+}
 
-export default function CodePreview({ code, children }: CodePreviewProps) {
-    const [hasCheckIcon, setHasCheckIcon] = React.useState(false);
-
-    const onCopy = () => {
+const CodePreview = ({ code }: CodePreviewProps) => {
+    const copyToClipboard = () => {
         navigator.clipboard.writeText(code);
-        setHasCheckIcon(true);
-
-        setTimeout(() => {
-            setHasCheckIcon(false);
-        }, 1000);
+        toast("Copied to clipboard");
     };
 
     return (
-        <div className="relative">
-            <div
-                className="absolute right-4 top-4 cursor-pointer bg-transparent p-2"
-                onClick={onCopy}
+        <ScrollArea className="h-full bg-[#2b2b2b]">
+            <div className="bg-white sticky top-0">
+                <BrutalistButton onClick={copyToClipboard}>
+                    Copy Code
+                </BrutalistButton>
+            </div>
+            <SyntaxHighlighter
+                language="jsx"
+                style={a11yDark}
+                wrapLines
+                wrapLongLines
             >
-                <div
-                    className={`absolute inset-0 transform transition-all duration-300 ${
-                        hasCheckIcon ? "scale-0 opacity-0" : "scale-100 opacity-100"
-                    }`}
-                >
-                    <Copy className="h-4 w-4 text-zinc-50" />
-                </div>
-                <div
-                    className={`absolute inset-0 transform transition-all duration-300 ${
-                        hasCheckIcon ? "scale-100 opacity-100" : "scale-0 opacity-0"
-                    }`}
-                >
-                    <Check className="h-4 w-4 text-zinc-50" />
-                </div>
-            </div>
-            <div className="max-h-[650px] overflow-auto rounded-md bg-zinc-900">
-                <div className="inline-block overflow-x-auto p-4 text-sm">{children}</div>
-            </div>
-        </div>
+                {code}
+            </SyntaxHighlighter>
+        </ScrollArea>
     );
-}
+};
+
+export default CodePreview;
