@@ -45,9 +45,9 @@ export default function ComponentCodePreviewDialog({
                 >
                     <div className="h-full w-full p-4 md:p-6 lg:p-20 flex flex-col gap-6 justify-end">
                         <div className="flex justify-between">
-                            <div>
+                            <div className="flex flex-col justify-end">
                                 <p className="font-medium">{name}</p>
-                                <p className="text-gray-500">{description}</p>
+                                {description && <p className="text-gray-500">{description}</p>}
                             </div>
                             <DialogClose />
                         </div>

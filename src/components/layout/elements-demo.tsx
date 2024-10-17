@@ -18,7 +18,7 @@ export default function ElementsDemo() {
                 <h1>Elements</h1>
             </div>
 
-            <div className={cn("grid grid-cols-2 gap-2", "md:grid-cols-4 lg:grid-cols-5")}>
+            <div className={cn("grid grid-cols-1 gap-2", "md:grid-cols-4 lg:grid-cols-5")}>
                 {elements?.map((e, index) => {
                     return (
                         <ComponentCodePreviewDialog

@@ -36,7 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 </ThemeProvider>
             </body>
 
-            <Toaster richColors />
+            <Toaster position="top-center" richColors />
         </html>
     );
 }

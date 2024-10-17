@@ -13,10 +13,10 @@ export const Components: Record<
 > = {
     button: [
         {
-            name: "demo-button",
-            description: "A demo button",
-            component: React.lazy(() => import("@/content/elements/button/demo-button")),
-            path: "src/content/elements/button/demo-button",
+            name: "Shimmer Button",
+            description: "",
+            component: React.lazy(() => import("@/content/elements/button/shimmer-button")),
+            path: "src/content/elements/button/shimmer-button",
             published: true,
             date: new Date("2024-12-12")
         }
@@ -33,10 +33,10 @@ export const Components: Record<
     ],
     loader: [
         {
-            name: "demo-loader",
-            description: "A demo loader",
-            component: React.lazy(() => import("@/content/elements/loader/demo-loader")),
-            path: "src/content/elements/loader/demo-loader",
+            name: "Three body loader",
+            description: "",
+            component: React.lazy(() => import("@/content/elements/loader/three-body-loader")),
+            path: "src/content/elements/loader/three-body-loader",
             published: true,
             date: new Date("2024-12-12")
         }

@@ -6,13 +6,13 @@ export default async function SiteHero() {
         <section id="hero" className={cn("my-10 flex flex-col gap-4 items-center", "md: my-32")}>
             <div className={cn("flex flex-col items-center gap-2", "md:gap-5")}>
                 <GithubStarBadge />
-                <p className="text-xl text-gray-500">
-                    Open-source collection of UI elements and components
+                <p className="text-center text-xl text-gray-500">
+                    Collection of UI elements and components
                 </p>
                 <h1
                     className={cn(
                         "text-black dark:text-white text-center",
-                        "text-5xl md:text-6xl text-balance text-left font-semibold tracking-tighter"
+                        "text-5xl md:text-6xl text-balance font-semibold tracking-tighter"
                     )}
                 >
                     Craft your project with Craft UI

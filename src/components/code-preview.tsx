@@ -1,12 +1,11 @@
-// /app/components/CodePreview.jsx
 "use client";
 
 import React from "react";
 import { toast } from "sonner";
 import { ScrollArea } from "./ui/scroll-area";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import BrutalistButton from "@/content/elements/button/brutalist-button";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface CodePreviewProps {
     code: string;
@@ -15,7 +14,7 @@ interface CodePreviewProps {
 const CodePreview = ({ code }: CodePreviewProps) => {
     const copyToClipboard = () => {
         navigator.clipboard.writeText(code);
-        toast("Copied to clipboard");
+        toast.success("Copied to clipboard");
     };
 
     return (

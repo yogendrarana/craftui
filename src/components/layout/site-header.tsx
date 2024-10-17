@@ -25,7 +25,7 @@ export function SiteHeader() {
                     <DesktopNav items={siteConfig.mainNav} />
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="hidden md:flex items-center gap-3">
                     <GithubStarBadge />
                 </div>
             </div>
