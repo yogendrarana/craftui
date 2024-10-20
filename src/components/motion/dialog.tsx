@@ -349,8 +349,8 @@ function DialogClose({ children, className, variants }: DialogCloseProps) {
             variants={variants}
         >
             {children || (
-                <BrutalistButton className="flex gap-3">
-                    Esc <XIcon size={24} />
+                <BrutalistButton className="flex items-center gap-3">
+                    <XIcon size={24} /> Esc
                 </BrutalistButton>
             )}
         </motion.button>
