@@ -2,7 +2,7 @@
 
 import React from "react";
 import { toast } from "sonner";
-import { ScrollArea } from "./ui/scroll-area";
+import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import BrutalistButton from "@/content/elements/button/brutalist-button";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -18,20 +18,15 @@ const CodePreview = ({ code }: CodePreviewProps) => {
     };
 
     return (
-        <ScrollArea className="h-full bg-[#2b2b2b]">
+        <ScrollArea className="h-full bg-[#2b2b2b] whitespace-nowrap">
             <div className="bg-white sticky top-0">
-                <BrutalistButton onClick={copyToClipboard}>
-                    Copy Code
-                </BrutalistButton>
+                <BrutalistButton onClick={copyToClipboard}>Copy Code</BrutalistButton>
             </div>
-            <SyntaxHighlighter
-                language="jsx"
-                style={a11yDark}
-                wrapLines
-                wrapLongLines
-            >
+            <SyntaxHighlighter language="tsx" style={a11yDark}>
                 {code}
             </SyntaxHighlighter>
+            <ScrollBar orientation="horizontal" />
+            <ScrollBar orientation="vertical" />
         </ScrollArea>
     );
 };
