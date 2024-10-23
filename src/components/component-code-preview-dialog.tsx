@@ -52,7 +52,7 @@ export default function ComponentCodePreviewDialog({
                     <div className="h-full w-full p-4 md:p-6 lg:p-20 flex flex-col gap-6 justify-end">
                         {/* header */}
                         <div className="flex justify-between">
-                            <div className="flex flex-col justify-end">
+                            <div className="flex flex-col justify-baseline">
                                 <p className="text-lg hidden md:flex">{name}</p>
                                 {description && (
                                     <p className="hidden md:flex text-gray-500">{description}</p>

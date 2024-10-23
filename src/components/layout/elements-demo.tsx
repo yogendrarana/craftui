@@ -7,7 +7,7 @@ export default function ElementsDemo() {
     const input = Components["input"][0];
     const button = Components["button"][0];
     const loader = Components["loader"][0];
-    const toggle = Components["toggle"][0];
+    const toggle = Components["toggle"][1];
     const checkbox = Components["checkbox"][0];
 
     const elements = [button, toggle, checkbox, loader, input];

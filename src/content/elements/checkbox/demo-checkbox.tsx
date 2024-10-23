@@ -1,35 +1,68 @@
 "use client";
 
-import React from "react";
-import { Check } from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-export default function DemoCheckbox() {
-    const [isChecked, setIsChecked] = React.useState(false);
+export default function AmazingCheckbox() {
+    const [isChecked, setIsChecked] = useState(true);
 
     const toggleCheckbox = () => setIsChecked(!isChecked);
 
     return (
-        <div>
-            <label className="flex items-center space-x-3 cursor-pointer">
-                <div className="relative">
-                    <input
-                        type="checkbox"
-                        className="sr-only"
-                        checked={isChecked}
-                        onChange={toggleCheckbox}
-                    />
-                    <div
-                        className={`w-6 h-6 border-2 rounded-md ${
-                            isChecked ? "border-primary bg-primary" : "border-gray-300 bg-white"
-                        } transition-colors duration-200 ease-in-out`}
+        <div className="flex items-center justify-center">
+            <label className="relative inline-flex items-center cursor-pointer">
+                <input
+                    type="checkbox"
+                    className="sr-only"
+                    checked={isChecked}
+                    onChange={toggleCheckbox}
+                />
+                <motion.div
+                    className={`w-9 h-9 rounded-xl border ${
+                        isChecked
+                            ? "bg-gradient-to-br from-purple-500 via-pink-500 to-red-500"
+                            : "bg-white"
+                    }`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 20
+                    }}
+                >
+                    <motion.svg
+                        className="w-full h-full p-2 text-white"
+                        viewBox="0 0 24 24"
+                        initial="hidden"
+                        animate={isChecked ? "visible" : "hidden"}
                     >
-                        <Check
-                            className={`w-4 h-4 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
-                                isChecked ? "opacity-100" : "opacity-0"
-                            } transition-opacity duration-200 ease-in-out`}
+                        <motion.path
+                            d="M4 12.6111L8.92308 17.5L20 6.5"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            variants={{
+                                visible: {
+                                    pathLength: 1,
+                                    transition: {
+                                        duration: 0.3,
+                                        ease: "easeOut"
+                                    }
+                                },
+                                hidden: {
+                                    pathLength: 0,
+                                    transition: {
+                                        duration: 0.3,
+                                        ease: "easeIn"
+                                    }
+                                }
+                            }}
                         />
-                    </div>
-                </div>
+                    </motion.svg>
+                </motion.div>
             </label>
         </div>
     );

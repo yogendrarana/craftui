@@ -9,7 +9,7 @@ export default function SiteFooter() {
                 <div className="flex flex-col gap-3">
                     <span className="text-xl font-semibold">{siteConfig.name}</span>
                     <p className="text-sm text-gray-500">
-                        Created by{" "}
+                        Crafted by{" "}
                         <ExternalLink href="https://yogendrarana.com.np" className="underline">
                             Yogendra Rana
                         </ExternalLink>

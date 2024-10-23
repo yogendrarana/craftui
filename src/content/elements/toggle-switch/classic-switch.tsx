@@ -1,8 +1,9 @@
 "use client";
 
+import React from "react";
 import { useState } from "react";
 
-export default function DemoToggle() {
+export default function ClassicSwitch() {
     const [isOn, setIsOn] = useState(false);
 
     const toggleSwitch = () => setIsOn(!isOn);

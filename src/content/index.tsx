@@ -1,16 +1,15 @@
 import * as React from "react";
 
-export const Components: Record<
-    string,
-    {
-        name: string;
-        description: string;
-        component: any;
-        path: string;
-        published: boolean;
-        date: Date;
-    }[]
-> = {
+interface ComponentInterface {
+    name: string;
+    description: string;
+    component: React.LazyExoticComponent<React.FC>;
+    path: string;
+    published: boolean;
+    date: Date;
+}
+
+export const Components: Record<string, ComponentInterface[]> = {
     button: [
         {
             name: "Shimmer Button",
@@ -43,22 +42,42 @@ export const Components: Record<
     ],
     toggle: [
         {
-            name: "demo-toggle",
-            description: "A demo toggle",
-            component: React.lazy(() => import("@/content/elements/toggle/demo-toggle")),
-            path: "src/content/elements/toggle/demo-toggle",
+            name: "Classic Switch",
+            description: "A classic toggle",
+            component: React.lazy(() => import("@/content/elements/toggle-switch/classic-switch")),
+            path: "src/content/elements/toggle-switch/classic-switch",
             published: true,
-            date: new Date("2024-12-12")
+            date: new Date("2024-12-23")
+        },
+        {
+            name: "Day night switch",
+            description: "",
+            component: React.lazy(
+                () => import("@/content/elements/toggle-switch/day-night-switch")
+            ),
+            path: "src/content/elements/toggle-switch/day-night-switch",
+            published: true,
+            date: new Date("2024-10-23")
+        },
+        {
+            name: "Brutalist Switch",
+            description: "",
+            component: React.lazy(
+                () => import("@/content/elements/toggle-switch/brutalist-switch")
+            ),
+            path: "src/content/elements/toggle-switch/brutalist-switch",
+            published: true,
+            date: new Date("2024-10-23")
         }
     ],
     checkbox: [
         {
-            name: "demo-checkbox",
-            description: "A demo checkbox",
+            name: "Checkbox",
+            description: "",
             component: React.lazy(() => import("@/content/elements/checkbox/demo-checkbox")),
             path: "src/content/elements/checkbox/demo-checkbox",
             published: true,
-            date: new Date("2024-12-12")
+            date: new Date("2024-10-25")
         }
     ]
 };
