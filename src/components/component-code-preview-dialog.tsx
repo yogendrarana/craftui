@@ -36,8 +36,7 @@ export default function ComponentCodePreviewDialog({
                     component={component}
                     className={cn(
                         "relative cursor-pointer aspect-square border bg-white",
-                        "transition-all duration-300 ease-in-out",
-                        "hover:scale-110 hover:rounded-lg hover:z-10 hover:border-[3px]"
+                        "transition-all duration-300 ease-in-out"
                     )}
                 />
             </DialogTrigger>

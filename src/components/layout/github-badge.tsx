@@ -1,10 +1,10 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { useStarStore } from "@/store/use-star-store";
-import { cn } from "@/lib/utils";
 
 interface PropTypes {
     className?: string;

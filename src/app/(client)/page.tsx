@@ -1,17 +1,14 @@
-import * as React from "react";
-import { Shell } from "@/components/shell";
-import SiteHero from "@/components/layout/site-hero";
-import SiteFooter from "@/components/layout/site-footer";
-import ElementsDemo from "@/components/layout/elements-demo";
-import { SiteHeader } from "@/components/layout/site-header";
+import React from "react";
+import HeroSection from "@/components/layout/hero-section";
+import FeaturesSection from "@/components/layout/features-section";
+import ComponentDemoSection from "@/components/layout/component-demo-section";
 
-export default async function HomePage() {
+export default function HomePage() {
     return (
-        <Shell>
-            <SiteHeader />
-            <SiteHero />
-            <ElementsDemo />
-            <SiteFooter />
-        </Shell>
+        <div className="min-h-screen bg-background">
+            <HeroSection />
+            <FeaturesSection />
+            <ComponentDemoSection />
+        </div>
     );
 }

@@ -68,6 +68,22 @@ export const Components: Record<string, ComponentInterface[]> = {
             path: "src/content/elements/toggle-switch/brutalist-switch",
             published: true,
             date: new Date("2024-10-23")
+        },
+        {
+            name: "Fluid Switch",
+            description: "",
+            component: React.lazy(() => import("@/content/elements/toggle-switch/fluid-switch")),
+            path: "src/content/elements/toggle-switch/fluid-switch",
+            published: true,
+            date: new Date("2024-10-23")
+        },
+        {
+            name: "Gradient Switch",
+            description: "",
+            component: React.lazy(() => import("@/content/elements/toggle-switch/gradient-switch")),
+            path: "src/content/elements/toggle-switch/gradient-switch",
+            published: true,
+            date: new Date("2024-10-23")
         }
     ],
     checkbox: [
