@@ -14,7 +14,7 @@ export default function FeaturesSection() {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-4"
                 >
                     <FeatureCard
                         icon={<Component className="h-8 w-6" />}

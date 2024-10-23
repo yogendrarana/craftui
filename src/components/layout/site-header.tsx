@@ -25,16 +25,16 @@ export default function SiteHeader() {
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-6">
                         <Link
+                            href="/elements"
+                            className="text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                            Elements
+                        </Link>
+                        <Link
                             href="/components"
                             className="text-muted-foreground hover:text-foreground transition-colors"
                         >
                             Components
-                        </Link>
-                        <Link
-                            href="/docs"
-                            className="text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                            Documentation
                         </Link>
 
                         <GithubStarBadge className="rounded-sm shadow-md" />

@@ -4,6 +4,7 @@ import { Components } from "@/content";
 import { ChevronRight } from "lucide-react";
 import { cn, toTitleCase } from "@/lib/utils";
 import ComponentCodePreviewDialog from "@/components/component-code-preview-dialog";
+import { Shell } from "@/components/shell";
 
 interface ElementsPageProps {
     children: React.ReactElement;
@@ -24,7 +25,7 @@ export default function ElementsPage({ params }: ElementsPageProps) {
     const elements = Components[element].sort((a, b) => a.date.getTime() - b.date.getTime());
 
     return (
-        <div className={cn("space-y-6")}>
+        <Shell className="py-12">
             <div className="flex items-center space-x-1 text-sm text-muted-foreground">
                 <div className="truncate">elements</div>
                 <ChevronRight className="size-4" />
@@ -52,6 +53,6 @@ export default function ElementsPage({ params }: ElementsPageProps) {
                     );
                 })}
             </div>
-        </div>
+        </Shell>
     );
 }
