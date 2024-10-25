@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { useStarStore } from "@/store/use-star-store";
+import BrutalistButton from "@/content/elements/button/brutalist-button";
+import { Separator } from "../ui/separator";
 
 interface PropTypes {
     className?: string;
@@ -47,20 +49,15 @@ const GithubStarBadge = ({ className }: PropTypes) => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
         >
-            <span
-                className={cn(
-                    "h-9 px-4 flex gap-3 items-center justify-center bg-black text-[12px] font-medium uppercase text-white backdrop-blur",
-                    className
-                )}
-            >
-                Github
-                <span className="h-4 w-[1px] bg-gray-200/50"></span>{" "}
+            <BrutalistButton className="w-auto">
+                GitHub
+                <Separator className="mx-2 h-6 bg-zinc-500" orientation="vertical" />
                 <span className="flex items-center tabular-nums">
                     {/* TODO: add animated counter */}
                     {stars}
                     <Star fill="#dba809" className="ml-2 inline-block h-4 w-4 text-yellow-500" />
                 </span>
-            </span>
+            </BrutalistButton>
         </motion.a>
     );
 };

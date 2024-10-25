@@ -3,6 +3,7 @@
 import React from "react";
 import { Shell } from "../shell";
 import { AnimatedLink } from "../animated-link";
+import Link from "next/link";
 
 export default function ElementsOverviewSection() {
     return (
@@ -20,7 +21,12 @@ export default function ElementsOverviewSection() {
                         <AnimatedLink href="/elements" label="Buttons" className="border-b-0" />
                         <AnimatedLink href="/elements" label="Loader" className="border-b-0" />
                         <AnimatedLink href="/elements" label="Toggles" className="border-b-0" />
-                        <AnimatedLink href="/elements" label="Inputs" />
+                        <AnimatedLink href="/elements" label="Inputs" className="border-b-0" />
+                        <AnimatedLink
+                            href="/elements"
+                            label="View All Elements"
+                            className="bg-black text-white border-t-0"
+                        />
                     </div>
                 </div>
             </Shell>

@@ -20,7 +20,7 @@ export const AnimatedLink: React.FC<AnimatedLinkProps> = ({
         <Link href={href} target={isExternal ? "_blank" : "_self"} className="cursor-pointer">
             <div
                 className={cn(
-                    "group relative h-16 border overflow-hidden border-gray-200 transition-all ease-in-out duration-500",
+                    "group relative h-16 overflow-hidden border border-gray-200 transition-all ease-in-out duration-500",
                     className
                 )}
             >
