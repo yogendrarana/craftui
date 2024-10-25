@@ -5,6 +5,7 @@ import { Shell } from "../shell";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import { Code2, Github, Sparkles } from "lucide-react";
+import BackgroundGrid from "./background-grid";
 
 export default function HeroSection() {
     return (
@@ -43,11 +44,7 @@ export default function HeroSection() {
                 </motion.div>
 
                 {/* Background Grid */}
-                <div className="absolute inset-0 grid grid-cols-6 gap-4 opacity-10">
-                    {[...Array(24)].map((_, i) => (
-                        <div key={i} className="border-r border-primary border-dashed"></div>
-                    ))}
-                </div>
+                <BackgroundGrid />
             </Shell>
         </section>
     );

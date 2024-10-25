@@ -2,13 +2,11 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Github, Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
 import { Shell } from "../shell";
-import { siteConfig } from "@/config/site";
+import { Menu, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import GithubStarBadge from "./github-badge";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function SiteHeader() {
     const router = useRouter();
@@ -17,7 +15,7 @@ export default function SiteHeader() {
     return (
         <nav className="border-b border-dashed boder-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
             <Shell>
-                <div className="flex h-16 items-center justify-between">
+                <div className="flex h-20 items-center justify-between">
                     <Link href="/" className="text-2xl font-bold">
                         Craft UI
                     </Link>

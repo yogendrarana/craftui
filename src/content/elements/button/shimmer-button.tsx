@@ -1,13 +1,21 @@
 "use client";
 
 import React from "react";
-
 import { cn } from "@/lib/utils";
 
-const ShimmerButton = () => {
+interface ShimmerButtonProps {
+    className?: string;
+}
+
+const ShimmerButton = ({ className }: ShimmerButtonProps) => {
     return (
         <>
-            <button className="px-6 py-2.5 rounded-full relative cursor-pointer flex items-center justify-center border border-white/10 bg-black overflow-hidden">
+            <button
+                className={cn(
+                    "h-12 w-28 rounded-full relative cursor-pointer flex items-center justify-center border border-white/10 bg-black overflow-hidden",
+                    className
+                )}
+            >
                 <span
                     className={cn(
                         "absolute w-full aspect-[1] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",

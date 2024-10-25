@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 
-export default function GradientCheckbox() {
+export default function GradientSwitch() {
     const [isChecked, setIsChecked] = useState(false);
 
     return (
-        <div className=" bg-gray-100">
+        <div>
             <div className="checkbox-wrapper-25">
                 <input
                     type="checkbox"
@@ -22,7 +22,7 @@ export default function GradientCheckbox() {
                             hsla(0, 0%, 0%, 0.1),
                             hsla(0, 0%, 100%, 0.1)
                         ),
-                        -webkit-linear-gradient(left, #f66 50%, #6cf 50%);
+                    -webkit-linear-gradient(left, #f66 50%, #6cf 50%);
                     background-size: 100% 100%, 200% 100%;
                     background-position: 0 0, 15px 0;
                     box-shadow: inset 0 1px 4px hsla(0, 0%, 0%, 0.5),
