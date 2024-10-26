@@ -4,26 +4,27 @@ import Link from "next/link";
 import { useState } from "react";
 import { Shell } from "../shell";
 import { Menu, X } from "lucide-react";
-import { useRouter } from "next/navigation";
-import GithubStarBadge from "./github-badge";
+import { Separator } from "../ui/separator";
+import GithubStarBadge from "@/components/github-badge";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function SiteHeader() {
-    const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <nav className="border-b border-dashed boder-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
             <Shell>
-                <div className="flex h-20 items-center justify-between">
+                <div className="h-20 flex items-center justify-between">
                     <Link href="/" className="text-2xl font-bold">
                         Craft UI
                     </Link>
 
+                    <Separator className="h-6 mx-8" orientation="vertical" />
+
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-6">
                         <Link
-                            href="/elements"
+                            href="/elements/button"
                             className="text-muted-foreground hover:text-foreground transition-colors"
                         >
                             Elements
@@ -34,8 +35,15 @@ export default function SiteHeader() {
                         >
                             Components
                         </Link>
-
-                        <GithubStarBadge className="rounded-sm shadow-md" />
+                        <Link
+                            href="/blocks"
+                            className="text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                            Blocks
+                        </Link>
+                    </div>
+                    <div className="ml-auto hidden md:block">
+                        <GithubStarBadge className="h-11 rounded-sm shadow-md" />
                     </div>
 
                     {/* Mobile Menu Button */}

@@ -2,12 +2,16 @@
 
 import React from "react";
 import { Shell } from "../shell";
-import { Button } from "../ui/button";
 import { motion } from "framer-motion";
-import { Code2, Github, Sparkles } from "lucide-react";
+import { siteConfig } from "@/config/site";
+import { useRouter } from "next/navigation";
 import BackgroundGrid from "./background-grid";
+import { Github, Code2, Sparkles } from "lucide-react";
+import BrutalistButton from "@/content/registry/elements/button/brutalist-button";
 
 export default function HeroSection() {
+    const router = useRouter();
+
     return (
         <section className="relative overflow-hidden border-b border-dashed border-border">
             <Shell>
@@ -15,7 +19,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="relative z-10 flex flex-col items-center text-center py-24 space-y-10"
+                    className="py-28 relative z-10 flex flex-col items-center text-center space-y-10"
                 >
                     <div className="px-3 py-1 text-sm inline-flex items-center rounded-full border">
                         <Sparkles className="mr-2 h-3 w-3" />
@@ -28,18 +32,25 @@ export default function HeroSection() {
                         </span>
                     </h1>
                     <p className="mb-8 text-2xl text-muted-foreground max-w-2xl">
-                        A collection of beautiful, interactive UI components for modern web
-                        applications. Built with Next.js, Tailwind CSS, and Framer Motion.
+                        {siteConfig.description}
                     </p>
                     <div className="flex gap-4">
-                        <Button size="lg" className="text-lg">
+                        <BrutalistButton
+                            onClick={() => router.push("/docs/getting-started/introduction")}
+                            className="text-lg px-4 w-auto"
+                        >
                             <Code2 className="mr-2 h-5 w-5" />
-                            Browse Components
-                        </Button>
-                        <Button size="lg" variant="outline" className="text-lg">
+                            Browse Docs
+                        </BrutalistButton>
+                        <BrutalistButton
+                            onClick={() =>
+                                window.open(`${siteConfig.projectLinks.github}`, "_blank")
+                            }
+                            className="px-4 text-lg w-auto bg-zinc-800 text-white"
+                        >
                             <Github className="mr-2 h-5 w-5" />
-                            View on GitHub
-                        </Button>
+                            Visit GitHub
+                        </BrutalistButton>
                     </div>
                 </motion.div>
 

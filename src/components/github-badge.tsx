@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
+import { Separator } from "@/components/ui/separator";
 import { useStarStore } from "@/store/use-star-store";
-import BrutalistButton from "@/content/elements/button/brutalist-button";
-import { Separator } from "../ui/separator";
+import BrutalistButton from "@/content/registry/elements/button/brutalist-button";
 
 interface PropTypes {
     className?: string;
@@ -30,7 +30,11 @@ const GithubStarBadge = ({ className }: PropTypes) => {
 
                 if (response.ok) {
                     const data = await response.json();
-                    setStars(data.stargazers_count || 100);
+                    const starsCount =
+                        data.stargazers_count >= 1000
+                            ? `${(data.stargazers_count / 1000).toFixed(2)}k`
+                            : data.stargazers_count;
+                    setStars(starsCount);
                 }
             } catch (error) {
                 console.error("Error fetching GitHub stars:", error);
@@ -48,8 +52,9 @@ const GithubStarBadge = ({ className }: PropTypes) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
+            className={cn("flex items-center", className)}
         >
-            <BrutalistButton className="w-auto">
+            <BrutalistButton className="h-full w-auto">
                 GitHub
                 <Separator className="mx-2 h-6 bg-zinc-500" orientation="vertical" />
                 <span className="flex items-center tabular-nums">

@@ -36,7 +36,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/content/elements/button/demo-button.mdx"
+    "src/registry/elements/button/demo-button.mdx"
   ],
   "exclude": [
     "node_modules"

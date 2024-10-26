@@ -6,6 +6,6 @@ interface StarStore {
 }
 
 export const useStarStore = create<StarStore>((set) => ({
-    stars: 100,
+    stars: 0,
     setStars: (count) => set({ stars: count })
 }));

@@ -5,7 +5,7 @@ import {
     DialogContent,
     DialogClose,
     DialogContainer
-} from "@/components/motion/dialog";
+} from "@/components/dialog";
 import { cn } from "@/lib/utils";
 import ComponentPreview from "./component-preview";
 import ComponentCodePreview from "./component-code-preview";
@@ -16,7 +16,7 @@ interface DemoDialogProps {
     component: React.ReactElement;
     name: string;
     description?: string;
-    path: string;
+    code: string;
     hasRetrigger?: boolean;
 }
 
@@ -24,10 +24,9 @@ export default function ComponentCodePreviewDialog({
     name,
     description,
     component,
-    path,
+    code,
     hasRetrigger = false
 }: DemoDialogProps) {
-    const code = extractCodeFromFilePath(`${path}.tsx`);
 
     return (
         <Dialog transition={{ type: "spring", bounce: 0.05, duration: 0.5 }}>

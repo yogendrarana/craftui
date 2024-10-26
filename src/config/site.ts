@@ -2,14 +2,20 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
     name: "Craft UI",
-    description: "Beautifully designed elements, components for React.js and Next.js.",
+    description:
+        "A collection of beautiful, interactive UI components built with Next.js, Tailwind CSS, and Framer Motion.",
     url: "https://craftui.dev",
-    links: {
-        x: "https://twitter.com/yoogendra_rana",
-        github: "https://github.com/yogendrarana",
-        githubAccount: "https://github.com/yogendrarana",
-        discord: "https://discord.com/users/yoogendrarana",
-        calDotCom: "https://cal.com/yogendrarana"
+    projectLinks: {
+        twitter: "https://twitter.com/yoogendra_rana",
+        github: "https://github.com/yogendrarana/craftui.git"
     },
-    mobile: "+977 9812345678"
+    author: {
+        name: "Yogendra Rana",
+        email: "yogendrarana.mail@gmail.com",
+        links: {
+            website: "https://yogendrarana.com.np",
+            twitter: "https://twitter.com/yoogendra_rana",
+            github: "https://github.com/yogendrarana"
+        }
+    }
 };

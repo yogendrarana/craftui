@@ -13,7 +13,7 @@ export default function SiteFooter() {
                         <p className="text-sm text-gray-500">
                             Crafted by{" "}
                             <ExternalLink
-                                href="https://yogendrarana.com.np"
+                                href={siteConfig.author.links.twitter}
                                 className="underline text-sm text-muted-foreground"
                             >
                                 Yogendra Rana

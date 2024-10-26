@@ -1,3 +1,5 @@
+const { withContentCollections } = require("@content-collections/next");
+
 const nextConfig = {
     pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
     experimental: {
@@ -14,4 +16,4 @@ const nextConfig = {
     }
 };
 
-module.exports = nextConfig;
+module.exports = withContentCollections(nextConfig);
