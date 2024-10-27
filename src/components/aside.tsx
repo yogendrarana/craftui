@@ -7,17 +7,10 @@ import { usePathname } from "next/navigation";
 
 interface AsideProps {
     className?: string;
+    asideLinks: { href: string; name: string }[];
 }
 
-const asideLinks = [
-    { href: "/elements/button", name: "Buttons" },
-    { href: "/elements/loader", name: "Loaders" },
-    { href: "/elements/input", name: "Inputs" },
-    { href: "/elements/checkbox", name: "Checkoxes" },
-    { href: "/elements/toggle-switch", name: "Toggle Switches" },
-]
-
-const Aside = ({ className }: AsideProps) => {
+const Aside = ({ className, asideLinks }: AsideProps) => {
     const pathname = usePathname();
     const isActive = (href: string) => pathname === href;
 

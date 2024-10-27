@@ -5,8 +5,8 @@ import { ExternalLink } from "../external-link";
 
 export default function SiteFooter() {
     return (
-        <footer>
-            <Shell className="py-12">
+        <footer className="py-8 border-t border-dashed">
+            <Shell>
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="flex flex-col gap-3">
                         <span className="text-xl font-semibold">{siteConfig.name}</span>

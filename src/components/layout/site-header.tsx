@@ -24,19 +24,19 @@ export default function SiteHeader() {
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-6">
                         <Link
-                            href="/elements/button"
+                            href="/docs/elements/button"
                             className="text-muted-foreground hover:text-foreground transition-colors"
                         >
                             Elements
                         </Link>
                         <Link
-                            href="/components"
+                            href="/docs/components/marquee"
                             className="text-muted-foreground hover:text-foreground transition-colors"
                         >
                             Components
                         </Link>
                         <Link
-                            href="/blocks"
+                            href="/docs/blocks/navbar"
                             className="text-muted-foreground hover:text-foreground transition-colors"
                         >
                             Blocks

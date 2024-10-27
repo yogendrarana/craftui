@@ -1,9 +1,8 @@
 import React from "react";
-import { cn } from "@/lib/utils";
-import Aside from "./_components/aside";
 import { Shell } from "@/components/shell";
 import { Previews } from "@/content/previews";
-import { Separator } from "@/components/ui/separator";
+import DocsSidebar from "@/components/docs-sidebar";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface ElementType {
     name: string;
@@ -26,18 +25,19 @@ export default function Page({ children }: PageProps) {
     return (
         <Shell>
             <div className="py-16 space-y-2">
-                <h1 className="text-4xl font-bold">Elements</h1>
+                <h1 className="text-4xl font-bold">Blocks</h1>
                 <p className="text-lg text-muted-foreground">
-                    A collection of basic UI elements built with React, Tailwind CSS, and Framer
+                    A collection of basic UI blocks built with React, Tailwind CSS, and Framer
                     Motion.
                 </p>
             </div>
 
             <div className="relative rounded-sm flex flex-col lg:flex-row items-start gap-12">
-                <Aside className="w-full md:w-52 sticky top-28" />
-                <div className="w-full">
-                    {children}
-                </div>
+                <ScrollArea className="h-full pr-6">
+                    <DocsSidebar />
+                </ScrollArea>
+
+                <div className="w-full">{children}</div>
             </div>
         </Shell>
     );
