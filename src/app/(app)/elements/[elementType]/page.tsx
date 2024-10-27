@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Shell } from "@/components/shell";
 import { Previews } from "@/content/previews";
 import ComponentCodePreviewDialog from "@/components/component-code-preview-dialog";
+import NoElements from "../_components/no-elements";
 
 interface ElementType {
     name: string;
@@ -17,12 +18,12 @@ export default function Page({ params }: { params: { elementType: string } }) {
     const filteredElements = elements.filter((elt) => elt.type === params.elementType);
 
     if (!elements || elements.length === 0) {
-        return null;
+        return <NoElements />;
     }
 
     return (
-        <Shell>
-            <div className={cn("flex-1 grid grid-cols-2 gap-3", "md:grid-cols-4")}>
+        <Shell className="px-0">
+            <div className={cn("grid gap-3 grid-cols-1 md:grid-cols-3 lg:grid-cols-4")}>
                 {filteredElements?.map((comp, index) => {
                     return (
                         <ComponentCodePreviewDialog

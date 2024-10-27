@@ -34,8 +34,10 @@ export default function Page({ children }: PageProps) {
             </div>
 
             <div className="relative rounded-sm flex flex-col lg:flex-row items-start gap-12">
-                <Aside className="w-52 sticky top-28" />
-                {children}
+                <Aside className="w-full md:w-52 sticky top-28" />
+                <div className="w-full">
+                    {children}
+                </div>
             </div>
         </Shell>
     );
