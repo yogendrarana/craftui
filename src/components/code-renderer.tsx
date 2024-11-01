@@ -4,6 +4,8 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Check, Clipboard } from "lucide-react";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 type CodeRendererProps = {
     code: string;
@@ -32,20 +34,21 @@ export default function CodeRenderer({ code, className }: CodeRendererProps) {
                 )}
             </button>
 
-            {/* Updated code section */}
-            <div className="w-full overflow-x-auto">
+            {/* alternative code section */}
+            {/* <div className="w-full overflow-x-auto">
                 <pre className="p-4 md:p-6 bg-black text-sm font-mono text-white max-w-full overflow-x-auto whitespace-pre">
                     <code className="break-all">{code}</code>
                 </pre>
-            </div>
+            </div> */}
 
-            <div className="max-h-[650px] overflow-auto rounded-md bg-zinc-900">
-                <div className="inline-block overflow-x-auto p-4 text-sm">
-                    <pre className="p-4 md:p-6 bg-black text-sm font-mono text-white w-full max-w-full overflow-x-auto whitespace-pre">
-                        <code className="break-all">{code}</code>
-                    </pre>
-                </div>
-            </div>
+            <SyntaxHighlighter
+                language="tsx"
+                style={a11yDark}
+                customStyle={{ margin: 0, backgroundColor: "black" }}
+            >
+                {code}
+            </SyntaxHighlighter>
+
             <ScrollBar orientation="horizontal" />
             <ScrollBar orientation="vertical" />
         </ScrollArea>
