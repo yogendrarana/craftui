@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Shell } from "../shell";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { useRouter } from "next/navigation";
@@ -14,7 +13,6 @@ export default function HeroSection() {
 
     return (
         <section className="relative overflow-hidden border-b border-dashed border-border">
-            <Shell>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -25,13 +23,13 @@ export default function HeroSection() {
                         <Sparkles className="mr-2 h-3 w-3" />
                         Beautifully crafted UI components
                     </div>
-                    <h1 className="mb-6 text-8xl font-black tracking-tight space-x-4">
+                    <h1 className="mb-6 text-6xl md:text-8xl font-black tracking-tight space-x-4">
                         <span className="text-primary">Craft</span>
                         <span className="px-5 rounded-sm bg-primary text-primary-foreground">
                             UI
                         </span>
                     </h1>
-                    <p className="mb-8 text-2xl text-muted-foreground max-w-2xl">
+                    <p className="mb-8 text-xl md:text-2xl text-muted-foreground max-w-2xl">
                         {siteConfig.description}
                     </p>
                     <div className="flex gap-4">
@@ -46,7 +44,7 @@ export default function HeroSection() {
                             onClick={() =>
                                 window.open(`${siteConfig.projectLinks.github}`, "_blank")
                             }
-                            className="px-4 text-lg w-auto bg-zinc-800 text-white"
+                            className="px-4 text-lg w-auto border-none bg-zinc-700 text-white"
                         >
                             <Github className="mr-2 h-5 w-5" />
                             Visit GitHub
@@ -56,7 +54,6 @@ export default function HeroSection() {
 
                 {/* Background Grid */}
                 <BackgroundGrid />
-            </Shell>
         </section>
     );
 }

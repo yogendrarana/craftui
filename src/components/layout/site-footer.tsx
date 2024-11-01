@@ -5,15 +5,15 @@ import { ExternalLink } from "../external-link";
 
 export default function SiteFooter() {
     return (
-        <footer className="py-8 border-t border-dashed">
+        <footer className="mt-8 py-8 border-t border-dashed">
             <Shell>
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div className="flex flex-col gap-3">
+                <div className={cn("flex justify-between items-end gap-4")}>
+                    <div className="space-y-2">
                         <span className="text-xl font-semibold">{siteConfig.name}</span>
                         <p className="text-sm text-gray-500">
                             Crafted by{" "}
                             <ExternalLink
-                                href={siteConfig.author.links.twitter}
+                                href={siteConfig.author.links.website}
                                 className="underline text-sm text-muted-foreground"
                             >
                                 Yogendra Rana

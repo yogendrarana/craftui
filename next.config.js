@@ -1,4 +1,4 @@
-const { withContentCollections } = require("@content-collections/next");
+import  { withContentCollections }  from "@content-collections/next"
 
 const nextConfig = {
     pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
@@ -16,4 +16,4 @@ const nextConfig = {
     }
 };
 
-module.exports = withContentCollections(nextConfig);
+export default withContentCollections(nextConfig);

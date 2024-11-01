@@ -9,7 +9,7 @@ export const docsConfig: DocsConfig = {
     mainNav: [
         {
             title: "Elements",
-            href: "/docs/elements/buttons"
+            href: "/docs/elements/button"
         },
         {
             title: "Components",
@@ -47,14 +47,12 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Loaders",
                     href: `/docs/elements/loader`,
-                    items: [],
-                    label: ""
+                    items: []
                 },
                 {
                     title: "Input Fields",
                     href: `/docs/elements/input`,
-                    items: [],
-                    label: ""
+                    items: []
                 },
                 {
                     title: "Checkboxes",
@@ -79,8 +77,7 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Hero Video Dialog",
                     href: `/docs/components/hero-video-dialog`,
-                    items: [],
-                    label: ""
+                    items: []
                 },
                 {
                     title: "Bento Grid",
@@ -95,79 +92,12 @@ export const docsConfig: DocsConfig = {
             ]
         },
         {
-            title: "Blocks",
+            title: "Text Effects",
             items: [
                 {
-                    title: "Navbars",
-                    href: `/docs/blocks/navbar`,
-                    items: [],
-                    label: ""
-                },
-                {
-                    title: "Banners",
-                    href: `/docs/blocks/banner`,
-                    items: [],
-                    label: ""
-                },
-                {
-                    title: "Footers",
-                    href: `/docs/blocks/footer`,
-                    items: [],
-                    label: ""
-                },
-                {
-                    title: "Navbars",
-                    href: `/docs/blocks/navbar`,
-                    items: [],
-                    label: ""
-                },
-                {
-                    title: "Banners",
-                    href: `/docs/blocks/banner`,
-                    items: [],
-                    label: ""
-                },
-                {
-                    title: "Footers",
-                    href: `/docs/blocks/footer`,
-                    items: [],
-                    label: ""
-                },
-                {
-                    title: "Navbars",
-                    href: `/docs/blocks/navbar`,
-                    items: [],
-                    label: ""
-                },
-                {
-                    title: "Banners",
-                    href: `/docs/blocks/banner`,
-                    items: [],
-                    label: ""
-                },
-                {
-                    title: "Footers",
-                    href: `/docs/blocks/footer`,
-                    items: [],
-                    label: ""
-                },
-                {
-                    title: "Navbars",
-                    href: `/docs/blocks/navbar`,
-                    items: [],
-                    label: ""
-                },
-                {
-                    title: "Banners",
-                    href: `/docs/blocks/banner`,
-                    items: [],
-                    label: ""
-                },
-                {
-                    title: "Footers",
-                    href: `/docs/blocks/footer`,
-                    items: [],
-                    label: ""
+                    title: "Split Flap Effect",
+                    href: `/docs/text/split-flap`,
+                    items: []
                 }
             ]
         }

@@ -1,24 +1,37 @@
+import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
+import { codeImport } from "remark-code-import";
+import { compileMDX } from "@content-collections/mdx";
 import { defineCollection, defineConfig } from "@content-collections/core";
 
-const components = defineCollection({
-    name: "Components",
-    directory: "src/content/components",
+const docs = defineCollection({
+    name: "Docs",
+    directory: "src/content",
     include: "**/*.mdx",
     schema: (z) => ({
         title: z.string(),
         description: z.string(),
         published: z.boolean().default(false),
-        order: z.number().optional(),
-        date: z.date().optional()
+        date: z.string().optional()
     }),
-    transform: (doc) => {
+    transform: async (document, context) => {
+        const body = await compileMDX(context, document, {
+            remarkPlugins: [codeImport, remarkGfm],
+            rehypePlugins: [rehypeSlug]
+        });
+
         return {
-            ...doc,
-            slug: doc.title.toLowerCase().replace(/\s/g, "-")
+            ...document,
+            slug: `/${document._meta.path}`,
+            slugAsParams: document._meta.path.split("/").slice(1).join("/"),
+            body: {
+                raw: document.content,
+                code: body
+            }
         };
     }
 });
 
 export default defineConfig({
-    collections: [components]
+    collections: [docs]
 });
