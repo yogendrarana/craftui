@@ -2,14 +2,14 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { ButtonProps } from "@/components/ui/button";
 import { CheckIcon, ClipboardIcon } from "lucide-react";
-import { Button, ButtonProps } from "@/components/ui/button";
 
 interface CopyButtonProps extends ButtonProps {
     value: string;
 }
 
-export function CopyButton({ value, className, variant = "ghost", ...props }: CopyButtonProps) {
+export function CopyButton({ value, className, ...props }: CopyButtonProps) {
     const [hasCopied, setHasCopied] = React.useState(false);
 
     React.useEffect(() => {
@@ -19,13 +19,9 @@ export function CopyButton({ value, className, variant = "ghost", ...props }: Co
     }, [hasCopied]);
 
     return (
-        <Button
+        <button
             size="icon"
-            variant={variant}
-            className={cn(
-                "relative z-10 size-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 [&_svg]:size-3",
-                className
-            )}
+            className={cn("relative z-10 p-2 bg-black rounded-full hover:bg-zinc-700", className)}
             onClick={() => {
                 navigator.clipboard.writeText(value);
                 setHasCopied(true);
@@ -34,10 +30,10 @@ export function CopyButton({ value, className, variant = "ghost", ...props }: Co
         >
             <span className="sr-only">Copy</span>
             {hasCopied ? (
-                <CheckIcon className="h-4 w-4 text-zinc-50" />
+                <CheckIcon className="h-3 w-3 text-zinc-200" />
             ) : (
-                <ClipboardIcon className="h-4 w-4 text-zinc-50" />
+                <ClipboardIcon className="h-3 w-3 text-zinc-200" />
             )}
-        </Button>
+        </button>
     );
 }

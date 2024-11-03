@@ -43,9 +43,7 @@ export default function ComponentSource({
 
     return (
         <div className={cn("relative overflow-hidden rounded-sm", className)}>
-
-        <Collapsible open={isOpened} onOpenChange={setIsOpened}>
-            <div className={cn("relative overflow-hidden rounded-sm", className)}>
+            <Collapsible open={isOpened} onOpenChange={setIsOpened}>
                 <CollapsibleContent
                     forceMount
                     className={cn("overflow-hidden", !isOpened && "max-h-72")}
@@ -65,8 +63,7 @@ export default function ComponentSource({
                         </Button>
                     </CollapsibleTrigger>
                 </div>
-            </div>
-        </Collapsible>
-    </div>
+            </Collapsible>
+        </div>
     );
 }

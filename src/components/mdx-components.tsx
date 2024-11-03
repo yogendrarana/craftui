@@ -170,15 +170,12 @@ const components = {
     ),
     Spacer: ({ height = "1rem" }) => <div style={{ height }} aria-hidden="true" />,
     pre: (props: React.HTMLProps<HTMLPreElement>) => {
-        const { children } = props; // Extract children from props
-        const codeText = (children as React.ReactElement).props.children.trim(); // The code text to copy
+        const { children } = props;
+        const codeText = (children as React.ReactElement).props.children.trim();
 
         return (
-            <div className="relative">
-                <pre
-                    className="px-2 py-3 overflow-x-auto rounded-lg bg-black text-white"
-                    {...props}
-                >
+            <div className="relative mx-auto">
+                <pre className="px-2 py-3 overflow-x-auto rounded-lg bg-black" {...props}>
                     {children}
                 </pre>
                 <CopyButton value={codeText} className="absolute top-2 right-2" />
@@ -187,10 +184,7 @@ const components = {
     },
     code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
         <code
-            className={cn(
-                "relative rounded text-white px-2 py-[0.2rem] font-mono text-sm",
-                className
-            )}
+            className={cn("block text-white px-2 py-[0.2rem] font-mono text-sm", className)}
             {...props}
         />
     ),
@@ -214,7 +208,7 @@ export function Mdx({ code, className }: MDXProps) {
     const Component = useMDXComponent(code);
 
     return (
-        <article className={cn("mx-auto", className)}>
+        <article className={cn("w-full mx-auto", className)}>
             <Component components={components} />
         </article>
     );

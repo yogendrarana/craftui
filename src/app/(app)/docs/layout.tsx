@@ -1,5 +1,6 @@
 import React from "react";
-import DocsSidebarContainer from "@/components/docs-sidebar-container";
+import DocsSidebar from "@/components/docs-sidebar";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface PageProps {
     children: React.ReactNode;
@@ -7,8 +8,15 @@ interface PageProps {
 
 export default function DocsLayout({ children }: PageProps) {
     return (
-        <div className="pt-16">
-            <DocsSidebarContainer>{children}</DocsSidebarContainer>
+        <div className="pt-16 flex-1 items-start md:grid md:grid-cols-[240px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-10">
+            <aside className="sticky top-24 hidden h-[calc(100vh-6rem)] md:block">
+                <ScrollArea className="h-full">
+                    <DocsSidebar />
+                </ScrollArea>
+            </aside>
+
+            {/* children */}
+            <main className="w-full">{children}</main>
         </div>
     );
 }

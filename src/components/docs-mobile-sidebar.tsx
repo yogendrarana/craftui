@@ -16,7 +16,7 @@ export default function DocsMobilSidebar() {
         <Drawer.Root open={open} onOpenChange={setOpen} direction="right">
             <Drawer.Trigger
                 className={cn(
-                    "p-2 bg-whites transition-all hover:bg-[#FAFAFA]",
+                    "bg-whites transition-all hover:bg-[#FAFAFA]",
                     "dark:bg-[#161615] dark:hover:bg-[#1A1A19] dark:text-white"
                 )}
             >

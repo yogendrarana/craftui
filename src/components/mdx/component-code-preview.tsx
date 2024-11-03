@@ -132,7 +132,7 @@ export default function ComponentCodePreview({
                 </TabsContent>
 
                 <TabsContent value="code">
-                    <CodeRenderer className="h-[400px] " code={Code} />
+                    <CodeRenderer className="h-[400px]" code={Code} />
                 </TabsContent>
             </Tabs>
         </div>
