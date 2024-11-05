@@ -13,8 +13,8 @@ import { cn } from "@/lib/utils";
 import Callout from "@/components/callout";
 import { CopyButton } from "./copy-button";
 import CodeRenderer from "./code-renderer";
-import ComponentSource from "@/components/mdx/component-source";
-import ComponentCodePreview from "./mdx/component-code-preview";
+import ComponentSource from "@/components/component-source";
+import ComponentCodePreview from "@/components/component-code-preview";
 import { useMDXComponent } from "@content-collections/mdx/react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 

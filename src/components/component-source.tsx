@@ -3,7 +3,7 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-import CodeRenderer from "../code-renderer";
+import CodeRenderer from "./code-renderer";
 import { Previews } from "@/content/previews";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
