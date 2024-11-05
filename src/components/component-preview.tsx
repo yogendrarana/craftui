@@ -1,11 +1,14 @@
 "use client";
 
+import { Previews } from "@/content/previews";
 import { cn } from "@/lib/utils";
 import { RotateCw } from "lucide-react";
-import { cloneElement, useState } from "react";
+import React, { cloneElement, useState } from "react";
 
 type ComponentPreviewProps = {
-    component: React.ReactElement;
+    component?: React.ReactElement;
+    name?: string;
+    type?: string;
     hasReTrigger?: boolean;
     className?: string;
 };
@@ -13,12 +16,38 @@ type ComponentPreviewProps = {
 export default function ComponentPreview({
     component,
     hasReTrigger = false,
-    className
+    className,
+    name,
+    type
 }: ComponentPreviewProps) {
     const [reTriggerKey, setReTriggerKey] = useState<number>(Date.now());
 
     const reTrigger = () => {
         setReTriggerKey(Date.now());
+    };
+
+    const renderContent = () => {
+        // If a direct component is provided, use it
+        if (component) {
+            return hasReTrigger ? cloneElement(component, { key: reTriggerKey }) : component;
+        }
+
+        // If name and type are provided, try to get component from registry
+        if (name && type && Previews[type]?.[name]) {
+            const RegistryComponent = Previews[type][name].component;
+            return hasReTrigger ? <RegistryComponent key={reTriggerKey} /> : <RegistryComponent />;
+        }
+
+        // Fallback for when component is not found in registry
+        return (
+            <p className="text-sm text-muted-foreground">
+                Component{" "}
+                <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
+                    {name}
+                </code>{" "}
+                not found in registry.
+            </p>
+        );
     };
 
     return (
@@ -28,7 +57,7 @@ export default function ComponentPreview({
                     <RotateCw className="h-4 w-4 text-zinc-500" />
                 </div>
             )}
-            {hasReTrigger ? cloneElement(component, { key: reTriggerKey }) : component}
+            {renderContent()}
         </div>
     );
 }
