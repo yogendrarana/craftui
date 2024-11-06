@@ -17,6 +17,7 @@ import ComponentSource from "@/components/component-source";
 import ComponentCodePreview from "@/components/component-code-preview";
 import { useMDXComponent } from "@content-collections/mdx/react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ComponentPreview from "./component-preview";
 
 const CustomLink = (props: any) => {
     const href = props.href;
@@ -43,6 +44,7 @@ const components = {
     AccordionTrigger,
     ComponentSource,
     CodeRenderer,
+    ComponentPreview,
     ComponentCodePreview,
     Callout,
     Image,
