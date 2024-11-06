@@ -10,7 +10,6 @@ import {
 import { cn } from "@/lib/utils";
 import CodeRenderer from "./code-renderer";
 import ComponentPreview from "./component-preview";
-import BrutalistCopyButton from "./brutalist-copy-button";
 
 interface ComponentCodeDialogProps {
     component: React.ReactElement;
@@ -56,7 +55,6 @@ export default function ComponentCodePreviewDialog({
                                 )}
                             </div>
                             <div className="flex items-center gap-3">
-                                <BrutalistCopyButton code={code} />
                                 <DialogClose />
                             </div>
                         </div>
