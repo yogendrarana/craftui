@@ -4,7 +4,7 @@ import React from "react";
 
 export default function LeapFrogLoader() {
     return (
-        <div className="relative flex items-center justify-between w-[40px] h-[40px] top-[15%]">
+        <div className="h-10 w-10 relative flex items-center justify-between">
             <div className="absolute top-0 left-0 flex items-center justify-start w-full h-full dot"></div>
             <div className="absolute top-0 left-0 flex items-center justify-start w-full h-full dot"></div>
             <div className="absolute top-0 left-0 flex items-center justify-start w-full h-full dot"></div>
