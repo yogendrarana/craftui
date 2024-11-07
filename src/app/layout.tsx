@@ -1,14 +1,13 @@
 import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import SiteFooter from "@/components/layout/site-footer";
-import SiteHeader from "@/components/layout/site-header";
+import SiteFooter from "@/components/home/site-footer";
+import SiteHeader from "@/components/home/site-header";
 
 // styles
 import "@/styles/mdx.css";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
-import { Shell } from "@/components/shell";
 import { siteConfig } from "@/config/site";
 import Providers from "@/components/provider/providers";
 
@@ -35,9 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             >
                 <Providers>
                     <SiteHeader />
-                    <Shell>
-                        <main className="flex-1">{children}</main>
-                    </Shell>
+                    <main className="flex-1">{children}</main>
                     <SiteFooter />
                 </Providers>
             </body>

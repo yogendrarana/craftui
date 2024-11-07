@@ -1,4 +1,3 @@
-"use client";
 
 import {
     Accordion,
@@ -18,6 +17,7 @@ import ComponentCodePreview from "@/components/component-code-preview";
 import { useMDXComponent } from "@content-collections/mdx/react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ComponentPreview from "./component-preview";
+import CodeFromPath from "./code-from-path";
 
 const CustomLink = (props: any) => {
     const href = props.href;
@@ -47,6 +47,7 @@ const components = {
     ComponentPreview,
     ComponentCodePreview,
     Callout,
+    CodeFromPath,
     Image,
     h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h1

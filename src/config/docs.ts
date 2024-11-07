@@ -50,11 +50,6 @@ export const docsConfig: DocsConfig = {
                     items: []
                 },
                 {
-                    title: "Input Fields",
-                    href: `/docs/elements/input`,
-                    items: []
-                },
-                {
                     title: "Checkboxes",
                     href: `/docs/elements/checkbox`,
                     items: []

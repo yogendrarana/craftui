@@ -1,25 +1,36 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
 
-export default function BrutalistSwitch() {
+export default function BrutalistToggleSwitch() {
     const [isOn, setIsOn] = useState(false);
 
+    const toggleSwitch = () => setIsOn(!isOn);
+
     return (
-        <motion.button
-            className={`w-24 h-12 rounded-none border-4 border-black relative ${
-                isOn ? "bg-yellow-400" : "bg-white"
-            }`}
-            onClick={() => setIsOn(!isOn)}
-            aria-checked={isOn}
-            role="switch"
-        >
-            <motion.div
-                className="w-10 h-10 bg-black absolute top-0 left-0"
-                animate={{ x: isOn ? 52 : 0 }}
-                transition={{ type: "spring", stiffness: 700, damping: 30 }}
-            />
-        </motion.button>
+        <div className="flex items-center justify-center p-8">
+            <button
+                className={`
+                    relative w-28 h-12
+                    bg-black border-4 border-black
+                    shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
+                    transition-all duration-300 ease-in-out
+                `}
+                onClick={toggleSwitch}
+                aria-checked={isOn}
+                role="switch"
+            >
+                <div
+                    className={`
+                    absolute top-0 left-0 w-1/2 h-full bg-white
+                    transform transition-transform duration-300 ease-in-out
+                    flex items-center justify-center
+                    ${isOn ? "translate-x-full" : "translate-x-0"}
+                `}
+                >
+                    <span className="text-black font-bold text-xs">{isOn ? "ON" : "OFF"}</span>
+                </div>
+            </button>
+        </div>
     );
 }
