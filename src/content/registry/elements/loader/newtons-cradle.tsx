@@ -2,9 +2,9 @@
 
 import React from "react";
 
-export default function SwingLoader() {
+export default function NewtonsCradle() {
     return (
-        <div className="relative top-[28%] flex items-center justify-center w-[39.78px] h-[39.78px]">
+        <div className="h-10 w-10 relative flex items-center justify-center">
             <div className="dot animate-swing">
                 <div className="dot-inner" />
             </div>
