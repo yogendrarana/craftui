@@ -13,14 +13,14 @@ import ComponentPreview from "./component-preview";
 
 interface ComponentCodeDialogProps {
     component: React.ReactElement;
-    name: string;
+    label: string;
     description?: string;
     code: string;
     hasReTrigger?: boolean;
 }
 
 export default function ComponentCodePreviewDialog({
-    name,
+    label,
     description,
     component,
     code,
@@ -49,7 +49,7 @@ export default function ComponentCodePreviewDialog({
                         {/* header */}
                         <div className="flex justify-between">
                             <div className="flex flex-col justify-baseline">
-                                <p className="text-lg hidden md:flex">{name}</p>
+                                <p className="text-lg hidden capitalize md:flex">{label}</p>
                                 {description && (
                                     <p className="hidden md:flex text-gray-500">{description}</p>
                                 )}

@@ -6,7 +6,7 @@ import { ComponentTypeEnum } from "@/constants/enum";
 import ComponentCodePreviewDialog from "@/components/component-code-preview-dialog";
 
 interface ElementType {
-    name: string;
+    label: string;
     type: string;
     rawCode: string;
     path: string;
@@ -29,7 +29,7 @@ export default function Page({ params }: { params: { elementType: string } }) {
                     return (
                         <ComponentCodePreviewDialog
                             component={React.createElement(comp.component)}
-                            name={comp.name}
+                            label={comp.label}
                             key={index}
                             code={comp.rawCode}
                         />

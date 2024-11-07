@@ -23,6 +23,7 @@ interface ComponentItem {
     type: string;
     component: string;
     path: string;
+    label: string;
     rawCode?: any;
 }
 
@@ -75,6 +76,8 @@ async function main() {
             }
 
             const name = path.basename(filePath, ".tsx");
+            const label = name.replace(/-/g, " ");
+
             let type = "";
             
             if (category === "element") {
@@ -91,6 +94,7 @@ async function main() {
 
             acc[category][key] = {
                 name,
+                label,
                 type,
                 rawCode: content,
                 component: importPath,
@@ -109,9 +113,10 @@ async function main() {
 
         for (const [category, items] of Object.entries(await components)) {
             previewContent += `  "${category}": {\n`;
-            for (const [key, { component, rawCode, name, type }] of Object.entries(items as Record<string, ComponentItem>)) {
+            for (const [key, { component, rawCode, name, type, label }] of Object.entries(items as Record<string, ComponentItem>)) {
                 previewContent += `    "${name}": {\n`;
                 previewContent += `      name: "${name}",\n`;
+                previewContent += `      label: "${label}",\n`;
                 previewContent += `      path: "${key}",\n`;
                 previewContent += `      component: React.lazy(() => import("${component}")),\n`;
                 previewContent += `      type: "${type}",\n`;
