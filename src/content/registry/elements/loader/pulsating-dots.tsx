@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default function PulsingLoader() {
+export default function PulsingDotsLoader() {
     return (
         <div className="relative flex items-center justify-between w-[43px] h-[10.32px]">
             <div className="w-[10.32px] h-[10.32px] rounded-full bg-black animate-pulse delay-0"></div>
