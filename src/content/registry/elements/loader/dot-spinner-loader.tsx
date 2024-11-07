@@ -14,8 +14,8 @@ export default function DotSpinnerLoader() {
                     <div
                         className={`h-[20%] w-[20%] rounded-full bg-black opacity-50 animate-pulse`}
                         style={{
-                            animationDelay: `-${index * 0.1125}s`, // Staggered delay for each dot
-                            animationDuration: "0.9s"
+                            animationDelay: `-${index * 0.1125}s`,
+                            animationDuration: "0.9s",
                         }}
                     ></div>
                 </div>
