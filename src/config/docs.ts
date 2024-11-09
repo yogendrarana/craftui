@@ -68,21 +68,6 @@ export const docsConfig: DocsConfig = {
                     title: "Marquee",
                     href: `/docs/components/marquee`,
                     items: []
-                },
-                {
-                    title: "Hero Video Dialog",
-                    href: `/docs/components/hero-video-dialog`,
-                    items: []
-                },
-                {
-                    title: "Bento Grid",
-                    href: `/docs/components/bento-grid`,
-                    items: []
-                },
-                {
-                    title: "Animated List",
-                    href: `/docs/components/animated-list`,
-                    items: []
                 }
             ]
         },

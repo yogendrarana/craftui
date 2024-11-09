@@ -4,6 +4,7 @@ import { Shell } from "@/components/shell";
 import { Previews } from "@/content/previews";
 import { ComponentTypeEnum } from "@/constants/enum";
 import ComponentCodePreviewDialog from "@/components/component-code-preview-dialog";
+import ComponentPreview from "@/components/component-preview";
 
 interface ElementType {
     label: string;
@@ -24,7 +25,7 @@ export default function Page({ params }: { params: { elementType: string } }) {
 
     return (
         <Shell className="px-0 w-full">
-            <div className={cn("grid gap-3 grid-cols-1 md:grid-cols-3 lg:grid-cols-4")}>
+            <div className={cn("grid gap-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-4")}>
                 {[...filteredElements]?.map((comp, index) => {
                     return (
                         <ComponentCodePreviewDialog

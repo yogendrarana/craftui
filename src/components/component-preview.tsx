@@ -10,6 +10,7 @@ type ComponentPreviewProps = {
     name?: string;
     type?: string;
     hasReTrigger?: boolean;
+    expandForCode?: boolean;
     className?: string;
 };
 
@@ -18,7 +19,8 @@ export default function ComponentPreview({
     hasReTrigger = false,
     className,
     name,
-    type
+    type,
+    expandForCode
 }: ComponentPreviewProps) {
     const [reTriggerKey, setReTriggerKey] = useState<number>(Date.now());
 
