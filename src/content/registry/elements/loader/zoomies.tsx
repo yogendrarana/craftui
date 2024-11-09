@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default function ZoomiesLoader() {
+export default function Zoomies() {
     return (
         <div className="relative flex items-center justify-center h-[5px] w-[80px] rounded-[2.5px] overflow-hidden transform">
             <div className="absolute top-0 left-0 h-full w-full bg-black opacity-10 transition-colors duration-300"></div>

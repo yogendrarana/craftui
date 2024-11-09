@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default function ClassicLoader({
+export default function Classic({
     size = "md",
     color = "primary"
 }: {

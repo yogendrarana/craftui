@@ -10,7 +10,6 @@ type ComponentPreviewProps = {
     name?: string;
     type?: string;
     hasReTrigger?: boolean;
-    expandForCode?: boolean;
     className?: string;
 };
 
@@ -20,7 +19,6 @@ export default function ComponentPreview({
     className,
     name,
     type,
-    expandForCode
 }: ComponentPreviewProps) {
     const [reTriggerKey, setReTriggerKey] = useState<number>(Date.now());
 
@@ -53,7 +51,7 @@ export default function ComponentPreview({
     };
 
     return (
-        <div className={cn("w-full flex items-center justify-center rounded-sm", className)}>
+        <div className={cn("relative w-full flex items-center justify-center rounded-sm", className)}>
             {hasReTrigger && (
                 <div className="absolute right-4 top-3 cursor-pointer" onClick={reTrigger}>
                     <RotateCw className="h-4 w-4 text-zinc-500" />

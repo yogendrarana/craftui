@@ -67,7 +67,10 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Marquee",
                     href: `/docs/components/marquee`,
-                    items: []
+                },
+                {
+                    title: "Pendulum Wave",
+                    href: `/docs/components/pendulum-wave`,
                 }
             ]
         },

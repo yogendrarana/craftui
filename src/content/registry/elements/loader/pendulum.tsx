@@ -8,7 +8,7 @@ interface PendulumLoadingProps {
     threadLength?: number;
 }
 
-export default function PendulumBobLoading(props: PendulumLoadingProps) {
+export default function Pendulum(props: PendulumLoadingProps) {
     const swingDuration = props.swingDuration || 1.5;
     const swingAngle = props.swingAngle || 30; // degrees
     const threadLength = props.threadLength || 60; // pixels

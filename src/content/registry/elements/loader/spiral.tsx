@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default function DotSpinnerLoader() {
+export default function Spiral() {
     return (
         <div className="relative flex items-center justify-start h-[40px] w-[40px]">
             {Array.from({ length: 8 }).map((_, index) => (

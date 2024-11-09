@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default function JumpingDotsLoader() {
+export default function JumpingDots() {
     return (
         <div className="flex items-end justify-between w-[47px] h-[23.5px]">
             {Array.from({ length: 4 }).map((_, index) => (

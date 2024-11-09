@@ -12,7 +12,13 @@ const docs = defineCollection({
         title: z.string(),
         description: z.string(),
         published: z.boolean().default(false),
-        date: z.string().optional()
+        date: z.string().optional(),
+        author: z
+            .object({
+                name: z.string().optional(),
+                twitter: z.string().optional()
+            })
+            .optional()
     }),
     transform: async (document, context) => {
         const body = await compileMDX(context, document, {

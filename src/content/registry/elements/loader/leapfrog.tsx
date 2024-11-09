@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export default function LeapFrogLoader() {
+export default function LeapFrog() {
     // Array of dot configurations
     const dots = [
         { delay: "0s", translateX: "translate-x-0" },

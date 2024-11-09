@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const ThreeBodyLoader = () => {
+export default function ThreeBody() {
     return (
         <>
             <div className="relative inline-block h-[35px] w-[35px] animate-[spin78236_2s_infinite_linear]">
@@ -60,5 +60,3 @@ const ThreeBodyLoader = () => {
         </>
     );
 };
-
-export default ThreeBodyLoader;
