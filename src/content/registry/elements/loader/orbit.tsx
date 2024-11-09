@@ -2,12 +2,12 @@
 
 import React from "react";
 
-export default function Tiktok() {
+export default function Orbit() {
     return (
         <div>
             <div className="relative h-[14px] w-[35px]">
-                <div className="absolute h-[14px] w-[14px] rounded-full bg-[#FE2C55] animate-[orbit_1.4s_linear_infinite]"></div>
-                <div className="absolute h-[14px] w-[14px] rounded-full bg-[#25F4EE] animate-[orbit_1.4s_linear_infinite] delay-700"></div>
+                <div className="absolute h-[14px] w-[14px] rounded-full bg-black animate-[orbit_1.4s_linear_infinite]"></div>
+                <div className="absolute h-[14px] w-[14px] rounded-full bg-black animate-[orbit_1.4s_linear_infinite] delay-700"></div>
             </div>
 
             <style jsx>{`

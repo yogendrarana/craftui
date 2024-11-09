@@ -13,7 +13,7 @@ export default function LineSpinner() {
                     style={{
                         left: "50%",
                         top: "50%",
-                        transform: `rotate(${-i * 30}deg)`,
+                        transform: `rotate(${i * 30}deg)`,
                         transformOrigin: "0% 0%"
                     }}
                     animate={{
