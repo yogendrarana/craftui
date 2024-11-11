@@ -67,23 +67,20 @@ export default function ComponentCodePreview({
     }, [name, type]);
 
     return (
-        <div
-            className={cn("relative my-2 flex flex-col space-y-2 lg:max-w-[120ch]", className)}
-            {...props}
-        >
+        <div className={cn("w-full relative flex flex-col", className)} {...props}>
             <Tabs defaultValue="preview" className="relative mr-auto w-full">
                 {!hideTabs && (
                     <div className="flex items-center justify-between pb-3">
                         <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
                             <TabsTrigger
                                 value="preview"
-                                className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+                                className="relative h-10 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
                             >
                                 Preview
                             </TabsTrigger>
                             <TabsTrigger
                                 value="code"
-                                className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+                                className="relative h-10 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
                             >
                                 Code
                             </TabsTrigger>
@@ -94,13 +91,12 @@ export default function ComponentCodePreview({
                 <TabsContent value="preview" className="relative rounded-md" key={key}>
                     <div>
                         {hasReTrigger && (
-                            <Button
+                            <div
+                                className="absolute right-6 top-6 cursor-pointer"
                                 onClick={() => setKey((prev) => prev + 1)}
-                                className="absolute right-1.5 top-1.5 z-10 ml-4 flex items-center rounded-lg px-3 py-1"
-                                variant="ghost"
                             >
-                                <RotateCcw aria-label="restart-btn" size={16} />
-                            </Button>
+                                <RotateCwIcon className="h-4 w-4 text-zinc-500" />
+                            </div>
                         )}
                         <React.Suspense
                             fallback={
@@ -112,26 +108,17 @@ export default function ComponentCodePreview({
                         >
                             <div
                                 className={cn(
-                                    "min-h-[400px] border w-full flex items-center justify-center rounded-sm",
+                                    "min-h-[400px] border w-full flex items-center justify-center rounded-md",
                                     className
                                 )}
                             >
-                                {hasReTrigger && (
-                                    <div
-                                        className="absolute right-4 top-3 cursor-pointer"
-                                        onClick={() => setKey((prev) => prev + 1)}
-                                    >
-                                        <RotateCwIcon className="h-4 w-4 text-zinc-500" />
-                                    </div>
-                                )}
-
-                                <div>{Preview}</div>
+                                {Preview}
                             </div>
                         </React.Suspense>
                     </div>
                 </TabsContent>
 
-                <TabsContent value="code">
+                <TabsContent value="code" className="w-full">
                     <CodeRenderer className="h-[400px]" code={Code} />
                 </TabsContent>
             </Tabs>
