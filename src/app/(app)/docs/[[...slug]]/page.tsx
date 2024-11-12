@@ -29,9 +29,9 @@ export default async function DocsPage({ params }: DocPageProps) {
     }
 
     return (
-        <main className={cn("relative lg:gap-10 xl:grid")}>
-            <div className="space-y-2">
-                <h1 className={cn("scroll-m-20 text-4xl font-bold tracking-tight")}>{doc.title}</h1>
+        <main className="w-full">
+            <div className="mb-6">
+                <h1 className={cn("mb-1 text-4xl font-bold tracking-tight")}>{doc.title}</h1>
                 {doc.description && (
                     <p className="text-balance text-lg text-muted-foreground">{doc.description}</p>
                 )}

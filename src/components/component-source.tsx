@@ -62,15 +62,16 @@ export default function ComponentSource({
         return <CodeRenderer code={codeToRender} />;
     };
 
-
     if (!useCollapsible) {
         return (
-            <div className={cn("relative overflow-hidden rounded-sm", className)}>{renderContent()}</div>
+            <div className={cn("relative overflow-hidden rounded-sm", className)}>
+                {renderContent()}
+            </div>
         );
     }
 
     return (
-        <div className={cn("relative overflow-hidden rounded-sm", className)}>
+        <div className={cn("h-full w-full relative overflow-hidden rounded-sm", className)}>
             <Collapsible open={isOpened} onOpenChange={setIsOpened}>
                 <CollapsibleContent
                     forceMount

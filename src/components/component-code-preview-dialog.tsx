@@ -60,17 +60,15 @@ export default function ComponentCodePreviewDialog({
                         </div>
 
                         {/* component and code */}
-                        <div className="flex-1 overflow-auto border rounded-lg">
-                            <div className="h-full w-full flex flex-col md:flex-row gap-4 overflow-hidden">
-                                <div className="w-full h-1/2 md:h-full md:w-1/2 flex items-center justify-center">
-                                    <ComponentPreview
-                                        component={component}
-                                        hasReTrigger={hasReTrigger}
-                                    />
-                                </div>
-                                <div className="w-full h-1/2 md:h-full md:w-1/2 p-4 border-t md:border-t-0 md:border-l overflow-hidden">
-                                    <CodeRenderer code={code} />
-                                </div>
+                        <div className="h-full flex-1 border rounded-sm flex flex-col md:flex-row gap-4 overflow-hidden">
+                            <div className="w-full h-1/2 md:h-full md:w-1/2 flex items-center justify-center">
+                                <ComponentPreview
+                                    component={component}
+                                    hasReTrigger={hasReTrigger}
+                                />
+                            </div>
+                            <div className="w-full h-1/2 md:h-full md:w-1/2 p-4 border-t md:border-t-0 md:border-l overflow-hidden">
+                                <CodeRenderer code={code} />
                             </div>
                         </div>
                     </div>
