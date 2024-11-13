@@ -34,9 +34,13 @@ export default function CodeRenderer({ code, className }: CodeRendererProps) {
                 )}
             </button>
 
-            <pre className="px-2 py-3 overflow-x-auto rounded-lg bg-black">
-                <code className="block text-white px-2 py-[0.2rem] font-mono text-sm">{code}</code>
-            </pre>
+            <SyntaxHighlighter
+                language="tsx"
+                style={a11yDark}
+                customStyle={{ margin: 0, backgroundColor: "black", height: "100%" }}
+            >
+                {code}
+            </SyntaxHighlighter>
 
             <ScrollBar orientation="horizontal" />
             <ScrollBar orientation="vertical" />
