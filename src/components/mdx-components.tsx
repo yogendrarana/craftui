@@ -1,4 +1,3 @@
-
 import {
     Accordion,
     AccordionContent,
@@ -101,7 +100,7 @@ const components = {
         />
     ),
     p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-        <p className={cn("mb-2 leading-8 [&:not(:first-child)]:mt-5", className)} {...props} />
+        <p className={cn("mb-1 leading-8 [&:not(:first-child)]:mt-5", className)} {...props} />
     ),
     ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
         <ul className={cn("ml-6 list-disc", className)} {...props} />

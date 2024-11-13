@@ -2,11 +2,10 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { RotateCcw, RotateCwIcon } from "lucide-react";
+import { RotateCwIcon } from "lucide-react";
 
 import CodeRenderer from "@/components/code-renderer";
 import { Previews } from "@/content/previews";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {

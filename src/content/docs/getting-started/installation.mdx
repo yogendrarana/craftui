@@ -11,17 +11,20 @@ You can follow the official documentation [here](https://tailwindcss.com/docs/in
 
 ### Framer Motion
 If a component uses **framer-motion** for animations, you’ll need to install it:
+
 ```bash filename="terminal" switcher
 npm install framer-motion
 ```
 
 ### Utility 
 If a component relies on the **cn** utility, install the **clsx** and **tailwind-merge** packages:
+
 ```bash
 npm install clsx tw-merge
 ```
 
 Next, add this utility function in your project at **/src/utils/cn.ts**:
+
 ```jsx
 import { twMerge } from "tailwind-merge";
 import { clsx, type ClassValue } from "clsx";
