@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "create-pv": "tsx ./scripts/create-pv.mts"
+    "create-preview": "tsx ./scripts/create-preview.mts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",

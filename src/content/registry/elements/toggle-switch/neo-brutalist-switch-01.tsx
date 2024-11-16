@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 
-export default function BrutalistToggleSwitch() {
+export default function NeoBrutalistToggleSwitch() {
     const [isOn, setIsOn] = useState(false);
 
     const toggleSwitch = () => setIsOn(!isOn);
 
     return (
-        <div className="flex items-center justify-center p-8">
+        <div>
             <button
                 className={`
                     relative w-28 h-12
