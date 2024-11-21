@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function AmazingCheckbox() {
+export default function GradientCheckbox() {
     const [isChecked, setIsChecked] = useState(true);
 
     const toggleCheckbox = () => setIsChecked(!isChecked);
@@ -18,7 +18,7 @@ export default function AmazingCheckbox() {
                     onChange={toggleCheckbox}
                 />
                 <motion.div
-                    className={`w-9 h-9 rounded-xl border ${
+                    className={`w-8 h-8 rounded-md border ${
                         isChecked
                             ? "bg-gradient-to-br from-purple-500 via-pink-500 to-red-500"
                             : "bg-white"

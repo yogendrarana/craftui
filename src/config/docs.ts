@@ -50,11 +50,6 @@ export const docsConfig: DocsConfig = {
                     items: []
                 },
                 {
-                    title: "Checkboxes",
-                    href: `/docs/elements/checkbox`,
-                    items: []
-                },
-                {
                     title: "Input Fields",
                     href: `/docs/elements/input-fields`,
                     items: []
@@ -63,7 +58,12 @@ export const docsConfig: DocsConfig = {
                     title: "Toggle Switch",
                     href: `/docs/elements/toggle-switch`,
                     items: []
-                }
+                },
+                {
+                    title: "Radio & Checkbox",
+                    href: `/docs/elements/radio-checkbox`,
+                    items: []
+                },
             ]
         },
         {
