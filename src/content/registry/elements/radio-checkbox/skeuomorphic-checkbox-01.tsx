@@ -1,17 +1,26 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 export default function SkeuomorphicCheckbox() {
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleChange = () => {
+        setIsChecked((prev) => !prev);
+    };
+
     return (
-        <label className="flex items-center cursor-pointer">
+        <label className="cursor-pointer">
             <input
                 type="checkbox"
                 className="
-                    appearance-none w-6 h-6 bg-white border-2 border-gray-300 
+                    appearance-none w-7 h-7 bg-white border-2 border-gray-300 duration-300 
                     rounded-sm shadow-md checked:bg-blue-400 checked:border-blue-500 
                     relative group cursor-pointer
                 "
+                checked={isChecked}
+                onChange={handleChange}
             />
-            <span className="ml-2">Skeuomorphic</span>
         </label>
     );
 }
