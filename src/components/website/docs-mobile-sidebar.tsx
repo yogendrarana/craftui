@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import { docsConfig } from "@/config/docs";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
+import { Button } from "../website/ui/button";
 
 export default function DocsMobilSidebar() {
     const sidebarNav = docsConfig.sidebarNav;

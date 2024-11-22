@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { useRouter } from "next/navigation";
 import { Github, Code2, Sparkles } from "lucide-react";
-import BackgroundGrid from "@/components/background-grid";
+import BackgroundGrid from "@/components/website/background-grid";
 import BrutalistButton from "@/content/registry/elements/button/brutalist-button";
 
 export default function HeroSection() {

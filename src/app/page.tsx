@@ -1,6 +1,6 @@
 import React from "react";
-import HeroSection from "@/components/home/hero-section";
-import ComponentsShowcase from "@/components/home/component-showcase";
+import HeroSection from "@/components/website/home/hero-section";
+import ComponentsShowcase from "@/components/website/home/component-showcase";
 
 export default function HomePage() {
     return (

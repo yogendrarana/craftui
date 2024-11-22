@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { ButtonProps } from "@/components/ui/button";
+import { ButtonProps } from "@/components/website/ui/button";
 import { CheckIcon, ClipboardIcon } from "lucide-react";
 
 interface CopyButtonProps extends ButtonProps {

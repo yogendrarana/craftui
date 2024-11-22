@@ -4,9 +4,14 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { RotateCwIcon } from "lucide-react";
 
-import CodeRenderer from "@/components/code-renderer";
+import CodeRenderer from "@/components/website/code-renderer";
 import { Previews } from "@/content/previews";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/website/ui/tabs";
+
+/**
+ * This component is used to preview a component and code from the registry.
+ * TODO: Add support for reading code from path is provided
+ */
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
     name: string;
@@ -27,7 +32,7 @@ export default function ComponentCodePreview({
     ...props
 }: ComponentPreviewProps) {
     const [key, setKey] = React.useState(0);
-
+    
     const Preview = React.useMemo(() => {
         const Component = Previews[type][name]?.component;
 
@@ -50,7 +55,6 @@ export default function ComponentCodePreview({
         const CodeOfComponent = Previews[type][name]?.rawCode;
 
         if (!CodeOfComponent) {
-            console.error(`Component with name "${name}" not found in registry.`);
             return (
                 <p className="text-sm text-muted-foreground">
                     Code for component{" "}
@@ -66,7 +70,7 @@ export default function ComponentCodePreview({
     }, [name, type]);
 
     return (
-        <div className={cn("w-full relative flex flex-col", className)} {...props}>
+        <div className={cn("w-full relativeflex flex-col", className)} {...props}>
             <Tabs defaultValue="preview" className="relative mr-auto w-full">
                 {!hideTabs && (
                     <div className="flex items-center justify-between pb-3">
@@ -107,7 +111,7 @@ export default function ComponentCodePreview({
                         >
                             <div
                                 className={cn(
-                                    "min-h-[400px] border w-full flex items-center justify-center rounded-md",
+                                    "min-h-[400px] w-full flex items-center justify-center rounded-md",
                                     className
                                 )}
                             >

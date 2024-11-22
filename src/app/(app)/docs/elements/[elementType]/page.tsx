@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Previews } from "@/content/previews";
 import { ComponentTypeEnum } from "@/constants/enum";
-import ComponentCodePreviewDialog from "@/components/component-code-preview-dialog";
+import ComponentCodePreviewDialog from "@/components/website/component-code-preview-dialog";
 
 interface ElementType {
     label: string;

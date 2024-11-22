@@ -11,6 +11,7 @@ const __dirname = dirname(__filename);
 const baseDir = path.join(__dirname, "../src/content");
 
 const textDir = path.join(baseDir, "registry", "text");
+const coreDir = path.join(baseDir, "registry", "core");
 const blocksDir = path.join(baseDir, "registry", "blocks");
 const elementsDir = path.join(baseDir, "registry", "elements");
 const componentDir = path.join(baseDir, "registry", "components");
@@ -55,6 +56,7 @@ function getCategory(filePath: string) {
     if (filePath.includes(path.sep + "components" + path.sep)) return "component";
     if (filePath.includes(path.sep + "elements" + path.sep)) return "element";
     if (filePath.includes(path.sep + "text" + path.sep)) return "text";
+    if (filePath.includes(path.sep + "core" + path.sep)) return "core";
     return "block";
 }
 
@@ -65,6 +67,7 @@ async function main() {
             getAllFiles(elementsDir),
             getAllFiles(blocksDir),
             getAllFiles(textDir),
+            getAllFiles(coreDir),
         ]);
 
         const components = allFiles.flat().reduce(async (accPromise, filePath) => {

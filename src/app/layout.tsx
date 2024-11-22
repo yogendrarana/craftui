@@ -1,15 +1,15 @@
 import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import SiteFooter from "@/components/home/site-footer";
-import SiteHeader from "@/components/home/site-header";
+import SiteFooter from "@/components/website/home/site-footer";
+import SiteHeader from "@/components/website/home/site-header";
 
 // styles
 import "@/styles/mdx.css";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { siteConfig } from "@/config/site";
-import Providers from "@/components/provider/providers";
+import Providers from "@/components/website/provider/providers";
 
 // metadata
 export const metadata: Metadata = {

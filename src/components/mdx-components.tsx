@@ -3,20 +3,20 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger
-} from "@/components/ui/accordion";
+} from "@/components/website/ui/accordion";
 
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import Callout from "@/components/callout";
-import { CopyButton } from "./copy-button";
-import CodeRenderer from "./code-renderer";
-import ComponentSource from "@/components/component-source";
-import ComponentCodePreview from "@/components/component-code-preview";
+import Callout from "@/components/website/callout";
+import { CopyButton } from "./website/copy-button";
+import CodeRenderer from "./website/code-renderer";
+import CodeFromPath from "./website/code-from-path";
+import ComponentPreview from "./website/component-preview";
 import { useMDXComponent } from "@content-collections/mdx/react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ComponentPreview from "./component-preview";
-import CodeFromPath from "./code-from-path";
+import ComponentSource from "@/components/website/component-source";
+import ComponentCodePreview from "@/components/website/component-code-preview";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/website/ui/tabs";
 
 const CustomLink = (props: any) => {
     const href = props.href;

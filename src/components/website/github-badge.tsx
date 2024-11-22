@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/website/ui/separator";
 import { useStarStore } from "@/store/use-star-store";
 import BrutalistButton from "@/content/registry/elements/button/brutalist-button";
 

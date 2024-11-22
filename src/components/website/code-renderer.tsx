@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Check, Clipboard } from "lucide-react";
-import { ScrollArea, ScrollBar } from "./ui/scroll-area";
+import { ScrollArea, ScrollBar } from "../website/ui/scroll-area";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 

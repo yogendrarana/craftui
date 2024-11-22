@@ -5,7 +5,7 @@ import {
     DialogContent,
     DialogClose,
     DialogContainer
-} from "@/components/dialog";
+} from "@/components/website/dialog";
 
 import { cn } from "@/lib/utils";
 import CodeRenderer from "./code-renderer";

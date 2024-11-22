@@ -47,7 +47,7 @@ export default function Marquee() {
             <div
                 className={cn(
                     "group relative flex overflow-hidden",
-                    "before:content-[''] before:absolute before:top-0 before:bottom-0  before:left-0  before:w-[50px] before:bg-gradient-to-r before:from-white before:to-transparent before:z-10",
+                    "before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-0 before:w-[50px] before:bg-gradient-to-r before:from-white before:to-transparent before:z-10",
                     "after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-0 after:w-[50px] after:bg-gradient-to-l after:from-white after:to-transparent after:z-10"
                 )}
                 onMouseEnter={() => setIsPaused(true)}

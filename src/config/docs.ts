@@ -63,7 +63,7 @@ export const docsConfig: DocsConfig = {
                     title: "Toggle Switch",
                     href: `/docs/elements/toggle-switch`,
                     items: []
-                },
+                }
             ]
         },
         {
@@ -71,11 +71,17 @@ export const docsConfig: DocsConfig = {
             items: [
                 {
                     title: "Marquee",
-                    href: `/docs/components/marquee`,
-                },
+                    href: `/docs/components/marquee`
+                }
+            ]
+        },
+        {
+            title: "Hover Effects",
+            items: [
                 {
-                    title: "Pendulum Wave",
-                    href: `/docs/components/pendulum-wave`,
+                    title: "Split Flap Effect",
+                    href: `/docs/hover/split-flap`,
+                    items: []
                 }
             ]
         },
@@ -83,10 +89,15 @@ export const docsConfig: DocsConfig = {
             title: "Text Effects",
             items: [
                 {
-                    title: "Split Flap Effect",
-                    href: `/docs/text/split-flap`,
+                    title: "Text Glitch",
+                    href: `/docs/text/text-glitch`,
                     items: []
-                }
+                },
+                {
+                    title: "Text Scramble",
+                    href: `/docs/text/text-scramble`,
+                    items: []
+                },
             ]
         }
     ]

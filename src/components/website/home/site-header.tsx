@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { Shell } from "../shell";
 import { Separator } from "../ui/separator";
-import DocsMobileSidebar from "../docs-mobile-sidebar";
 import GithubStarBadge from "../github-badge";
+import DocsMobileSidebar from "../docs-mobile-sidebar";
 
 export default function SiteHeader() {
     return (
@@ -36,12 +36,6 @@ export default function SiteHeader() {
                             className="text-muted-foreground hover:text-foreground transition-colors"
                         >
                             Components
-                        </Link>
-                        <Link
-                            href="/docs/text/split-flap"
-                            className="text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                            Text
                         </Link>
                     </div>
                     <div className="ml-auto hidden md:block">

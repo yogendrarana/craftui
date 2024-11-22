@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Shell } from "@/components/shell";
+import { Shell } from "@/components/website/shell";
 import { motion } from "framer-motion";
 import { Component, Copy, Layers } from "lucide-react";
 
