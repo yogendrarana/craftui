@@ -8,7 +8,7 @@ import React, { cloneElement, useState } from "react";
 type ComponentPreviewProps = {
     component?: React.ReactElement;
     name?: string;
-    type?: string;
+    category?: string;
     hasReTrigger?: boolean;
     className?: string;
 };
@@ -18,7 +18,7 @@ export default function ComponentPreview({
     hasReTrigger = false,
     className,
     name,
-    type,
+    category
 }: ComponentPreviewProps) {
     const [reTriggerKey, setReTriggerKey] = useState<number>(Date.now());
 
@@ -32,9 +32,9 @@ export default function ComponentPreview({
             return hasReTrigger ? cloneElement(component, { key: reTriggerKey }) : component;
         }
 
-        // If name and type are provided, try to get component from registry
-        if (name && type && Previews[type]?.[name]) {
-            const RegistryComponent = Previews[type][name].component;
+        // If name and category are provided, try to get component from registry
+        if (name && category && Previews[category]?.[name]) {
+            const RegistryComponent = Previews[category][name].component;
             return hasReTrigger ? <RegistryComponent key={reTriggerKey} /> : <RegistryComponent />;
         }
 
@@ -51,7 +51,9 @@ export default function ComponentPreview({
     };
 
     return (
-        <div className={cn("relative w-full flex items-center justify-center rounded-sm", className)}>
+        <div
+            className={cn("relative w-full flex items-center justify-center rounded-sm", className)}
+        >
             {hasReTrigger && (
                 <div className="absolute right-4 top-3 cursor-pointer" onClick={reTrigger}>
                     <RotateCw className="h-4 w-4 text-zinc-500" />

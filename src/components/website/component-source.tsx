@@ -9,7 +9,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     name?: string;
-    type?: string;
+    category?: string;
     code?: string;
     expandButtonTitle?: string;
     useCollapsible?: boolean;
@@ -19,7 +19,7 @@ export default function ComponentSource({
     expandButtonTitle = "View Code",
     className,
     name,
-    type,
+    category,
     code: directCode,
     useCollapsible = true
 }: Props) {
@@ -31,9 +31,9 @@ export default function ComponentSource({
             return directCode;
         }
 
-        // If name and type are provided, try to get code from registry
-        if (name && type && Previews[type]?.[name]) {
-            return Previews[type][name].rawCode;
+        // If name and category are provided, try to get code from registry
+        if (name && category && Previews[category]?.[name]) {
+            return Previews[category][name].rawCode;
         }
 
         // Return error message if no code is found
@@ -44,7 +44,7 @@ export default function ComponentSource({
         );
 
         return null;
-    }, [directCode, name, type]);
+    }, [directCode, name, category]);
 
     const renderContent = () => {
         if (!codeToRender) {

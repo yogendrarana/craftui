@@ -1,7 +1,7 @@
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import fs from "fs/promises";
 import path from "path";
+import fs from "fs/promises";
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 // Get current file's directory
 const __filename = fileURLToPath(import.meta.url);
@@ -10,6 +10,7 @@ const __dirname = dirname(__filename);
 // Update base directory path calculation
 const baseDir = path.join(__dirname, "../src/content");
 
+const examplesDir = path.join(baseDir, "examples");
 const textDir = path.join(baseDir, "registry", "text");
 const coreDir = path.join(baseDir, "registry", "core");
 const blocksDir = path.join(baseDir, "registry", "blocks");
@@ -57,17 +58,19 @@ function getCategory(filePath: string) {
     if (filePath.includes(path.sep + "elements" + path.sep)) return "element";
     if (filePath.includes(path.sep + "text" + path.sep)) return "text";
     if (filePath.includes(path.sep + "core" + path.sep)) return "core";
-    return "block";
+    if (filePath.includes(path.sep + "block" + path.sep)) return "block";
+    return "examples";
 }
 
 async function main() {
     try {
         const allFiles = await Promise.all([
-            getAllFiles(componentDir),
-            getAllFiles(elementsDir),
-            getAllFiles(blocksDir),
-            getAllFiles(textDir),
             getAllFiles(coreDir),
+            getAllFiles(textDir),
+            getAllFiles(blocksDir),
+            getAllFiles(elementsDir),
+            getAllFiles(examplesDir),
+            getAllFiles(componentDir)
         ]);
 
         const components = allFiles.flat().reduce(async (accPromise, filePath) => {

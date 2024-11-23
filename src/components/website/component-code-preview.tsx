@@ -15,7 +15,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/website/u
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
     name: string;
-    type: string;
+    category: string;
     align?: "center" | "start" | "end";
     hideTabs?: boolean;
     hasReTrigger?: boolean;
@@ -23,7 +23,7 @@ interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export default function ComponentCodePreview({
     name,
-    type,
+    category,
     children,
     className,
     align = "center",
@@ -32,9 +32,9 @@ export default function ComponentCodePreview({
     ...props
 }: ComponentPreviewProps) {
     const [key, setKey] = React.useState(0);
-    
+
     const Preview = React.useMemo(() => {
-        const Component = Previews[type][name]?.component;
+        const Component = Previews[category][name]?.component;
 
         if (!Component) {
             return (
@@ -49,10 +49,10 @@ export default function ComponentCodePreview({
         }
 
         return <Component />;
-    }, [name, type]);
+    }, [name, category]);
 
     const Code = React.useMemo(() => {
-        const CodeOfComponent = Previews[type][name]?.rawCode;
+        const CodeOfComponent = Previews[category][name]?.rawCode;
 
         if (!CodeOfComponent) {
             return (
@@ -67,7 +67,7 @@ export default function ComponentCodePreview({
         }
 
         return CodeOfComponent;
-    }, [name, type]);
+    }, [name, category]);
 
     return (
         <div className={cn("w-full relativeflex flex-col", className)} {...props}>
@@ -111,7 +111,7 @@ export default function ComponentCodePreview({
                         >
                             <div
                                 className={cn(
-                                    "min-h-[400px] w-full flex items-center justify-center rounded-md",
+                                    "min-h-[400px] w-full flex items-center justify-center border rounded-md",
                                     className
                                 )}
                             >
