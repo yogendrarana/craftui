@@ -1,0 +1,49 @@
+---
+title: Text Scramble
+description: Text Scramble component is used to create a text animation effect.
+slug: /text/text-scramble
+published: true
+date: 2024-11-23
+---
+
+#### Basic Text Scramble
+<ComponentCodePreview category="examples" name="text-scramble-basic" hasReTrigger />
+
+#### Text Scramble on Hover
+<ComponentCodePreview category="examples" name="text-scramble-on-hover" />
+
+#### Text Scramble with Custom Chars
+<ComponentCodePreview category="examples" name="text-scramble-custom-chars" hasReTrigger />
+
+
+## Usage Guide
+
+Install the **clsx** and **tailwind-merge** packages:
+```bash
+npm install clsx tw-merge
+```
+
+Next, add [**cn**](https://github.com/yogendrarana/craftui/blob/master/src/lib/utils.ts) utility function in your project:
+```jsx
+import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from "clsx";
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}
+```
+
+Copy and paste the following component source.
+
+<ComponentSource category="core" name="text-scramble" />
+
+## Props
+
+| Prop             | Type      | Description                                | Default            |
+|------------------|-----------|--------------------------------------------|--------------------|
+| defaultText      | string    | The text to display initially.             | "Hello, World!"    |
+| scrambleOnHover  | boolean   | Enables scrambling animation on hover.     | true               |
+| duration         | number    | Duration of the scrambling animation (ms). | 1000               |
+| characters       | string    | Custom characters used for scrambling.     | ""                 |
+| className        | string    | Additional class names for styling.        | ""                 |
+
