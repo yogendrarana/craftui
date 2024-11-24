@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import CustomCursor from "@/content/registry/core/custom-cursor";
 
 export default function CustomCursorComplex() {
