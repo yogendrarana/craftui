@@ -8,6 +8,14 @@ export type PreviewsType = typeof Previews;
 
 export const Previews: Record<string, any> = {
   "core": {
+    "custom-cursor": {
+      name: "custom-cursor",
+      label: "custom cursor",
+      path: "core/custom-cursor",
+      component: React.lazy(() => import("@/content/registry/core/custom-cursor")),
+      type: "",
+      rawCode: "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { AnimatePresence, motion } from \"framer-motion\";\nimport React, { useState, useRef } from \"react\";\n\ntype CursorType = \"icon\" | \"text\" | \"custom\";\n\ninterface CursorChangerProps {\n    children: React.ReactNode;\n    cursorType: CursorType;\n    cursorContent: string | React.ReactNode;\n    className?: string;\n}\n\nexport default function CustomCursor({\n    children,\n    cursorType,\n    cursorContent,\n    className,\n}: CursorChangerProps) {\n    const [isHovering, setIsHovering] = useState(false);\n    const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });\n    const containerRef = useRef<HTMLDivElement>(null);\n\n    const handleMouseMove = (e: React.MouseEvent) => {\n        if (isHovering) {\n            setCursorPos({ x: e.clientX, y: e.clientY });\n        }\n    };\n\n    const handleMouseEnter = (e: React.MouseEvent) => {\n        setCursorPos({ x: e.clientX, y: e.clientY });\n        setIsHovering(true);\n    };\n\n    const handleMouseLeave = () => {\n        setIsHovering(false);\n    };\n\n    const renderCursor = () => {\n        const variants = {\n            initial: { scale: 1, opacity: 1 },\n            animate: { scale: 1, opacity: 1 },\n            exit: { scale: 0.8, opacity: 0 }\n        };\n\n        switch (cursorType) {\n            case \"icon\":\n                return (\n                    <motion.span\n                        variants={variants}\n                        className=\"text-2xl\"\n                    >\n                        {cursorContent}\n                    </motion.span>\n                );\n            case \"text\":\n                return (\n                    <motion.span\n                        variants={variants}\n                        className=\"text-sm bg-white text-black px-2 py-1.5 rounded shadow\"\n                    >\n                        {cursorContent}\n                    </motion.span>\n                );\n            case \"custom\":\n                return (\n                    <motion.div\n                        variants={variants}\n                    >\n                        {cursorContent}\n                    </motion.div>\n                );\n            default:\n                return null;\n        }\n    };\n\n    return (\n        <div\n            ref={containerRef}\n            className={cn(\"relative\", className)}\n            onMouseEnter={handleMouseEnter}\n            onMouseLeave={handleMouseLeave}\n            onMouseMove={handleMouseMove}\n            style={{ cursor: isHovering ? \"none\" : \"default\" }}\n        >\n            {children}\n            \n            <AnimatePresence mode=\"wait\">\n                {isHovering && cursorPos.x !== 0 && (\n                    <motion.div\n                        initial={false}\n                        className=\"fixed pointer-events-none z-[100]\"\n                        style={{\n                            left: cursorPos.x,\n                            top: cursorPos.y,\n                            transform: 'translate(-50%, -50%)'\n                        }}\n                        transition={{\n                            type: \"spring\",\n                            damping: 28,\n                            stiffness: 500,\n                            mass: 0.5\n                        }}\n                    >\n                        {renderCursor()}\n                    </motion.div>\n                )}\n            </AnimatePresence>\n        </div>\n    );\n}",
+    },
     "text-scramble": {
       name: "text-scramble",
       label: "text scramble",
@@ -366,6 +374,30 @@ export const Previews: Record<string, any> = {
     },
   },
   "examples": {
+    "custom-cursor-basic": {
+      name: "custom-cursor-basic",
+      label: "custom cursor basic",
+      path: "custom-cursor-basic",
+      component: React.lazy(() => import("@/content/examples/custom-cursor-basic")),
+      type: "",
+      rawCode: "\"use client\";\n\nimport CustomCursor from \"../registry/core/custom-cursor\";\n\nexport default function CustomCursorBasic() {\n    return (\n        <CustomCursor cursorType=\"icon\" cursorContent=\"👋\">\n            <div>Hover me!</div>\n        </CustomCursor>\n    );\n}\n",
+    },
+    "custom-cursor-complex": {
+      name: "custom-cursor-complex",
+      label: "custom cursor complex",
+      path: "custom-cursor-complex",
+      component: React.lazy(() => import("@/content/examples/custom-cursor-complex")),
+      type: "",
+      rawCode: "\"use client\";\n\nimport { Star } from \"lucide-react\";\nimport CustomCursor from \"@/content/registry/core/custom-cursor\";\n\nexport default function CustomCursorDemo() {\n    return (\n        <CustomCursor\n            cursorType=\"custom\"\n            cursorContent={\n                <div className=\"flex items-center space-x-2 bg-yellow-300 px-3 py-1 rounded-full shadow-lg\">\n                    <Star className=\"w-4 h-4 text-yellow-600\" />\n                    <span className=\"text-sm font-semibold text-yellow-800\">Star me!</span>\n                </div>\n            }\n        >\n            <div className=\"bg-yellow-100 p-8 rounded-md text-center\">\n                <h2 className=\"text-xl font-semibold mb-4\">Custom Cursor</h2>\n                <p>Hover over this area to see a custom cursor</p>\n            </div>\n        </CustomCursor>\n    );\n}\n",
+    },
+    "custom-cursor-text": {
+      name: "custom-cursor-text",
+      label: "custom cursor text",
+      path: "custom-cursor-text",
+      component: React.lazy(() => import("@/content/examples/custom-cursor-text")),
+      type: "",
+      rawCode: "\"use client\";\n\nimport CustomCursor from \"@/content/registry/core/custom-cursor\";\n\nexport default function CursorChangerDemo() {\n    return (\n        <div>\n            <CustomCursor cursorType=\"text\" cursorContent=\"Hello, World!\">\n                <div className=\"bg-green-200 p-8 rounded-lg text-center\">\n                    <h2 className=\"text-xl font-semibold mb-4\">Text Cursor</h2>\n                    <p>Hover over this area to see a text cursor</p>\n                </div>\n            </CustomCursor>\n        </div>\n    );\n}\n",
+    },
     "text-scramble-basic": {
       name: "text-scramble-basic",
       label: "text scramble basic",

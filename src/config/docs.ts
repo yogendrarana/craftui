@@ -72,6 +72,10 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Marquee",
                     href: `/docs/components/marquee`
+                },
+                {
+                    title: "Custom Cursor",
+                    href: `/docs/components/custom-cursor`
                 }
             ]
         },
@@ -97,7 +101,7 @@ export const docsConfig: DocsConfig = {
                     title: "Text Scramble",
                     href: `/docs/text/text-scramble`,
                     items: []
-                },
+                }
             ]
         }
     ]

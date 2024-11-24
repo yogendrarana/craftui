@@ -1,0 +1,37 @@
+---
+title: Custom Cursor
+description: A custom cursor component that follows the mouse cursor.
+slug: /components/custom-cursor
+published: true
+date: 2024-11-23
+author: { name: "Yogendra Rana", twitter: "https://twitter.com/yoogendra_rana" }
+---
+
+#### Custom Cursor - Icon
+<ComponentCodePreview category="examples" name="custom-cursor-basic" />
+
+#### Custom Cursor - Text
+<ComponentCodePreview category="examples" name="custom-cursor-text" />
+
+#### Custom Cursor - Custom
+<ComponentCodePreview category="examples" name="custom-cursor-complex" />
+
+## Usage Guide
+
+Install the **clsx** and **tailwind-merge** packages:
+```bash
+npm install clsx tw-merge
+```
+
+Next, add [**cn**](https://github.com/yogendrarana/craftui/blob/master/src/lib/utils.ts) utility:
+```jsx
+import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from "clsx";
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}
+```
+
+Copy and paste the following component source.
+<ComponentSource category="core" name="custom-cursor" />
