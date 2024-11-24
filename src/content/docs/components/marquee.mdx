@@ -8,6 +8,8 @@ author: { name: "Yogendra Rana", twitter: "https://twitter.com/yoogendra_rana" }
 ---
 
 #### Marquee - Basic
+The component is using svg icons as marquee content. 
+If you want to use these icons you can visit [**svgl.app**](https://www.svgl.app)
 <ComponentCodePreview category="examples" name="marquee-basic" />
 
 #### Marquee - Reverse
@@ -31,7 +33,16 @@ export function cn(...inputs: ClassValue[]) {
 ```
 
 Copy and paste the following component source.
-The component is using svg icons as marquee content. 
-If you want to use these icons you can visit [**svgl.app**](https://www.svgl.app)
-
 <ComponentSource name="marquee" category="core" />
+
+## Props
+
+| Prop         | Type              | Description                                  | Default |
+| -----------  | ----------------- | -------------------------------------------- | ------- |
+| children     | ReactNode         | Custom class to apply to the component       | _       |
+| className    | string            | Custom class to apply to the component.      | _       |
+| duration     | number            | Duration of the animation in seconds         | 20      |
+| repeat       | number            | Number of times the animation should repeat. | 2       |
+| direction    | "left" or "right" | Direction of the animation.                  | "left"  |
+| pauseOnHover | boolean           | Whether the animation pauses on hover.       | true    |
+| gap          | number            | Space between the animated items in pixels.  | 0       |
