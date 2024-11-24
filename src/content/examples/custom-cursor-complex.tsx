@@ -1,6 +1,6 @@
 "use client";
 
-import { Star } from "lucide-react";
+import { ArrowRight, Sparkles, Star } from "lucide-react";
 import CustomCursor from "@/content/registry/core/custom-cursor";
 
 export default function CustomCursorComplex() {
@@ -9,8 +9,11 @@ export default function CustomCursorComplex() {
             cursorType="custom"
             cursorContent={
                 <div className="flex items-center space-x-2 bg-yellow-300 px-3 py-1 rounded-full shadow-lg">
-                    <Star className="w-4 h-4 text-yellow-600" />
-                    <span className="text-sm font-semibold text-yellow-800">Star me!</span>
+                    <Sparkles className="w-4 h-4 text-yellow-600" />
+                    <span className="text-sm font-semibold text-yellow-800">
+                        Click Here!
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-yellow-600" />
                 </div>
             }
         >
