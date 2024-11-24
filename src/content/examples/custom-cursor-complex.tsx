@@ -14,8 +14,8 @@ export default function CustomCursorComplex() {
                 </div>
             }
         >
-            <div className="bg-yellow-100 p-8 rounded-md text-center">
-                <h2 className="text-xl font-semibold mb-4">Custom Cursor</h2>
+            <div className="border p-8 rounded-md text-center">
+                <h2 className="text-xl font-semibold mb-2">Custom Cursor</h2>
                 <p>Hover over this area to see a custom cursor</p>
             </div>
         </CustomCursor>
