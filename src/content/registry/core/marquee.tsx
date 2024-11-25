@@ -39,7 +39,7 @@ export default function Marquee({
                             key={index}
                             className={cn(
                                 `marquee-${direction}`,
-                                "w-full flex shrink-0 items-center justify-around",
+                                "w-max md:w-full flex shrink-0 items-center justify-around",
                                 {
                                     "group-hover:[animation-play-state:paused]": pauseOnHover
                                 }
