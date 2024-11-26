@@ -1,7 +1,7 @@
 import React from "react";
 import Marquee from "@/content/registry/core/marquee";
 
-const testimonials = [
+const team = [
     {
         name: "Jack Thompson",
         role: "Product Designer",
@@ -44,7 +44,7 @@ export default function TestimonialsMarquee() {
             className="w-[1000px] py-8"
             pauseOnHover
         >
-            {testimonials.map((item) => (
+            {team.map((item) => (
                 <div
                     key={item.id}
                     className="border rounded-md p-6 flex flex-col items-center justify-center"
