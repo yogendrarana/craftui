@@ -74,6 +74,10 @@ export const docsConfig: DocsConfig = {
                     href: `/docs/components/marquee`
                 },
                 {
+                    title: "Sticky",
+                    href: `/docs/components/sticky`
+                },
+                {
                     title: "Custom Cursor",
                     href: `/docs/components/custom-cursor`
                 }
