@@ -7,7 +7,7 @@ type PropType = {
     children: React.ReactNode;
 };
 
-export default function Sticky({ children }: PropType) {
+export default function Magnetic({ children }: PropType) {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

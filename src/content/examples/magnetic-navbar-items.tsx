@@ -1,4 +1,5 @@
-import Sticky from "@/content/registry/core/sticky";
+import React from "react";
+import Magnetic from "@/content/registry/core/magnetic";
 
 // nav items
 const navMenu = [
@@ -69,18 +70,18 @@ const Icons = {
     )
 };
 
-export default function StickyNavbar() {
+export default function MagneticNavbarItems() {
     return (
         <div className="w-full flex items-center justify-around">
             <div className="flex items-center">
                 <div className="flex gap-8 items-center">
                     {navMenu.map((nav, index) => (
-                        <Sticky key={index}>
+                        <Magnetic key={index}>
                             <div className="group relative">
                                 <a href={nav.link}>{nav.name}</a>
                                 <div className="h-2 w-2 bg-black rounded-full absolute -bottom-4 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all ease duration-300"></div>
                             </div>
-                        </Sticky>
+                        </Magnetic>
                     ))}
                 </div>
             </div>
