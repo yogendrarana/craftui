@@ -103,7 +103,7 @@ export default function ComponentCodePreview({
                         )}
                         <React.Suspense
                             fallback={
-                                <div className="flex items-center text-sm text-muted-foreground">
+                                <div className="min-h-[400px] flex items-center justify-center text-sm text-muted-foreground">
                                     {/* <Icons.spinner className="mr-2 size-4 animate-spin" /> */}
                                     Loading...
                                 </div>

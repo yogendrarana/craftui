@@ -1,0 +1,46 @@
+---
+title: Dock
+description: A dock component that displays a list of items.
+slug: /components/dock
+published: true
+date: 2024-11-30
+author: { name: "Yogendra Rana", twitter: "https://twitter.com/yoogendra_rana" }
+---
+
+#### Dock - Basic
+<ComponentCodePreview category="examples" name="dock-basic" />
+
+## Usage Guide
+
+Install the **clsx** and **tailwind-merge** packages:
+```bash
+npm install clsx tw-merge
+```
+
+Next, add [**cn**](https://github.com/yogendrarana/craftui/blob/master/src/lib/utils.ts) utility:
+```jsx
+import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from "clsx";
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}
+```
+
+Copy and paste the following component source.
+<ComponentSource name="dock" category="core" />
+
+## Props - Dock
+
+| Prop         | Type              | Description                                  | Default |
+| -----------  | ----------------- | -------------------------------------------- | ------- |
+| children     | ReactNode         | Custom class to apply to the component       | _       |
+| className    | string            | Custom class to apply to the component.      | _       |
+
+## Props - DockItem
+
+| Prop         | Type              | Description                                  | Default |
+| -----------  | ----------------- | -------------------------------------------- | ------- |
+| icon         | ReactNode         | Custom class to apply to the component       | _       |
+| className    | string            | Custom class to apply to the component.      | _       |
+| label        | string            | Text to show on tooltip                      | _       |

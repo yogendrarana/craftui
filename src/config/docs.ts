@@ -70,6 +70,10 @@ export const docsConfig: DocsConfig = {
             title: "Components",
             items: [
                 {
+                    title: "Dock",
+                    href: `/docs/components/dock`
+                },
+                {
                     title: "Marquee",
                     href: `/docs/components/marquee`
                 },
