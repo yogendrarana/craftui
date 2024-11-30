@@ -16,7 +16,7 @@ interface PropType {
 const defaultCharacterSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 export default function TextScramble({
-    children,
+    children = "Hello, World!",
     speed = 50,
     duration = 3,
     trigger = true,

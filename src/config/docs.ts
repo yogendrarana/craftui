@@ -109,6 +109,11 @@ export const docsConfig: DocsConfig = {
                     title: "Text Scramble",
                     href: `/docs/text/text-scramble`,
                     items: []
+                },
+                {
+                    title: "Typing Effect",
+                    href: `/docs/text/typing-effect`,
+                    items: []
                 }
             ]
         }

@@ -39,11 +39,15 @@ Copy and paste the following component source.
 
 ## Props
 
-| Prop             | Type      | Description                                | Default            |
-|------------------|-----------|--------------------------------------------|--------------------|
-| defaultText      | string    | The text to display initially.             | "Hello, World!"    |
-| scrambleOnHover  | boolean   | Enables scrambling animation on hover.     | true               |
-| duration         | number    | Duration of the scrambling animation (ms). | 1000               |
-| characters       | string    | Custom characters used for scrambling.     | ""                 |
-| className        | string    | Additional class names for styling.        | ""                 |
+| Prop             | Type      | Description                                 | Default            |
+|------------------|-----------|---------------------------------------------|--------------------|
+| children         | string    | The text to display                         | "Hello, World!"    |
+| duration         | number    | Duration of the scrambling animation (s).   | 3                  |
+| speed            | number    | The speed at which scrambling happens (ms). | 50                 |
+| trigger          | boolean   | Trigger the animation.                      | true               |
+| characterSet     | string    | Custom characters used for scrambling.      | [A-Za-z0-9]        |
+| className        | string    | Additional class names for styling.         | _                  |
+| as               | string    | HTML tag name to wrap the text inside       | _                  |
+| onScrambleEnd    | function  | Function to run after the scrambling ends   | _                  |
+
 

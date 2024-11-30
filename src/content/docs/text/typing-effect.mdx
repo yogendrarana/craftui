@@ -1,0 +1,30 @@
+---
+title: Typing Effect
+description: This component displays text with a typing animation effect.
+slug: /text/typing-effect
+published: true
+date: 2024-11-23
+---
+
+#### Basic Text Scramble
+<ComponentCodePreview category="examples" name="typing-effect-basic" hasReTrigger />
+
+## Usage Guide
+
+Install the **clsx** and **tailwind-merge** packages:
+```bash
+npm install framer-motion
+```
+
+Copy and paste the following component source.
+
+<ComponentSource category="core" name="typing-effect" />
+
+## Props
+
+| Prop             | Type      | Description                                | Default            |
+|------------------|-----------|--------------------------------------------|--------------------|
+| children         | string    | The text to display initially.             | "Hello, World!"    |
+| className        | string    | Additional class names for styling.        | ""                 |
+| typingSpeed      | number    | Speed at which typing happens (ms).        | 100               |
+
