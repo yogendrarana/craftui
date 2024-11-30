@@ -13,23 +13,21 @@ interface PropType {
     onScrambleEnd?: () => void;
 }
 
+const defaultCharacterSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
 export default function TextScramble({
     children,
     speed = 50,
     duration = 3,
     trigger = true,
     className = "",
-    characterSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+    characterSet = defaultCharacterSet,
     as: Component = "span",
     onScrambleEnd
 }: PropType) {
-    const [isScrambling, setIsScrambling] = useState(false);
     const [scrambledText, setScrambledText] = useState(children);
 
     const scrambleText = useCallback(() => {
-        if (isScrambling) return;
-        setIsScrambling(true);
-
         let currentIndex = 0;
         const endTime = Date.now() + duration * 1000;
 
@@ -37,7 +35,6 @@ export default function TextScramble({
             if (Date.now() > endTime) {
                 clearInterval(scrambleInterval);
                 setScrambledText(children);
-                setIsScrambling(false);
                 onScrambleEnd && onScrambleEnd();
                 return;
             }
@@ -45,8 +42,12 @@ export default function TextScramble({
             const scrambled = children
                 .split("")
                 .map((char, index) => {
-                    if (index < currentIndex) return char;
-                    return characterSet[Math.floor(Math.random() * characterSet.length)];
+                    if (char === " ") {
+                        return " ";
+                    }
+                    return index < currentIndex
+                        ? char
+                        : characterSet[Math.floor(Math.random() * characterSet.length)];
                 })
                 .join("");
 
@@ -55,14 +56,16 @@ export default function TextScramble({
         }, speed);
 
         return () => clearInterval(scrambleInterval);
-    }, [isScrambling, duration, speed, children, onScrambleEnd, characterSet]);
+    }, [children, duration, speed, characterSet, onScrambleEnd]);
 
     useEffect(() => {
-        if (!trigger) return;
-
-        scrambleText();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [trigger]);
+        if (trigger) {
+            const cleanup = scrambleText();
+            return cleanup;
+        } else {
+            setScrambledText(children);
+        }
+    }, [trigger, scrambleText, children]);
 
     return <Component className={className}>{scrambledText}</Component>;
 }
