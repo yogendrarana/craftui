@@ -20,8 +20,8 @@ interface DockProps {
 export function Dock({ children, className }: DockProps) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             className={cn("px-4 py-2 flex gap-2 border rounded-2xl shadow-md", className)}
         >

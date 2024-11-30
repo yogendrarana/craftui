@@ -3,7 +3,7 @@
 import { Dock, DockItem } from "../registry/core/dock";
 import { Home, Settings, Mail, Calendar, Music, ImageIcon } from "lucide-react";
 
-export default function DockDemo() {
+export default function DockBasic() {
     const dockItems = [
         { id: "1", icon: <Home className="w-4 h-4 text-gray-500" />, label: "Home" },
         { id: "2", icon: <Settings className="w-4 h-4 text-gray-500" />, label: "Settings" },
