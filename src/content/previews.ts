@@ -468,7 +468,7 @@ export const Previews: Record<string, any> = {
       path: "text-scramble-custom-trigger",
       component: React.lazy(() => import("@/content/examples/text-scramble-custom-trigger")),
       type: "",
-      rawCode: "\"use client\";\n\nimport React from \"react\";\nimport TextScramble from \"@/content/registry/core/text-scramble\";\n\nexport default function TextScrambleCustomTrigger() {\n    const [triggerScramble, setTriggerScramble] = React.useState(false);\n    return (\n        <div\n            // onMouseEnter={() => setTriggerScramble(true)}\n            // onMouseLeave={() => setTriggerScramble(false)}\n            className=\"flex flex-col gap-4 items-center border\"\n        >\n            <TextScramble speed={50} trigger={triggerScramble} className=\"cursor-pointer uppercase\">\n                Hover to scramble this text\n            </TextScramble>\n\n            <button onClick={() => setTriggerScramble(!triggerScramble)}>\n                {triggerScramble ? \"True\" : \"False\"}\n            </button>\n        </div>\n    );\n}\n",
+      rawCode: "\"use client\";\n\nimport React from \"react\";\nimport TextScramble from \"@/content/registry/core/text-scramble\";\n\nexport default function TextScrambleCustomTrigger() {\n    const [triggerScramble, setTriggerScramble] = React.useState(false);\n    return (\n        <div\n            onMouseEnter={() => setTriggerScramble(true)}\n            onMouseLeave={() => setTriggerScramble(false)}\n        >\n            <TextScramble speed={50} trigger={triggerScramble} className=\"cursor-pointer uppercase\">\n                Hover to scramble this text\n            </TextScramble>\n        </div>\n    );\n}\n",
     },
   },
 };
