@@ -25,7 +25,7 @@ export default function HeroSection() {
                 </div>
                 <h1 className="mb-6 text-6xl md:text-8xl font-black tracking-tight space-x-4">
                     <span className="text-primary">Craft</span>
-                    <span className="px-5 rounded-sm bg-primary text-primary-foreground">UI</span>
+                    <span className="px-5 rounded-sm">UI</span>
                 </h1>
                 <p className="mb-8 text-xl md:text-2xl text-muted-foreground max-w-2xl">
                     {siteConfig.description}

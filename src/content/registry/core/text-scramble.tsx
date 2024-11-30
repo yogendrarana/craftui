@@ -1,85 +1,68 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useCallback } from "react";
 
-interface TextScrambleProps {
-    displayText: string;
-    className?: string;
-    scrambleOnHover?: boolean;
+interface PropType {
+    children: string;
+    speed?: number;
     duration?: number;
-    characters?: string;
+    trigger?: boolean;
+    className?: string;
+    characterSet?: string;
+    as?: React.ElementType;
+    onScrambleEnd?: () => void;
 }
 
-const defaultCharacters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-={}[]|;:,.<>?";
-
 export default function TextScramble({
-    displayText = "Hello, World!",
-    className,
-    scrambleOnHover = true,
-    duration = 1000,
-    characters = defaultCharacters
-}: TextScrambleProps) {
+    children,
+    speed = 50,
+    duration = 3,
+    trigger = true,
+    className = "",
+    characterSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
+    as: Component = "span",
+    onScrambleEnd
+}: PropType) {
     const [isScrambling, setIsScrambling] = useState(false);
-    const [scrambledText, setScrambledText] = useState(displayText);
+    const [scrambledText, setScrambledText] = useState(children);
 
     const scrambleText = useCallback(() => {
-        let iteration = 0;
-        const totalIterations = displayText.length * 8; // You can this multiplier to change the "speed" of reveal
-        const intervalDuration = duration / totalIterations;
-
+        if (isScrambling) return;
         setIsScrambling(true);
 
-        const interval = setInterval(() => {
-            setScrambledText((prevText) =>
-                prevText
-                    .split("")
-                    .map((char, index) => {
-                        if (index < iteration / 8) {
-                            return displayText[index];
-                        }
-                        return characters[Math.floor(Math.random() * characters.length)];
-                    })
-                    .join("")
-            );
+        let currentIndex = 0;
+        const endTime = Date.now() + duration * 1000;
 
-            if (iteration >= totalIterations) {
-                clearInterval(interval);
+        const scrambleInterval = setInterval(() => {
+            if (Date.now() > endTime) {
+                clearInterval(scrambleInterval);
+                setScrambledText(children);
                 setIsScrambling(false);
+                onScrambleEnd && onScrambleEnd();
+                return;
             }
 
-            iteration += 1;
-        }, intervalDuration);
-    }, [displayText, duration, characters]);
+            const scrambled = children
+                .split("")
+                .map((char, index) => {
+                    if (index < currentIndex) return char;
+                    return characterSet[Math.floor(Math.random() * characterSet.length)];
+                })
+                .join("");
+
+            setScrambledText(scrambled);
+            currentIndex = Math.min(currentIndex + 1, children.length);
+        }, speed);
+
+        return () => clearInterval(scrambleInterval);
+    }, [isScrambling, duration, speed, children, onScrambleEnd, characterSet]);
 
     useEffect(() => {
-        if (!scrambleOnHover) {
-            scrambleText();
-        }
-    }, [scrambleOnHover, scrambleText]);
+        if (!trigger) return;
 
-    const handleMouseEnter = () => {
-        if (scrambleOnHover && !isScrambling) {
-            scrambleText();
-        }
-    };
+        scrambleText();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [trigger]);
 
-    return (
-        <span
-            className={cn(
-                "inline-flex select-none",
-                scrambleOnHover && "cursor-pointer",
-                className
-            )}
-            onMouseEnter={handleMouseEnter}
-            aria-label={displayText}
-        >
-            {scrambledText.split("").map((char, index) => (
-                <span key={index} className="inline-block" style={{ textAlign: "center" }}>
-                    {char}
-                </span>
-            ))}
-        </span>
-    );
+    return <Component className={className}>{scrambledText}</Component>;
 }

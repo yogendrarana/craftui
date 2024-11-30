@@ -78,7 +78,7 @@ export default function MagneticNavbarItems() {
                     {navMenu.map((nav, index) => (
                         <Magnetic key={index}>
                             <div className="group relative">
-                                <a href={nav.link}>{nav.name}</a>
+                                <div className="cursor-pointer">{nav.name}</div>
                                 <div className="h-2 w-2 bg-black rounded-full absolute -bottom-4 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all ease duration-300"></div>
                             </div>
                         </Magnetic>
