@@ -10,8 +10,8 @@ export default function TextScrambleCustomTrigger() {
             onMouseEnter={() => setTriggerScramble(true)}
             onMouseLeave={() => setTriggerScramble(false)}
         >
-            <TextScramble speed={50} trigger={triggerScramble} className="cursor-pointer uppercase">
-                Hover to scramble this text
+            <TextScramble speed={50} className="cursor-pointer uppercase" trigger={triggerScramble}>
+                Hover to scramble this text!
             </TextScramble>
         </div>
     );

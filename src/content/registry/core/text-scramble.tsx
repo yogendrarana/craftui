@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useCallback } from "react";
 
 interface PropType {
@@ -67,5 +68,5 @@ export default function TextScramble({
         }
     }, [trigger, scrambleText, children]);
 
-    return <Component className={className}>{scrambledText}</Component>;
+    return <Component className={cn("font-mono", className)}>{scrambledText}</Component>;
 }
