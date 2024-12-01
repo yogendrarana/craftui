@@ -86,7 +86,7 @@ export default function CustomCursor({
             {children}
             {isHovering && (
                 <div
-                    className="absolute pointer-events-none z-50 transition-all duration-300 ease-out"
+                    className="absolute pointer-events-none z-50"
                     style={{
                         left: cursorPosition.x,
                         top: cursorPosition.y,

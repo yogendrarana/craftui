@@ -52,7 +52,7 @@ export default function ComponentPreview({
 
     return (
         <div
-            className={cn("relative w-full flex items-center justify-center rounded-sm", className)}
+            className={cn("relative w-full flex items-center justify-center rounded-sm h-full", className)}
         >
             {hasReTrigger && (
                 <div className="absolute right-4 top-3 cursor-pointer" onClick={reTrigger}>

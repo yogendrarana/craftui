@@ -32,7 +32,7 @@ export default function ComponentCodePreviewDialog({
                 <ComponentPreview
                     component={component}
                     className={cn(
-                        "relative cursor-pointer aspect-square border bg-white",
+                        "cursor-pointer aspect-square border bg-[#fafafa]",
                         "transition-all duration-300 ease-in-out"
                     )}
                 />
@@ -60,11 +60,12 @@ export default function ComponentCodePreviewDialog({
                         </div>
 
                         {/* component and code */}
-                        <div className="h-full flex-1 border rounded-sm flex flex-col md:flex-row gap-4 overflow-hidden">
+                        <div className="h-full flex-1 border rounded-sm flex flex-col md:flex-row overflow-hidden">
                             <div className="w-full h-1/2 md:h-full md:w-1/2 flex items-center justify-center">
                                 <ComponentPreview
                                     component={component}
                                     hasReTrigger={hasReTrigger}
+                                    className="w-full h-full bg-[#fafafa]"
                                 />
                             </div>
                             <div className="w-full h-1/2 md:h-full md:w-1/2 p-4 border-t md:border-t-0 md:border-l overflow-hidden">
