@@ -28,11 +28,6 @@ export const docsConfig: DocsConfig = {
                     title: "Introduction",
                     href: "/docs/getting-started/introduction",
                     items: []
-                },
-                {
-                    title: "Installation",
-                    href: "/docs/getting-started/installation",
-                    items: []
                 }
             ]
         },
@@ -88,16 +83,6 @@ export const docsConfig: DocsConfig = {
             ]
         },
         {
-            title: "Hover Effects",
-            items: [
-                {
-                    title: "Split Flap Effect",
-                    href: `/docs/hover/split-flap`,
-                    items: []
-                }
-            ]
-        },
-        {
             title: "Text Effects",
             items: [
                 {
@@ -108,6 +93,11 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Text Scramble",
                     href: `/docs/text/text-scramble`,
+                    items: []
+                },
+                {
+                    title: "Split Flap Effect",
+                    href: `/docs/text/split-flap`,
                     items: []
                 }
             ]
