@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface TypingEffectProps {
     children: string;
@@ -14,7 +14,6 @@ export default function TypingEffect({
     typingSpeed = 100,
     className = ""
 }: TypingEffectProps) {
-    const controls = useAnimation();
     const [displayedText, setDisplayedText] = useState("");
 
     const text = children;
@@ -27,19 +26,17 @@ export default function TypingEffect({
                 currentIndex++;
             } else {
                 clearInterval(intervalId);
-                controls.start({ opacity: 1 });
             }
         }, typingSpeed);
 
         return () => clearInterval(intervalId);
-    }, [text, typingSpeed, controls]);
+    }, [text, typingSpeed]);
 
     return (
         <div className={`font-mono ${className}`}>
             {displayedText}
             <motion.span
-                initial={{ opacity: 0 }}
-                animate={controls}
+                animate={{ opacity: [0, 1] }}
                 transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
             >
                 |

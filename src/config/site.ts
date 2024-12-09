@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
     name: "Craft UI",
     description:
-        "A collection of beautiful, interactive UI components built with Next.js, Tailwind CSS, and Framer Motion.",
+        "A collection of beautiful, interactive UI components built with React.js, Tailwind CSS, and Framer Motion.",
     url: "https://craftui.dev",
     projectLinks: {
         twitter: "https://twitter.com/yoogendra_rana",

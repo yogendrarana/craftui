@@ -86,11 +86,22 @@ export default function MagneticNavbarItems() {
                 </div>
             </div>
 
-            <div className="mr-[2rem] flex gap-4">
-                <div className="mx-8 text-gray-200">|</div>
-                <Icons.GitHub className="h-4 w-4 cursor-pointer" />
-                <Icons.LinkedIn className="h-4 w-4 cursor-pointer" />
-                <Icons.X className="h-4 w-4 cursor-pointer" />
+            <div className="mr-[2rem] flex gap-6">
+                <Magnetic>
+                    <div>
+                        <Icons.GitHub className="h-4 w-4 cursor-pointer" />
+                    </div>
+                </Magnetic>
+                <Magnetic>
+                    <div>
+                        <Icons.LinkedIn className="h-4 w-4 cursor-pointer" />
+                    </div>
+                </Magnetic>
+                <Magnetic>
+                    <div>
+                        <Icons.X className="h-4 w-4 cursor-pointer" />
+                    </div>
+                </Magnetic>
             </div>
         </div>
     );
