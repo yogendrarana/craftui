@@ -50,15 +50,15 @@ export const docsConfig: DocsConfig = {
                     items: []
                 },
                 {
-                    title: "Input Fields",
-                    href: `/docs/elements/input-fields`,
-                    items: []
-                },
-                {
                     title: "Toggle Switch",
                     href: `/docs/elements/toggle-switch`,
                     items: []
-                }
+                },
+                {
+                    title: "Input & Textarea",
+                    href: `/docs/elements/input-textarea`,
+                    items: []
+                },
             ]
         },
         {

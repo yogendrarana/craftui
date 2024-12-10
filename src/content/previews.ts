@@ -104,7 +104,7 @@ export const Previews: Record<string, any> = {
       path: "elements/checkbox/animated-checkbox-01",
       component: React.lazy(() => import("@/content/registry/elements/checkbox/animated-checkbox-01")),
       type: "checkbox",
-      rawCode: "\"use client\";\n\nimport React, { useState } from \"react\";\n\nexport default function CustomCheckbox() {\n    const [isChecked, setIsChecked] = useState(false);\n\n    return (\n        <div className=\"flex items-center\">\n            <label className=\"w-7 h-7 cursor-pointer relative\">\n                <input\n                    type=\"checkbox\"\n                    className=\"hidden\"\n                    checked={isChecked}\n                    onChange={() => setIsChecked(!isChecked)}\n                />\n                <span\n                    className={`block w-full h-full border-2 border-gray-700 rounded-md transition-all duration-500 ${\n                        isChecked\n                            ? \"rotate-45 w-3.5 translate-x-2 -translate-y-1 border-t-transparent border-l-transparent rounded-none\"\n                            : \"\"\n                    }`}\n                ></span>\n            </label>\n        </div>\n    );\n}\n",
+      rawCode: "\"use client\";\n\nimport React, { useState } from \"react\";\n\nexport default function CustomCheckbox() {\n    const [isChecked, setIsChecked] = useState(false);\n\n    return (\n        <div className=\"flex items-center\">\n            <label className=\"cursor-pointer relative\">\n                <input\n                    type=\"checkbox\"\n                    className=\"hidden\"\n                    checked={isChecked}\n                    onChange={() => setIsChecked(!isChecked)}\n                />\n                <span\n                    className={`block border-2 border-gray-700 rounded-md transition-all duration-500 ${\n                        isChecked\n                            ? \"h-7 w-4 rotate-45 -translate-y-1 border-t-transparent border-l-transparent rounded-none\"\n                            : \"h-7 w-7\"\n                    }`}\n                ></span>\n            </label>\n        </div>\n    );\n}\n",
     },
     "animated-checkbox-02": {
       name: "animated-checkbox-02",
@@ -161,14 +161,6 @@ export const Previews: Record<string, any> = {
       component: React.lazy(() => import("@/content/registry/elements/checkbox/skeuomorphic-checkbox-01")),
       type: "checkbox",
       rawCode: "\"use client\";\n\nimport React, { useState } from \"react\";\n\nexport default function SkeuomorphicCheckbox() {\n    const [isChecked, setIsChecked] = useState(false);\n\n    const handleChange = () => {\n        setIsChecked((prev) => !prev);\n    };\n\n    return (\n        <label className=\"cursor-pointer\">\n            <input\n                type=\"checkbox\"\n                className=\"\n                    appearance-none w-7 h-7 bg-white border-2 border-gray-300 duration-300 \n                    rounded-sm shadow-md checked:bg-blue-400 checked:border-blue-500 \n                    relative group cursor-pointer\n                \"\n                checked={isChecked}\n                onChange={handleChange}\n            />\n        </label>\n    );\n}\n",
-    },
-    "demo-input": {
-      name: "demo-input",
-      label: "demo input",
-      path: "elements/input/demo-input",
-      component: React.lazy(() => import("@/content/registry/elements/input/demo-input")),
-      type: "input",
-      rawCode: "import React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport default function DemoInput() {\n    return (\n        <div>\n            <input\n                type=\"text\"\n                name=\"text\"\n                className={cn(\n                    \"h-9 w-56 px-3 border border-black text-sm uppercase tracking-widest\",\n                    \"focus:outline-none focus:border-[0.5px] focus:shadow-[-5px_-5px_0px_0px_rgba(0,0,0,1)] placeholder:text-gray-500\",\n                    \"transition-all duration-100 ease-linear\"\n                )}\n                placeholder=\"search...\"\n            />\n        </div>\n    );\n}\n",
     },
     "classic": {
       name: "classic",

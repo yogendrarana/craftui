@@ -7,7 +7,7 @@ export default function CustomCheckbox() {
 
     return (
         <div className="flex items-center">
-            <label className="w-7 h-7 cursor-pointer relative">
+            <label className="cursor-pointer relative">
                 <input
                     type="checkbox"
                     className="hidden"
@@ -15,10 +15,10 @@ export default function CustomCheckbox() {
                     onChange={() => setIsChecked(!isChecked)}
                 />
                 <span
-                    className={`block w-full h-full border-2 border-gray-700 rounded-md transition-all duration-500 ${
+                    className={`block border-2 border-gray-700 rounded-md transition-all duration-500 ${
                         isChecked
-                            ? "rotate-45 w-3.5 translate-x-2 -translate-y-1 border-t-transparent border-l-transparent rounded-none"
-                            : ""
+                            ? "h-7 w-4 rotate-45 -translate-y-1 border-t-transparent border-l-transparent rounded-none"
+                            : "h-7 w-7"
                     }`}
                 ></span>
             </label>
