@@ -69,6 +69,10 @@ export const docsConfig: DocsConfig = {
                     href: `/docs/components/dock`
                 },
                 {
+                    title: "Dialog",
+                    href: `/docs/components/dialog`
+                },
+                {
                     title: "Marquee",
                     href: `/docs/components/marquee`
                 },
@@ -93,11 +97,6 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Text Scramble",
                     href: `/docs/text/text-scramble`,
-                    items: []
-                },
-                {
-                    title: "Split Flap Effect",
-                    href: `/docs/text/split-flap`,
                     items: []
                 }
             ]

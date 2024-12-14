@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 const shellVariants = cva("grid items-center", {
     variants: {
         variant: {
-            default: "container px-4 sm:px-6 md:px-8",
+            default: "container",
             sidebar: "px-4 sm:px-6",
             centered:
                 "container flex h-dvh max-w-2xl flex-col justify-center px-4 sm:px-6 md:px-12",
