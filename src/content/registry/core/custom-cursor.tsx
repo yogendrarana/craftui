@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 type CursorType = "icon" | "text" | "custom";
 
-interface CursorChangerProps {
+interface CustomCursorProps {
     children: React.ReactNode;
     cursorType: CursorType;
     cursorContent: string | React.ReactNode;
@@ -17,7 +17,7 @@ export default function CustomCursor({
     cursorType,
     cursorContent,
     className
-}: CursorChangerProps) {
+}: CustomCursorProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [isHovering, setIsHovering] = useState(false);
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
