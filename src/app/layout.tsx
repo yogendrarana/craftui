@@ -9,6 +9,7 @@ import "@/styles/mdx.css";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { siteConfig } from "@/config/site";
+import { Analytics } from "@vercel/analytics/react";
 import Providers from "@/components/website/provider/providers";
 
 // metadata
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </body>
 
             <Toaster position="top-center" richColors />
+            <Analytics />
         </html>
     );
 }
