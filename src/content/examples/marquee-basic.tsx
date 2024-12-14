@@ -35,17 +35,10 @@ const data = [
 
 export default function MarqueeBasic() {
     return (
-        <Marquee
-            duration={20}
-            repeat={2}
-            direction="left"
-            pauseOnHover
-            className="w-[500px]"
-        >
+        <Marquee duration={20} repeat={2} direction="left" pauseOnHover className="w-[500px]">
             {data.map((item, index) => (
                 <div key={`${item.name}-${index}`} className="flex flex-col items-center">
                     <item.icon className="h-14 w-14 px-4 dark:invert" />
-                    <span className="text-xs">{item.name}</span>
                 </div>
             ))}
         </Marquee>
