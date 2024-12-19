@@ -218,10 +218,10 @@ function render() {
 
     particles.forEach((particle) => {
         particle.update();
-        particle.render(ctx);
+        particle.render(ctx!);
     });
 
-    particles = particles.filter((p) => p.position.y < canvas.height);
+    particles = particles.filter((p) => p.position.y < canvas!.height);
 
     if (particles.length > 0) {
         animationFrame = requestAnimationFrame(render);
@@ -243,10 +243,10 @@ export function triggerConfetti(options: ConfettiOptions = {}) {
     const sequinCount = Math.floor(particleCount * 0.25);
 
     const newConfetti = Array.from({ length: confettiCount }, () =>
-        createConfetto(canvas.width, canvas.height, origin)
+        createConfetto(canvas!.width, canvas!.height, origin)
     );
     const newSequins = Array.from({ length: sequinCount }, () =>
-        createSequin(canvas.width, canvas.height, origin)
+        createSequin(canvas!.width, canvas!.height, origin)
     );
 
     particles = [...particles, ...newConfetti, ...newSequins];
