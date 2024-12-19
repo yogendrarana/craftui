@@ -1,0 +1,25 @@
+---
+title: Confetti
+description: A text morph component for React.
+slug: /components/confetti
+published: true
+date: 2024-12-16
+author: { name: "Yogendra Rana", twitter: "https://twitter.com/yoogendra_rana" }
+---
+
+#### Confetti Center
+<ComponentCodePreview category="examples" name="confetti-demo" />
+
+## Usage Guide
+
+Copy and paste the following source code.
+<ComponentSource name="confetti.ts" category="functions" />
+
+## Props
+The above code exports **triggerConfetti()** function which can be used to trigger confetti animation. The function accepts the following props:
+
+| Prop           | Type              | Description                                             | Default |
+| -------------- | ----------------- | ------------------------------------------------------- | ------- |
+| particleCount  | number            | The number of confetto and sequin  you want             | 50      |
+| origin         | string            | top \| bottom \| left \| right \| top-left \| top-right \| bottom-left \| bottom-right | center  |
+| duration       | number            | Determines when the canvas will be removed after the confetti effect has finished      | 3000    |

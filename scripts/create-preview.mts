@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs/promises";
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 // Get current file's directory
 const __filename = fileURLToPath(import.meta.url);
@@ -16,6 +16,7 @@ const coreDir = path.join(baseDir, "registry", "core");
 const blocksDir = path.join(baseDir, "registry", "blocks");
 const elementsDir = path.join(baseDir, "registry", "elements");
 const componentDir = path.join(baseDir, "registry", "components");
+const functionsDir = path.join(baseDir, "registry", "functions");
 
 const outputMapFilePath = path.join(baseDir, "previews.ts");
 
@@ -33,18 +34,18 @@ interface ComponentItem {
 async function getAllFiles(dirPath: string, arrayOfFiles: string[] = []): Promise<string[]> {
     try {
         const files = await fs.readdir(dirPath);
-        
+
         for (const file of files) {
             const filePath = path.join(dirPath, file);
             const stat = await fs.stat(filePath);
-            
+
             if (stat.isDirectory()) {
                 arrayOfFiles = await getAllFiles(filePath, arrayOfFiles);
-            } else if (file.endsWith(".tsx")) {
+            } else if (file.endsWith(".tsx") || file.endsWith(".ts")) {
                 arrayOfFiles.push(filePath);
             }
         }
-        
+
         return arrayOfFiles;
     } catch (error) {
         console.error(`Error reading directory ${dirPath}:`, error);
@@ -59,6 +60,7 @@ function getCategory(filePath: string) {
     if (filePath.includes(path.sep + "text" + path.sep)) return "text";
     if (filePath.includes(path.sep + "core" + path.sep)) return "core";
     if (filePath.includes(path.sep + "block" + path.sep)) return "block";
+    if (filePath.includes(path.sep + "functions" + path.sep)) return "functions";
     return "examples";
 }
 
@@ -70,7 +72,8 @@ async function main() {
             getAllFiles(blocksDir),
             getAllFiles(elementsDir),
             getAllFiles(examplesDir),
-            getAllFiles(componentDir)
+            getAllFiles(componentDir),
+            getAllFiles(functionsDir)
         ]);
 
         const components = allFiles.flat().reduce(async (accPromise, filePath) => {
@@ -85,13 +88,14 @@ async function main() {
             const label = name.replace(/-/g, " ");
 
             let type = "";
-            
+
             if (category === "element") {
                 type = filePath.split(path.sep).slice(-2)[0];
             }
 
             const content = await fs.readFile(filePath, "utf8");
-            const relativePath = path.relative(baseDir, filePath)
+            const relativePath = path
+                .relative(baseDir, filePath)
                 .split(path.sep)
                 .join("/")
                 .replace(".tsx", "");
@@ -119,7 +123,9 @@ async function main() {
 
         for (const [category, items] of Object.entries(await components)) {
             previewContent += `  "${category}": {\n`;
-            for (const [key, { component, rawCode, name, type, label }] of Object.entries(items as Record<string, ComponentItem>)) {
+            for (const [key, { component, rawCode, name, type, label }] of Object.entries(
+                items as Record<string, ComponentItem>
+            )) {
                 previewContent += `    "${name}": {\n`;
                 previewContent += `      name: "${name}",\n`;
                 previewContent += `      label: "${label}",\n`;

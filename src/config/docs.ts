@@ -58,7 +58,7 @@ export const docsConfig: DocsConfig = {
                     title: "Input & Textarea",
                     href: `/docs/elements/input-textarea`,
                     items: []
-                },
+                }
             ]
         },
         {
@@ -71,6 +71,11 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Dialog",
                     href: `/docs/components/dialog`
+                },
+                {
+                    title: "Confetti",
+                    href: `/docs/components/confetti`,
+                    items: []
                 },
                 {
                     title: "Marquee",
