@@ -1,7 +1,9 @@
-import React, { createContext, useContext, useState } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+"use client";
+
 import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+import React, { createContext, useContext, useState } from "react";
 
 // Context
 interface AccordionContextType {
