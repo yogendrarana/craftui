@@ -32,7 +32,7 @@ export default function SiteHeader() {
                             Elements
                         </Link>
                         <Link
-                            href="/docs/components/marquee"
+                            href="/docs/components/accordion"
                             className="text-muted-foreground hover:text-foreground transition-colors"
                         >
                             Components

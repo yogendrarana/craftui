@@ -1,0 +1,62 @@
+---
+title: Accordion
+description: A simple accordion component
+slug: /components/accordion
+published: true
+date: 2024-12-20
+---
+
+
+#### Accordion - Single Open
+<ComponentCodePreview category="examples" name="accordion-single-open" hasReTrigger />
+
+#### Accordion - Multiple Open
+<ComponentCodePreview category="examples" name="accordion-multiple-open" hasReTrigger />
+
+#### Accordion - Default Open
+<ComponentCodePreview category="examples" name="accordion-default-open" hasReTrigger />
+
+#### Accordion - Custom Icons
+<ComponentCodePreview category="examples" name="accordion-custom-icons" hasReTrigger />
+
+## Usage Guide
+
+Copy and paste the following component source.
+<ComponentSource name="accordion" category="core" />
+
+### Props - Accordion
+
+| Prop                 | Type              | Description                                                  | Default |
+| -------------------  | ----------------- | ------------------------------------------------------------ | ------- |
+| children             | ReactNode         | The content to be rendered inside the Accordion              | _       |
+| defaultOpen?         | array             | An array of IDs of items that should be open by default.     | []      |
+| allowMultipleOpen?   | boolean           | If true, allows multiple items to be open at the same time.  | false   |
+| className?           | string            | Additional class names to style the Accordion.               | _       |
+
+
+### Props - AccordionItem
+
+| Prop         | Type              | Description                                             | Default     |
+| -----------  | ----------------- | ------------------------------------------------------- | ----------- |
+| children     | ReactNode         | The content to be rendered inside the AccordionItem.    | _           |
+| id           | string            | A unique identifier for the AccordionItem.              | undefined   |
+| className?   | string            | Additional class names to style the AccordionItem.      | _           |
+
+
+### Props - AccordionTrigger
+
+| Prop                 | Type              | Description                                                                    | Default     |
+| -------------------  | ----------------- | ------------------------------------------------------------------------------ | ----------- |
+| children             | ReactNode         | The content to be rendered inside the trigger button for the AccordionItem.    | _           |
+| className?           | string            | Additional class names to style the AccordionTrigger.	                        | _           |
+| customOpenIcon?      | ReactNode         | A custom icon to display when the item is open                                 | undefined   |
+| customCloseIcon?     | ReactNode         | A custom icon to display when the item is closed                               | undefined   |
+
+
+### Props - AccordionContent
+
+| Prop         | Type              | Description                                                            | Default |
+| -----------  | ----------------- | ---------------------------------------------------------------------- | ------- |
+| children     | ReactNode         | The content to be revealed when the AccordionItem is expanded.	        | _       |
+| className?   | string            | Additional class names to style the AccordionContent.	                | _       |
+| variants?    | Object            | Framer Motion variants for animating the AccordionContent.	            | _       |

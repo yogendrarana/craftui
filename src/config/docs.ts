@@ -65,6 +65,18 @@ export const docsConfig: DocsConfig = {
             title: "Components",
             items: [
                 {
+                    title: "Accordion",
+                    href: `/docs/components/accordion`
+                },
+                {
+                    title: "Confetti",
+                    href: `/docs/components/confetti`
+                },
+                {
+                    title: "Cursor",
+                    href: `/docs/components/custom-cursor`
+                },
+                {
                     title: "Dock",
                     href: `/docs/components/dock`
                 },
@@ -73,21 +85,12 @@ export const docsConfig: DocsConfig = {
                     href: `/docs/components/dialog`
                 },
                 {
-                    title: "Confetti",
-                    href: `/docs/components/confetti`,
-                    items: []
-                },
-                {
                     title: "Marquee",
                     href: `/docs/components/marquee`
                 },
                 {
                     title: "Magnetic",
                     href: `/docs/components/magnetic`
-                },
-                {
-                    title: "Custom Cursor",
-                    href: `/docs/components/custom-cursor`
                 }
             ]
         },
