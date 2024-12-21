@@ -113,7 +113,7 @@ export const AccordionTrigger: React.FC<AccordionTriggerProps> = ({
     return (
         <motion.button
             className={cn(
-                "w-full px-4 py-2 flex items-center justify-between text-left bg-white hover:underline",
+                "w-full py-2 border-b flex items-center justify-between text-left bg-white hover:underline",
                 className
             )}
             onClick={() => toggleItem(id)}
