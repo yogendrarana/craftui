@@ -10,7 +10,7 @@ import {
 
 export default function AccordionSingleOpen() {
     return (
-        <Accordion defaultOpen={["item-1"]}>
+        <Accordion>
             <AccordionItem id="item-1">
                 <AccordionTrigger>What is React?</AccordionTrigger>
                 <AccordionContent>

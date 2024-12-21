@@ -18,7 +18,7 @@ export default function AccordionMultipleOpen() {
                     reusable UI components.
                 </AccordionContent>
             </AccordionItem>
-            <AccordionItem id="item-3">
+            <AccordionItem id="item-2">
                 <AccordionTrigger>What is Tailwind CSS?</AccordionTrigger>
                 <AccordionContent>
                     Tailwind CSS is a utility-first CSS framework packed with classes like flex,
@@ -26,7 +26,7 @@ export default function AccordionMultipleOpen() {
                     directly in your markup.
                 </AccordionContent>
             </AccordionItem>
-            <AccordionItem id="item-2">
+            <AccordionItem id="item-3">
                 <AccordionTrigger>Why use Framer Motion?</AccordionTrigger>
                 <AccordionContent>
                     Framer Motion is a motion library for React. It provides a declarative, flexible
