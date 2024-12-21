@@ -5,29 +5,32 @@ import { cn } from "@/lib/utils";
 import { createPortal } from "react-dom";
 import { Transition, Variants } from "framer-motion";
 import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
 
-// dialog context
-const DialogContext = React.createContext<{
+type DrawerOrigin = "left" | "right" | "top" | "bottom";
+
+// Drawer context
+const DrawerContext = React.createContext<{
     isOpen: boolean;
     setIsOpen: (isOpen: boolean) => void;
-    titleId: string;
-    descriptionId: string;
+    origin: DrawerOrigin;
     variants: Variants;
     transition: Transition;
 } | null>(null);
 
-// useDialog hook
-const useDialog = () => {
-    const context = React.useContext(DialogContext);
+// useDrawer hook
+const useDrawer = () => {
+    const context = React.useContext(DrawerContext);
     if (!context) {
-        throw new Error("Dialog components must be used within a Dialog");
+        throw new Error("Drawer components must be used within a Drawer");
     }
     return context;
 };
 
-// dialog component
-interface DialogProps {
+// Drawer component
+interface DrawerProps {
     children: React.ReactNode;
+    origin?: DrawerOrigin;
     variants?: Variants;
     transition?: Transition;
     defaultOpen?: boolean;
@@ -35,25 +38,39 @@ interface DialogProps {
     onOpenChange?: (isOpen: boolean) => void;
 }
 
-const defaultVariants: Variants = {
-    initial: {
-        opacity: 0,
-        scale: 0.95
+const defaultVariants: Record<DrawerOrigin, Variants> = {
+    left: {
+        initial: { x: "-100%" },
+        animate: { x: 0 },
+        exit: { x: "-100%" }
     },
-    animate: {
-        opacity: 1,
-        scale: 1
+    right: {
+        initial: { x: "100%" },
+        animate: { x: 0 },
+        exit: { x: "100%" }
+    },
+    top: {
+        initial: { y: "-100%" },
+        animate: { y: 0 },
+        exit: { y: "-100%" }
+    },
+    bottom: {
+        initial: { y: "100%" },
+        animate: { y: 0 },
+        exit: { y: "100%" }
     }
 };
 
 const defaultTransition: Transition = {
-    ease: "easeOut",
-    duration: 0.2
+    type: "spring",
+    stiffness: 300,
+    damping: 30
 };
 
-const Dialog: React.FC<DialogProps> = ({
+const Drawer: React.FC<DrawerProps> = ({
     children,
-    variants = defaultVariants,
+    origin = "right",
+    variants = defaultVariants[origin],
     transition = defaultTransition,
     defaultOpen = false,
     onOpenChange,
@@ -73,35 +90,26 @@ const Dialog: React.FC<DialogProps> = ({
         [isControlled, onOpenChange]
     );
 
-    const titleId = React.useRef(
-        `dialog-title-${Math.random().toString(36).substring(2, 9)}`
-    ).current;
-    const descriptionId = React.useRef(
-        `dialog-description-${Math.random().toString(36).substring(2, 9)}`
-    ).current;
-
     React.useEffect(() => {
         onOpenChange?.(isOpen);
     }, [isOpen, onOpenChange]);
 
     return (
-        <DialogContext.Provider
-            value={{ isOpen, setIsOpen, titleId, descriptionId, variants, transition }}
-        >
+        <DrawerContext.Provider value={{ isOpen, setIsOpen, origin, variants, transition }}>
             {children}
-        </DialogContext.Provider>
+        </DrawerContext.Provider>
     );
 };
 
-// dialog trigger component
-interface DialogTriggerProps {
+// DrawerTrigger component
+interface DrawerTriggerProps {
     children: React.ReactNode;
     asChild?: boolean;
     className?: string;
 }
 
-const DialogTrigger: React.FC<DialogTriggerProps> = ({ children, asChild = false, className }) => {
-    const { setIsOpen } = useDialog();
+const DrawerTrigger: React.FC<DrawerTriggerProps> = ({ children, asChild = false, className }) => {
+    const { setIsOpen } = useDrawer();
 
     const handleClick = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -124,23 +132,24 @@ const DialogTrigger: React.FC<DialogTriggerProps> = ({ children, asChild = false
     );
 };
 
-// dialog content component
-interface DialogContentProps {
+// DrawerContent component
+interface DrawerContentProps {
     children: React.ReactNode;
     onClose?: () => void;
     className?: string;
     backdropClassName?: string;
 }
 
-const DialogContent: React.FC<DialogContentProps> = ({
+const DrawerContent: React.FC<DrawerContentProps> = ({
     children,
     onClose,
     className,
     backdropClassName
 }) => {
-    const { isOpen, setIsOpen, titleId, descriptionId, variants, transition } = useDialog();
+    const { isOpen, setIsOpen, origin, variants, transition } = useDrawer();
+
+    const drawerRef = React.useRef<HTMLDivElement>(null);
     const contentRef = React.useRef<HTMLDivElement>(null);
-    const dialogRef = React.useRef<HTMLDivElement>(null);
 
     React.useEffect(() => {
         const handleEscape = (event: KeyboardEvent) => {
@@ -192,19 +201,17 @@ const DialogContent: React.FC<DialogContentProps> = ({
         <AnimatePresence>
             {isOpen && (
                 <motion.div
-                    ref={dialogRef}
+                    ref={drawerRef}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
-                    variants={variants}
                     className={cn(
-                        "fixed inset-0 z-50 flex items-center justify-center overflow-y-auto",
-                        "bg-black/50 backdrop-blur-sm",
+                        "fixed inset-0 z-50 bg-black/50 backdrop-blur-sm",
                         backdropClassName
                     )}
                     onClick={(e) => {
-                        if (e.target === dialogRef.current) {
+                        if (e.target === drawerRef.current) {
                             setIsOpen(false);
                         }
                     }}
@@ -217,13 +224,19 @@ const DialogContent: React.FC<DialogContentProps> = ({
                         transition={transition}
                         variants={variants}
                         className={cn(
-                            "p-6 relative bg-white rounded-lg shadow-md w-full max-w-md mx-auto",
+                            "px-4 fixed bg-white shadow-md border",
+                            origin === "left" || origin === "right"
+                                ? "top-0 bottom-0 w-1/4"
+                                : "left-0 right-0 h-80",
+                            origin === "left"
+                                ? "left-0"
+                                : origin === "right"
+                                ? "right-0"
+                                : origin === "top"
+                                ? "top-0"
+                                : "bottom-0",
                             className
                         )}
-                        role="dialog"
-                        aria-modal="true"
-                        aria-labelledby={titleId}
-                        aria-describedby={descriptionId}
                     >
                         {children}
                     </motion.div>
@@ -235,47 +248,33 @@ const DialogContent: React.FC<DialogContentProps> = ({
     return typeof window !== "undefined" ? createPortal(portalContent, document.body) : null;
 };
 
-// dialog header components
-const DialogHeader: React.FC<{ children: React.ReactNode; className?: string }> = ({
+// DrawerHeader component
+const DrawerHeader: React.FC<{ children: React.ReactNode; className?: string }> = ({
     children,
     className
-}) => <div className={cn("mb-4", className)}>{children}</div>;
+}) => <div className={cn("py-4 border-b border-gray-200", className)}>{children}</div>;
 
-// dialog title component
-const DialogTitle: React.FC<{ children: React.ReactNode; className?: string }> = ({
+// DrawerTitle component
+const DrawerTitle: React.FC<{ children: React.ReactNode; className?: string }> = ({
     children,
     className
-}) => {
-    const { titleId } = useDialog();
-    return (
-        <h2 id={titleId} className={cn("text-xl font-semibold", className)}>
-            {children}
-        </h2>
-    );
-};
+}) => <h2 className={cn("text-lg font-semibold", className)}>{children}</h2>;
 
-// dialog description component
-const DialogDescription: React.FC<{ children: React.ReactNode; className?: string }> = ({
+// DrawerDescription component
+const DrawerDescription: React.FC<{ children: React.ReactNode; className?: string }> = ({
     children,
     className
-}) => {
-    const { descriptionId } = useDialog();
-    return (
-        <p id={descriptionId} className={cn("text-sm text-gray-500", className)}>
-            {children}
-        </p>
-    );
-};
+}) => <p className={cn("text-sm text-gray-500", className)}>{children}</p>;
 
-// dialog close component
-interface DialogCloseProps {
-    children: React.ReactNode;
+// DrawerClose component
+interface DrawerCloseProps {
+    children?: React.ReactNode;
     asChild?: boolean;
     className?: string;
 }
 
-const DialogClose: React.FC<DialogCloseProps> = ({ children, asChild = false, className }) => {
-    const { setIsOpen } = useDialog();
+const DrawerClose: React.FC<DrawerCloseProps> = ({ children, asChild = false, className }) => {
+    const { setIsOpen } = useDrawer();
 
     const handleClose = (e: React.MouseEvent) => {
         e.preventDefault();
@@ -292,19 +291,30 @@ const DialogClose: React.FC<DialogCloseProps> = ({ children, asChild = false, cl
     }
 
     return (
-        <button onClick={handleClose} className={cn("border", className)}>
-            {children}
+        <button
+            type="button"
+            onClick={handleClose}
+            aria-label="Close drawer"
+            className={cn(className)}
+        >
+            {children || <X className="h-4 w-4" />}
         </button>
     );
 };
 
+// DrawerFooter component
+const DrawerFooter: React.FC<{ children: React.ReactNode; className?: string }> = ({
+    children,
+    className
+}) => <div className={cn("py-4 border-t border-gray-200", className)}>{children}</div>;
+
 export {
-    Dialog,
-    DialogTrigger,
-    DialogHeader,
-    DialogContent,
-    DialogTitle,
-    DialogDescription,
-    DialogClose,
-    useDialog
+    Drawer,
+    DrawerTrigger,
+    DrawerContent,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerDescription,
+    DrawerClose,
+    DrawerFooter
 };

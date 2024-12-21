@@ -107,7 +107,7 @@ export const AccordionTrigger: React.FC<AccordionTriggerProps> = ({
     const renderIcon = () => {
         if (isOpen && customOpenIcon) return customOpenIcon;
         if (!isOpen && customClosedIcon) return customClosedIcon;
-        return <ChevronDown className="h-4 w-4 shrink-0 " />;
+        return <ChevronDown className="h-4 w-4 shrink-0" />;
     };
 
     return (

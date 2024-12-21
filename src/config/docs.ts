@@ -77,12 +77,16 @@ export const docsConfig: DocsConfig = {
                     href: `/docs/components/custom-cursor`
                 },
                 {
+                    title: "Dialog",
+                    href: `/docs/components/dialog`
+                },
+                {
                     title: "Dock",
                     href: `/docs/components/dock`
                 },
                 {
-                    title: "Dialog",
-                    href: `/docs/components/dialog`
+                    title: "Drawer",
+                    href: `/docs/components/drawer`
                 },
                 {
                     title: "Marquee",
