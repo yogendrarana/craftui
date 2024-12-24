@@ -95,6 +95,10 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Magnetic",
                     href: `/docs/components/magnetic`
+                },
+                {
+                    title: "Tabs",
+                    href: `/docs/components/tabs`
                 }
             ]
         },
