@@ -217,7 +217,7 @@ const DialogContent: React.FC<DialogContentProps> = ({
                         transition={transition}
                         variants={variants}
                         className={cn(
-                            "p-6 relative bg-white rounded-lg shadow-md w-full max-w-md mx-auto",
+                            "w-full max-w-lg mx-auto p-6 relative bg-white rounded-lg shadow-md",
                             className
                         )}
                         role="dialog"

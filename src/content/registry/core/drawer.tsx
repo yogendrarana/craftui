@@ -226,7 +226,7 @@ const DrawerContent: React.FC<DrawerContentProps> = ({
                         className={cn(
                             "px-4 fixed bg-white shadow-md border",
                             origin === "left" || origin === "right"
-                                ? "top-0 bottom-0 w-1/4"
+                                ? "top-0 bottom-0 w-full md:w-1/4"
                                 : "left-0 right-0 h-80",
                             origin === "left"
                                 ? "left-0"
