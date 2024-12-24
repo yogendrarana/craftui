@@ -55,7 +55,7 @@ export const Accordion: React.FC<AccordionProps> = ({
 
     return (
         <AccordionContext.Provider value={{ openItems, toggleItem }}>
-            <div className={cn("w-[700px] space-y-2", className)}>{children}</div>
+            <div className={cn("space-y-2", className)}>{children}</div>
         </AccordionContext.Provider>
     );
 };
@@ -157,9 +157,7 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({
         <AnimatePresence initial={false}>
             {isOpen && (
                 <motion.div initial="hidden" animate="visible" exit="hidden" variants={variants}>
-                    <div className={cn("px-4 py-2 bg-white text-gray-500", className)}>
-                        {children}
-                    </div>
+                    <div className={cn("py-2 bg-white text-gray-500", className)}>{children}</div>
                 </motion.div>
             )}
         </AnimatePresence>

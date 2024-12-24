@@ -8,9 +8,9 @@ import {
     AccordionContent
 } from "../registry/core/accordion";
 
-export default function AccordionMultipleOpen() {
+export default function AccordionDemo() {
     return (
-        <Accordion allowMultipleOpen>
+        <Accordion allowMultipleOpen className="w-full md:w-[500px]">
             <AccordionItem id="item-1">
                 <AccordionTrigger>What is React?</AccordionTrigger>
                 <AccordionContent>

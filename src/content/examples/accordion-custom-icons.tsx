@@ -9,9 +9,9 @@ import {
 } from "../registry/core/accordion";
 import { Plus, Minus } from "lucide-react";
 
-export default function AccordionCustomIcons() {
+export default function AccordionDemo() {
     return (
-        <Accordion>
+        <Accordion className="w-full md:w-[500px]">
             <AccordionItem id="item-1">
                 <AccordionItem id="item-1">
                     <AccordionTrigger

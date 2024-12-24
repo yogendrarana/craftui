@@ -8,9 +8,9 @@ import {
     AccordionContent
 } from "../registry/core/accordion";
 
-export default function AccordionSingleOpen() {
+export default function AccordionDemo() {
     return (
-        <Accordion>
+        <Accordion className="w-full md:w-[500px]">
             <AccordionItem id="item-1">
                 <AccordionTrigger>What is React?</AccordionTrigger>
                 <AccordionContent>
