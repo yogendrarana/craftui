@@ -2,7 +2,7 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import { motion, Variant, Transition, AnimatePresence } from "framer-motion";
+import { motion, Variants, Transition, AnimatePresence } from "framer-motion";
 
 type AnimationType = "line" | "none";
 
@@ -112,28 +112,16 @@ interface TabPanelProps {
     children: React.ReactNode;
     value: string;
     className?: string;
-    variants?: {
-        initial: Variant;
-        animate: Variant;
-        exit: Variant;
-    };
+    variants?: Variants;
     transition?: Transition;
 }
-
-const defaultVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 }
-};
-
-const defaultTransition = { duration: 0.25, ease: "easeInOut" };
 
 const TabPanel = ({
     children,
     value,
     className,
-    variants = defaultVariants,
-    transition = defaultTransition
+    variants = undefined,
+    transition = undefined
 }: TabPanelProps) => {
     const { activeTab } = useTabContext();
     if (activeTab !== value) return null;
