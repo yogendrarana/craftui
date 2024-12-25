@@ -69,6 +69,10 @@ export const docsConfig: DocsConfig = {
                     href: `/docs/components/accordion`
                 },
                 {
+                    title: "Button",
+                    href: `/docs/components/button`
+                },
+                {
                     title: "Confetti",
                     href: `/docs/components/confetti`
                 },
