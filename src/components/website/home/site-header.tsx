@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Shell } from "../shell";
-import { Separator } from "../ui/separator";
 import GithubStarBadge from "../github-badge";
 import DocsMobileSidebar from "../docs-mobile-sidebar";
 
@@ -15,7 +14,7 @@ export default function SiteHeader() {
                         Craft UI
                     </Link>
 
-                    <Separator className="h-1/3 mx-8 hidden md:block" orientation="vertical" />
+                    <div className="h-1/3 mx-8 hidden md:block border-l" />
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-6">

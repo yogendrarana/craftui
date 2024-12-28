@@ -1,14 +1,6 @@
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger
-} from "@/components/website/ui/accordion";
-
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import Callout from "@/components/website/callout";
 import { CopyButton } from "./website/copy-button";
 import CodeRenderer from "./website/code-renderer";
 import CodeFromPath from "./website/code-from-path";
@@ -37,15 +29,10 @@ const CustomLink = (props: any) => {
 };
 
 const components = {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
     ComponentSource,
     CodeRenderer,
     ComponentPreview,
     ComponentCodePreview,
-    Callout,
     CodeFromPath,
     Image,
     h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (

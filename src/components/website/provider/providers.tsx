@@ -1,6 +1,5 @@
 import React from "react";
 import { ThemeProvider } from "./theme-provider";
-import { TooltipProvider } from "../ui/tooltip";
 import { ViewTransitions } from "next-view-transitions";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
@@ -11,9 +10,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
             enableSystem
             disableTransitionOnChange
         >
-            <TooltipProvider>
-                <ViewTransitions>{children}</ViewTransitions>
-            </TooltipProvider>
+            <ViewTransitions>{children}</ViewTransitions>
         </ThemeProvider>
     );
 };

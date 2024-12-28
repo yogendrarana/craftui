@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
-import { Separator } from "@/components/website/ui/separator";
 import { useStarStore } from "@/store/use-star-store";
 import BrutalistButton from "@/content/registry/elements/button/brutalist-button";
 
@@ -56,7 +55,7 @@ const GithubStarBadge = ({ className }: PropTypes) => {
         >
             <BrutalistButton className="h-full w-auto">
                 GitHub
-                <Separator className="mx-2 h-6 bg-zinc-500" orientation="vertical" />
+                <div className="mx-2 h-6 bg-zinc-500 border-l" />
                 <span className="flex items-center tabular-nums">
                     {/* TODO: add animated counter */}
                     {stars}
