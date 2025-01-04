@@ -101,6 +101,10 @@ export const docsConfig: DocsConfig = {
                     href: "/docs/components/magnetic"
                 },
                 {
+                    title: "Select",
+                    href: "/docs/components/select"
+                },
+                {
                     title: "Separator",
                     href: "/docs/components/separator"
                 },
