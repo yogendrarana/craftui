@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
     Select,
@@ -9,10 +11,8 @@ import {
 } from "../registry/core/select";
 
 export default function SelectDemo() {
-    const [open, setOpen] = React.useState(false);
-
     return (
-        <Select open={open} onOpenChange={setOpen}>
+        <Select>
             <SelectTrigger>
                 <SelectValue />
             </SelectTrigger>

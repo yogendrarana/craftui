@@ -6,27 +6,22 @@ import {
     SelectTrigger,
     SelectContent,
     SelectOption,
-    SelectGroup,
     SelectValue
 } from "../registry/core/select";
 
 export default function SelectDemo() {
+    const [_, setFruit] = React.useState<string | null>(null);
+
     return (
-        <Select>
+        <Select onValueChange={(v: string) => setFruit(v)}>
             <SelectTrigger>
-                <SelectValue />
+                <SelectValue placeholder="Select fruits ..." />
             </SelectTrigger>
             <SelectContent>
-                <SelectGroup label="Frontend">
-                    <SelectOption value="react">React</SelectOption>
-                    <SelectOption value="vue">Vue</SelectOption>
-                    <SelectOption value="svelte">Svelte</SelectOption>
-                </SelectGroup>
-                <SelectGroup label="Backend">
-                    <SelectOption value="node">Node</SelectOption>
-                    <SelectOption value="deno">Deno</SelectOption>
-                    <SelectOption value="bun">Bun</SelectOption>
-                </SelectGroup>
+                <SelectOption value="apple">Apple</SelectOption>
+                <SelectOption value="banana">Banana</SelectOption>
+                <SelectOption value="orange">Orange</SelectOption>
+                <SelectOption value="mango">Mango</SelectOption>
             </SelectContent>
         </Select>
     );

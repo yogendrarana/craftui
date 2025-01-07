@@ -10,7 +10,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, X, Check, Loader2, Search } from "lucide-react";
+import { ChevronDown, X, Check, Loader, Search } from "lucide-react";
 
 type ValueType = string | string[] | null;
 
@@ -23,18 +23,20 @@ interface SelectContextType {
     searchValue: string;
     setSearchValue: React.Dispatch<React.SetStateAction<string>>;
 
+    // value
+    handleValueClear: () => void;
+    handleValueChange: (newValue: string) => void;
+
     // features
     multiple?: boolean;
     loading?: boolean;
     disabled?: boolean;
     searchable?: boolean;
     creatable?: boolean;
+    clearable?: boolean;
 
     // option management
-    selectedOptions: string[];
-    filteredOptions: string[];
     onCreateOption?: (value: string) => void;
-    loadedOptions: any[];
 
     // Navigation
     highlightedIndex: number;
@@ -43,14 +45,8 @@ interface SelectContextType {
     // Handlers
     // handleSelect: (option: string) => void;
     // handleKeyDown: (event: React.KeyboardEvent) => void;
-    handleCreateOption?: (value: string) => void;
-
-    // Custom behaviors
-    getOptionLabel?: (option: string) => string;
-    filterOption?: (option: string, searchValue: string) => boolean;
 
     // misc
-    clearable?: boolean;
     maxSelected?: number;
 }
 
@@ -80,15 +76,12 @@ interface SelectProps {
 
     // controlled value
     defaultValue?: ValueType;
-    onValueChange?: (value: ValueType) => void;
+    onValueChange?: (value: any) => void;
 
     // customizations
     className?: string;
-    
+
     // Options
-    getOptionLabel?: (option: string) => string;
-    loadOptions?: (inputValue: string) => Promise<Array<any>>;
-    filterOption?: (option: string, searchValue: string) => boolean;
     onCreateOption?: (value: string) => void;
 
     // features
@@ -110,12 +103,10 @@ interface SelectProps {
 const Select = ({
     children,
     className,
-    loadOptions,
-    filterOption,
-    getOptionLabel,
     onCreateOption,
     open,
     onOpenChange,
+    onValueChange,
     maxSelected,
     multiple = false,
     disabled = false,
@@ -128,7 +119,7 @@ const Select = ({
     const id = React.useId();
     const selectRef = React.useRef<HTMLDivElement>(null);
 
-    const [loading, setLoading] = React.useState(false);
+    const [loading, setLoading] = React.useState(externalLoading);
     const [searchValue, setSearchValue] = React.useState("");
     const [internalOpen, setInternalOpen] = React.useState(false);
     const [highlightedIndex, setHighlightedIndex] = React.useState(-1);
@@ -150,31 +141,50 @@ const Select = ({
         [isControlledOpen, onOpenChange]
     );
 
+    /**
+     *
+     * @param newValue
+     * @returns
+     *
+     * A function to handle the change in value
+     */
+    const handleValueChange = (newValue: string) => {
+        if (disabled) return;
+
+        const isValueSelected = multiple
+            ? Array.isArray(value) && value.includes(newValue)
+            : value === newValue;
+
+        if (multiple && Array.isArray(value)) {
+            const updatedValue = isValueSelected
+                ? value.filter((v) => v !== newValue)
+                : [...value, newValue];
+            setValue(updatedValue);
+            onValueChange?.(newValue);
+        } else {
+            setValue(newValue);
+            onValueChange?.(newValue);
+            setIsOpen(false);
+        }
+    };
+
+    /**
+     * Function to clear the value
+     * @returns
+     */
+    const handleValueClear = () => {
+        if (disabled) return;
+        setValue(multiple ? [] : null);
+        setIsOpen(false);
+        onValueChange?.(null);
+    };
+
     // Handle filtering of options
     React.useEffect(() => {
-        if (isOpen && searchValue && !loadOptions) {
+        if (isOpen && searchValue) {
             setLoadedOptions([]);
         }
-    }, [isOpen, loadOptions, searchValue]);
-
-    // Handle loading of async options
-    React.useEffect(() => {
-        if (loadOptions && isOpen && searchValue) {
-            const debounceTimer = setTimeout(async () => {
-                setLoading(true);
-                try {
-                    const options = await loadOptions(searchValue);
-                    setLoadedOptions(options);
-                } catch (error) {
-                    console.error("Error loading options:", error);
-                } finally {
-                    setLoading(false);
-                }
-            }, 300);
-
-            return () => clearTimeout(debounceTimer);
-        }
-    }, [loadOptions, searchValue, isOpen]);
+    }, [isOpen, searchValue]);
 
     // Close select when clicking outside
     React.useEffect(() => {
@@ -199,17 +209,15 @@ const Select = ({
         loading: loading || externalLoading,
         disabled,
         loadedOptions,
-        getOptionLabel,
-        filterOption,
         searchable,
         clearable,
         creatable,
         maxSelected,
-        selectedOptions: [],
-        filteredOptions: [],
         highlightedIndex,
         setHighlightedIndex,
-        onCreateOption
+        onCreateOption,
+        handleValueChange,
+        handleValueClear
     };
 
     return (
@@ -286,7 +294,7 @@ const SelectContent = ({ children, className, scrollbarWidth = "none" }: SelectC
         if (context.loading && !context.searchValue) {
             return (
                 <div className="px-4 py-2 text-sm text-gray-500 flex items-center gap-2">
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <Loader className="w-4 h-4 animate-spin" />
                     Loading...
                 </div>
             );
@@ -296,7 +304,7 @@ const SelectContent = ({ children, className, scrollbarWidth = "none" }: SelectC
         if (context.loading && context.searchValue) {
             return (
                 <div className="px-4 py-2 text-sm text-gray-500 flex items-center gap-2">
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <Loader className="w-4 h-4 animate-spin" />
                     Searching for &quot;{context.searchValue}&quot;...
                 </div>
             );
@@ -337,7 +345,7 @@ const SelectContent = ({ children, className, scrollbarWidth = "none" }: SelectC
                     className={cn(
                         "absolute z-50 w-full mt-1 bg-white rounded shadow-lg overflow-hidden",
                         "border border-gray-200",
-                        "max-h-80 overflow-auto",
+                        "max-h-[350px] overflow-auto",
                         className
                     )}
                     style={{
@@ -478,7 +486,7 @@ const SelectTrigger = ({ children, className }: SelectTriggerProps) => {
             <div className="flex flex-1 items-center">{children}</div>
             <div className="h-full flex gap-2 items-center justify-center">
                 {/* loading icon */}
-                {context.loading && <Loader2 className="w-4 h-4 animate-spin text-gray-400" />}
+                {context.loading && <Loader className="w-4 h-4 animate-spin text-gray-400" />}
 
                 {/* clear icon */}
                 {context.clearable &&
@@ -495,10 +503,7 @@ const SelectTrigger = ({ children, className }: SelectTriggerProps) => {
                             size={20}
                             onClick={(e) => {
                                 e.stopPropagation();
-                                if (!context.disabled) {
-                                    context.setValue(context.multiple ? [] : null);
-                                    context.setIsOpen(false);
-                                }
+                                context.handleValueClear();
                             }}
                         />
                     )}
@@ -525,6 +530,7 @@ interface SelectOptionProps {
     highlighted?: boolean;
     disabled?: boolean;
     className?: string;
+    onSelect?: () => void;
 }
 
 const SelectOption = ({
@@ -532,7 +538,8 @@ const SelectOption = ({
     children,
     highlighted,
     disabled = false,
-    className = ""
+    className = "",
+    onSelect
 }: SelectOptionProps) => {
     const context = useSelectContext();
 
@@ -540,34 +547,18 @@ const SelectOption = ({
         ? Array.isArray(context.value) && context.value.includes(value)
         : context.value === value;
 
-    const handleSelect = () => {
-        if (disabled || context.disabled) return;
-
-        if (context.multiple && Array.isArray(context.value)) {
-            const newValue = isSelected
-                ? context.value.filter((v) => v !== value)
-                : [...context.value, value];
-            context.setValue(newValue);
-        } else {
-            context.setValue(value);
-            context.setIsOpen(false);
-        }
-    };
-
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            handleSelect();
+            context.handleValueChange(value);
+            onSelect?.();
         }
     };
 
-    const label = context.getOptionLabel
-        ? context.getOptionLabel(children)
-        : children?.toString() || value;
+    const label = children?.toString() || value;
 
-    const isVisible = context.filterOption
-        ? context.filterOption(children, context.searchValue)
-        : !context.searchValue || label.toLowerCase().includes(context.searchValue.toLowerCase());
+    const isVisible =
+        context.searchValue || label.toLowerCase().includes(context.searchValue.toLowerCase());
 
     if (!isVisible) {
         return null;
@@ -585,7 +576,12 @@ const SelectOption = ({
                 className
             )}
             role="option"
-            onClick={handleSelect}
+            onClick={() => {
+                if (!disabled) {
+                    context.handleValueChange(value);
+                    onSelect?.();
+                }
+            }}
             onKeyDown={handleKeyDown}
             aria-selected={isSelected}
             aria-disabled={disabled}
