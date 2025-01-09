@@ -10,10 +10,10 @@ import {
 } from "../registry/core/select";
 
 export default function SelectDemo() {
-    const [_, setFruit] = React.useState<string | null>(null);
+    const [fruit, setFruit] = React.useState<string | null>("apple");
 
     return (
-        <Select onValueChange={(v: string) => setFruit(v)}>
+        <Select defaultValue={fruit} onValueChange={(v: string) => setFruit(v)}>
             <SelectTrigger>
                 <SelectValue placeholder="Select fruits ..." />
             </SelectTrigger>
