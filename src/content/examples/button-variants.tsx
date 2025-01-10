@@ -6,8 +6,8 @@ export default function ButtonDemo() {
         <div className="flex flex-col md:flex-row gap-2">
             <Button>Default</Button>
             <Button variant="secondary">Secondary</Button>
-            <Button variant="outline">Danger</Button>
-            <Button variant="danger">Outline</Button>
+            <Button variant="danger">Danger</Button>
+            <Button variant="outline">Outline</Button>
             <Button variant="link">Link</Button>
         </div>
     );
