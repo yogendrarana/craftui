@@ -8,7 +8,10 @@ export default function ButtonDemo() {
             <Button variant="secondary">Secondary</Button>
             <Button variant="danger">Danger</Button>
             <Button variant="outline">Outline</Button>
-            <Button variant="link">Link</Button>
+            <Button variant="gradient">Gradient</Button>
+            <Button variant="glow">Glow</Button>
+            <Button variant="glass">Glass</Button>
+
         </div>
     );
 }

@@ -7,19 +7,13 @@ date: 2024-12-25
 ---
 
 This one is almost similar to **shadcn/ui** button component with some modifications.
-If you want to see the original one, you can visit this link [**shadcn/ui**](https://ui.shadcn.com/docs/components/button)
-
-<ComponentCodePreview category="examples" name="button-demo" />
+If you want to use the original one, you can visit this link [**shadcn/ui**](https://ui.shadcn.com/docs/components/button)
 
 #### Buttons with different variants
 <ComponentCodePreview category="examples" name="button-variants" />
 
-#### Button with icon size
+#### Buttons with icons
 <ComponentCodePreview category="examples" name="button-icon" />
-
-#### Passing your custom element as a child
-<ComponentCodePreview category="examples" name="button-as-child" />
-
 
 ## Usage guide
 Install the **clsx** and **tailwind-merge** packages:
@@ -46,7 +40,7 @@ Copy and paste the following component source.
 | Prop             | Type              | Description                                                         | Default |
 | ---------------  | ----------------- | ------------------------------------------------------------------- | ------- |
 | children         | ReactNode         | The content to be rendered inside it                                | _       |
-| variants         | string            | default, danger, outline, secondary, link                           | default |
+| variants         | string            | default, danger, outline, secondary, link, gradient, glow, glass    | default |
 | size             | string            | default, sm, lg, or icon                                            | default |
 | asChild?         | string            | If false, returns button other wise returns children                | false   |
 | className?       | string            | Optional class names to style the button component                  | _       |
