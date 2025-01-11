@@ -9,7 +9,7 @@ interface BrutalistButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const BrutalistButton = forwardRef<HTMLButtonElement, BrutalistButtonProps>(
-    ({ children, icon = true, className, ...props }, ref) => {
+    ({ children, className, ...props }, ref) => {
         return (
             <button
                 ref={ref}
