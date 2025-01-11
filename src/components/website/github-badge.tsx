@@ -53,7 +53,7 @@ const GithubStarBadge = ({ className }: PropTypes) => {
             transition={{ duration: 0.5 }}
             className={cn("flex items-center", className)}
         >
-            <BrutalistButton className="h-full w-auto">
+            <BrutalistButton>
                 GitHub
                 <div className="mx-2 h-6 bg-zinc-500 border-l" />
                 <span className="flex items-center tabular-nums">

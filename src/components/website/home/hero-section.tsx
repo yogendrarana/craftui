@@ -23,8 +23,8 @@ export default function HeroSection() {
                     <Sparkles className="mr-2 h-3 w-3" />
                     Beautifully crafted UI components
                 </div>
-                <h1 className="mb-6 text-6xl md:text-8xl font-black tracking-tight space-x-4">
-                    <span className="text-primary">Craft</span>
+                <h1 className="text-primary mb-6 text-6xl md:text-8xl font-black tracking-tight space-x-4">
+                    <span>Craft</span>
                     <span className="px-5 rounded-sm">UI</span>
                 </h1>
                 <p className="mb-8 text-xl md:text-2xl text-muted-foreground max-w-2xl">
@@ -40,7 +40,7 @@ export default function HeroSection() {
                     </BrutalistButton>
                     <BrutalistButton
                         onClick={() => window.open(`${siteConfig.projectLinks.github}`, "_blank")}
-                        className="px-4 text-lg w-auto border-none bg-zinc-700 text-white"
+                        className="px-4 text-lg w-auto bg-zinc-700 text-white dark:bg-zinc-600"
                     >
                         <Github className="mr-2 h-5 w-5" />
                         Visit GitHub

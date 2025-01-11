@@ -8,7 +8,6 @@ export default function ComponentsShowcase() {
     return (
         <Shell>
             <section className="py-24 space-y-20">
-                {/* elements */}
                 <div className="flex gap-4 flex-col md:flex-row">
                     <div className="flex-1 flex-col">
                         <h2 className="text-4xl font-bold">UI Elements</h2>
@@ -18,31 +17,19 @@ export default function ComponentsShowcase() {
                     </div>
 
                     <div className="flex-1">
-                        <AnimatedLink
-                            href="/docs/elements/button"
-                            label="Button"
-                            className="border-b-0"
-                        />
-                        <AnimatedLink
-                            href="/docs/elements/loader"
-                            label="Loader"
-                            className="border-b-0"
-                        />
-                        <AnimatedLink
-                            href="/docs/elements/toggle-switch"
-                            label="Toggle"
-                            className="border-b-0"
-                        />
-                        <AnimatedLink
-                            href="/docs/elements/checkbox"
-                            label="Checkbox"
-                            className="border-b-0"
-                        />
-                        <AnimatedLink
-                            href="/docs/elements/button"
-                            label="...explore more"
-                            className="bg-black text-white border-t-0"
-                        />
+                        <AnimatedLink href="/docs/elements/button" className="border-b-0">
+                            Button
+                        </AnimatedLink>
+                        <AnimatedLink href="/docs/elements/loader" className="border-b-0">
+                            Loader
+                        </AnimatedLink>
+                        <AnimatedLink href="/docs/elements/toggle-switch" className="border-b-0">
+                            Toggle
+                        </AnimatedLink>
+                        <AnimatedLink href="/docs/elements/checkbox" className="border-b-0">
+                            Checkbox
+                        </AnimatedLink>
+                        <AnimatedLink href="/docs/elements/button">... and more</AnimatedLink>
                     </div>
                 </div>
             </section>

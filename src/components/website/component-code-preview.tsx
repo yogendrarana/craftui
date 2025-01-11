@@ -6,11 +6,11 @@ import { RotateCwIcon } from "lucide-react";
 
 import CodeRenderer from "@/components/website/code-renderer";
 import { Previews } from "@/content/previews";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/website/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 /**
  * This component is used to preview a component and code from the registry.
- * TODO: Add support for reading code from path is provided
+ * TODO: Add support for reading code from path if provided
  */
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {

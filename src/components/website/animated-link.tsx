@@ -5,42 +5,45 @@ import { ArrowRight } from "lucide-react";
 
 interface AnimatedLinkProps {
     href: string;
-    label: string;
     className?: string;
     isExternal?: boolean;
+    children: string;
 }
 
 export const AnimatedLink: React.FC<AnimatedLinkProps> = ({
     href,
-    label,
     isExternal = false,
-    className
+    className,
+    children
 }) => {
     return (
         <Link href={href} target={isExternal ? "_blank" : "_self"} className="cursor-pointer">
             <div
                 className={cn(
-                    "group relative h-16 overflow-hidden border border-gray-200 transition-all ease-in-out duration-500",
+                    "group relative h-16 overflow-hidden border transition-all ease-in-out duration-500",
+                    "border-border",
                     className
                 )}
             >
                 <div
                     className={cn(
                         "h-full p-4 flex items-center justify-between gap-4",
-                        "group-hover:-translate-y-full transition-transform transform duration-500"
+                        "group-hover:-translate-y-full transition-transform transform duration-500",
+                        "bg-background text-foreground"
                     )}
                 >
-                    <span>{label}</span>
+                    <span>{children}</span>
                     <ArrowRight size={20} className="-rotate-45" />
                 </div>
 
                 <div
                     className={cn(
-                        "h-full p-4 flex items-center justify-between gap-4 text-white bg-black",
-                        "group-hover:-translate-y-full transition-transform transform duration-500"
+                        "h-full p-4 flex items-center justify-between gap-4",
+                        "group-hover:-translate-y-full transition-transform transform duration-500",
+                        "bg-foreground text-background"
                     )}
                 >
-                    <span>{label}</span>
+                    <span>{children}</span>
                     <ArrowRight size={20} className="-rotate-45" />
                 </div>
             </div>

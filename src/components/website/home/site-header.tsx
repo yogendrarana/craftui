@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Shell } from "../shell";
+import ToggleSwitch from "../toggle-mode";
 import GithubStarBadge from "../github-badge";
 import DocsMobileSidebar from "../docs-mobile-sidebar";
 
@@ -37,8 +38,9 @@ export default function SiteHeader() {
                             Components
                         </Link>
                     </div>
-                    <div className="ml-auto hidden md:block">
+                    <div className="ml-auto hidden md:flex items-center gap-4">
                         <GithubStarBadge className="h-11 rounded-sm shadow-md" />
+                        <ToggleSwitch />
                     </div>
 
                     <div className="md:hidden ml-auto">

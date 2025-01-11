@@ -8,7 +8,7 @@ import ComponentPreview from "./website/component-preview";
 import { useMDXComponent } from "@content-collections/mdx/react";
 import ComponentSource from "@/components/website/component-source";
 import ComponentCodePreview from "@/components/website/component-code-preview";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/website/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const CustomLink = (props: any) => {
     const href = props.href;

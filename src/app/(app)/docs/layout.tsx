@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Shell } from "@/components/website/shell";
 import DocsSidebar from "@/components/website/docs-sidebar";
-import { ScrollArea } from "@/components/website/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface PageProps {
     children: React.ReactNode;

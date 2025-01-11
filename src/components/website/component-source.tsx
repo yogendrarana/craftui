@@ -4,8 +4,8 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import CodeRenderer from "./code-renderer";
 import { Previews } from "@/content/previews";
-import { Button } from "@/components/website/ui/button";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/website/ui/collapsible";
+import { Button } from "@/components/ui/button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     name?: string;

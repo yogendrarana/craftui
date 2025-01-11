@@ -32,7 +32,7 @@ export default function ComponentCodePreviewDialog({
                 <ComponentPreview
                     component={component}
                     className={cn(
-                        "cursor-pointer aspect-square border bg-[#fafafa]",
+                        "cursor-pointer aspect-square border",
                         "transition-all duration-300 ease-in-out"
                     )}
                 />
