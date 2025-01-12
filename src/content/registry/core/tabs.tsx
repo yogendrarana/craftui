@@ -23,6 +23,10 @@ const useTabContext = () => {
     return context;
 };
 
+/* -------------------------------------------------------------------------------------------------
+ * Tabs component
+ * -------------------------------------------------------------------------------------------------
+ */
 interface TabsProps {
     children: React.ReactNode;
     defaultTab: string;
@@ -47,6 +51,10 @@ const Tabs = ({
     );
 };
 
+/* -------------------------------------------------------------------------------------------------
+ * TabList component
+ * -------------------------------------------------------------------------------------------------
+ */
 interface TabListProps {
     children: React.ReactNode;
     className?: string;
@@ -54,12 +62,21 @@ interface TabListProps {
 
 const TabList = ({ children, className }: TabListProps) => {
     return (
-        <div className={cn("relative flex gap-2 border-b border-gray-200", className)}>
+        <div
+            className={cn(
+                "relative flex gap-2 border-b border-gray-200 dark:border-zinc-700",
+                className
+            )}
+        >
             {children}
         </div>
     );
 };
 
+/* -------------------------------------------------------------------------------------------------
+ * Tab component
+ * -------------------------------------------------------------------------------------------------
+ */
 interface TabProps {
     children: React.ReactNode;
     value: string;
@@ -76,7 +93,8 @@ const Tab = ({ children, value, className, icon }: TabProps) => {
             case "line":
                 return {
                     layoutId: `activeTab-${instanceId}`,
-                    className: "absolute -bottom-[1px] left-0 right-0 h-[2px] bg-black rounded-full"
+                    className:
+                        "absolute -bottom-[1px] left-0 right-0 h-[2px] rounded-full bg-black dark:bg-white"
                 };
             default:
                 return {};
@@ -88,7 +106,10 @@ const Tab = ({ children, value, className, icon }: TabProps) => {
             onClick={() => setActiveTab(value)}
             className={cn(
                 "relative px-4 py-2 text-sm font-medium transition-colors flex items-center gap-2",
-                isActive ? "text-black" : "text-[#707070] hover:text-black",
+                {
+                    "text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white":
+                        !isActive
+                },
                 className
             )}
         >
@@ -99,14 +120,28 @@ const Tab = ({ children, value, className, icon }: TabProps) => {
     );
 };
 
+/* -------------------------------------------------------------------------------------------------
+ * TabPanels component
+ * -------------------------------------------------------------------------------------------------
+ */
+
 interface TabPanelsProps {
     children: React.ReactNode;
     className?: string;
 }
 
 const TabPanels = ({ children, className }: TabPanelsProps) => {
-    return <div className={cn("mt-3", className)}>{children}</div>;
+    return (
+        <div className={cn("mt-3 p-3 rounded border dark:border-zinc-700", className)}>
+            {children}
+        </div>
+    );
 };
+
+/* -------------------------------------------------------------------------------------------------
+ * TabPanel component
+ * -------------------------------------------------------------------------------------------------
+ */
 
 interface TabPanelProps {
     children: React.ReactNode;
@@ -135,7 +170,7 @@ const TabPanel = ({
                     exit="exit"
                     variants={variants}
                     transition={transition}
-                    className={cn("p-3 bg-gray-100 rounded-sm", className)}
+                    className={cn(className)}
                 >
                     {children}
                 </motion.div>

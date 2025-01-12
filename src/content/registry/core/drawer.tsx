@@ -126,7 +126,15 @@ const DrawerTrigger: React.FC<DrawerTriggerProps> = ({ children, asChild = false
     }
 
     return (
-        <button onClick={handleClick} className={className}>
+        <button
+            onClick={handleClick}
+            className={cn(
+                "px-4 py-2 text-sm font-medium rounded-md border transition-colors focus:outline-none",
+                "bg-white text-black border-gray-200 hover:bg-gray-200 focus:ring-2 focus:ring-gray-300",
+                "dark:bg-black dark:text-white dark:border-zinc-700 dark:hover:bg-gray-800 dark:focus:ring-gray-600",
+                className
+            )}
+        >
             {children}
         </button>
     );
@@ -208,7 +216,8 @@ const DrawerContent: React.FC<DrawerContentProps> = ({
                     transition={{ duration: 0.2 }}
                     className={cn(
                         "fixed inset-0 z-50 bg-black/50 backdrop-blur-sm",
-                        backdropClassName
+                        backdropClassName,
+                        "dark:bg-black/70"
                     )}
                     onClick={(e) => {
                         if (e.target === drawerRef.current) {
@@ -225,6 +234,7 @@ const DrawerContent: React.FC<DrawerContentProps> = ({
                         variants={variants}
                         className={cn(
                             "px-4 fixed bg-white shadow-md border",
+                            "dark:bg-zinc-900 dark:text-white dark:border-zinc-800",
                             origin === "left" || origin === "right"
                                 ? "top-0 bottom-0 w-full md:w-1/4"
                                 : "left-0 right-0 h-80",
@@ -252,19 +262,23 @@ const DrawerContent: React.FC<DrawerContentProps> = ({
 const DrawerHeader: React.FC<{ children: React.ReactNode; className?: string }> = ({
     children,
     className
-}) => <div className={cn("py-4 border-b border-gray-200", className)}>{children}</div>;
+}) => (
+    <div className={cn("py-4 border-b border-gray-200 dark:border-zinc-700", className)}>
+        {children}
+    </div>
+);
 
 // DrawerTitle component
 const DrawerTitle: React.FC<{ children: React.ReactNode; className?: string }> = ({
     children,
     className
-}) => <h2 className={cn("text-lg font-semibold", className)}>{children}</h2>;
+}) => <h2 className={cn("text-xl font-semibold dark:text-white", className)}>{children}</h2>;
 
 // DrawerDescription component
 const DrawerDescription: React.FC<{ children: React.ReactNode; className?: string }> = ({
     children,
     className
-}) => <p className={cn("text-sm text-gray-500", className)}>{children}</p>;
+}) => <p className={cn("text-sm text-gray-400 dark:text-gray-300", className)}>{children}</p>;
 
 // DrawerClose component
 interface DrawerCloseProps {
@@ -273,6 +287,7 @@ interface DrawerCloseProps {
     className?: string;
 }
 
+// DrawerClose component
 const DrawerClose: React.FC<DrawerCloseProps> = ({ children, asChild = false, className }) => {
     const { setIsOpen } = useDrawer();
 
@@ -295,7 +310,11 @@ const DrawerClose: React.FC<DrawerCloseProps> = ({ children, asChild = false, cl
             type="button"
             onClick={handleClose}
             aria-label="Close drawer"
-            className={cn(className)}
+            className={cn(
+                "text-sm border border-gray-200  hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100",
+                "dark:text-gray-300 dark:border-zinc-700 dark:hover:text-white dark:hover:bg-gray-800 dark:focus:ring-zinc-800",
+                className
+            )}
         >
             {children || <X className="h-4 w-4" />}
         </button>
@@ -306,7 +325,11 @@ const DrawerClose: React.FC<DrawerCloseProps> = ({ children, asChild = false, cl
 const DrawerFooter: React.FC<{ children: React.ReactNode; className?: string }> = ({
     children,
     className
-}) => <div className={cn("py-4 border-t border-gray-200", className)}>{children}</div>;
+}) => (
+    <div className={cn("py-4 border-t border-gray-200 dark:border-zinc-700", className)}>
+        {children}
+    </div>
+);
 
 export {
     Drawer,

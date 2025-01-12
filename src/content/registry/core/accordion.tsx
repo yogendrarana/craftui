@@ -27,7 +27,11 @@ const defaultVariants: Variants = {
     }
 };
 
-// Accordion
+/* -------------------------------------------------------------------------------------------------
+ * Accordion (provider) component
+ * -------------------------------------------------------------------------------------------------
+ */
+
 interface AccordionProps {
     children: React.ReactNode;
     allowMultipleOpen?: boolean;
@@ -35,7 +39,7 @@ interface AccordionProps {
     className?: string;
 }
 
-export const Accordion: React.FC<AccordionProps> = ({
+const Accordion: React.FC<AccordionProps> = ({
     children,
     allowMultipleOpen = false,
     defaultOpen = [],
@@ -60,7 +64,10 @@ export const Accordion: React.FC<AccordionProps> = ({
     );
 };
 
-// AccordionItem component
+/* -------------------------------------------------------------------------------------------------
+ * AccordionItem component
+ * -------------------------------------------------------------------------------------------------
+ */
 interface AccordionItemProps {
     children: React.ReactNode;
     id: string;
@@ -69,7 +76,7 @@ interface AccordionItemProps {
 
 const AccordionItemContext = createContext<{ id: string } | undefined>(undefined);
 
-export const AccordionItem: React.FC<AccordionItemProps> = ({ children, id, className = "" }) => {
+const AccordionItem: React.FC<AccordionItemProps> = ({ children, id, className = "" }) => {
     return (
         <AccordionItemContext.Provider value={{ id }}>
             <div className={cn("overflow-hidden", className)} data-state={id}>
@@ -79,7 +86,10 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({ children, id, clas
     );
 };
 
-// AccordionTrigger component
+/* -------------------------------------------------------------------------------------------------
+ * AccordionTrigger component
+ * -------------------------------------------------------------------------------------------------
+ */
 interface AccordionTriggerProps {
     children: React.ReactNode;
     className?: string;
@@ -88,7 +98,7 @@ interface AccordionTriggerProps {
     customClosedIcon?: React.ReactNode;
 }
 
-export const AccordionTrigger: React.FC<AccordionTriggerProps> = ({
+const AccordionTrigger: React.FC<AccordionTriggerProps> = ({
     children,
     className = "",
     customOpenIcon,
@@ -113,7 +123,8 @@ export const AccordionTrigger: React.FC<AccordionTriggerProps> = ({
     return (
         <motion.button
             className={cn(
-                "w-full py-2 border-b flex items-center justify-between text-left bg-white hover:underline",
+                "w-full py-2 border-b flex items-center justify-between text-left",
+                "hover:underline",
                 className
             )}
             onClick={() => toggleItem(id)}
@@ -131,14 +142,17 @@ export const AccordionTrigger: React.FC<AccordionTriggerProps> = ({
     );
 };
 
-// AccordionContent component
+/* -------------------------------------------------------------------------------------------------
+ * AccordionContent component
+ * -------------------------------------------------------------------------------------------------
+ */
 interface AccordionContentProps {
     children: React.ReactNode;
     className?: string;
     variants?: Variants;
 }
 
-export const AccordionContent: React.FC<AccordionContentProps> = ({
+const AccordionContent: React.FC<AccordionContentProps> = ({
     children,
     className = "",
     variants = defaultVariants
@@ -157,9 +171,13 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({
         <AnimatePresence initial={false}>
             {isOpen && (
                 <motion.div initial="hidden" animate="visible" exit="hidden" variants={variants}>
-                    <div className={cn("py-2 bg-white text-gray-500", className)}>{children}</div>
+                    <div className={cn("py-2 text-gray-500", "dark:text-gray-400", className)}>
+                        {children}
+                    </div>
                 </motion.div>
             )}
         </AnimatePresence>
     );
 };
+
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

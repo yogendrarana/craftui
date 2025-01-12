@@ -288,22 +288,19 @@ const SelectContent = ({ children, className, scrollbarWidth = "none" }: SelectC
         setFilteredChildren(result || []);
     }, [children, context.searchValue]);
 
-    // content
     const content = React.useMemo(() => {
-        // Show loading state when initial load
         if (context.loading && !context.searchValue) {
             return (
-                <div className="px-4 py-2 text-sm text-gray-500 flex items-center gap-2">
+                <div className="px-4 py-2 text-sm flex items-center gap-2">
                     <Loader className="w-4 h-4 animate-spin" />
                     Loading...
                 </div>
             );
         }
 
-        // Show loading state during async search
         if (context.loading && context.searchValue) {
             return (
-                <div className="px-4 py-2 text-sm text-gray-500 flex items-center gap-2">
+                <div className="px-4 py-2 text-sm flex items-center gap-2">
                     <Loader className="w-4 h-4 animate-spin" />
                     Searching for &quot;{context.searchValue}&quot;...
                 </div>
@@ -314,7 +311,7 @@ const SelectContent = ({ children, className, scrollbarWidth = "none" }: SelectC
             if (context.creatable && context.searchValue) {
                 return (
                     <div
-                        className="flex items-center px-2 py-1.5 text-sm text-blue-600 cursor-pointer hover:bg-blue-50"
+                        className="flex items-center px-2 py-1.5 text-sm text-primary cursor-pointer hover:bg-primary/10"
                         onClick={() => context.onCreateOption?.(context.searchValue)}
                     >
                         Cannot find &quot;{context.searchValue}&quot;. Create instead?
@@ -323,7 +320,7 @@ const SelectContent = ({ children, className, scrollbarWidth = "none" }: SelectC
             }
 
             return (
-                <div className="py-6 text-center text-sm text-gray-500">
+                <div className="py-6 text-center text-sm text-muted-foreground">
                     {context.searchValue ? "No results found" : "No options available"}
                 </div>
             );
@@ -343,9 +340,8 @@ const SelectContent = ({ children, className, scrollbarWidth = "none" }: SelectC
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
                     className={cn(
-                        "absolute z-50 w-full mt-1 bg-white rounded shadow-lg overflow-hidden",
-                        "border border-gray-200",
-                        "max-h-[350px] overflow-auto",
+                        "max-h-[350px] absolute z-50 w-full mt-1 bg-white rounded shadow-lg overflow-hidden border border-gray-200",
+                        "dark:bg-zinc-800 dark:border-zinc-700",
                         className
                     )}
                     style={{
@@ -354,12 +350,12 @@ const SelectContent = ({ children, className, scrollbarWidth = "none" }: SelectC
                     role="listbox"
                 >
                     {context.searchable && (
-                        <div className="relative flex items-center px-2 border-b border-gray-4200">
+                        <div className="relative flex items-center px-2 border-b border-gray-200 dark:border-zinc-700">
                             <Search size={16} className="text-gray-400" />
                             <input
                                 autoFocus
                                 type="text"
-                                className="sticky top-0 w-full px-3 py-2 text-sm focus:outline-none"
+                                className="sticky top-0 w-full px-3 py-2 text-sm bg-transparent text-foreground placeholder-gray-400 focus:outline-none"
                                 placeholder="Search..."
                                 value={context.searchValue}
                                 onChange={(e) => context.setSearchValue(e.target.value)}
@@ -388,7 +384,12 @@ interface SelectGroupProps {
 const SelectGroup = ({ children, className, label }: SelectGroupProps) => {
     return (
         <div className={cn("py-1", className)} role="group" aria-label={label}>
-            <div className="px-4 py-1.5 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+            <div
+                className={cn(
+                    "px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-gray-400",
+                    " dark:text-gray-500"
+                )}
+            >
                 {label}
             </div>
             {children}
@@ -419,7 +420,10 @@ const SelectValue = ({ placeholder = "Select an option ..." }: SelectValueProps)
                         {context.value.map((val) => (
                             <span
                                 key={val}
-                                className="inline-flex items-center px-2 py-0.5 bg-blue-100 rounded-full text-xs"
+                                className={cn(
+                                    "px-2 py-0.5 inline-flex items-center rounded-full text-xs bg-gray-200",
+                                    "dark:bg-zinc-700"
+                                )}
                             >
                                 {val}
                                 <X
@@ -443,11 +447,6 @@ const SelectValue = ({ placeholder = "Select an option ..." }: SelectValueProps)
 
     return (
         <span
-            onClick={() => {
-                if (!context.isOpen) {
-                    context.setIsOpen(true);
-                }
-            }}
             className={cn("h-full w-full flex items-center", { "text-gray-500": !context.value })}
         >
             {context.value || placeholder}
@@ -478,7 +477,9 @@ const SelectTrigger = ({ children, className }: SelectTriggerProps) => {
                 }
             }}
             className={cn(
-                "w-full px-3 py-2 flex items-center justify-between text-sm border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus-within:ring-2 focus-within:ring-gray-200",
+                "w-full px-3 py-2 flex items-center justify-between text-sm border rounded-md focus-within:ring-2",
+                "border border-gray-200 text-foreground hover:bg-gray-50 focus-within:ring-gray-100",
+                "dark:border-zinc-700 dark:bg-zinc-800",
                 context.disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
                 className
             )}
@@ -486,7 +487,9 @@ const SelectTrigger = ({ children, className }: SelectTriggerProps) => {
             <div className="flex flex-1 items-center">{children}</div>
             <div className="h-full flex gap-2 items-center justify-center">
                 {/* loading icon */}
-                {context.loading && <Loader className="w-4 h-4 animate-spin text-gray-400" />}
+                {context.loading && (
+                    <Loader className="w-4 h-4 animate-spin text-gray-500 dark:text-gray-100" />
+                )}
 
                 {/* clear icon */}
                 {context.clearable &&
@@ -494,12 +497,9 @@ const SelectTrigger = ({ children, className }: SelectTriggerProps) => {
                         ? Array.isArray(context.value) && context.value.length > 0
                         : context.value) && (
                         <X
-                            className={cn(
-                                "p-1 transition-transform duration-200 rounded-full hover:bg-gray-200",
-                                {
-                                    "text-gray-400": context.disabled
-                                }
-                            )}
+                            className={cn("p-1 transition-transform duration-200 rounded-full", {
+                                "text-gray-400 dark:text-gray-500": context.disabled
+                            })}
                             size={20}
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -510,7 +510,7 @@ const SelectTrigger = ({ children, className }: SelectTriggerProps) => {
 
                 <ChevronDown
                     className={cn("transition-transform duration-200", {
-                        "text-gray-400": context.disabled,
+                        "text-gray-400 dark:text-gray-500": context.disabled,
                         "transform rotate-180": context.isOpen
                     })}
                     size={18}
@@ -536,7 +536,6 @@ interface SelectOptionProps {
 const SelectOption = ({
     value,
     children,
-    highlighted,
     disabled = false,
     className = "",
     onSelect
@@ -567,11 +566,11 @@ const SelectOption = ({
     return (
         <div
             className={cn(
-                "px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 flex items-center justify-between",
+                "px-4 py-2 text-sm cursor-pointer flex items-center justify-between hover:bg-gray-100",
+                "dark:hover:bg-zinc-700/50",
                 {
                     "opacity-50 cursor-not-allowed": disabled,
-                    "bg-gray-100": highlighted,
-                    "bg-blue-50 text-blue-600": isSelected
+                    "bg-gray-100 dark:bg-zinc-700/50": isSelected
                 },
                 className
             )}
@@ -588,7 +587,7 @@ const SelectOption = ({
             tabIndex={0}
         >
             <span>{label}</span>
-            {isSelected && <Check className="w-4 h-4 text-blue-500" />}
+            {isSelected && <Check className="w-4 h-4 text-primary" />}
         </div>
     );
 };

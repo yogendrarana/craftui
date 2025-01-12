@@ -18,7 +18,7 @@ const BrutalistButton = forwardRef<HTMLButtonElement, BrutalistButtonProps>(
                     "hover:bg-gray-100 transition-all duration-200",
                     "active:translate-x-1 active:translate-y-1 active:shadow-[2px_2px_0_0_#000]",
                     "disabled:opacity-50 disabled:pointer-events-none",
-                    "dark:border-gray-300 dark:bg-black dark:text-white dark:shadow-gray-300 dark:hover:bg-gray-900",
+                    "dark:border-gray-800 dark:bg-black dark:text-white dark:shadow-gray-800 dark:hover:bg-gray-900",
                     className
                 )}
                 {...props}

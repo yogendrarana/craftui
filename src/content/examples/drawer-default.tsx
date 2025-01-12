@@ -15,16 +15,14 @@ import {
 export default function DrawerDemo() {
     return (
         <Drawer>
-            <DrawerTrigger>
-                <button className="px-4 py-2 bg-gray-200 rounded">Open Drawer</button>
-            </DrawerTrigger>
+            <DrawerTrigger asChild>Open Drawer</DrawerTrigger>
             <DrawerContent className="flex flex-col h-full">
                 <DrawerHeader className="flex justify-between items-center">
                     <div>
                         <DrawerTitle>Title</DrawerTitle>
                         <DrawerDescription>This is the description of the drawer</DrawerDescription>
                     </div>
-                    <DrawerClose className="p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+                    <DrawerClose className="p-2 rounded-xl" />
                 </DrawerHeader>
 
                 {/* your content */}
@@ -33,10 +31,8 @@ export default function DrawerDemo() {
                 </div>
 
                 <DrawerFooter className="flex gap-2 justify-end">
-                    <button className="px-5 py-1.5 text-sm border rounded-sm shadow-sm hover:bg-accent">
-                        Close
-                    </button>
-                    <button className="px-5 py-1.5 text-sm bg-black text-white border rounded-sm">
+                    <DrawerClose className="px-5 py-0.5">Close</DrawerClose>
+                    <button className="px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm">
                         Save
                     </button>
                 </DrawerFooter>

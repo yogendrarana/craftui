@@ -37,7 +37,7 @@ export function DockItem({ icon, label, onClick, className, ...props }: DockItem
     return (
         <motion.div
             className={cn(
-                "border relative flex items-center justify-center w-12 h-12 rounded-full shadow-md cursor-pointer",
+                "relative flex items-center justify-center w-12 h-12 rounded-full shadow-md cursor-pointer border dark:bg-neutral-900",
                 className
             )}
             onHoverStart={() => setIsHovered(true)}
@@ -50,7 +50,7 @@ export function DockItem({ icon, label, onClick, className, ...props }: DockItem
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="absolute bottom-full mb-2 px-2 py-1 bg-black/75 text-white text-xs rounded"
+                    className="absolute bottom-full mb-2 px-2 py-1 bg-black/75 text-white dark:bg-white dark:text-black text-xs rounded"
                 >
                     {label}
                 </motion.div>
