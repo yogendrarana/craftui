@@ -17,7 +17,7 @@ export default function LeapFrog() {
                     key={index}
                     className={`
                         absolute top-0 left-0 flex items-center justify-start w-full h-full
-                        before:content-[''] before:block before:h-2 before:w-2 before:rounded-full before:bg-black
+                        before:content-[''] before:block before:h-2 before:w-2 before:rounded-full before:bg-black dark:before:bg-white
                         before:transition-colors before:duration-300 before:ease-in-out
                         animate-leapFrog
                     `}

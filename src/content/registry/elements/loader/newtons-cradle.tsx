@@ -5,17 +5,17 @@ import React from "react";
 export default function NewtonsCradle() {
     return (
         <div className="h-10 w-10 relative flex items-center justify-center">
-            <div className="dot animate-swing">
-                <div className="dot-inner" />
-            </div>
-            <div className="dot animate-swing2">
-                <div className="dot-inner" />
+            <div className="dot">
+                <div className="dot-inner bg-black dark:bg-white"></div>
             </div>
             <div className="dot">
-                <div className="dot-inner" />
+                <div className="dot-inner bg-black dark:bg-white"></div>
             </div>
             <div className="dot">
-                <div className="dot-inner" />
+                <div className="dot-inner bg-black dark:bg-white"></div>
+            </div>
+            <div className="dot">
+                <div className="dot-inner bg-black dark:bg-white"></div>
             </div>
 
             <style jsx>{`
@@ -30,14 +30,12 @@ export default function NewtonsCradle() {
                     transform-origin: center top;
                 }
 
-                .dot-inner {a
+                .dot-inner {
                     content: "";
                     display: block;
                     width: 100%;
                     height: 25%;
                     border-radius: 50%;
-                    background-color: black;
-                    transition: background-color 0.3s ease;
                 }
 
                 .dot:first-child {

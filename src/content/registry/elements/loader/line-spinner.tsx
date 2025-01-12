@@ -9,7 +9,7 @@ export default function LineSpinner() {
             {[...Array(12)].map((_, i) => (
                 <motion.div
                     key={i}
-                    className="absolute w-1 h-4 bg-primary"
+                    className="absolute w-1 h-4 rounded-full bg-black dark:bg-white"
                     style={{
                         left: "50%",
                         top: "50%",

@@ -12,7 +12,7 @@ export default function Spiral() {
                     style={{ transform: `rotate(${index * 45}deg)` }}
                 >
                     <div
-                        className={`h-[20%] w-[20%] rounded-full bg-black opacity-50 animate-pulse`}
+                        className={`h-[20%] w-[20%] rounded-full bg-black dark:bg-white animate-pulse`}
                         style={{
                             animationDelay: `-${index * 0.1125}s`,
                             animationDuration: "0.9s",

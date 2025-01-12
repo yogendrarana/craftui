@@ -53,11 +53,6 @@ export const docsConfig: DocsConfig = {
                     title: "Toggle Switch",
                     href: "/docs/elements/toggle-switch",
                     items: []
-                },
-                {
-                    title: "Input & Textarea",
-                    href: "/docs/elements/input-textarea",
-                    items: []
                 }
             ]
         },
