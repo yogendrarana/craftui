@@ -131,7 +131,7 @@ const DrawerTrigger: React.FC<DrawerTriggerProps> = ({ children, asChild = false
             className={cn(
                 "px-4 py-2 text-sm font-medium rounded-md border transition-colors focus:outline-none",
                 "bg-white text-black border-gray-200 hover:bg-gray-200 focus:ring-2 focus:ring-gray-300",
-                "dark:bg-black dark:text-white dark:border-zinc-700 dark:hover:bg-gray-800 dark:focus:ring-gray-600",
+                "dark:bg-zinc-800 dark:text-white dark:border-zinc-700 dark:hover:bg-gray-800 dark:focus:ring-gray-600",
                 className
             )}
         >
@@ -278,7 +278,7 @@ const DrawerTitle: React.FC<{ children: React.ReactNode; className?: string }> =
 const DrawerDescription: React.FC<{ children: React.ReactNode; className?: string }> = ({
     children,
     className
-}) => <p className={cn("text-sm text-gray-400 dark:text-gray-300", className)}>{children}</p>;
+}) => <p className={cn("text-sm text-gray-400 dark:text-gray-500", className)}>{children}</p>;
 
 // DrawerClose component
 interface DrawerCloseProps {
@@ -311,7 +311,7 @@ const DrawerClose: React.FC<DrawerCloseProps> = ({ children, asChild = false, cl
             onClick={handleClose}
             aria-label="Close drawer"
             className={cn(
-                "text-sm border border-gray-200  hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100",
+                "text-sm border border-gray-200 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100",
                 "dark:text-gray-300 dark:border-zinc-700 dark:hover:text-white dark:hover:bg-gray-800 dark:focus:ring-zinc-800",
                 className
             )}

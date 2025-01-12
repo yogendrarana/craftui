@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { createPortal } from "react-dom";
 import { Transition, Variants } from "framer-motion";
 import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
 
 // dialog context
 const DialogContext = React.createContext<{
@@ -25,7 +26,10 @@ const useDialog = () => {
     return context;
 };
 
-// dialog component
+/* -------------------------------------------------------------------------------------------------
+ * Dialog (provider) component
+ * -------------------------------------------------------------------------------------------------
+ */
 interface DialogProps {
     children: React.ReactNode;
     variants?: Variants;
@@ -93,7 +97,10 @@ const Dialog: React.FC<DialogProps> = ({
     );
 };
 
-// dialog trigger component
+/* -------------------------------------------------------------------------------------------------
+ * DialogTrigger component
+ * -------------------------------------------------------------------------------------------------
+ */
 interface DialogTriggerProps {
     children: React.ReactNode;
     asChild?: boolean;
@@ -118,13 +125,24 @@ const DialogTrigger: React.FC<DialogTriggerProps> = ({ children, asChild = false
     }
 
     return (
-        <button onClick={handleClick} className={className}>
+        <button
+            onClick={handleClick}
+            className={cn(
+                "px-4 py-2 text-sm font-medium rounded-md border transition-colors focus:outline-none",
+                "bg-white text-black border-gray-200 hover:bg-gray-200 focus:ring-2 focus:ring-gray-300",
+                "dark:bg-zinc-800 dark:text-white dark:border-zinc-700 dark:hover:bg-gray-800 dark:focus:ring-gray-600",
+                className
+            )}
+        >
             {children}
         </button>
     );
 };
 
-// dialog content component
+/* -------------------------------------------------------------------------------------------------
+ * DialogContent component
+ * -------------------------------------------------------------------------------------------------
+ */
 interface DialogContentProps {
     children: React.ReactNode;
     onClose?: () => void;
@@ -218,6 +236,7 @@ const DialogContent: React.FC<DialogContentProps> = ({
                         variants={variants}
                         className={cn(
                             "w-full max-w-lg mx-auto p-6 relative bg-white rounded-lg shadow-md",
+                            "dark:bg-zinc-800 dark:shadow-lg",
                             className
                         )}
                         role="dialog"
@@ -235,41 +254,53 @@ const DialogContent: React.FC<DialogContentProps> = ({
     return typeof window !== "undefined" ? createPortal(portalContent, document.body) : null;
 };
 
-// dialog header components
+/* -------------------------------------------------------------------------------------------------
+ * DialogHeader component
+ * -------------------------------------------------------------------------------------------------
+ */
 const DialogHeader: React.FC<{ children: React.ReactNode; className?: string }> = ({
     children,
     className
 }) => <div className={cn("mb-4", className)}>{children}</div>;
 
-// dialog title component
+/* -------------------------------------------------------------------------------------------------
+ * DialogTitle component
+ * -------------------------------------------------------------------------------------------------
+ */
 const DialogTitle: React.FC<{ children: React.ReactNode; className?: string }> = ({
     children,
     className
 }) => {
     const { titleId } = useDialog();
     return (
-        <h2 id={titleId} className={cn("text-xl font-semibold", className)}>
+        <h2 id={titleId} className={cn("text-xl font-semibold dark:text-white", className)}>
             {children}
         </h2>
     );
 };
 
-// dialog description component
+/* -------------------------------------------------------------------------------------------------
+ * DialogDscription component
+ * -------------------------------------------------------------------------------------------------
+ */
 const DialogDescription: React.FC<{ children: React.ReactNode; className?: string }> = ({
     children,
     className
 }) => {
     const { descriptionId } = useDialog();
     return (
-        <p id={descriptionId} className={cn("text-sm text-gray-500", className)}>
+        <p id={descriptionId} className={cn("text-sm text-gray-400 dark:text-gray-500", className)}>
             {children}
         </p>
     );
 };
 
-// dialog close component
+/* -------------------------------------------------------------------------------------------------
+ * DialogClose component
+ * -------------------------------------------------------------------------------------------------
+ */
 interface DialogCloseProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     asChild?: boolean;
     className?: string;
 }
@@ -292,8 +323,15 @@ const DialogClose: React.FC<DialogCloseProps> = ({ children, asChild = false, cl
     }
 
     return (
-        <button onClick={handleClose} className={cn("border", className)}>
-            {children}
+        <button
+            onClick={handleClose}
+            className={cn(
+                "text-sm border border-gray-200 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100",
+                "dark:text-gray-300 dark:border-zinc-700 dark:hover:text-white dark:hover:bg-gray-800 dark:focus:ring-zinc-800",
+                className
+            )}
+        >
+            {children || <X className="h-4 w-4" />}
         </button>
     );
 };

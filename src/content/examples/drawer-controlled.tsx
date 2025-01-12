@@ -23,7 +23,7 @@ export default function DrawerDemo() {
                         <DrawerTitle>Title</DrawerTitle>
                         <DrawerDescription>This is the description of the drawer</DrawerDescription>
                     </div>
-                    <DrawerClose className="p-2 rounded-xl" />{" "}
+                    <DrawerClose className="p-2 rounded-xl" />
                 </DrawerHeader>
 
                 {/* your content */}
