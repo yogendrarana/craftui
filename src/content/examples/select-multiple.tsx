@@ -1,11 +1,23 @@
 "use client";
 
 import React from "react";
-import { Select, SelectTrigger, SelectContent, SelectOption, SelectValue } from "../registry/core/select";
+import {
+    Select,
+    SelectTrigger,
+    SelectContent,
+    SelectOption,
+    SelectValue
+} from "../registry/core/select";
 
 export default function SelectDemo() {
+    const [value, setValue] = React.useState<string[]>([]);
+
+    React.useEffect(() => {
+        console.log(value);
+    }, [value]);
+
     return (
-        <Select multiple>
+        <Select multiple onValueChange={setValue} defaultValue={value}>
             <SelectTrigger>
                 <SelectValue placeholder="Select fruits ..." />
             </SelectTrigger>

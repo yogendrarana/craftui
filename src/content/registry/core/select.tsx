@@ -160,7 +160,7 @@ const Select = ({
                 ? value.filter((v) => v !== newValue)
                 : [...value, newValue];
             setValue(updatedValue);
-            onValueChange?.(newValue);
+            onValueChange?.(updatedValue);
         } else {
             setValue(newValue);
             onValueChange?.(newValue);
