@@ -474,7 +474,7 @@ export const Previews: Record<string, any> = {
       path: "custom-cursor-basic",
       component: React.lazy(() => import("@/content/examples/custom-cursor-basic")),
       type: "",
-      rawCode: "\"use client\";\n\nimport CustomCursor from \"../registry/core/custom-cursor\";\n\nexport default function CustomCursorBasic() {\n    return (\n        <CustomCursor cursor={<span>👋</span>}>\n            <div className=\"px-8 py-4 border rounded-md\">Hover me!</div>\n        </CustomCursor>\n    );\n}\n",
+      rawCode: "\"use client\";\n\nimport CustomCursor from \"../registry/core/custom-cursor\";\n\nexport default function CustomCursorBasic() {\n    return (\n        <CustomCursor cursor={<span>👋</span>} className=\"h-[400px] w-full flex items-center justify-center\">\n            Emoji Cursor\n        </CustomCursor>\n    );\n}\n",
     },
     "custom-cursor-complex": {
       name: "custom-cursor-complex",
@@ -482,7 +482,7 @@ export const Previews: Record<string, any> = {
       path: "custom-cursor-complex",
       component: React.lazy(() => import("@/content/examples/custom-cursor-complex")),
       type: "",
-      rawCode: "\"use client\";\n\nimport { ArrowRight, Sparkles } from \"lucide-react\";\nimport CustomCursor from \"@/content/registry/core/custom-cursor\";\n\nexport default function CustomCursorComplex() {\n    return (\n        <CustomCursor\n            cursor={\n                <div className=\"flex items-center space-x-2 bg-yellow-300 px-3 py-1 rounded-full shadow-lg\">\n                    <Sparkles className=\"w-4 h-4 text-yellow-600\" />\n                    <span className=\"text-sm font-semibold text-yellow-800\">Click Here!</span>\n                    <ArrowRight className=\"w-4 h-4 text-yellow-600\" />\n                </div>\n            }\n        >\n            <div className=\"border p-8 rounded-md text-center\">\n                <h2 className=\"text-xl font-semibold mb-2\">Custom Cursor</h2>\n                <p>Hover over this area to see a custom cursor</p>\n            </div>\n        </CustomCursor>\n    );\n}\n",
+      rawCode: "\"use client\";\n\nimport { ArrowRight, Sparkles } from \"lucide-react\";\nimport CustomCursor from \"@/content/registry/core/custom-cursor\";\n\nexport default function CustomCursorComplex() {\n    return (\n        <CustomCursor\n            cursor={\n                <div className=\"flex items-center space-x-2 bg-yellow-300 px-3 py-1 rounded-full shadow-lg\">\n                    <Sparkles className=\"w-4 h-4 text-yellow-600\" />\n                    <span className=\"text-sm font-semibold text-yellow-800\">Click Here!</span>\n                    <ArrowRight className=\"w-4 h-4 text-yellow-600\" />\n                </div>\n            }\n            className=\"h-[400px] w-full flex items-center justify-center\"\n        >\n            <div className=\"text-center\">\n                <h2 className=\"text-xl font-semibold mb-2\">Custom Cursor</h2>\n                <p>Hover over this area to see a custom cursor</p>\n            </div>\n        </CustomCursor>\n    );\n}\n",
     },
     "custom-cursor-text": {
       name: "custom-cursor-text",
@@ -490,7 +490,7 @@ export const Previews: Record<string, any> = {
       path: "custom-cursor-text",
       component: React.lazy(() => import("@/content/examples/custom-cursor-text")),
       type: "",
-      rawCode: "\"use client\";\n\nimport CustomCursor from \"@/content/registry/core/custom-cursor\";\n\nexport default function CursorChangerText() {\n    return (\n        <CustomCursor\n            cursor={\n                <span className=\"text-sm border bg-white text-black px-2 py-1 rounded shadow\">\n                    Hello, World!\n                </span>\n            }\n        >\n            <div className=\"border p-8 rounded-md text-center\">\n                <h2 className=\"text-xl font-semibold mb-2\">Text Cursor</h2>\n                <p>Hover over this area to see a text cursor</p>\n            </div>\n        </CustomCursor>\n    );\n}\n",
+      rawCode: "\"use client\";\n\nimport CustomCursor from \"@/content/registry/core/custom-cursor\";\n\nexport default function CursorChangerText() {\n    return (\n        <CustomCursor\n            cursor={\n                <span className=\"text-sm border bg-white text-black px-2 py-1 rounded shadow\">\n                    Hello, World!\n                </span>\n            }\n             className=\"h-[400px] w-full flex items-center justify-center\"\n        >\n            <div className=\"text-center\">\n                <h2 className=\"text-xl font-semibold mb-2\">Text Cursor</h2>\n                <p>Hover over this area to see a text cursor</p>\n            </div>\n        </CustomCursor>\n    );\n}\n",
     },
     "dialog-basic": {
       name: "dialog-basic",

@@ -13,8 +13,9 @@ export default function CustomCursorComplex() {
                     <ArrowRight className="w-4 h-4 text-yellow-600" />
                 </div>
             }
+            className="h-[400px] w-full flex items-center justify-center"
         >
-            <div className="border p-8 rounded-md text-center">
+            <div className="text-center">
                 <h2 className="text-xl font-semibold mb-2">Custom Cursor</h2>
                 <p>Hover over this area to see a custom cursor</p>
             </div>

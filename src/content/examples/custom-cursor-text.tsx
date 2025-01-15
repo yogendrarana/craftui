@@ -10,8 +10,9 @@ export default function CursorChangerText() {
                     Hello, World!
                 </span>
             }
+             className="h-[400px] w-full flex items-center justify-center"
         >
-            <div className="border p-8 rounded-md text-center">
+            <div className="text-center">
                 <h2 className="text-xl font-semibold mb-2">Text Cursor</h2>
                 <p>Hover over this area to see a text cursor</p>
             </div>
