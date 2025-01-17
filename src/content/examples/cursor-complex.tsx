@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, Sparkles } from "lucide-react";
-import CustomCursor from "@/content/registry/core/custom-cursor";
+import CustomCursor from "@/content/registry/components/cursor";
 
 export default function CustomCursorComplex() {
     return (

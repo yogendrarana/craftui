@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import TextScramble from "@/content/registry/core/text-scramble";
+import TextScramble from "@/content/registry/components/text-scramble";
 
 export default function TextScrambleCustomTrigger() {
     const [triggerScramble, setTriggerScramble] = React.useState(false);

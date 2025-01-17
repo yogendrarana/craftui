@@ -1,6 +1,6 @@
 import React from "react";
 import { Icons } from "@/components/website/icons";
-import Marquee from "@/content/registry/core/marquee";
+import Marquee from "@/content/registry/components/marquee";
 
 const data = [
     {

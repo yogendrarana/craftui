@@ -11,12 +11,10 @@ const __dirname = dirname(__filename);
 const baseDir = path.join(__dirname, "../src/content");
 
 const examplesDir = path.join(baseDir, "examples");
-const textDir = path.join(baseDir, "registry", "text");
-const coreDir = path.join(baseDir, "registry", "core");
 const blocksDir = path.join(baseDir, "registry", "blocks");
 const elementsDir = path.join(baseDir, "registry", "elements");
-const componentDir = path.join(baseDir, "registry", "components");
 const functionsDir = path.join(baseDir, "registry", "functions");
+const componentsDir = path.join(baseDir, "registry", "components");
 
 const outputMapFilePath = path.join(baseDir, "previews.ts");
 
@@ -55,25 +53,21 @@ async function getAllFiles(dirPath: string, arrayOfFiles: string[] = []): Promis
 
 // function to get the category of the file
 function getCategory(filePath: string) {
-    if (filePath.includes(path.sep + "components" + path.sep)) return "component";
-    if (filePath.includes(path.sep + "elements" + path.sep)) return "element";
-    if (filePath.includes(path.sep + "text" + path.sep)) return "text";
-    if (filePath.includes(path.sep + "core" + path.sep)) return "core";
-    if (filePath.includes(path.sep + "block" + path.sep)) return "block";
+    if (filePath.includes(path.sep + "block" + path.sep)) return "blocks";
+    if (filePath.includes(path.sep + "elements" + path.sep)) return "elements";
     if (filePath.includes(path.sep + "functions" + path.sep)) return "functions";
+    if (filePath.includes(path.sep + "components" + path.sep)) return "components";
     return "examples";
 }
 
 async function main() {
     try {
         const allFiles = await Promise.all([
-            getAllFiles(coreDir),
-            getAllFiles(textDir),
             getAllFiles(blocksDir),
             getAllFiles(elementsDir),
             getAllFiles(examplesDir),
-            getAllFiles(componentDir),
-            getAllFiles(functionsDir)
+            getAllFiles(functionsDir),
+            getAllFiles(componentsDir)
         ]);
 
         const components = allFiles.flat().reduce(async (accPromise, filePath) => {
@@ -89,7 +83,7 @@ async function main() {
 
             let type = "";
 
-            if (category === "element") {
+            if (category === "elements") {
                 type = filePath.split(path.sep).slice(-2)[0];
             }
 

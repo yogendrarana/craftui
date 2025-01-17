@@ -9,7 +9,7 @@ import {
     DialogTitle,
     DialogDescription,
     DialogClose
-} from "@/content/registry/core/dialog";
+} from "@/content/registry/components/dialog";
 
 export default function DialogBasic() {
     return (

@@ -5,7 +5,7 @@ import {
     SelectContent,
     SelectOption,
     SelectValue
-} from "../registry/core/select";
+} from "../registry/components/select";
 
 const countries = [
     { label: "Australia", value: "AU" },

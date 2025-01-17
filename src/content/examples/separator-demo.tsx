@@ -1,4 +1,4 @@
-import { Separator } from "../registry/core/separator";
+import { Separator } from "../registry/components/separator";
 
 export default function SeparatorDemo() {
     return (

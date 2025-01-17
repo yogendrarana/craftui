@@ -3,13 +3,13 @@
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useRef } from "react";
 
-interface CustomCursorProps {
+interface CursorProps {
     children: React.ReactNode;
     cursor: string | React.ReactNode;
     className?: string;
 }
 
-export default function CustomCursor({ children, cursor, className }: CustomCursorProps) {
+export default function Cursor({ children, cursor, className }: CursorProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [isHovering, setIsHovering] = useState(false);
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });

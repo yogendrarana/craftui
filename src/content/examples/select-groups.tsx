@@ -8,7 +8,7 @@ import {
     SelectOption,
     SelectGroup,
     SelectValue
-} from "../registry/core/select";
+} from "../registry/components/select";
 
 export default function SelectDemo() {
     return (

@@ -13,7 +13,7 @@ interface ElementType {
 }
 
 export default function Page({ params }: { params: { elementType: string } }) {
-    const elements: ElementType[] = Object.values(Previews[ComponentTypeEnum.ELEMENT]);
+    const elements: ElementType[] = Object.values(Previews[ComponentTypeEnum.ELEMENTS]);
     const filteredElements = elements.filter((elt) => elt.type === params.elementType);
 
     if (!elements || elements.length === 0) {

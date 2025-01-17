@@ -1,6 +1,6 @@
 "use client";
 
-import { Dock, DockItem } from "../registry/core/dock";
+import { Dock, DockItem } from "../registry/components/dock";
 import { Home, Settings, Mail, Calendar, Music, ImageIcon } from "lucide-react";
 
 export default function DockBasic() {

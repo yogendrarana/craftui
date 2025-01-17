@@ -68,33 +68,14 @@ export const docsConfig: DocsConfig = {
                     href: "/docs/components/button"
                 },
                 {
-                    title: "Confetti",
-                    href: "/docs/components/confetti"
-                },
-                {
-                    title: "Cursor",
-                    href: "/docs/components/custom-cursor"
-                },
-                {
                     title: "Dialog",
                     href: "/docs/components/dialog"
-                },
-                {
-                    title: "Dock",
-                    href: "/docs/components/dock"
                 },
                 {
                     title: "Drawer",
                     href: "/docs/components/drawer"
                 },
-                {
-                    title: "Marquee",
-                    href: "/docs/components/marquee"
-                },
-                {
-                    title: "Magnetic",
-                    href: "/docs/components/magnetic"
-                },
+
                 {
                     title: "Select",
                     href: "/docs/components/select"
@@ -106,6 +87,31 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Tabs",
                     href: "/docs/components/tabs"
+                }
+            ]
+        },
+        {
+            title: "Extra Components",
+            items: [
+                {
+                    title: "Confetti",
+                    href: "/docs/extra-components/confetti"
+                },
+                {
+                    title: "Cursor",
+                    href: "/docs/extra-components/cursor"
+                },
+                {
+                    title: "Dock",
+                    href: "/docs/extra-components/dock"
+                },
+                {
+                    title: "Magnetic",
+                    href: "/docs/extra-components/magnetic"
+                },
+                {
+                    title: "Marquee",
+                    href: "/docs/extra-components/marquee"
                 }
             ]
         },

@@ -1,5 +1,5 @@
 import React from "react";
-import Magnetic from "@/content/registry/core/magnetic";
+import Magnetic from "@/content/registry/components/magnetic";
 
 // nav items
 const navMenu = [

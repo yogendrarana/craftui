@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Tabs, TabList, Tab, TabPanels, TabPanel } from "../registry/core/tabs";
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from "../registry/components/tabs";
 
 export default function TabsDemo() {
     const variants = {

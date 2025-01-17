@@ -10,7 +10,7 @@ import {
     DrawerTitle,
     DrawerClose,
     DrawerDescription
-} from "../registry/core/drawer";
+} from "../registry/components/drawer";
 
 export default function DrawerDemo() {
     const [open, setOpen] = React.useState(false);

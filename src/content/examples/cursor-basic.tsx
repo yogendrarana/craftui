@@ -1,6 +1,6 @@
 "use client";
 
-import CustomCursor from "../registry/core/custom-cursor";
+import CustomCursor from "../registry/components/cursor";
 
 export default function CustomCursorBasic() {
     return (
