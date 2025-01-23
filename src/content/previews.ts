@@ -464,7 +464,7 @@ export const Previews: Record<string, any> = {
       path: "magnetic-basic",
       component: React.lazy(() => import("@/content/examples/magnetic-basic")),
       type: "",
-      rawCode: "import React from \"react\";\nimport Magnetic from \"@/content/registry/components/magnetic\";\n\nexport default function MagneticBasic() {\n    return (\n        <Magnetic>\n            <div className=\"p-2 cursor-pointer\">Hover Me</div>\n        </Magnetic>\n    );\n}\n",
+      rawCode: "import React from \"react\";\nimport Magnetic from \"@/content/registry/components/magnetic\";\n\nexport default function MagneticBasic() {\n    return (\n        <Magnetic>\n            <button className=\"px-4 py-2 cursor-pointer border rounded shadow\">Hover Me</button>\n        </Magnetic>\n    );\n}\n",
     },
     "magnetic-navbar-items": {
       name: "magnetic-navbar-items",
