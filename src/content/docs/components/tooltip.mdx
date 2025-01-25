@@ -3,26 +3,23 @@ title: Tooltip
 description: A tooltip component that shows pop-up messages on hover.
 slug: /components/tooltip
 published: true
-date: 2024-12-26
+date: 2025-01-25
 ---
 
 #### Basic Tooltip
-<ComponentCodePreview category="examples" name="tooltip-basic" />
+<ComponentCodePreview category="examples" name="tooltip-demo" />
 
-#### Tooltip variants
-<ComponentCodePreview category="examples" name="tooltip-variants" />
+#### Tooltip with different positions
+<ComponentCodePreview category="examples" name="tooltip-positions" />
 
-#### Tooltip with custom directions
-<ComponentCodePreview category="examples" name="tooltip-directions" />
-
-#### More example
-<ComponentCodePreview category="examples" name="tooltip-example" />
+#### Tooltip with icons
+<ComponentCodePreview category="examples" name="tooltip-icons" />
 
 ## Usage Guide
 
 Install the **clsx** and **tailwind-merge** packages:
 ```bash
-npm install clsx tw-merge
+npm install clsx tw-merge framer-motion
 ```
 
 Next, add [**cn**](https://github.com/yogendrarana/craftui/blob/master/src/lib/utils.ts) utility:
@@ -46,8 +43,6 @@ Copy and paste the following component source.
 | Prop             | Type              | Description                                                         | Default    |
 | ---------------  | ----------------- | ------------------------------------------------------------------- | ---------- |
 | children         | ReactNode         | The element that triggers the tooltip when hovered or focused       | _          |
-| variant?         | string            | "default" | "primary" | "secondary" | "destructive"                 | default    |
-| direction?       | string            | "top" | "right" | "bottom" | "left"                                 | top        |
 | delay?           | number            | Delay in milliseconds before the tooltip appears or disappears.     | 200        |
 
 ### TooltipTrigger
@@ -55,6 +50,7 @@ Copy and paste the following component source.
 | Prop         | Type              | Description                                                               | Default  |
 | -----------  | ----------------- | ------------------------------------------------------------------------- | -------- |
 | children     | ReactNode         | The element that acts as the trigger for the tooltip.                     | _        |
+| className?   | string            | Additional classes to be added to the trigger element.                    | _        |
 | asChild?     | boolean           | If true, renders the children element as the trigger without wrapping it in an additional DOM element.               | _       |
 
 ### TooltipContent
@@ -62,3 +58,5 @@ Copy and paste the following component source.
 | Prop           | Type              | Description                                                           | Default |
 | -------------  | ----------------- | --------------------------------------------------------------------- | ------- |
 | children       | ReactNode         | The content displayed inside the tooltip.                             | _       |
+| position?      | string            | "top" | "right" | "bottom" | "left"                                   | top     |
+| className?     | string            | Additional classes to be added to the tooltip content.                | _       |
