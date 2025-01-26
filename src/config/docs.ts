@@ -98,6 +98,10 @@ export const docsConfig: DocsConfig = {
             title: "Extra Components",
             items: [
                 {
+                    title: "Animated Tooltip",
+                    href: "/docs/extra-components/animated-tooltip"
+                },
+                {
                     title: "Confetti",
                     href: "/docs/extra-components/confetti"
                 },
