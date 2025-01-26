@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 export interface DockItemProps {
     icon: React.ReactNode;
@@ -37,20 +37,19 @@ export function Dock({ children, className }: DockProps) {
 export function DockItem({ icon, label, onClick, className, ...props }: DockItemProps) {
     const [isHovered, setIsHovered] = useState(false);
 
-    // Motion values for cursor tracking and label tilt
     const x = useMotionValue(0);
     const springConfig = { stiffness: 200, damping: 10 };
-    const rotate = useSpring(useTransform(x, [-50, 50], [-25, 25]), springConfig); // Tilt range: -25 to 25 degrees
-    const translateX = useSpring(useTransform(x, [-50, 50], [-10, 10]), springConfig); // Subtle translation
+    const rotate = useSpring(useTransform(x, [-50, 50], [-25, 25]), springConfig);
+    const translateX = useSpring(useTransform(x, [-50, 50], [-10, 10]), springConfig);
 
     const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
         const rect = event.currentTarget.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
-        x.set(event.clientX - centerX); // Update motion value
+        x.set(event.clientX - centerX);
     };
 
     const handleMouseLeave = () => {
-        x.set(0); // Reset motion value
+        x.set(0);
         setIsHovered(false);
     };
 
