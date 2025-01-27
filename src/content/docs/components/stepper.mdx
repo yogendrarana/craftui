@@ -1,0 +1,43 @@
+---
+title: Stepper
+description: A dock component that displays a list of items.
+slug: /components/stepper
+published: true
+date: 2024-11-30
+author: { name: "Yogendra Rana", twitter: "https://twitter.com/yoogendra_rana" }
+---
+
+#### Basic Stepper
+<ComponentCodePreview category="examples" name="stepper-demo" />
+
+#### Stepper with progress indicator
+<ComponentCodePreview category="examples" name="stepper-indicator-progress" />
+
+#### Stepper with numbers indicator
+<ComponentCodePreview category="examples" name="stepper-indicator-numbers" />
+
+#### Stepper with fraction indicator
+<ComponentCodePreview category="examples" name="stepper-indicator-fraction" />
+
+#### Stepper with text indicator
+<ComponentCodePreview category="examples" name="stepper-indicator-text" />
+
+## Usage Guide
+
+Install the **clsx** and **tailwind-merge** packages:
+```bash
+npm install clsx tw-merge framer-motion
+```
+
+Next, add [**cn**](https://github.com/yogendrarana/craftui/blob/master/src/lib/utils.ts) utility:
+```jsx
+import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from "clsx";
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}
+```
+
+Copy and paste the following component source.
+<ComponentSource name="stepper" category="components" />

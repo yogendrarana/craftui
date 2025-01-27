@@ -85,6 +85,10 @@ export const docsConfig: DocsConfig = {
                     href: "/docs/components/separator"
                 },
                 {
+                    title: "Stepper",
+                    href: "/docs/components/stepper"
+                },
+                {
                     title: "Tabs",
                     href: "/docs/components/tabs"
                 },
