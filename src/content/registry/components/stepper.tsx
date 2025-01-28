@@ -1,3 +1,8 @@
+/**
+ * @todo Add support vertical stepper
+ * @todo Add support linear and non-linear stepper
+ */
+
 "use client";
 
 import React from "react";
@@ -7,7 +12,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface StepperContextType {
-    activeStep: number;
+    currentStep: number;
     totalSteps: number;
     isLastStep: boolean;
     goToNextStep: () => void;
@@ -16,7 +21,7 @@ interface StepperContextType {
 }
 
 const StepperContext = React.createContext<StepperContextType>({
-    activeStep: 0,
+    currentStep: 0,
     totalSteps: 0,
     isLastStep: false,
     goToNextStep: () => {},
@@ -32,25 +37,38 @@ const StepperContext = React.createContext<StepperContextType>({
 interface StepperProps {
     children: React.ReactNode;
     activeStep?: number;
-    onStepChange?: (step: number) => void;
+    totalSteps: number;
     className?: string;
+    onStepChange?: (step: number) => void;
 }
 
-const Stepper = ({ children, activeStep = 0, onStepChange, className = "" }: StepperProps) => {
+const Stepper = ({
+    children,
+    onStepChange,
+    className = "",
+    totalSteps,
+    activeStep = 0
+}: StepperProps) => {
     const id = React.useId();
-    const totalSteps = React.Children.count(children);
-    const isLastStep = activeStep === totalSteps - 1;
+    const [currentStep, setCurrentStep] = React.useState(activeStep);
+    const isLastStep = currentStep === totalSteps - 1;
 
     const contextValue = React.useMemo(
         () => ({
-            activeStep,
+            currentStep,
             totalSteps,
             isLastStep,
-            goToNextStep: () => onStepChange?.(Math.min(activeStep + 1, totalSteps - 1)),
-            goToPreviousStep: () => onStepChange?.(Math.max(activeStep - 1, 0)),
-            goToStep: (step: number) => onStepChange?.(Math.min(Math.max(step, 0), totalSteps - 1))
+            goToNextStep: () =>
+                onStepChange?.(Math.min(currentStep + 1, totalSteps - 1)) ||
+                setCurrentStep?.(Math.min(currentStep + 1, totalSteps - 1)),
+            goToPreviousStep: () =>
+                onStepChange?.(Math.max(currentStep - 1, 0)) ||
+                setCurrentStep?.(Math.max(currentStep - 1, 0)),
+            goToStep: (step: number) =>
+                onStepChange?.(Math.min(Math.max(step, 0), totalSteps - 1)) ||
+                setCurrentStep?.(Math.min(Math.max(step, 0), totalSteps - 1))
         }),
-        [activeStep, totalSteps, isLastStep, onStepChange]
+        [currentStep, totalSteps, isLastStep, setCurrentStep, onStepChange]
     );
 
     return (
@@ -80,7 +98,7 @@ const useStepper = () => {
 };
 
 /* -------------------------------------------------------------------------------------------------
- * Stepper Content
+ * StepperContent
  * -------------------------------------------------------------------------------------------------
  */
 
@@ -89,38 +107,41 @@ interface StepperContentProps {
     className?: string;
 }
 
-const StepperContent = ({ children, className = "" }: StepperContentProps) => {
-    const { activeStep } = useStepper();
-    const validChildren = React.Children.toArray(children).filter(React.isValidElement);
-
-    return (
-        <div className={cn("w-full my-4 relative", className)}>
-            <AnimatePresence mode="wait">
-                <motion.div
-                    key={activeStep}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                >
-                    {validChildren[activeStep]}
-                </motion.div>
-            </AnimatePresence>
-        </div>
-    );
+const StepperContent = ({ children, className }: StepperContentProps) => {
+    return <div className={cn("my-6", className)}>{children}</div>;
 };
 
 /* -------------------------------------------------------------------------------------------------
- * Step
+ * Step Component
  * -------------------------------------------------------------------------------------------------
  */
 
 interface StepProps {
     children: React.ReactNode;
     className?: string;
+    step: number;
 }
 
-const Step: React.FC<StepProps> = ({ children, className }) => {
-    return <div className={cn("", className)}>{children}</div>;
+const Step = ({ children, step, className = "" }: StepProps) => {
+    const { currentStep } = useStepper();
+    const isActive = currentStep === step - 1;
+
+    if (!isActive) return null;
+
+    return (
+        <div className={cn("space-y-4", className)}>
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={step}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                >
+                    {children}
+                </motion.div>
+            </AnimatePresence>
+        </div>
+    );
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -165,22 +186,22 @@ interface PrevStepProps {
 }
 
 const PrevStep = ({ className = "" }: PrevStepProps) => {
-    const { activeStep, goToPreviousStep } = useStepper();
+    const { currentStep, goToPreviousStep } = useStepper();
 
     return (
         <Button
             variant="outline"
             onClick={goToPreviousStep}
-            disabled={activeStep === 0}
+            disabled={currentStep === 0}
             className={cn(
                 {
-                    "text-gray-400 cursor-not-allowed": activeStep === 0
+                    "text-gray-400 cursor-not-allowed": currentStep === 0
                 },
                 className
             )}
         >
             <ChevronLeft className="w-4 h-4" />
-            Back
+            Prev
         </Button>
     );
 };
@@ -191,7 +212,7 @@ const PrevStep = ({ className = "" }: PrevStepProps) => {
  */
 
 interface NextStepProps {
-    onFinish?: () => void;
+    onFinish: () => void;
     className?: string;
 }
 
@@ -225,18 +246,18 @@ interface StepIndicatorProps {
 }
 
 const StepIndicator = ({ variant = "dots", className = "" }: StepIndicatorProps) => {
-    const { activeStep, totalSteps, goToStep } = useStepper();
+    const { currentStep, totalSteps, goToStep } = useStepper();
 
     switch (variant) {
         case "fraction":
             return (
                 <div className={cn("text-sm font-medium", className)}>
-                    Step {activeStep + 1} of {totalSteps}
+                    Step {currentStep + 1} of {totalSteps}
                 </div>
             );
 
         case "progress":
-            const progress = ((activeStep + 1) / totalSteps) * 100;
+            const progress = ((currentStep + 1) / totalSteps) * 100;
             return (
                 <div className={cn("w-full bg-gray-200 rounded-full h-2", className)}>
                     <motion.div
@@ -257,9 +278,10 @@ const StepIndicator = ({ variant = "dots", className = "" }: StepIndicatorProps)
                             className={cn(
                                 "w-6 h-6 rounded flex items-center justify-center text-xs transition-all duration-300",
                                 {
-                                    "bg-black dark:bg-zinc-700 text-white": index === activeStep,
-                                    "bg-gray-200 dark:bg-gray-300 text-black": index !== activeStep,
-                                    "hover:bg-gray-300": index !== activeStep
+                                    "bg-black dark:bg-zinc-700 text-white": index === currentStep,
+                                    "bg-gray-200 dark:bg-gray-300 text-black":
+                                        index !== currentStep,
+                                    "hover:bg-gray-300": index !== currentStep
                                 }
                             )}
                         >
@@ -277,9 +299,9 @@ const StepIndicator = ({ variant = "dots", className = "" }: StepIndicatorProps)
                             key={index}
                             onClick={() => goToStep(index)}
                             className={cn("text-sm font-medium transition-all duration-300", {
-                                "text-black dark:text-gray-200": index === activeStep,
+                                "text-black dark:text-gray-200": index === currentStep,
                                 "text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-gray-400":
-                                    index !== activeStep
+                                    index !== currentStep
                             })}
                         >
                             Step {index + 1}
@@ -296,11 +318,11 @@ const StepIndicator = ({ variant = "dots", className = "" }: StepIndicatorProps)
                         <motion.div
                             key={index}
                             className={cn("w-2 h-2 rounded-full", {
-                                "bg-black dark:bg-zinc-700": index === activeStep,
-                                "bg-gray-300": index !== activeStep
+                                "bg-black dark:bg-zinc-700": index === currentStep,
+                                "bg-gray-300": index !== currentStep
                             })}
                             initial={{ scale: 1 }}
-                            animate={{ scale: index === activeStep ? 1.5 : 1 }}
+                            animate={{ scale: index === currentStep ? 1.5 : 1 }}
                         />
                     ))}
                 </div>
@@ -314,7 +336,7 @@ const StepIndicator = ({ variant = "dots", className = "" }: StepIndicatorProps)
  */
 
 interface StepperNavigationProps {
-    onFinish?: () => void;
+    onFinish: () => void;
     className?: string;
 }
 
