@@ -1,0 +1,89 @@
+---
+title: Timeline
+description: A timeline component to show the progress of a process.
+slug: /components/timeline
+published: true
+date: 2025-01-29
+author: { name: "Yogendra Rana", twitter: "https://twitter.com/yoogendra_rana" }
+---
+
+#### Timeline Demo
+<ComponentCodePreview category="examples" name="timeline-demo" />
+
+#### Timeline with fill marker
+<ComponentCodePreview category="examples" name="timeline-fill-marker" />
+
+#### Timeline with horizontal layout
+<ComponentCodePreview category="examples" name="timeline-horizontal" />
+
+## Usage Guide
+
+Install the **clsx** and **tailwind-merge** packages:
+```bash
+npm install clsx tw-merge 
+```
+
+Next, add [**cn**](https://github.com/yogendrarana/craftui/blob/master/src/lib/utils.ts) utility:
+```jsx
+import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from "clsx";
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}
+```
+
+Copy and paste the following component source.
+<ComponentSource category="components" name="timeline" />
+
+## Props
+
+## Timeline
+    
+| Prop         | Type              | Description                                                        | Default      |
+| -----------  | ----------------- | ------------------------------------------------------------------ | ------------ |
+| children     | ReactNode         | The content to be displayed inside the component                   | _            |
+| variant?     | string            | Accepted values are **vertical** or **horizontal**                 | "vertical"   |
+| className?   | string            | Additional CSS classes to style the Timeline component.            | ""           |
+| aria-label?  | string            | Accessible label describing the timeline for screen readers.       | ""           |
+
+
+
+## TimelineItem
+
+| Prop         | Type              | Description                                                      | Default |
+| -----------  | ----------------- | ---------------------------------------------------------------- | ------- |
+| children     | ReactNode         | The content to be displayed inside the TimelineItem component    | _       |
+| className?   | string            | Additional CSS classes to style the TimelineItem component       | _       |
+
+
+## TimelineMarker
+
+| Prop         | Type              | Description                                                                  | Default |
+| -----------  | ----------------- | ---------------------------------------------------------------------------- | ------- |
+| variant      | string            | Use **fill** for a solid marker, **empty** for an outlined marker.           | "empty" |
+| className?   | string            | Additional CSS classes to style the TimelineMarker component                 | _       |
+
+
+## TimelineContent
+    
+| Prop         | Type              | Description                                                             | Default |
+| -----------  | ----------------- | ----------------------------------------------------------------------- | ------- |
+| children     | ReactNode         | The content to be displayed inside the TimelineContent component        | _       |
+| className?   | string            | Additional CSS classes to style the TimelineContent component           | _       |
+
+
+## TimelineTitle
+
+| Prop         | Type              | Description                                                             | Default |
+| -----------  | ----------------- | ----------------------------------------------------------------------- | ------- |
+| children     | ReactNode         | The content to be displayed inside the TimelineTitle component          | _       |
+| className?   | string            | Additional CSS classes to style the TimelineTitle component             | _       |
+
+
+## TimelineDescription
+    
+| Prop         | Type              | Description                                                             | Default |
+| -----------  | ----------------- | ----------------------------------------------------------------------- | ------- |
+| children     | ReactNode         | The content to be displayed inside the TimelineDescription component    | _       |
+| className?   | string            | Additional CSS classes to style the TimelineDescription component       | _       |

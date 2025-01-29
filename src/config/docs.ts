@@ -124,6 +124,10 @@ export const docsConfig: DocsConfig = {
                 {
                     title: "Marquee",
                     href: "/docs/extra-components/marquee"
+                },
+                {
+                    title: "Timeline",
+                    href: "/docs/extra-components/timeline"
                 }
             ]
         },
