@@ -7,18 +7,16 @@ import {
     AccordionTrigger,
     AccordionContent
 } from "../registry/components/accordion";
-import { Plus, Minus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 export default function AccordionDemo() {
     return (
         <Accordion className="w-full md:w-[500px]">
             <AccordionItem id="item-1">
                 <AccordionItem id="item-1">
-                    <AccordionTrigger
-                        customOpenIcon={<Minus size={14} />}
-                        customClosedIcon={<Plus size={14} />}
-                    >
+                    <AccordionTrigger>
                         What is React?
+                        <Plus className="size-4 shrink-0 transition-all ease-out group-data-[state=open]:rotate-45" />
                     </AccordionTrigger>
                     <AccordionContent>
                         React is a JavaScript library for building user interfaces. It lets you
@@ -27,11 +25,9 @@ export default function AccordionDemo() {
                 </AccordionItem>
             </AccordionItem>
             <AccordionItem id="item-2">
-                <AccordionTrigger
-                    customOpenIcon={<Minus size={14} />}
-                    customClosedIcon={<Plus size={14} />}
-                >
-                    What is Tailwind CSS?
+                <AccordionTrigger>
+                    <span>What is Tailwind CSS?</span>
+                    <Plus className="size-4 shrink-0 transition-all ease-out group-data-[state=open]:rotate-45" />
                 </AccordionTrigger>
                 <AccordionContent>
                     Tailwind CSS is a utility-first CSS framework packed with classes like flex,
@@ -41,11 +37,9 @@ export default function AccordionDemo() {
             </AccordionItem>
 
             <AccordionItem id="item-3">
-                <AccordionTrigger
-                    customOpenIcon={<Minus size={14} />}
-                    customClosedIcon={<Plus size={14} />}
-                >
+                <AccordionTrigger>
                     Why use Framer Motion?
+                    <Plus className="size-4 shrink-0 transition-all ease-out group-data-[state=open]:rotate-45" />
                 </AccordionTrigger>
                 <AccordionContent>
                     Framer Motion is a motion library for React. It provides a declarative, flexible

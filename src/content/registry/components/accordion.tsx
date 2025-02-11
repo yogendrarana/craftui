@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import React, { createContext, useContext, useState } from "react";
 
@@ -93,17 +92,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ children, id, className =
 interface AccordionTriggerProps {
     children: React.ReactNode;
     className?: string;
-    icon?: React.ReactNode;
-    customOpenIcon?: React.ReactNode;
-    customClosedIcon?: React.ReactNode;
 }
 
-const AccordionTrigger: React.FC<AccordionTriggerProps> = ({
-    children,
-    className = "",
-    customOpenIcon,
-    customClosedIcon
-}) => {
+const AccordionTrigger: React.FC<AccordionTriggerProps> = ({ children, className = "" }) => {
     const context = useContext(AccordionContext);
     if (!context) throw new Error("AccordionTrigger must be used within an Accordion");
 
@@ -114,31 +105,19 @@ const AccordionTrigger: React.FC<AccordionTriggerProps> = ({
     const { id } = itemContext;
     const isOpen = openItems.includes(id);
 
-    const renderIcon = () => {
-        if (isOpen && customOpenIcon) return customOpenIcon;
-        if (!isOpen && customClosedIcon) return customClosedIcon;
-        return <ChevronDown className="h-4 w-4 shrink-0" />;
-    };
-
     return (
-        <motion.button
+        <button
             className={cn(
-                "w-full py-2 border-b flex items-center justify-between text-left",
-                "hover:underline",
+                "group flex w-full border-b cursor-pointer items-baseline justify-between gap-4 py-2 text-left font-medium",
+                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-800",
                 className
             )}
             onClick={() => toggleItem(id)}
+            data-state={isOpen ? "open" : "closed"}
             aria-expanded={isOpen}
         >
-            <span className="font-medium text-md">{children}</span>
-            <motion.div
-                initial={false}
-                animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-            >
-                {renderIcon()}
-            </motion.div>
-        </motion.button>
+            {children}
+        </button>
     );
 };
 
@@ -170,7 +149,13 @@ const AccordionContent: React.FC<AccordionContentProps> = ({
     return (
         <AnimatePresence initial={false}>
             {isOpen && (
-                <motion.div initial="hidden" animate="visible" exit="hidden" variants={variants}>
+                <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    variants={variants}
+                    data-panel-open={isOpen}
+                >
                     <div className={cn("py-2 text-gray-500", "dark:text-gray-400", className)}>
                         {children}
                     </div>
