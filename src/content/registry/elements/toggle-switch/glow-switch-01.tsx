@@ -13,7 +13,7 @@ export default function GlowSwitch() {
                 onClick={handleToggle}
                 className={`
                     w-14 h-7 rounded-full transition-all duration-300
-                    ${isOn ? "bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]" : "bg-gray-700"}
+                    ${isOn ? "bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]" : "bg-gray-200"}
                 `}
             >
                 <div
