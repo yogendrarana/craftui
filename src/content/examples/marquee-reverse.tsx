@@ -1,5 +1,5 @@
 import React from "react";
-import Marquee from "@/content/registry/components/marquee";
+import Marquee from "@/content/components/marquee";
 
 const team = [
     {

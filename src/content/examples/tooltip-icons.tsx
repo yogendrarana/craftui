@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Bell, Camera, Info, Settings } from "lucide-react";
-import { Tooltip, TooltipTrigger, TooltipContent } from "../registry/components/tooltip";
+import { Tooltip, TooltipTrigger, TooltipContent } from "../components/tooltip";
 
 export default function TooltipDemo() {
     return (

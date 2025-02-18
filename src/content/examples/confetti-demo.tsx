@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { triggerConfetti } from "../registry/functions/confetti";
+import { triggerConfetti } from "../functions/confetti";
 
 export default function ConfettiDemo() {
     const origins = [

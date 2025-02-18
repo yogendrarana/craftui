@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Bell, Home, Settings, User } from "lucide-react";
-import { Tabs, TabList, Tab, TabPanels, TabPanel } from "../registry/components/tabs";
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from "../components/tabs";
 
 export default function TabsDemo() {
     const variants = {

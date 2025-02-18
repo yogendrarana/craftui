@@ -7,7 +7,7 @@ import {
     SelectContent,
     SelectOption,
     SelectValue
-} from "../registry/components/select";
+} from "../components/select";
 
 export default function SelectDemo() {
     const [fruit, setFruit] = React.useState<string | null>("apple");

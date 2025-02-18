@@ -8,7 +8,7 @@ import {
     DialogTitle,
     DialogDescription,
     DialogClose
-} from "@/content/registry/components/dialog";
+} from "@/content/components/dialog";
 
 export default function DialogControlled() {
     const [isOpen, setIsOpen] = React.useState(false);

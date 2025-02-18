@@ -6,7 +6,7 @@ import {
     AccordionItem,
     AccordionTrigger,
     AccordionContent
-} from "../registry/components/accordion";
+} from "../components/accordion";
 
 export default function AccordionDemo() {
     return (

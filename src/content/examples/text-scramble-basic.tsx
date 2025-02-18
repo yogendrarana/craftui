@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import TextScramble from "@/content/registry/components/text-scramble";
+import TextScramble from "@/content/components/text-scramble";
 
 export default function TextScrambleBasic() {
     return (

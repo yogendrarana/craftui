@@ -5,7 +5,7 @@ import {
     TimelineContent,
     TimelineTitle,
     TimelineDescription
-} from "../registry/components/timeline";
+} from "../components/timeline";
 
 export default function TimelineDemo() {
     return (

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { XIcon } from "lucide-react";
 import { createPortal } from "react-dom";
 import useClickOutside from "@/hooks/use-click-outside";
-import BrutalistButton from "@/content/registry/elements/button/brutalist-button";
+import BrutalistButton from "@/content/elements/button/brutalist-button";
 import { motion, AnimatePresence, MotionConfig, Transition, Variant } from "framer-motion";
 import React, { useCallback, useContext, useEffect, useId, useMemo, useRef, useState } from "react";
 

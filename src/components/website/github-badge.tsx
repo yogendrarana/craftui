@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { useStarStore } from "@/store/use-star-store";
-import BrutalistButton from "@/content/registry/elements/button/brutalist-button";
+import BrutalistButton from "@/content/elements/button/brutalist-button";
 
 interface PropTypes {
     className?: string;

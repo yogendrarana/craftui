@@ -10,7 +10,7 @@ import {
     StepperContent,
     PrevStep,
     NextStep
-} from "../registry/components/stepper";
+} from "../components/stepper";
 
 const StepperPreview = () => {
     return (

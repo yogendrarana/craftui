@@ -1,5 +1,5 @@
 import React from "react";
-import Magnetic from "@/content/registry/components/magnetic";
+import Magnetic from "@/content/components/magnetic";
 
 export default function MagneticBasic() {
     return (

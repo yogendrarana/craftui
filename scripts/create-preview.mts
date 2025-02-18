@@ -10,11 +10,11 @@ const __dirname = dirname(__filename);
 // Update base directory path calculation
 const baseDir = path.join(__dirname, "../src/content");
 
+const blocksDir = path.join(baseDir, "blocks");
 const examplesDir = path.join(baseDir, "examples");
-const blocksDir = path.join(baseDir, "registry", "blocks");
-const elementsDir = path.join(baseDir, "registry", "elements");
-const functionsDir = path.join(baseDir, "registry", "functions");
-const componentsDir = path.join(baseDir, "registry", "components");
+const elementsDir = path.join(baseDir, "elements");
+const functionsDir = path.join(baseDir, "functions");
+const componentsDir = path.join(baseDir, "components");
 
 const outputMapFilePath = path.join(baseDir, "previews.ts");
 

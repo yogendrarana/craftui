@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatedTooltip } from "../registry/components/animated-tooltip";
+import { AnimatedTooltip } from "../components/animated-tooltip";
 import { Home, Settings, Mail, Calendar, Music, ImageIcon } from "lucide-react";
 
 export default function AnimatedTooltipDemo() {

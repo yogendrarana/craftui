@@ -4,7 +4,7 @@ import React from "react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { Copy } from "lucide-react";
-import BrutalistButton from "@/content/registry/elements/button/brutalist-button";
+import BrutalistButton from "@/content/elements/button/brutalist-button";
 
 const BrutalistCopyButton = ({ code, className }: { code: string; className?: string }) => {
     const copyToClipboard = () => {

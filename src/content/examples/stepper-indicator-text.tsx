@@ -9,7 +9,7 @@ import {
     StepIndicator,
     StepperNavigation,
     StepperContent
-} from "../registry/components/stepper";
+} from "../components/stepper";
 
 const StepperPreview = () => {
     const [activeStep, setActiveStep] = useState(0);

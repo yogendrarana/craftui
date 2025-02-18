@@ -6,7 +6,7 @@ import {
     SelectOption,
     SelectGroup,
     SelectValue
-} from "../registry/components/select";
+} from "../components/select";
 
 export default function SelectDemo() {
     const [open, setOpen] = React.useState(false);

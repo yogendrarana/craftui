@@ -6,7 +6,7 @@ import {
     AccordionItem,
     AccordionTrigger,
     AccordionContent
-} from "../registry/components/accordion";
+} from "../components/accordion";
 import { Plus } from "lucide-react";
 
 export default function AccordionDemo() {

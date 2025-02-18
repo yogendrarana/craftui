@@ -9,7 +9,7 @@ import {
     DialogTitle,
     DialogDescription,
     DialogClose
-} from "@/content/registry/components/dialog";
+} from "@/content/components/dialog";
 import { Variants, Transition } from "framer-motion";
 
 const customVariants: Variants = {

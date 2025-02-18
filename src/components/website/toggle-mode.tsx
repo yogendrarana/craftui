@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
-import BrutalistButton from "@/content/registry/elements/button/brutalist-button";
+import BrutalistButton from "@/content/elements/button/brutalist-button";
 
 export default function ToggleSwitch() {
     const { theme, setTheme } = useTheme();

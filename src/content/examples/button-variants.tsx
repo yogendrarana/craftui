@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../registry/components/button";
+import { Button } from "../components/button";
 
 export default function ButtonDemo() {
     return (

@@ -10,7 +10,7 @@ import {
     DrawerTitle,
     DrawerClose,
     DrawerDescription
-} from "../registry/components/drawer";
+} from "../components/drawer";
 
 export default function DrawerDemo() {
     return (

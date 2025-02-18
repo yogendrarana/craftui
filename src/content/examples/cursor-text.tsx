@@ -1,6 +1,6 @@
 "use client";
 
-import CustomCursor from "@/content/registry/components/cursor";
+import CustomCursor from "@/content/components/cursor";
 
 export default function CursorChangerText() {
     return (
