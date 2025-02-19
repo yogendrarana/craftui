@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "../components/button";
 import { ArrowRight, Mail, Sun } from "lucide-react";
+import { Button } from "../components/button";
 
 export default function ButtonDemo() {
     return (

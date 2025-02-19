@@ -111,7 +111,7 @@ export default function ComponentCodePreview({
                         >
                             <div
                                 className={cn(
-                                    "min-h-[400px] p-4 w-full flex items-center justify-center border rounded-md",
+                                    "min-h-[400px] p-2 w-full flex items-center justify-center border rounded-md",
                                     className
                                 )}
                             >

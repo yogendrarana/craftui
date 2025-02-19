@@ -6,6 +6,8 @@ export interface NavItem {
     label?: string;
     paid?: boolean;
     event?: string;
+    new?: boolean;
+    updated?: boolean;
 }
 
 export interface NavItemWithChildren extends NavItem {
