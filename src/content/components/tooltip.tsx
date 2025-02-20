@@ -52,7 +52,7 @@ interface TooltipProps {
     delay?: number;
 }
 
-const Tooltip = ({ children, delay = 200 }: TooltipProps) => {
+const Tooltip = ({ children, delay = 100 }: TooltipProps) => {
     const tooltipTriggerRef = React.useRef<HTMLElement>(null);
     const [isVisible, setIsVisible] = React.useState(false);
 
@@ -72,13 +72,6 @@ interface TooltipTriggerProps {
     children: React.ReactNode;
     className?: string;
     asChild?: boolean;
-}
-
-interface TooltipContextProps {
-    tooltipTriggerRef: React.RefObject<HTMLElement | HTMLButtonElement>;
-    delay?: number;
-    isVisible: boolean;
-    setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const TooltipTrigger = ({ children, className, asChild = false }: TooltipTriggerProps) => {
