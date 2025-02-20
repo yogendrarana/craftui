@@ -152,7 +152,7 @@ const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>(
             const triggerRect = tooltipTriggerRef.current.getBoundingClientRect();
             const spaceAbove = triggerRect.top;
             const spaceBelow = window.innerHeight - triggerRect.bottom;
-            const spceLeft = triggerRect.left;
+            const spaceLeft = triggerRect.left;
             const spaceRight = window.innerWidth - triggerRect.right;
 
             // Auto-switch position dynamically
@@ -167,7 +167,7 @@ const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>(
             }
 
             if (position === "left") {
-                if (spceLeft < 40) setComputedPosition("right");
+                if (spaceLeft < 40) setComputedPosition("right");
                 else setComputedPosition("left");
             }
 
