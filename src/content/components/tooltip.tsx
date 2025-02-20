@@ -142,7 +142,53 @@ const defaultVariants = {
 
 const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>(
     ({ children, position = "top", variants = defaultVariants, className }, ref) => {
-        const { isVisible } = useTooltip();
+        const { isVisible, tooltipTriggerRef } = useTooltip();
+
+        const [computedPosition, setComputedPosition] = React.useState(position);
+
+        const updateTooltipPosition = React.useCallback(() => {
+            if (!tooltipTriggerRef.current) return;
+
+            const triggerRect = tooltipTriggerRef.current.getBoundingClientRect();
+            const spaceAbove = triggerRect.top;
+            const spaceBelow = window.innerHeight - triggerRect.bottom;
+            const spceLeft = triggerRect.left;
+            const spaceRight = window.innerWidth - triggerRect.right;
+
+            // Auto-switch position dynamically
+            if (position === "top") {
+                if (spaceAbove < 40) setComputedPosition("bottom");
+                else setComputedPosition("top");
+            }
+
+            if (position === "bottom") {
+                if (spaceBelow < 40) setComputedPosition("top");
+                else setComputedPosition("bottom");
+            }
+
+            if (position === "left") {
+                if (spceLeft < 40) setComputedPosition("right");
+                else setComputedPosition("left");
+            }
+
+            if (position === "right") {
+                if (spaceRight < 40) setComputedPosition("left");
+                else setComputedPosition("right");
+            }
+        }, [position, tooltipTriggerRef]);
+
+        // Attach event listeners
+        React.useEffect(() => {
+            updateTooltipPosition();
+
+            window.addEventListener("scroll", updateTooltipPosition);
+            window.addEventListener("resize", updateTooltipPosition);
+
+            return () => {
+                window.removeEventListener("scroll", updateTooltipPosition);
+                window.removeEventListener("resize", updateTooltipPosition);
+            };
+        }, [updateTooltipPosition]);
 
         if (!isVisible) return null;
 
@@ -156,7 +202,7 @@ const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>(
                         initial="hidden"
                         animate="visible"
                         exit="hidden"
-                        className={cn(tooltipStyles({ position }), className)}
+                        className={cn(tooltipStyles({ position: computedPosition }), className)}
                     >
                         {children}
                     </motion.div>
