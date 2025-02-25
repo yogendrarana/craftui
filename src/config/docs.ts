@@ -145,15 +145,6 @@ export const docsConfig: DocsConfig = {
                     items: []
                 }
             ]
-        },
-        {
-            title: "Background Components",
-            items: [
-                {
-                    title: "Aurora Background",
-                    href: "/docs/backgrounds/aurora-background"
-                }
-            ]
         }
     ]
 };
