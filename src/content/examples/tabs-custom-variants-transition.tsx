@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "../components/tabs";
+import { Transition } from "framer-motion";
 
 export default function TabsDemo() {
     const variants = {
@@ -10,7 +11,7 @@ export default function TabsDemo() {
         exit: { opacity: 0, y: -20 }
     };
 
-    const transition = { duration: 0.25, ease: "easeInOut" };
+    const transition: Transition = { duration: 0.25, ease: "easeInOut" };
 
     return (
         <div>

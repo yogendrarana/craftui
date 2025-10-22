@@ -252,11 +252,16 @@ const SelectContent = ({ children, className, scrollbarWidth = "none" }: SelectC
 
         const result = React.Children.map(children, (child) => {
             if (React.isValidElement(child)) {
-                if (child.type === SelectGroup) {
-                    const filteredGroupChildren = React.Children.toArray(child.props.children)
+                const element = child as React.ReactElement<{ children?: React.ReactNode }>;
+                if (element.type === SelectGroup) {
+                    const filteredGroupChildren = React.Children.toArray(element.props.children)
                         .filter((groupChild) => {
-                            if (React.isValidElement(groupChild) && groupChild.props.children) {
-                                return String(groupChild.props.children)
+                            if (
+                                React.isValidElement(groupChild) &&
+                                (groupChild as React.ReactElement<{ children?: React.ReactNode }>).props?.children
+                            ) {
+                                const gc = groupChild as React.ReactElement<{ children?: React.ReactNode }>;
+                                return String(gc.props.children)
                                     .toLowerCase()
                                     .includes(context.searchValue?.toLowerCase() || "");
                             }
@@ -265,18 +270,18 @@ const SelectContent = ({ children, className, scrollbarWidth = "none" }: SelectC
                         .filter(Boolean);
 
                     if (filteredGroupChildren.length > 0) {
-                        return React.cloneElement(child, {}, filteredGroupChildren);
+                        return React.cloneElement(element, {}, filteredGroupChildren);
                     }
                     return null;
                 }
 
-                if (child.type === SelectOption) {
+                if (element.type === SelectOption) {
                     if (
-                        String(child.props.children)
+                        String(element.props.children)
                             .toLowerCase()
                             .includes(context.searchValue?.toLowerCase() || "")
                     ) {
-                        return child;
+                        return element;
                     }
                     return null;
                 }

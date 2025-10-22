@@ -3,6 +3,7 @@
 import React from "react";
 import { Bell, Home, Settings, User } from "lucide-react";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "../components/tabs";
+import { type Transition } from "framer-motion";
 
 export default function TabsDemo() {
     const variants = {
@@ -11,7 +12,7 @@ export default function TabsDemo() {
         exit: { opacity: 0, scale: 0.95 }
     };
 
-    const transition = { duration: 0.25, ease: "easeInOut" };
+    const transition: Transition = { duration: 0.25, ease: "easeInOut" };
 
     return (
         <div>
