@@ -1,17 +1,18 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { useEffect } from "react";
-import { Star } from "lucide-react";
-import { motion } from "framer-motion";
+import { Github } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "../ui/button";
 import { useStarStore } from "@/store/use-star-store";
-import BrutalistButton from "@/content/elements/button/brutalist-button";
 
 interface PropTypes {
     className?: string;
 }
 
-const GithubStarBadge = ({ className }: PropTypes) => {
+const GithubStars = ({ className }: PropTypes) => {
     const { stars, setStars } = useStarStore();
 
     useEffect(() => {
@@ -44,26 +45,21 @@ const GithubStarBadge = ({ className }: PropTypes) => {
     }, [stars, setStars]);
 
     return (
-        <motion.a
+        <Link
             href="https://github.com/yogendrarana/craftui"
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className={cn("flex items-center", className)}
+            className={cn(
+                buttonVariants({ variant: "outline", size: "sm" }),
+                "hidden sm:flex rounded-none",
+                className
+            )}
         >
-            <BrutalistButton>
-                GitHub
-                <div className="mx-2 h-6 bg-zinc-500 border-l" />
-                <span className="flex items-center tabular-nums">
-                    {/* TODO: add animated counter */}
-                    {stars}
-                    <Star fill="#dba809" className="ml-2 inline-block h-4 w-4 text-yellow-500" />
-                </span>
-            </BrutalistButton>
-        </motion.a>
+            <span className="h-4 w-4">{stars}</span>
+            <span className="border-l h-full" />
+            <Github className="h-4 w-4" />
+        </Link>
     );
 };
 
-export default GithubStarBadge;
+export default GithubStars;

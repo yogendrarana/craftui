@@ -1,16 +1,12 @@
-import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import SiteFooter from "@/components/website/home/site-footer";
-import SiteHeader from "@/components/website/home/site-header";
 
 // styles
-import "@/styles/mdx.css";
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { Analytics } from "@vercel/analytics/react";
-import Providers from "@/components/website/provider/providers";
+import { Provider } from "@/components/website/provider";
 
 // metadata
 export const metadata: Metadata = {
@@ -26,21 +22,18 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html lang="en">
+        <html>
             <body
                 className={cn(
                     "w-full flex flex-col justify-center overflow-x-hidden scroll-smooth",
                     inter.className
                 )}
             >
-                <Providers>
-                    <SiteHeader />
-                    <main className="flex-1">{children}</main>
-                    <SiteFooter />
-                </Providers>
+                <Provider>
+                    <main className="root">{children}</main>
+                </Provider>
             </body>
 
-            <Toaster position="top-center" richColors />
             <Analytics />
         </html>
     );

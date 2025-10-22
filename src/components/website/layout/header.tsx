@@ -1,15 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { Shell } from "../shell";
-import ToggleSwitch from "../toggle-mode";
-import GithubStarBadge from "../github-badge";
-import DocsMobileSidebar from "../docs-mobile-sidebar";
 
-export default function SiteHeader() {
+import ToggleSwitch from "../toggle-mode";
+import GithubStars from "../github-stars";
+import DocsMobileSidebar from "../docs-mobile-sidebar";
+import MaxWidthContainer from "@/components/max-width-container";
+
+export default function Header() {
     return (
-        <header className="sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <Shell>
+        <header className="bg-background sticky top-0 z-50 border-b border-dashed">
+            <MaxWidthContainer className="sm:border-l sm:border-r border-dashed">
                 <nav className="h-20 flex items-center justify-between">
                     <Link href="/" className="text-2xl font-bold">
                         Craft UI
@@ -19,12 +20,6 @@ export default function SiteHeader() {
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-6">
-                        <Link
-                            href="/docs/getting-started/introduction"
-                            className="text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                            Docs
-                        </Link>
                         <Link
                             href="/docs/elements/button"
                             className="text-muted-foreground hover:text-foreground transition-colors"
@@ -38,8 +33,8 @@ export default function SiteHeader() {
                             Components
                         </Link>
                     </div>
-                    <div className="ml-auto hidden md:flex items-center gap-4">
-                        <GithubStarBadge className="h-11 rounded-sm shadow-md" />
+                    <div className="ml-auto hidden md:flex items-center gap-2">
+                        <GithubStars />
                         <ToggleSwitch />
                     </div>
 
@@ -47,7 +42,7 @@ export default function SiteHeader() {
                         <DocsMobileSidebar />
                     </div>
                 </nav>
-            </Shell>
+            </MaxWidthContainer>
         </header>
     );
 }

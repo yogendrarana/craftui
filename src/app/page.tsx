@@ -1,12 +1,13 @@
-import React from "react";
-import HeroSection from "@/components/website/home/hero-section";
-import ComponentsShowcase from "@/components/website/home/component-showcase";
+import Hero from "@/components/website/layout/hero";
+import Header from "@/components/website/layout/header";
+import Footer from "@/components/website/layout/footer";
 
 export default function HomePage() {
     return (
-        <div className="min-h-screen">
-            <HeroSection />
-            <ComponentsShowcase />
-        </div>
+        <section className="min-h-screen flex flex-col">
+            <Header />
+            <Hero />
+            <Footer />
+        </section>
     );
 }

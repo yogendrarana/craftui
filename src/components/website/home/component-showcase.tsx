@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
-import { Shell } from "../shell";
+import MaxWidthContainer from "@/components/max-width-container";
 import { AnimatedLink } from "../animated-link";
 
 export default function ComponentsShowcase() {
     return (
-        <Shell>
-            <section className="py-24 space-y-20">
+        <section className="border-b border-dashed border-border">
+            <MaxWidthContainer className="sm:border-l sm:border-r border-dashed">
                 <div className="flex gap-4 flex-col md:flex-row">
                     <div className="flex-1 flex-col">
                         <h2 className="text-4xl font-bold">UI Elements</h2>
@@ -32,7 +31,7 @@ export default function ComponentsShowcase() {
                         <AnimatedLink href="/docs/elements/button">... and more</AnimatedLink>
                     </div>
                 </div>
-            </section>
-        </Shell>
+            </MaxWidthContainer>
+        </section>
     );
 }

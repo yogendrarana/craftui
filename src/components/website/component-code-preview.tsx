@@ -2,129 +2,110 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { RotateCwIcon } from "lucide-react";
-
+import { RotateCwIcon, EyeIcon, Code2Icon, ExternalLinkIcon, CopyIcon } from "lucide-react";
 import CodeRenderer from "@/components/website/code-renderer";
 import { Previews } from "@/content/previews";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-/**
- * This component is used to preview a component and code from the registry.
- * TODO: Add support for reading code from path if provided
- */
+import { Button } from "@/components/ui/button";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
     name: string;
     category: string;
-    align?: "center" | "start" | "end";
-    hideTabs?: boolean;
     hasReTrigger?: boolean;
 }
 
 export default function ComponentCodePreview({
     name,
     category,
-    children,
     className,
-    align = "center",
-    hideTabs = false,
     hasReTrigger = false,
     ...props
 }: ComponentPreviewProps) {
     const [key, setKey] = React.useState(0);
-
-    const Preview = React.useMemo(() => {
-        const Component = Previews[category][name]?.component;
-
-        if (!Component) {
-            return (
-                <p className="text-sm text-muted-foreground">
-                    Component{" "}
-                    <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
-                        {name}
-                    </code>{" "}
-                    not found in registry.
-                </p>
-            );
-        }
-
-        return <Component />;
-    }, [name, category]);
+    const [mode, setMode] = React.useState<"preview" | "code">("preview");
 
     const Code = React.useMemo(() => {
-        const CodeOfComponent = Previews[category][name]?.rawCode;
-
-        if (!CodeOfComponent) {
+        const raw = Previews[category]?.[name]?.rawCode;
+        if (!raw)
             return (
                 <p className="text-sm text-muted-foreground">
-                    Code for component{" "}
-                    <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
-                        {name}
-                    </code>{" "}
-                    not found in registry.
+                    Code for <code>{name}</code> not found.
                 </p>
             );
-        }
-
-        return CodeOfComponent;
+        return raw;
     }, [name, category]);
 
+    const copyCode = () => {
+        if (Code) {
+            navigator.clipboard.writeText(Code.toString());
+        }
+    };
+
     return (
-        <div className={cn("w-full relativeflex flex-col", className)} {...props}>
-            <Tabs defaultValue="preview" className="relative mr-auto w-full">
-                {!hideTabs && (
-                    <div className="flex items-center justify-between pb-3">
-                        <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
-                            <TabsTrigger
-                                value="preview"
-                                className="relative h-10 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
-                            >
-                                Preview
-                            </TabsTrigger>
-                            <TabsTrigger
-                                value="code"
-                                className="relative h-10 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
-                            >
-                                Code
-                            </TabsTrigger>
-                        </TabsList>
-                    </div>
-                )}
+        <div className={cn("w-full flex flex-col", className)} {...props}>
+            {/* === Top Toolbar === */}
+            <div className="p-1.5 mb-2 flex items-center justify-between rounded-md border">
+                {/* Left side: mode toggle */}
+                <div className="flex items-center gap-1">
+                    <Button
+                        size="sm"
+                        variant={mode === "preview" ? "secondary" : "outline"}
+                        onClick={() => setMode("preview")}
+                        className="text-xs"
+                    >
+                        <EyeIcon className="h-4 w-4" />
+                        Preview
+                    </Button>
 
-                <TabsContent value="preview" className="relative rounded-md" key={key}>
-                    <div>
-                        {hasReTrigger && (
-                            <div
-                                className="absolute right-6 top-6 cursor-pointer"
-                                onClick={() => setKey((prev) => prev + 1)}
-                            >
-                                <RotateCwIcon className="h-4 w-4 text-zinc-500" />
-                            </div>
-                        )}
-                        <React.Suspense
-                            fallback={
-                                <div className="min-h-[400px] flex items-center justify-center text-sm text-muted-foreground">
-                                    {/* <Icons.spinner className="mr-2 size-4 animate-spin" /> */}
-                                    Loading...
-                                </div>
-                            }
+                    <Button
+                        size="sm"
+                        variant={mode === "code" ? "secondary" : "outline"}
+                        onClick={() => setMode("code")}
+                        className="text-xs"
+                    >
+                        <Code2Icon className="h-4 w-4" />
+                        Code
+                    </Button>
+                </div>
+
+                {/* Right side: actions */}
+                <div className="flex items-center gap-2">
+                    {hasReTrigger && (
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => setKey((prev) => prev + 1)}
                         >
-                            <div
-                                className={cn(
-                                    "min-h-[400px] p-2 w-full flex items-center justify-center border rounded-md",
-                                    className
-                                )}
-                            >
-                                {Preview}
-                            </div>
-                        </React.Suspense>
-                    </div>
-                </TabsContent>
+                            <RotateCwIcon className="h-4 w-4" />
+                        </Button>
+                    )}
+                </div>
+            </div>
 
-                <TabsContent value="code" className="w-full">
+            {/* === Preview / Code Content === */}
+            <div className="relative min-h-[400px] w-full border rounded-md flex items-center justify-center p-1.5">
+                {mode === "preview" ? (
+                    <React.Suspense
+                        fallback={
+                            <div className="flex items-center justify-center text-sm text-muted-foreground">
+                                Loading preview...
+                            </div>
+                        }
+                    >
+                        {(() => {
+                            const Component = Previews[category]?.[name]?.component;
+                            if (!Component)
+                                return (
+                                    <p className="text-sm text-muted-foreground">
+                                        Component <code>{name}</code> not found.
+                                    </p>
+                                );
+                            return <Component key={key} />;
+                        })()}
+                    </React.Suspense>
+                ) : (
                     <CodeRenderer className="h-[400px]" code={Code} />
-                </TabsContent>
-            </Tabs>
+                )}
+            </div>
         </div>
     );
 }

@@ -1,13 +1,13 @@
 import { cn } from "@/lib/utils";
-import { Shell } from "../shell";
 import { siteConfig } from "@/config/site";
 import { ExternalLink } from "../external-link";
+import MaxWidthContainer from "@/components/max-width-container";
 
-export default function SiteFooter() {
+export default function Footer() {
     return (
-        <footer className="mt-8 py-8 border-t border-dashed">
-            <Shell>
-                <div className={cn("flex justify-between items-end gap-4")}>
+        <footer className="">
+            <MaxWidthContainer className="sm:border-l sm:border-r border-dashed">
+                <div className={cn("py-6 flex justify-between items-end gap-4")}>
                     <div className="space-y-2">
                         <span className="text-xl font-semibold">{siteConfig.name}</span>
                         <p className="text-sm text-gray-500">
@@ -23,7 +23,7 @@ export default function SiteFooter() {
 
                     <p
                         className={cn(
-                            "text-start text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50  to-neutral-300",
+                            "text-start text-3xl font-bold bg-clip-text text-transparent bg-linear-to-b from-neutral-50  to-neutral-300",
                             "md:text-3xl lg:text-5xl",
                             "dark:from-neutral-950 dark:to-neutral-800"
                         )}
@@ -31,7 +31,7 @@ export default function SiteFooter() {
                         Craft UI
                     </p>
                 </div>
-            </Shell>
+            </MaxWidthContainer>
         </footer>
     );
 }

@@ -1,8 +1,11 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Shell } from "@/components/website/shell";
 import DocsSidebar from "@/components/website/docs-sidebar";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import MaxWidthContainer from "@/components/max-width-container";
+import Header from "@/components/website/layout/header";
+import Footer from "@/components/website/layout/footer";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Scrollbar } from "@radix-ui/react-scroll-area";
 
 interface PageProps {
     children: React.ReactNode;
@@ -10,27 +13,31 @@ interface PageProps {
 
 export default function DocsLayout({ children }: PageProps) {
     return (
-        <Shell>
-            <div
-                className={cn(
-                    "relative mt-10 flex-1 items-start overflow-hidden md:overflow-visible",
-                    "md:grid md:grid-cols-[240px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[250px_minmax(0,1fr)]"
-                )}
-            >
-                <aside
-                    className={cn(
-                        "w-full hidden h-[calc(100vh-3.5rem)] shrink-0",
-                        "md:top-20 md:sticky md:z-30 md:block"
-                    )}
-                >
-                    <ScrollArea className="h-full">
-                        <DocsSidebar />
-                    </ScrollArea>
-                </aside>
+        <div className="min-h-screen flex flex-col">
+            <Header />
 
-                {/* main content */}
-                <main>{children}</main>
+            <div className="flex-1 border-b border-dashed">
+                <MaxWidthContainer className="sm:border-l sm:border-r border-dashed px-0">
+                    <div
+                        className={cn(
+                            "relative flex-1 items-start overflow-hidden md:overflow-visible",
+                            "md:grid md:grid-cols-[240px_minmax(0,1fr)] lg:grid-cols-[250px_minmax(0,1fr)]"
+                        )}
+                    >
+                        <aside className="p-4 hidden md:block md:sticky md:top-20 md:z-30 border-r border-dashed h-[calc(100vh-5rem)]">
+                            <ScrollArea hideScrollbar scrollHideDelay={1} type="hover" className="h-full">
+                                <DocsSidebar />
+                                <Scrollbar />
+                            </ScrollArea>
+                        </aside>
+
+                        {/* main content */}
+                        <main className="p-4">{children}</main>
+                    </div>
+                </MaxWidthContainer>
             </div>
-        </Shell>
+
+            <Footer />
+        </div>
     );
 }

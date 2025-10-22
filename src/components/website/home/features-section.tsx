@@ -1,14 +1,12 @@
 "use client";
 
 import React from "react";
-import { Shell } from "@/components/website/shell";
 import { motion } from "framer-motion";
 import { Component, Copy, Layers } from "lucide-react";
 
 export default function FeaturesSection() {
     return (
         <section className="py-24 border-b border-dashed border-border">
-            <Shell>
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -32,7 +30,6 @@ export default function FeaturesSection() {
                         description="Tailwind CSS makes it easy to customize components to match your design."
                     />
                 </motion.div>
-            </Shell>
         </section>
     );
 }

@@ -3,13 +3,13 @@
 import React from "react";
 import { Drawer } from "vaul";
 import { Menu, X } from "lucide-react";
-import { docsConfig } from "@/config/docs";
+import { docsNavItems } from "@/config/docs";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 
 export default function DocsMobilSidebar() {
-    const sidebarNav = docsConfig.sidebarNav;
+    const sidebarNav = docsNavItems;
     const [open, setOpen] = React.useState(false);
 
     return (
