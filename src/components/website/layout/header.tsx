@@ -5,7 +5,7 @@ import Link from "next/link";
 import ToggleSwitch from "../toggle-mode";
 import GithubStars from "../github-stars";
 import DocsMobileSidebar from "../docs-mobile-sidebar";
-import MaxWidthContainer from "@/components/max-width-container";
+import MaxWidthContainer from "@/components/website/max-width-container";
 
 export default function Header() {
     return (

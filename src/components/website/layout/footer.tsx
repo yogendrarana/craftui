@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { ExternalLink } from "../external-link";
-import MaxWidthContainer from "@/components/max-width-container";
+import MaxWidthContainer from "@/components/website/max-width-container";
 
 export default function Footer() {
     return (

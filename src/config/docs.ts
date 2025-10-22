@@ -61,10 +61,6 @@ export const docsNavItems: Array<DocsNavItem> = [
                 href: "/docs/components/select"
             },
             {
-                title: "Separator",
-                href: "/docs/components/separator"
-            },
-            {
                 title: "Stepper",
                 href: "/docs/components/stepper"
             },
@@ -72,10 +68,7 @@ export const docsNavItems: Array<DocsNavItem> = [
                 title: "Tabs",
                 href: "/docs/components/tabs"
             },
-            {
-                title: "Tooltip",
-                href: "/docs/components/tooltip"
-            }
+
         ]
     },
     {

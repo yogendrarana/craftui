@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
-import MaxWidthContainer from "@/components/max-width-container";
+import MaxWidthContainer from "@/components/website/max-width-container";
 
 export default function Hero() {
     return (

@@ -1,11 +1,11 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import DocsSidebar from "@/components/website/docs-sidebar";
-import MaxWidthContainer from "@/components/max-width-container";
-import Header from "@/components/website/layout/header";
 import Footer from "@/components/website/layout/footer";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import Header from "@/components/website/layout/header";
 import { Scrollbar } from "@radix-ui/react-scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import MaxWidthContainer from "@/components/website/max-width-container";
 
 interface PageProps {
     children: React.ReactNode;
