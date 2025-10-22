@@ -5,34 +5,37 @@ import { ComponentTypeEnum } from "@/constants/enum";
 import ComponentCodePreviewDialog from "@/components/website/component-code-preview-dialog";
 
 interface ElementType {
-    label: string;
-    type: string;
-    rawCode: string;
-    path: string;
-    component: React.LazyExoticComponent<React.FC>;
+  label: string;
+  type: string;
+  rawCode: string;
+  path: string;
+  component: React.LazyExoticComponent<React.FC>;
 }
 
-export default function Page({ params }: { params: { elementType: string } }) {
-    const elements: ElementType[] = Object.values(Previews[ComponentTypeEnum.ELEMENTS]);
-    const filteredElements = elements.filter((elt) => elt.type === params.elementType);
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ elementType: string }>;
+}) {
+  const { elementType } = await params;
 
-    if (!elements || elements.length === 0) {
-        // TODO: Return a proper error comopnent
-        return <div>No element found</div>;
-    }
+  const elements: ElementType[] = Object.values(Previews[ComponentTypeEnum.ELEMENTS]);
+  const filteredElements = elements.filter((elt) => elt.type === elementType);
 
-    return (
-        <div className={cn("grid gap-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-5")}>
-            {[...filteredElements]?.map((comp, index) => {
-                return (
-                    <ComponentCodePreviewDialog
-                        component={React.createElement(comp.component)}
-                        label={comp.label}
-                        key={index}
-                        code={comp.rawCode}
-                    />
-                );
-            })}
-        </div>
-    );
+  if (!filteredElements || filteredElements.length === 0) {
+    return <div>No element found</div>;
+  }
+
+  return (
+    <div className={cn("grid gap-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-5")}>
+      {filteredElements.map((comp, index) => (
+        <ComponentCodePreviewDialog
+          key={index}
+          component={React.createElement(comp.component)}
+          label={comp.label}
+          code={comp.rawCode}
+        />
+      ))}
+    </div>
+  );
 }
