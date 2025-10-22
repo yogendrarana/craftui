@@ -87,7 +87,7 @@ const components = {
         />
     ),
     p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-        <p className={cn("mb-1 leading-8 [&:not(:first-child)]:mt-5", className)} {...props} />
+        <p className={cn("mb-1 leading-8 not-first:mt-5", className)} {...props} />
     ),
     ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
         <ul className={cn("ml-6 list-disc", className)} {...props} />
@@ -160,7 +160,7 @@ const components = {
     Spacer: ({ height = "1rem" }) => <div style={{ height }} aria-hidden="true" />,
     pre: (props: React.HTMLProps<HTMLPreElement>) => {
         const { children } = props;
-        const codeText = (children as React.ReactElement).props.children.trim();
+        const codeText = String((children as any)?.props?.children ?? children ?? "").trim();
 
         return (
             <div className="relative mx-auto">
@@ -188,6 +188,8 @@ const components = {
     )
 };
 
+
+// Mdx component
 interface MDXProps {
     code: string;
     className?: string;
@@ -198,7 +200,7 @@ export function Mdx({ code, className }: MDXProps) {
 
     return (
         <article className={cn("w-full mx-auto", className)}>
-            <Component components={components} />
+            <Component components={components as any} />
         </article>
     );
 }

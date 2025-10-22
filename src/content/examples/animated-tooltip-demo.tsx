@@ -10,7 +10,7 @@ export default function AnimatedTooltipDemo() {
         { id: "3", icon: <Mail className="w-4 h-4 text-gray-500" />, label: "Mail" },
         { id: "4", icon: <Calendar className="w-4 h-4 text-gray-500" />, label: "Calendar" },
         { id: "5", icon: <ImageIcon className="w-4 h-4 text-gray-500" />, label: "Photos" },
-        { id: "5", icon: <Music className="w-4 h-4 text-gray-500" />, label: "Music" }
+        { id: "6", icon: <Music className="w-4 h-4 text-gray-500" />, label: "Music" }
     ];
 
     return (
