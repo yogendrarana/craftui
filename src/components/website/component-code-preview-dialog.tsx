@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import {
     Dialog,
@@ -32,7 +34,7 @@ export default function ComponentCodePreviewDialog({
                 <ComponentPreview
                     component={component}
                     className={cn(
-                        "cursor-pointer aspect-square border",
+                        "cursor-pointer aspect-square border border-dashed rounded-md",
                         "transition-all duration-300 ease-in-out"
                     )}
                 />
@@ -41,7 +43,7 @@ export default function ComponentCodePreviewDialog({
             <DialogContainer>
                 <DialogContent
                     className={cn(
-                        "relative h-full w-full flex flex-col overflow-hidden bg-white",
+                        "relative h-full w-full flex flex-col overflow-hidden bg-background",
                         "dark:border-zinc-50/10 dark:bg-zinc-900"
                     )}
                 >
