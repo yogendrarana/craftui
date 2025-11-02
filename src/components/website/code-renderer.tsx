@@ -37,7 +37,7 @@ export default function CodeRenderer({ code, className }: CodeRendererProps) {
             <SyntaxHighlighter
                 language="tsx"
                 style={a11yDark}
-                customStyle={{ margin: 0, backgroundColor: "black", height: "100%" }}
+                customStyle={{ margin: 0, backgroundColor: "black", height: "100%", fontSize: "14px" }}
             >
                 {code}
             </SyntaxHighlighter>
