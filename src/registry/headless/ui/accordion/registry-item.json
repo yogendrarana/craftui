@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "headless-ui-accordion",
+	"type": "registry:ui",
+	"description": "A raw implementation of accordion component",
+	"dependencies": ["motion"],
+	"registryDependencies": ["@craftui/lib-utils"],
+	"files": [
+		{
+			"path": "src/registry/headless/ui/accordion/index.tsx",
+			"type": "registry:ui",
+			"target": "components/craftui/headless/ui/accordion.tsx"
+		}
+	]
+}

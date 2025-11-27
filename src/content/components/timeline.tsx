@@ -6,45 +6,47 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 // Define variants
 const timelineVariants = cva("relative", {
-    variants: {
-        variant: {
-            vertical: "flex flex-col gap-6",
-            horizontal: "flex flex-row items-center gap-12"
-        }
-    },
-    defaultVariants: {
-        variant: "vertical"
-    }
+	variants: {
+		variant: {
+			vertical: "flex flex-col gap-6",
+			horizontal: "flex flex-row items-center gap-12",
+		},
+	},
+	defaultVariants: {
+		variant: "vertical",
+	},
 });
 
 const markerVariants = cva(
-    "w-3 h-3 rounded-full border flex items-center justify-center shrink-0 relative z-10 transition-colors duration-200",
-    {
-        variants: {
-            variant: {
-                empty: "bg-white dark:bg-neutral-900",
-                fill: "bg-neutral-300 dark:bg-neutral-600"
-            }
-        },
-        defaultVariants: {
-            variant: "empty"
-        }
-    }
+	"w-3 h-3 rounded-full border flex items-center justify-center shrink-0 relative z-10 transition-colors duration-200",
+	{
+		variants: {
+			variant: {
+				empty: "bg-white dark:bg-neutral-900",
+				fill: "bg-neutral-300 dark:bg-neutral-600",
+			},
+		},
+		defaultVariants: {
+			variant: "empty",
+		},
+	},
 );
 
 // Context
 type TimelineContextValue = {
-    variant: "vertical" | "horizontal";
+	variant: "vertical" | "horizontal";
 };
 
-const TimelineContext = React.createContext<TimelineContextValue | undefined>(undefined);
+const TimelineContext = React.createContext<TimelineContextValue | undefined>(
+	undefined,
+);
 
 const useTimeline = () => {
-    const context = React.useContext(TimelineContext);
-    if (!context) {
-        throw new Error("useTimeline must be used within a Timeline component");
-    }
-    return context;
+	const context = React.useContext(TimelineContext);
+	if (!context) {
+		throw new Error("useTimeline must be used within a Timeline component");
+	}
+	return context;
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -53,44 +55,47 @@ const useTimeline = () => {
  * -------------------------------------------------------------------------------------------------
  */
 interface TimelineProps extends VariantProps<typeof timelineVariants> {
-    children: React.ReactNode;
-    className?: string;
-    variant?: "vertical" | "horizontal";
-    "aria-label"?: string;
+	children: React.ReactNode;
+	className?: string;
+	variant?: "vertical" | "horizontal";
+	"aria-label"?: string;
 }
 
 const Timeline = React.forwardRef<HTMLDivElement, TimelineProps>(
-    ({ children, variant = "vertical", className, "aria-label": ariaLabel }, ref) => {
-        const id = useId();
+	(
+		{ children, variant = "vertical", className, "aria-label": ariaLabel },
+		ref,
+	) => {
+		const id = useId();
 
-        return (
-            <TimelineContext.Provider value={{ variant }}>
-                <div
-                    ref={ref}
-                    id={id}
-                    role="list"
-                    aria-label={ariaLabel || "Timeline"}
-                    className={cn(
-                        timelineVariants({ variant }),
-                        "dark:text-neutral-200",
-                        className
-                    )}
-                >
-                    <div
-                        className={cn(
-                            "absolute",
-                            variant === "vertical"
-                                ? "left-[6px] top-0 w-[1px] h-full"
-                                : "top-[6px] left-0 h-[1px] w-full",
-                            "bg-neutral-200 dark:bg-neutral-700"
-                        )}
-                        aria-hidden="true"
-                    />
-                    {children}
-                </div>
-            </TimelineContext.Provider>
-        );
-    }
+		return (
+			<TimelineContext.Provider value={{ variant }}>
+				<div
+					ref={ref}
+					id={id}
+					role="list"
+					aria-label={ariaLabel || "Timeline"}
+					className={cn(
+						timelineVariants({ variant }),
+						"dark:text-neutral-200",
+						className,
+					)}
+				>
+					<div
+						className={cn(
+							"absolute",
+							variant === "vertical"
+								? "left-[6px] top-0 w-[1px] h-full"
+								: "top-[6px] left-0 h-[1px] w-full",
+							"bg-neutral-200 dark:bg-neutral-700",
+						)}
+						aria-hidden="true"
+					/>
+					{children}
+				</div>
+			</TimelineContext.Provider>
+		);
+	},
 );
 
 Timeline.displayName = "Timeline";
@@ -101,25 +106,25 @@ Timeline.displayName = "Timeline";
  * -------------------------------------------------------------------------------------------------
  */
 interface TimelineItemProps {
-    children: React.ReactNode;
-    className?: string;
+	children: React.ReactNode;
+	className?: string;
 }
 
 const TimelineItem = ({ children, className }: TimelineItemProps) => {
-    const { variant } = useTimeline();
+	const { variant } = useTimeline();
 
-    return (
-        <div
-            role="listitem"
-            className={cn(
-                "relative flex items-start group",
-                variant === "horizontal" && "flex-col items-center",
-                className
-            )}
-        >
-            {children}
-        </div>
-    );
+	return (
+		<div
+			role="listitem"
+			className={cn(
+				"relative flex items-start group",
+				variant === "horizontal" && "flex-col items-center",
+				className,
+			)}
+		>
+			{children}
+		</div>
+	);
 };
 
 TimelineItem.displayName = "TimelineItem";
@@ -130,20 +135,23 @@ TimelineItem.displayName = "TimelineItem";
  * -------------------------------------------------------------------------------------------------
  */
 interface TimelineMarkerProps extends VariantProps<typeof markerVariants> {
-    className?: string;
+	className?: string;
 }
 
-const TimelineMarker = ({ variant = "empty", className }: TimelineMarkerProps) => {
-    return (
-        <div
-            className={cn(
-                markerVariants({ variant }),
-                "border-neutral-300 dark:border-neutral-600",
-                className
-            )}
-            aria-hidden="true"
-        />
-    );
+const TimelineMarker = ({
+	variant = "empty",
+	className,
+}: TimelineMarkerProps) => {
+	return (
+		<div
+			className={cn(
+				markerVariants({ variant }),
+				"border-neutral-300 dark:border-neutral-600",
+				className,
+			)}
+			aria-hidden="true"
+		/>
+	);
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -152,24 +160,24 @@ const TimelineMarker = ({ variant = "empty", className }: TimelineMarkerProps) =
  * -------------------------------------------------------------------------------------------------
  */
 interface TimelineContentProps {
-    children: React.ReactNode;
-    className?: string;
+	children: React.ReactNode;
+	className?: string;
 }
 
 const TimelineContent = ({ children, className }: TimelineContentProps) => {
-    const { variant } = useTimeline();
+	const { variant } = useTimeline();
 
-    return (
-        <div
-            className={cn(
-                variant === "vertical" ? "ml-4" : "mt-4 text-center",
-                "relative z-10",
-                className
-            )}
-        >
-            {children}
-        </div>
-    );
+	return (
+		<div
+			className={cn(
+				variant === "vertical" ? "ml-4" : "mt-4 text-center",
+				"relative z-10",
+				className,
+			)}
+		>
+			{children}
+		</div>
+	);
 };
 
 TimelineContent.displayName = "TimelineContent";
@@ -180,21 +188,21 @@ TimelineContent.displayName = "TimelineContent";
  * -------------------------------------------------------------------------------------------------
  */
 interface TimelineTitleProps {
-    children: React.ReactNode;
-    className?: string;
+	children: React.ReactNode;
+	className?: string;
 }
 
 const TimelineTitle = ({ children, className }: TimelineTitleProps) => {
-    return (
-        <h3
-            className={cn(
-                "text-base font-medium text-neutral-900 dark:text-neutral-100 mb-1",
-                className
-            )}
-        >
-            {children}
-        </h3>
-    );
+	return (
+		<h3
+			className={cn(
+				"text-base font-medium text-neutral-900 dark:text-neutral-100 mb-1",
+				className,
+			)}
+		>
+			{children}
+		</h3>
+	);
 };
 
 /* -------------------------------------------------------------------------------------------------
@@ -203,29 +211,37 @@ const TimelineTitle = ({ children, className }: TimelineTitleProps) => {
  * -------------------------------------------------------------------------------------------------
  */
 interface TimelineDescriptionProps {
-    children: React.ReactNode;
-    className?: string;
+	children: React.ReactNode;
+	className?: string;
 }
 
-const TimelineDescription = ({ children, className }: TimelineDescriptionProps) => {
-    return (
-        <p className={cn("text-sm text-neutral-600 dark:text-neutral-400", className)}>
-            {children}
-        </p>
-    );
+const TimelineDescription = ({
+	children,
+	className,
+}: TimelineDescriptionProps) => {
+	return (
+		<p
+			className={cn(
+				"text-sm text-neutral-600 dark:text-neutral-400",
+				className,
+			)}
+		>
+			{children}
+		</p>
+	);
 };
 
 export {
-    Timeline,
-    TimelineItem,
-    TimelineMarker,
-    TimelineContent,
-    TimelineTitle,
-    TimelineDescription,
-    type TimelineProps,
-    type TimelineItemProps,
-    type TimelineMarkerProps,
-    type TimelineContentProps,
-    type TimelineTitleProps,
-    type TimelineDescriptionProps
+	Timeline,
+	TimelineItem,
+	TimelineMarker,
+	TimelineContent,
+	TimelineTitle,
+	TimelineDescription,
+	type TimelineProps,
+	type TimelineItemProps,
+	type TimelineMarkerProps,
+	type TimelineContentProps,
+	type TimelineTitleProps,
+	type TimelineDescriptionProps,
 };

@@ -1,0 +1,17 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "hooks-use-optimistic",
+	"type": "registry:hook",
+	"description": "A hook that wraps React.useOptimistic to manage optimistic updates for lists, supporting add, update, and delete actions.",
+	"dependencies": [],
+	"devDependencies": [],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "src/registry/hooks/use-optimistic/index.ts",
+			"content": "import * as React from \"react\";\n\nexport function useOptimistic<TData extends { id: string }>(data: TData[]) {\n\tconst [optimisticData, setOptimisticData] = React.useOptimistic(\n\t\tdata,\n\t\t(\n\t\t\tstate,\n\t\t\t{\n\t\t\t\taction,\n\t\t\t\titem,\n\t\t\t}: {\n\t\t\t\taction: \"add\" | \"delete\" | \"update\";\n\t\t\t\titem: TData;\n\t\t\t},\n\t\t) => {\n\t\t\tswitch (action) {\n\t\t\t\tcase \"delete\":\n\t\t\t\t\treturn state.filter((i) => i.id !== item.id);\n\t\t\t\tcase \"update\":\n\t\t\t\t\treturn state.map((i) => (i.id === item.id ? item : i));\n\t\t\t\tdefault:\n\t\t\t\t\treturn [...state, item];\n\t\t\t}\n\t\t},\n\t);\n\n\treturn [optimisticData, setOptimisticData] as const;\n}\n",
+			"type": "registry:hook",
+			"target": "hooks/use-optimistic.ts"
+		}
+	]
+}

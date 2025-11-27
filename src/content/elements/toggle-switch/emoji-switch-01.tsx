@@ -3,15 +3,15 @@
 import React, { useState } from "react";
 
 export default function EmojiSwitch() {
-    const [isOn, setIsOn] = useState(false);
-    const handleToggle = () => setIsOn(!isOn);
+	const [isOn, setIsOn] = useState(false);
+	const handleToggle = () => setIsOn(!isOn);
 
-    return (
-        <div className="flex items-center justify-center">
-            <button
-                role="switch"
-                aria-checked={isOn}
-                className={`
+	return (
+		<div className="flex items-center justify-center">
+			<button
+				role="switch"
+				aria-checked={isOn}
+				className={`
                   w-20 h-11 
                   flex items-center 
                   rounded-full p-1 
@@ -19,10 +19,10 @@ export default function EmojiSwitch() {
                   transition-colors duration-300
                   ${isOn ? "bg-yellow-400 dark:bg-yellow-500" : "bg-gray-300 dark:bg-gray-600"}
                 `}
-                onClick={handleToggle}
-            >
-                <span
-                    className={`
+				onClick={handleToggle}
+			>
+				<span
+					className={`
                       w-9 h-9 
                       flex items-center justify-center 
                       rounded-full 
@@ -30,10 +30,10 @@ export default function EmojiSwitch() {
                       transform transition-transform duration-300
                       ${isOn ? "translate-x-9" : "translate-x-0"}
                     `}
-                >
-                    {isOn ? "😊" : "😴"}
-                </span>
-            </button>
-        </div>
-    );
+				>
+					{isOn ? "😊" : "😴"}
+				</span>
+			</button>
+		</div>
+	);
 }
