@@ -3,14 +3,14 @@
 import React from "react";
 
 export default function Orbit() {
-    return (
-        <div>
-            <div className="relative h-[14px] w-[35px]">
-                <div className="absolute h-[14px] w-[14px] rounded-full bg-black dark:bg-white animate-[orbit_1.4s_linear_infinite]"></div>
-                <div className="absolute h-[14px] w-[14px] rounded-full bg-black dark:bg-white animate-[orbit_1.4s_linear_infinite] delay-700"></div>
-            </div>
+	return (
+		<div>
+			<div className="relative h-[14px] w-[35px]">
+				<div className="absolute h-[14px] w-[14px] rounded-full bg-black dark:bg-white animate-[orbit_1.4s_linear_infinite]"></div>
+				<div className="absolute h-[14px] w-[14px] rounded-full bg-black dark:bg-white animate-[orbit_1.4s_linear_infinite] delay-700"></div>
+			</div>
 
-            <style jsx>{`
+			<style jsx>{`
                 @keyframes orbit {
                     0% {
                         transform: translateX(calc(35px * 0.25)) scale(0.73684);
@@ -98,6 +98,6 @@ export default function Orbit() {
                     }
                 }
             `}</style>
-        </div>
-    );
+		</div>
+	);
 }

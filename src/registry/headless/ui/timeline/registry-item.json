@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "headless-ui-timeline",
+	"type": "registry:ui",
+	"description": "A timeline component with vertical and horizontal variants",
+	"dependencies": ["class-variance-authority"],
+	"registryDependencies": ["@craftui/lib-utils"],
+	"files": [
+		{
+			"path": "src/registry/headless/ui/timeline/index.tsx",
+			"type": "registry:ui",
+			"target": "components/craftui/headless/ui/timeline.tsx"
+		}
+	]
+}

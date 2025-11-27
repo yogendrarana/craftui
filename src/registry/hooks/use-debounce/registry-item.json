@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "hooks-use-debounce",
+	"type": "registry:hook",
+	"description": "A hook to debounce rapidly changing values",
+	"dependencies": [],
+	"devDependencies": [],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "src/registry/hooks/use-debounce/index.ts",
+			"type": "registry:hook",
+			"target": "hooks/use-auto-height.tsx"
+		}
+	]
+}

@@ -3,22 +3,22 @@
 import React from "react";
 
 export default function NewtonsCradle() {
-    return (
-        <div className="h-10 w-10 relative flex items-center justify-center">
-            <div className="dot">
-                <div className="dot-inner bg-black dark:bg-white"></div>
-            </div>
-            <div className="dot">
-                <div className="dot-inner bg-black dark:bg-white"></div>
-            </div>
-            <div className="dot">
-                <div className="dot-inner bg-black dark:bg-white"></div>
-            </div>
-            <div className="dot">
-                <div className="dot-inner bg-black dark:bg-white"></div>
-            </div>
+	return (
+		<div className="h-10 w-10 relative flex items-center justify-center">
+			<div className="dot">
+				<div className="dot-inner bg-black dark:bg-white"></div>
+			</div>
+			<div className="dot">
+				<div className="dot-inner bg-black dark:bg-white"></div>
+			</div>
+			<div className="dot">
+				<div className="dot-inner bg-black dark:bg-white"></div>
+			</div>
+			<div className="dot">
+				<div className="dot-inner bg-black dark:bg-white"></div>
+			</div>
 
-            <style jsx>{`
+			<style jsx>{`
                 .dot {
                     position: relative;
                     display: flex;
@@ -76,6 +76,6 @@ export default function NewtonsCradle() {
                     }
                 }
             `}</style>
-        </div>
-    );
+		</div>
+	);
 }

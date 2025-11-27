@@ -1,0 +1,17 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "hooks-use-is-mobile",
+	"type": "registry:hook",
+	"description": "A hook that detects whether the current viewport width is below the mobile breakpoint.",
+	"dependencies": [],
+	"devDependencies": [],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "src/registry/hooks/use-is-mobile/index.ts",
+			"content": "import * as React from \"react\";\n\nconst MOBILE_BREAKPOINT = 768;\n\nexport function useIsMobile() {\n\tconst [isMobile, setIsMobile] = React.useState<boolean | undefined>(\n\t\tundefined,\n\t);\n\n\tReact.useEffect(() => {\n\t\tconst mql = window.matchMedia(\n\t\t\t`(max-width: ${MOBILE_BREAKPOINT - 1}px)`,\n\t\t);\n\t\tconst onChange = () => {\n\t\t\tsetIsMobile(window.innerWidth < MOBILE_BREAKPOINT);\n\t\t};\n\t\tmql.addEventListener(\"change\", onChange);\n\t\tsetIsMobile(window.innerWidth < MOBILE_BREAKPOINT);\n\t\treturn () => mql.removeEventListener(\"change\", onChange);\n\t}, []);\n\n\treturn !!isMobile;\n}\n",
+			"type": "registry:hook",
+			"target": "hooks/use-is-mobile.ts"
+		}
+	]
+}

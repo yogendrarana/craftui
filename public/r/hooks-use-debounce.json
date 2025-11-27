@@ -1,0 +1,17 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "hooks-use-debounce",
+	"type": "registry:hook",
+	"description": "A hook to debounce rapidly changing values",
+	"dependencies": [],
+	"devDependencies": [],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "src/registry/hooks/use-debounce/index.ts",
+			"content": "import { useEffect, useState } from \"react\";\n\nexport function useDebounce<T>(value: T, delay: number = 500): T {\n\tconst [debouncedValue, setDebouncedValue] = useState<T>(value);\n\n\tuseEffect(() => {\n\t\t// Set up the timeout\n\t\tconst handler = setTimeout(() => {\n\t\t\tsetDebouncedValue(value);\n\t\t}, delay);\n\n\t\t// Clean up the timeout if value changes before delay\n\t\treturn () => {\n\t\t\tclearTimeout(handler);\n\t\t};\n\t}, [value, delay]);\n\n\treturn debouncedValue;\n}\n",
+			"type": "registry:hook",
+			"target": "hooks/use-auto-height.tsx"
+		}
+	]
+}

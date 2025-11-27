@@ -4,43 +4,47 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 interface TypingEffectProps {
-    children: string;
-    typingSpeed?: number;
-    className?: string;
+	children: string;
+	typingSpeed?: number;
+	className?: string;
 }
 
 export default function TypingEffect({
-    children,
-    typingSpeed = 100,
-    className = ""
+	children,
+	typingSpeed = 100,
+	className = "",
 }: TypingEffectProps) {
-    const [displayedText, setDisplayedText] = useState("");
+	const [displayedText, setDisplayedText] = useState("");
 
-    const text = children;
+	const text = children;
 
-    useEffect(() => {
-        let currentIndex = 0;
-        const intervalId = setInterval(() => {
-            if (currentIndex <= text.length) {
-                setDisplayedText(text.slice(0, currentIndex));
-                currentIndex++;
-            } else {
-                clearInterval(intervalId);
-            }
-        }, typingSpeed);
+	useEffect(() => {
+		let currentIndex = 0;
+		const intervalId = setInterval(() => {
+			if (currentIndex <= text.length) {
+				setDisplayedText(text.slice(0, currentIndex));
+				currentIndex++;
+			} else {
+				clearInterval(intervalId);
+			}
+		}, typingSpeed);
 
-        return () => clearInterval(intervalId);
-    }, [text, typingSpeed]);
+		return () => clearInterval(intervalId);
+	}, [text, typingSpeed]);
 
-    return (
-        <div className={`font-mono ${className}`}>
-            {displayedText}
-            <motion.span
-                animate={{ opacity: [0, 1] }}
-                transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
-            >
-                |
-            </motion.span>
-        </div>
-    );
+	return (
+		<div className={`font-mono ${className}`}>
+			{displayedText}
+			<motion.span
+				animate={{ opacity: [0, 1] }}
+				transition={{
+					duration: 0.5,
+					repeat: Infinity,
+					repeatType: "reverse",
+				}}
+			>
+				|
+			</motion.span>
+		</div>
+	);
 }

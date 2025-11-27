@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "headless-components-cursor",
+	"type": "registry:component",
+	"description": "A custom cursor component",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/lib-utils"],
+	"files": [
+		{
+			"path": "src/registry/headless/components/cursor/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/headless/components/cursor.tsx"
+		}
+	]
+}

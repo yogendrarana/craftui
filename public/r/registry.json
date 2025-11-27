@@ -1,0 +1,365 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry.json",
+	"name": "craftui",
+	"homepage": "https://craft-ui.vercel.app",
+	"items": [
+		{
+			"name": "index",
+			"type": "registry:style",
+			"dependencies": [
+				"tw-animate-css",
+				"class-variance-authority",
+				"lucide-react"
+			],
+			"registryDependencies": ["utils"],
+			"cssVars": {},
+			"files": []
+		},
+		{
+			"name": "headless-components-animated-tooltip",
+			"type": "registry:component",
+			"description": "An animated tooltip component",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/components/animated-tooltip/index.tsx",
+					"type": "registry:component",
+					"target": "components/craftui/headless/components/animated-tooltip.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-components-cursor",
+			"type": "registry:component",
+			"description": "A custom cursor component",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/components/cursor/index.tsx",
+					"type": "registry:component",
+					"target": "components/craftui/headless/components/cursor.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-components-dock",
+			"type": "registry:component",
+			"description": "A dock component",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/components/dock/index.tsx",
+					"type": "registry:component",
+					"target": "components/craftui/headless/components/dock.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-components-magnetic",
+			"type": "registry:component",
+			"description": "A magnetic hover effect component",
+			"dependencies": ["gsap"],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/headless/components/magnetic/index.tsx",
+					"type": "registry:component",
+					"target": "components/craftui/headless/components/magnetic.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-components-marquee",
+			"type": "registry:component",
+			"description": "A marquee component for scrolling content horizontally",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/components/marquee/index.tsx",
+					"type": "registry:component",
+					"target": "components/craftui/headless/components/marquee.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-effects-text-scramble",
+			"type": "registry:ui",
+			"description": "A text scrambling animation effect component",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/effects/text-scramble/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/headless/effects/text-scramble.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-effects-typing-effect",
+			"type": "registry:ui",
+			"description": "A typing animation effect component",
+			"dependencies": ["motion"],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/headless/effects/typing-effect/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/headless/effects/typing-effect.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-ui-accordion",
+			"type": "registry:ui",
+			"description": "A raw implementation of accordion component",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/ui/accordion/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/headless/ui/accordion.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-ui-dialog",
+			"type": "registry:ui",
+			"description": "A dialog/modal component with animations",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/ib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/ui/dialog/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/headless/ui/dialog.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-ui-drawer",
+			"type": "registry:ui",
+			"description": "A drawer/slide-out panel component",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/ui/drawer/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/headless/ui/drawer.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-ui-select",
+			"type": "registry:ui",
+			"description": "A custom select dropdown component",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/ui/select/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/headless/ui/select.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-ui-stepper",
+			"type": "registry:ui",
+			"description": "A stepper/wizard component",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/ui/stepper/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/headless/ui/stepper.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-ui-tabs",
+			"type": "registry:ui",
+			"description": "A tabs component with animations",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/ui/tabs/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/headless/ui/tabs.tsx"
+				}
+			]
+		},
+		{
+			"name": "headless-ui-timeline",
+			"type": "registry:ui",
+			"description": "A timeline component with vertical and horizontal variants",
+			"dependencies": ["class-variance-authority"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/headless/ui/timeline/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/headless/ui/timeline.tsx"
+				}
+			]
+		},
+		{
+			"name": "hooks-use-callback",
+			"type": "registry:hook",
+			"description": "A hook that provides a stable callback reference while always invoking the latest version of the provided function.",
+			"dependencies": [],
+			"devDependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/hooks/use-callback/index.ts",
+					"type": "registry:hook",
+					"target": "hooks/use-callback.tsx"
+				}
+			]
+		},
+		{
+			"name": "hooks-use-click-outside",
+			"type": "registry:hook",
+			"description": "A hook to detect clicks outside of a specified element",
+			"dependencies": [],
+			"devDependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/hooks/use-click-outside/index.ts",
+					"type": "registry:hook",
+					"target": "hooks/use-auto-height.tsx"
+				}
+			]
+		},
+		{
+			"name": "hooks-use-debounce",
+			"type": "registry:hook",
+			"description": "A hook to debounce rapidly changing values",
+			"dependencies": [],
+			"devDependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/hooks/use-debounce/index.ts",
+					"type": "registry:hook",
+					"target": "hooks/use-auto-height.tsx"
+				}
+			]
+		},
+		{
+			"name": "hooks-use-hydrated",
+			"type": "registry:hook",
+			"description": "A hook that returns whether the component has hydrated on the client to avoid hydration mismatches.",
+			"dependencies": [],
+			"devDependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/hooks/use-hydrated/index.ts",
+					"type": "registry:hook",
+					"target": "hooks/use-hydrated.ts"
+				}
+			]
+		},
+		{
+			"name": "hooks-use-is-mobile",
+			"type": "registry:hook",
+			"description": "A hook that detects whether the current viewport width is below the mobile breakpoint.",
+			"dependencies": [],
+			"devDependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/hooks/use-is-mobile/index.ts",
+					"type": "registry:hook",
+					"target": "hooks/use-is-mobile.ts"
+				}
+			]
+		},
+		{
+			"name": "hooks-use-media-query",
+			"type": "registry:hook",
+			"description": "A hook for responsive breakpoint detection using media queries",
+			"dependencies": [],
+			"devDependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/hooks/use-media-query/index.ts",
+					"type": "registry:hook",
+					"target": "hooks/use-auto-height.tsx"
+				}
+			]
+		},
+		{
+			"name": "hooks-use-mounted",
+			"type": "registry:hook",
+			"description": "A hook that returns whether the component is currently mounted, updating on mount and unmount.",
+			"dependencies": [],
+			"devDependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/hooks/use-mounted/index.ts",
+					"type": "registry:hook",
+					"target": "hooks/use-mounted.ts"
+				}
+			]
+		},
+		{
+			"name": "hooks-use-optimistic",
+			"type": "registry:hook",
+			"description": "A hook that wraps React.useOptimistic to manage optimistic updates for lists, supporting add, update, and delete actions.",
+			"dependencies": [],
+			"devDependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/hooks/use-optimistic/index.ts",
+					"type": "registry:hook",
+					"target": "hooks/use-optimistic.ts"
+				}
+			]
+		},
+		{
+			"name": "hooks-use-query-string",
+			"type": "registry:hook",
+			"description": "A hook that helps build updated URL query strings by merging or removing parameters from existing search params.",
+			"dependencies": [],
+			"devDependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/hooks/use-query-string/index.ts",
+					"type": "registry:hook",
+					"target": "hooks/use-query-string.ts"
+				}
+			]
+		},
+		{
+			"name": "lib-utils",
+			"type": "registry:lib",
+			"description": "Utility functions including cn for merging Tailwind classes",
+			"dependencies": ["clsx", "tailwind-merge"],
+			"devDependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/lib/utils/index.ts",
+					"type": "registry:lib",
+					"target": "lib/utils.ts"
+				}
+			]
+		}
+	]
+}

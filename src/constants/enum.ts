@@ -1,5 +1,5 @@
 export enum ComponentTypeEnum {
-    ELEMENTS = "elements",
-    COMPONENTS= "components",
-    BLOCKS = "blocks",
+	ELEMENTS = "elements",
+	COMPONENTS = "components",
+	BLOCKS = "blocks",
 }

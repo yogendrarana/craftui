@@ -1,0 +1,17 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "hooks-use-hydrated",
+	"type": "registry:hook",
+	"description": "A hook that returns whether the component has hydrated on the client to avoid hydration mismatches.",
+	"dependencies": [],
+	"devDependencies": [],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "src/registry/hooks/use-hydrated/index.ts",
+			"content": "import { useEffect, useState } from \"react\";\n\n/**\n * Hook to safely handle client-side only code and prevent hydration mismatches\n * @returns boolean indicating if the component has hydrated\n */\nexport function useHydrated() {\n\tconst [isHydrated, setIsHydrated] = useState(false);\n\n\tuseEffect(() => {\n\t\tsetIsHydrated(true);\n\t}, []);\n\n\treturn isHydrated;\n}\n",
+			"type": "registry:hook",
+			"target": "hooks/use-hydrated.ts"
+		}
+	]
+}
