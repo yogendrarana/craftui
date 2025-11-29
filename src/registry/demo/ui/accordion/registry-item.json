@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-accordion",
+	"type": "registry:block",
+	"description": "Basic accordion demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-accordion"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/accordion/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

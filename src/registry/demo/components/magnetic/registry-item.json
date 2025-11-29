@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-components-magnetic",
+	"type": "registry:block",
+	"description": "Basic magnetic demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/components-magnetic"],
+	"files": [
+		{
+			"path": "src/registry/demo/components/magnetic/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

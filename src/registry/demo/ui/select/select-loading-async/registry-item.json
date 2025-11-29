@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-select-loading-async",
+	"type": "registry:block",
+	"description": "Select with async loading demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-select"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/select/select-loading-async/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

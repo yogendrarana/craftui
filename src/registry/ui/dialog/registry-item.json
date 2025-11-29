@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "ui-dialog",
+	"type": "registry:ui",
+	"description": "A dialog/modal component with animations",
+	"dependencies": ["motion"],
+	"registryDependencies": ["@craftui/ib-utils"],
+	"files": [
+		{
+			"path": "src/registry/ui/dialog/index.tsx",
+			"type": "registry:ui",
+			"target": "components/craftui/ui/dialog.tsx"
+		}
+	]
+}

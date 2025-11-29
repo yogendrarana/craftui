@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-tabs-custom-variants",
+	"type": "registry:block",
+	"description": "Tabs with custom variants demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-tabs"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/tabs/tabs-custom-variants/index.tsx",
+			"content": "\"use client\";\n\nimport React from \"react\";\nimport { Tabs, TabList, Tab, TabPanels, TabPanel } from \"@/components/craftui/ui/tabs\";\nimport { Transition } from \"motion/react\";\n\nexport default function TabsCustomVariants() {\n\tconst variants = {\n\t\tinitial: { opacity: 0, y: -20 },\n\t\tanimate: { opacity: 1, y: 0 },\n\t\texit: { opacity: 0, y: -20 },\n\t};\n\n\tconst transition: Transition = { duration: 0.25, ease: \"easeInOut\" };\n\n\treturn (\n\t\t<div>\n\t\t\t<Tabs\n\t\t\t\tdefaultTab=\"tab1\"\n\t\t\t\tinstanceId=\"tabs-custom-variants-transition\"\n\t\t\t>\n\t\t\t\t<TabList>\n\t\t\t\t\t<Tab value=\"tab1\">First Tab</Tab>\n\t\t\t\t\t<Tab value=\"tab2\">Second Tab</Tab>\n\t\t\t\t\t<Tab value=\"tab3\">Third Tab</Tab>\n\t\t\t\t\t<Tab value=\"tab4\">Fourth Tab</Tab>\n\t\t\t\t</TabList>\n\n\t\t\t\t<TabPanels>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue=\"tab1\"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">\n\t\t\t\t\t\t\tContent for first tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue=\"tab2\"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">\n\t\t\t\t\t\t\tContent for second tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue=\"tab3\"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">\n\t\t\t\t\t\t\tContent for third tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue=\"tab4\"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">\n\t\t\t\t\t\t\tContent for fourth tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t</TabPanels>\n\t\t\t</Tabs>\n\t\t</div>\n\t);\n}\n",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

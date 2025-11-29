@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-stepper-indicator-progress",
+	"type": "registry:block",
+	"description": "Stepper with progress indicator demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-stepper"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/stepper/stepper-indicator-progress/index.tsx",
+			"content": "\"use client\";\n\nimport React from \"react\";\nimport {\n\tStepper,\n\tStep,\n\tStepTitle,\n\tStepDescription,\n\tStepIndicator,\n\tStepperContent,\n\tPrevStep,\n\tNextStep,\n} from \"@/components/craftui/ui/stepper\";\n\nconst StepperPreview = () => {\n\treturn (\n\t\t<div className=\"border rounded-md\">\n\t\t\t<Stepper totalSteps={4}>\n\t\t\t\t<StepperContent>\n\t\t\t\t\t<Step step={1}>\n\t\t\t\t\t\t<StepTitle>Step 1</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 1 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={2}>\n\t\t\t\t\t\t<StepTitle>Step 2</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 2 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={3}>\n\t\t\t\t\t\t<StepTitle>Step 3</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 3 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={4}>\n\t\t\t\t\t\t<StepTitle>Step 4</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 4 Description</StepDescription>\n\t\t\t\t\t</Step>\n\t\t\t\t</StepperContent>\n\n\t\t\t\t<div className=\"flex justify-between items-center gap-8\">\n\t\t\t\t\t<PrevStep />\n\t\t\t\t\t<StepIndicator variant=\"progress\" />\n\t\t\t\t\t<NextStep onFinish={() => alert(\"This is the end!\")} />\n\t\t\t\t</div>\n\t\t\t</Stepper>\n\t\t</div>\n\t);\n};\n\nexport default StepperPreview;\n",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

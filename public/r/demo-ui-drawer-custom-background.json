@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-drawer-custom-background",
+	"type": "registry:block",
+	"description": "Drawer with custom background demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-drawer"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/drawer/drawer-custom-background/index.tsx",
+			"content": "\"use client\";\n\nimport React from \"react\";\nimport {\n\tDrawer,\n\tDrawerTrigger,\n\tDrawerContent,\n\tDrawerHeader,\n\tDrawerFooter,\n\tDrawerTitle,\n\tDrawerClose,\n\tDrawerDescription,\n} from \"@/components/craftui/ui/drawer\";\n\nexport default function DrawerCustomBackground() {\n\treturn (\n\t\t<Drawer>\n\t\t\t<DrawerTrigger>Open Drawer</DrawerTrigger>\n\n\t\t\t<DrawerContent\n\t\t\t\tclassName=\"flex flex-col h-full border shadow-[0_0_5px_rgba(0,0,0,0.1)]\"\n\t\t\t\tbackdropClassName=\"bg-white/20\"\n\t\t\t>\n\t\t\t\t<DrawerHeader className=\"flex justify-between items-center\">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<DrawerTitle>Title</DrawerTitle>\n\t\t\t\t\t\t<DrawerDescription>\n\t\t\t\t\t\t\tThis is the description of the drawer\n\t\t\t\t\t\t</DrawerDescription>\n\t\t\t\t\t</div>\n\t\t\t\t\t<DrawerClose className=\"p-2 rounded-xl\" />{\" \"}\n\t\t\t\t</DrawerHeader>\n\n\t\t\t\t{/* your content */}\n\t\t\t\t<div className=\"py-4 flex-grow overflow-auto\">\n\t\t\t\t\t<p>The content of the drawer goes here.</p>\n\t\t\t\t</div>\n\n\t\t\t\t<DrawerFooter className=\"flex gap-2 justify-end\">\n\t\t\t\t\t<DrawerClose className=\"px-5 py-0.5 border\">\n\t\t\t\t\t\tClose\n\t\t\t\t\t</DrawerClose>\n\t\t\t\t\t<button className=\"px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm\">\n\t\t\t\t\t\tSave\n\t\t\t\t\t</button>\n\t\t\t\t</DrawerFooter>\n\t\t\t</DrawerContent>\n\t\t</Drawer>\n\t);\n}\n",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

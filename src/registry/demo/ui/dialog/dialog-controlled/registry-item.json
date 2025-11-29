@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-dialog-controlled",
+	"type": "registry:block",
+	"description": "Controlled dialog demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-dialog"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/dialog/dialog-controlled/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

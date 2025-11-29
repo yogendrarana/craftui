@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-components-cursor-text",
+	"type": "registry:block",
+	"description": "Text cursor demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/components-cursor"],
+	"files": [
+		{
+			"path": "src/registry/demo/components/cursor/cursor-text/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

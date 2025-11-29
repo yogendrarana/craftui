@@ -6,7 +6,7 @@ import type {
 	RegistryItem,
 	RegistryItemFile,
 	RegistryJson,
-} from "./../src/types/index";
+} from "./../src/types/registry";
 
 const REGISTRY_JSON_PATH = path.join(
 	process.cwd(),
@@ -67,28 +67,20 @@ async function getRegistryItemsFromFolder(registryDirPath: string) {
 	const entries = await fs.readdir(registryDirPath, { withFileTypes: true });
 
 	for (const entry of entries) {
+		const fullPath = path.join(registryDirPath, entry.name);
+
 		if (entry.isDirectory()) {
-			const fullPath = path.join(registryDirPath, entry.name);
-			const registryItemPath = path.join(fullPath, "registry-item.json");
+			const subItems = await getRegistryItemsFromFolder(fullPath);
+			items.push(...subItems);
+		} else if (entry.name === "registry-item.json") {
+			const content = await fs.readFile(fullPath, "utf-8");
+			const itemData = JSON.parse(content);
 
-			try {
-				// check if registry-item.json exists in this directory
-				await fs.access(registryItemPath);
-
-				// read and parse the registry item file
-				const content = await fs.readFile(registryItemPath, "utf-8");
-				const itemData = JSON.parse(content);
-
-				// remove the $schema property if it exists
-				if (itemData.$schema) {
-					delete itemData.$schema;
-				}
-
-				items.push(itemData);
-			} catch {
-				const subItems = await getRegistryItemsFromFolder(fullPath);
-				items.push(...subItems);
+			if (itemData.$schema) {
+				delete itemData.$schema;
 			}
+
+			items.push(itemData);
 		}
 	}
 
@@ -155,7 +147,7 @@ async function buildRegistryIndex() {
 
 		// define the component path from the first file if exists
 		const componentPath = item.files[0]?.path
-			? `@/${item.files[0].path}`
+			? `@/${item.files[0].path.replace(/^src\//, "")}`
 			: "";
 
 		// read files and add content preserving newlines
@@ -219,10 +211,8 @@ async function buildRegistryIndex() {
 									Comp = mod[exportName];
 								}
 
-								for (const key of metaKeys) {
-									if (mod[key]) {
-										LazyComp[key] = mod[key];
-									}
+								if (mod.animations) {
+									(LazyComp as any).animations = mod.animations;
 								}
 
 								return { default: Comp };
@@ -349,7 +339,7 @@ async function main() {
 
 		console.log("Registry build completed successfully!");
 
-		// 👇 Exit cleanly after success
+		// Exit cleanly after success
 		process.exit(0);
 	} catch (error) {
 		console.error("Build failed:", error);

@@ -1,0 +1,50 @@
+---
+title: Marquee
+description: A marquee component that scrolls content horizontally.
+slug: /components/marquee
+published: true
+date: 2024-11-11T00:00:00.000Z
+category: Headless
+subCategory: Effects
+---
+
+#### Marquee - Basic
+The component is using svg icons as marquee content. 
+If you want to use these icons you can visit [**svgl.app**](https://www.svgl.app).
+Or you can copy and paste the file which contains all the icons from [**here**](https://github.com/yogendrarana/craftui/blob/master/src/components/website/icons.tsx).
+<ComponentCodePreview name="demo-components-marquee" category="demo" />
+
+#### Marquee - Reverse
+<ComponentCodePreview name="demo-components-marquee-reverse" category="demo" />
+
+## Usage Guide
+
+Install the **clsx** and **tailwind-merge** packages:
+```bash
+npm install clsx tw-merge
+```
+
+Next, add [**cn**](https://github.com/yogendrarana/craftui/blob/master/src/lib/utils.ts) utility:
+```jsx
+import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from "clsx";
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}
+```
+
+Copy and paste the following component source.
+<ComponentSource name="marquee" category="components" />
+
+## Props
+
+| Prop         | Type              | Description                                       | Default |
+| -----------  | ----------------- | ------------------------------------------------- | ------- |
+| children     | ReactNode         | The content to be rendered inside the component   | _       |
+| className    | string            | Custom class to apply to the component.           | _       |
+| duration     | number            | Duration of the animation in seconds              | 20      |
+| repeat       | number            | Number of times the animation should repeat.      | 2       |
+| direction    | "left" or "right" | Direction of the animation.                       | "left"  |
+| pauseOnHover | boolean           | Whether the animation pauses on hover.            | true    |
+| gap          | number            | Space between the animated items in pixels.       | 0       |

@@ -20,6 +20,7 @@
 		],
 		"paths": {
 			"@/*": ["./src/*"],
+			"@/__registry__": ["./__registry__"],
 			"content-collections": ["./.content-collections/generated"]
 		}
 	},

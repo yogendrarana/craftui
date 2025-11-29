@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-stepper-indicator-fraction",
+	"type": "registry:block",
+	"description": "Stepper with fraction indicator demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-stepper"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/stepper/stepper-indicator-fraction/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

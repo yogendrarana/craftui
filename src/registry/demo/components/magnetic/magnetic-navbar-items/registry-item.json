@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-components-magnetic-navbar-items",
+	"type": "registry:block",
+	"description": "Magnetic navbar items demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/components-magnetic"],
+	"files": [
+		{
+			"path": "src/registry/demo/components/magnetic/magnetic-navbar-items/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

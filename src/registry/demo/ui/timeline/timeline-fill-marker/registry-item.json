@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-timeline-fill-marker",
+	"type": "registry:block",
+	"description": "Timeline with filled markers demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-timeline"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/timeline/timeline-fill-marker/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

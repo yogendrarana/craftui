@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-drawer-origins",
+	"type": "registry:block",
+	"description": "Drawer with different origins demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-drawer"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/drawer/drawer-origins/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}
