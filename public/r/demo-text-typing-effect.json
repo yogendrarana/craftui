@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-text-typing-effect",
+	"type": "registry:block",
+	"description": "Basic typing effect demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/text-typing-effect"],
+	"files": [
+		{
+			"path": "src/registry/demo/text/typing-effect/index.tsx",
+			"content": "\"use client\";\n\nimport TextTyping from \"@/components/craftui/text/text-typing\";\n\nexport default function Home() {\n\treturn (\n\t\t<TextTyping typingSpeed={100}>This is typing effect demo!</TextTyping>\n\t);\n}\n",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

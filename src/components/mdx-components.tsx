@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { CopyButton } from "./website/copy-button";
-import CodeRenderer from "./website/code-renderer";
-import CodeFromPath from "./website/code-from-path";
-import ComponentPreview from "./website/component-preview";
+import { CopyButton } from "./mdx/copy-button";
+import { Installation } from "./mdx/installation";
+import { CodeRenderer } from "./mdx/code-renderer";
+import { ComponentPreview } from "./mdx/component-preview";
 import { useMDXComponent } from "@content-collections/mdx/react";
-import ComponentSource from "@/components/website/component-source";
-import ComponentCodePreview from "@/components/website/component-code-preview";
+import { ComponentSource } from "@/components/mdx/component-source";
+import { ComponentCodePreview } from "@/components/mdx/component-code-preview";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const CustomLink = (props: any) => {
@@ -33,12 +33,12 @@ const components = {
 	CodeRenderer,
 	ComponentPreview,
 	ComponentCodePreview,
-	CodeFromPath,
+	Installation,
 	Image,
 	h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<h1
 			className={cn(
-				"font-heading mt-2 mb-2 scroll-m-20 text-4xl font-bold",
+				"font-heading mt-2 mb-4 scroll-m-20 text-4xl font-bold",
 				className,
 			)}
 			{...props}
@@ -47,7 +47,7 @@ const components = {
 	h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<h2
 			className={cn(
-				"font-heading mt-8 md-2 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0",
+				"font-heading mt-8 mb-4 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -56,7 +56,7 @@ const components = {
 	h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<h3
 			className={cn(
-				"font-heading mt-8 md-2 scroll-m-20 text-xl font-semibold tracking-tight",
+				"font-heading mt-8 mb-4 scroll-m-20 text-xl font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -74,7 +74,7 @@ const components = {
 	h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<h5
 			className={cn(
-				"mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
+				"font-heading mt-8 mb-4 scroll-m-20 text-lg font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
@@ -83,12 +83,13 @@ const components = {
 	h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<h6
 			className={cn(
-				"mt-8 mb-2 scroll-m-20 text-base font-semibold tracking-tight",
+				"font-heading mt-8 mb-2 scroll-m-20 text-base font-semibold tracking-tight",
 				className,
 			)}
 			{...props}
 		/>
 	),
+
 	a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
 		<CustomLink
 			className={cn(

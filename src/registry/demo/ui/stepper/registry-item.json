@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-stepper",
+	"type": "registry:block",
+	"description": "Basic stepper demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-stepper"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/stepper/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

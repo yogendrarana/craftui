@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-timeline-horizontal",
+	"type": "registry:block",
+	"description": "Horizontal timeline demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-timeline"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/timeline/timeline-horizontal/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

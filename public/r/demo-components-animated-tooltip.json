@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-components-animated-tooltip",
+	"type": "registry:block",
+	"description": "Basic animated tooltip demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/components-animated-tooltip"],
+	"files": [
+		{
+			"path": "src/registry/demo/components/animated-tooltip/index.tsx",
+			"content": "\"use client\";\n\nimport { AnimatedTooltip } from \"@/components/craftui/components/animated-tooltip\";\nimport { Home, Settings, Mail, Calendar, Music, ImageIcon } from \"lucide-react\";\n\nexport default function AnimatedTooltipDemo() {\n\tconst tooltips = [\n\t\t{\n\t\t\tid: \"1\",\n\t\t\ticon: <Home className=\"w-4 h-4 text-gray-500\" />,\n\t\t\tlabel: \"Home\",\n\t\t},\n\t\t{\n\t\t\tid: \"2\",\n\t\t\ticon: <Settings className=\"w-4 h-4 text-gray-500\" />,\n\t\t\tlabel: \"Settings\",\n\t\t},\n\t\t{\n\t\t\tid: \"3\",\n\t\t\ticon: <Mail className=\"w-4 h-4 text-gray-500\" />,\n\t\t\tlabel: \"Mail\",\n\t\t},\n\t\t{\n\t\t\tid: \"4\",\n\t\t\ticon: <Calendar className=\"w-4 h-4 text-gray-500\" />,\n\t\t\tlabel: \"Calendar\",\n\t\t},\n\t\t{\n\t\t\tid: \"5\",\n\t\t\ticon: <ImageIcon className=\"w-4 h-4 text-gray-500\" />,\n\t\t\tlabel: \"Photos\",\n\t\t},\n\t\t{\n\t\t\tid: \"6\",\n\t\t\ticon: <Music className=\"w-4 h-4 text-gray-500\" />,\n\t\t\tlabel: \"Music\",\n\t\t},\n\t];\n\n\treturn (\n\t\t<div className=\"flex gap-2\">\n\t\t\t{tooltips.map(({ id, icon, label }) => (\n\t\t\t\t<AnimatedTooltip key={id} label={label}>\n\t\t\t\t\t{icon}\n\t\t\t\t</AnimatedTooltip>\n\t\t\t))}\n\t\t</div>\n\t);\n}\n",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

@@ -16,198 +16,674 @@
 			"files": []
 		},
 		{
-			"name": "headless-components-animated-tooltip",
+			"name": "components-animated-tooltip",
 			"type": "registry:component",
 			"description": "An animated tooltip component",
 			"dependencies": ["motion"],
 			"registryDependencies": ["@craftui/lib-utils"],
 			"files": [
 				{
-					"path": "src/registry/headless/components/animated-tooltip/index.tsx",
+					"path": "src/registry/components/animated-tooltip/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/headless/components/animated-tooltip.tsx"
+					"target": "components/craftui/components/animated-tooltip.tsx"
 				}
 			]
 		},
 		{
-			"name": "headless-components-cursor",
+			"name": "components-cursor",
 			"type": "registry:component",
 			"description": "A custom cursor component",
 			"dependencies": [],
 			"registryDependencies": ["@craftui/lib-utils"],
 			"files": [
 				{
-					"path": "src/registry/headless/components/cursor/index.tsx",
+					"path": "src/registry/components/cursor/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/headless/components/cursor.tsx"
+					"target": "components/craftui/components/cursor.tsx"
 				}
 			]
 		},
 		{
-			"name": "headless-components-dock",
+			"name": "components-dock",
 			"type": "registry:component",
 			"description": "A dock component",
 			"dependencies": ["motion"],
 			"registryDependencies": ["@craftui/lib-utils"],
 			"files": [
 				{
-					"path": "src/registry/headless/components/dock/index.tsx",
+					"path": "src/registry/components/dock/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/headless/components/dock.tsx"
+					"target": "components/craftui/components/dock.tsx"
 				}
 			]
 		},
 		{
-			"name": "headless-components-magnetic",
+			"name": "components-magnetic",
 			"type": "registry:component",
 			"description": "A magnetic hover effect component",
 			"dependencies": ["gsap"],
 			"registryDependencies": [],
 			"files": [
 				{
-					"path": "src/registry/headless/components/magnetic/index.tsx",
+					"path": "src/registry/components/magnetic/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/headless/components/magnetic.tsx"
+					"target": "components/craftui/components/magnetic.tsx"
 				}
 			]
 		},
 		{
-			"name": "headless-components-marquee",
+			"name": "components-marquee",
 			"type": "registry:component",
 			"description": "A marquee component for scrolling content horizontally",
 			"dependencies": [],
 			"registryDependencies": ["@craftui/lib-utils"],
 			"files": [
 				{
-					"path": "src/registry/headless/components/marquee/index.tsx",
+					"path": "src/registry/components/marquee/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/headless/components/marquee.tsx"
+					"target": "components/craftui/components/marquee.tsx"
 				}
 			]
 		},
 		{
-			"name": "headless-effects-text-scramble",
-			"type": "registry:ui",
-			"description": "A text scrambling animation effect component",
+			"name": "demo-components-animated-tooltip",
+			"type": "registry:block",
+			"description": "Basic animated tooltip demo",
 			"dependencies": [],
-			"registryDependencies": ["@craftui/lib-utils"],
+			"registryDependencies": ["@craftui/components-animated-tooltip"],
 			"files": [
 				{
-					"path": "src/registry/headless/effects/text-scramble/index.tsx",
-					"type": "registry:ui",
-					"target": "components/craftui/headless/effects/text-scramble.tsx"
+					"path": "src/registry/demo/components/animated-tooltip/index.tsx",
+					"type": "registry:block",
+					"target": ""
 				}
 			]
 		},
 		{
-			"name": "headless-effects-typing-effect",
-			"type": "registry:ui",
-			"description": "A typing animation effect component",
-			"dependencies": ["motion"],
-			"registryDependencies": [],
+			"name": "demo-components-cursor-complex",
+			"type": "registry:block",
+			"description": "Complex cursor demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/components-cursor"],
 			"files": [
 				{
-					"path": "src/registry/headless/effects/typing-effect/index.tsx",
-					"type": "registry:ui",
-					"target": "components/craftui/headless/effects/typing-effect.tsx"
+					"path": "src/registry/demo/components/cursor/cursor-complex/index.tsx",
+					"type": "registry:block",
+					"target": ""
 				}
 			]
 		},
 		{
-			"name": "headless-ui-accordion",
-			"type": "registry:ui",
-			"description": "A raw implementation of accordion component",
-			"dependencies": ["motion"],
-			"registryDependencies": ["@craftui/lib-utils"],
+			"name": "demo-components-cursor-text",
+			"type": "registry:block",
+			"description": "Text cursor demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/components-cursor"],
 			"files": [
 				{
-					"path": "src/registry/headless/ui/accordion/index.tsx",
-					"type": "registry:ui",
-					"target": "components/craftui/headless/ui/accordion.tsx"
+					"path": "src/registry/demo/components/cursor/cursor-text/index.tsx",
+					"type": "registry:block",
+					"target": ""
 				}
 			]
 		},
 		{
-			"name": "headless-ui-dialog",
-			"type": "registry:ui",
-			"description": "A dialog/modal component with animations",
-			"dependencies": ["motion"],
-			"registryDependencies": ["@craftui/ib-utils"],
+			"name": "demo-components-cursor",
+			"type": "registry:block",
+			"description": "Basic cursor demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/components-cursor"],
 			"files": [
 				{
-					"path": "src/registry/headless/ui/dialog/index.tsx",
-					"type": "registry:ui",
-					"target": "components/craftui/headless/ui/dialog.tsx"
+					"path": "src/registry/demo/components/cursor/index.tsx",
+					"type": "registry:block",
+					"target": ""
 				}
 			]
 		},
 		{
-			"name": "headless-ui-drawer",
-			"type": "registry:ui",
-			"description": "A drawer/slide-out panel component",
-			"dependencies": ["motion"],
-			"registryDependencies": ["@craftui/lib-utils"],
+			"name": "demo-components-dock",
+			"type": "registry:block",
+			"description": "Basic dock demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/components-dock"],
 			"files": [
 				{
-					"path": "src/registry/headless/ui/drawer/index.tsx",
-					"type": "registry:ui",
-					"target": "components/craftui/headless/ui/drawer.tsx"
+					"path": "src/registry/demo/components/dock/index.tsx",
+					"type": "registry:block",
+					"target": ""
 				}
 			]
 		},
 		{
-			"name": "headless-ui-select",
-			"type": "registry:ui",
-			"description": "A custom select dropdown component",
-			"dependencies": ["motion"],
-			"registryDependencies": ["@craftui/lib-utils"],
+			"name": "demo-components-magnetic-navbar-items",
+			"type": "registry:block",
+			"description": "Magnetic navbar items demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/components-magnetic"],
 			"files": [
 				{
-					"path": "src/registry/headless/ui/select/index.tsx",
-					"type": "registry:ui",
-					"target": "components/craftui/headless/ui/select.tsx"
+					"path": "src/registry/demo/components/magnetic/magnetic-navbar-items/index.tsx",
+					"type": "registry:block",
+					"target": ""
 				}
 			]
 		},
 		{
-			"name": "headless-ui-stepper",
-			"type": "registry:ui",
-			"description": "A stepper/wizard component",
-			"dependencies": ["motion"],
-			"registryDependencies": ["@craftui/lib-utils"],
+			"name": "demo-components-magnetic",
+			"type": "registry:block",
+			"description": "Basic magnetic demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/components-magnetic"],
 			"files": [
 				{
-					"path": "src/registry/headless/ui/stepper/index.tsx",
-					"type": "registry:ui",
-					"target": "components/craftui/headless/ui/stepper.tsx"
+					"path": "src/registry/demo/components/magnetic/index.tsx",
+					"type": "registry:block",
+					"target": ""
 				}
 			]
 		},
 		{
-			"name": "headless-ui-tabs",
-			"type": "registry:ui",
-			"description": "A tabs component with animations",
-			"dependencies": ["motion"],
-			"registryDependencies": ["@craftui/lib-utils"],
+			"name": "demo-components-marquee-reverse",
+			"type": "registry:block",
+			"description": "Reverse marquee demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/components-marquee"],
 			"files": [
 				{
-					"path": "src/registry/headless/ui/tabs/index.tsx",
-					"type": "registry:ui",
-					"target": "components/craftui/headless/ui/tabs.tsx"
+					"path": "src/registry/demo/components/marquee/marquee-reverse/index.tsx",
+					"type": "registry:block",
+					"target": ""
 				}
 			]
 		},
 		{
-			"name": "headless-ui-timeline",
-			"type": "registry:ui",
-			"description": "A timeline component with vertical and horizontal variants",
-			"dependencies": ["class-variance-authority"],
-			"registryDependencies": ["@craftui/lib-utils"],
+			"name": "demo-components-marquee",
+			"type": "registry:block",
+			"description": "Basic marquee demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/components-marquee"],
 			"files": [
 				{
-					"path": "src/registry/headless/ui/timeline/index.tsx",
-					"type": "registry:ui",
-					"target": "components/craftui/headless/ui/timeline.tsx"
+					"path": "src/registry/demo/components/marquee/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-text-text-scramble",
+			"type": "registry:block",
+			"description": "Basic text scramble demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/text-text-scramble"],
+			"files": [
+				{
+					"path": "src/registry/demo/text/text-scramble/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-text-text-scramble-custom-chars",
+			"type": "registry:block",
+			"description": "Text scramble with custom characters demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/text-text-scramble"],
+			"files": [
+				{
+					"path": "src/registry/demo/text/text-scramble/text-scramble-custom-chars/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-text-text-scramble-custom-trigger",
+			"type": "registry:block",
+			"description": "Text scramble with custom trigger demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/text-text-scramble"],
+			"files": [
+				{
+					"path": "src/registry/demo/text/text-scramble/text-scramble-custom-trigger/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-text-typing-effect",
+			"type": "registry:block",
+			"description": "Basic typing effect demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/text-typing-effect"],
+			"files": [
+				{
+					"path": "src/registry/demo/text/typing-effect/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-accordion-custom-icons",
+			"type": "registry:block",
+			"description": "Accordion with custom icons",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-accordion"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/accordion/accordion-custom-icons/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-accordion-default-open",
+			"type": "registry:block",
+			"description": "Accordion with default open item",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-accordion"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/accordion/accordion-default-open/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-accordion-multiple-open",
+			"type": "registry:block",
+			"description": "Accordion with multiple items open",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-accordion"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/accordion/accordion-multiple-open/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-accordion",
+			"type": "registry:block",
+			"description": "Basic accordion demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-accordion"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/accordion/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-dialog-controlled",
+			"type": "registry:block",
+			"description": "Controlled dialog demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-dialog"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/dialog/dialog-controlled/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-dialog-custom-backdrop",
+			"type": "registry:block",
+			"description": "Dialog with custom backdrop demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-dialog"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/dialog/dialog-custom-backdrop/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-dialog-custom-variant-transition",
+			"type": "registry:block",
+			"description": "Dialog with custom variant and transition demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-dialog"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/dialog/dialog-custom-variant-transition/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-dialog",
+			"type": "registry:block",
+			"description": "Basic dialog demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-dialog"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/dialog/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-drawer-controlled",
+			"type": "registry:block",
+			"description": "Controlled drawer demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-drawer"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/drawer/drawer-controlled/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-drawer-custom-background",
+			"type": "registry:block",
+			"description": "Drawer with custom background demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-drawer"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/drawer/drawer-custom-background/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-drawer-origins",
+			"type": "registry:block",
+			"description": "Drawer with different origins demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-drawer"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/drawer/drawer-origins/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-drawer",
+			"type": "registry:block",
+			"description": "Basic drawer demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-drawer"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/drawer/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-select",
+			"type": "registry:block",
+			"description": "Basic select demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-select"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/select/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-select-controlled",
+			"type": "registry:block",
+			"description": "Controlled select demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-select"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/select/select-controlled/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-select-creatable",
+			"type": "registry:block",
+			"description": "Creatable select demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-select"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/select/select-creatable/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-select-groups",
+			"type": "registry:block",
+			"description": "Select with groups demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-select"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/select/select-groups/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-select-loading-async",
+			"type": "registry:block",
+			"description": "Select with async loading demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-select"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/select/select-loading-async/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-select-multiple",
+			"type": "registry:block",
+			"description": "Select with multiple selection demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-select"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/select/select-multiple/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-select-searchable",
+			"type": "registry:block",
+			"description": "Searchable select demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-select"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/select/select-searchable/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-stepper",
+			"type": "registry:block",
+			"description": "Basic stepper demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-stepper"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/stepper/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-stepper-indicator-fraction",
+			"type": "registry:block",
+			"description": "Stepper with fraction indicator demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-stepper"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/stepper/stepper-indicator-fraction/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-stepper-indicator-numbers",
+			"type": "registry:block",
+			"description": "Stepper with numbers indicator demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-stepper"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/stepper/stepper-indicator-numbers/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-stepper-indicator-progress",
+			"type": "registry:block",
+			"description": "Stepper with progress indicator demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-stepper"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/stepper/stepper-indicator-progress/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-stepper-indicator-text",
+			"type": "registry:block",
+			"description": "Stepper with text indicator demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-stepper"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/stepper/stepper-indicator-text/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-tabs",
+			"type": "registry:block",
+			"description": "Basic tabs demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-tabs"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/tabs/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-tabs-custom-icons",
+			"type": "registry:block",
+			"description": "Tabs with custom icons demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-tabs"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/tabs/tabs-custom-icons/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-tabs-custom-variants",
+			"type": "registry:block",
+			"description": "Tabs with custom variants demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-tabs"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/tabs/tabs-custom-variants/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-timeline",
+			"type": "registry:block",
+			"description": "Basic timeline demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-timeline"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/timeline/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-timeline-fill-marker",
+			"type": "registry:block",
+			"description": "Timeline with filled markers demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-timeline"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/timeline/timeline-fill-marker/index.tsx",
+					"type": "registry:block",
+					"target": ""
+				}
+			]
+		},
+		{
+			"name": "demo-ui-timeline-horizontal",
+			"type": "registry:block",
+			"description": "Horizontal timeline demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/ui-timeline"],
+			"files": [
+				{
+					"path": "src/registry/demo/ui/timeline/timeline-horizontal/index.tsx",
+					"type": "registry:block",
+					"target": ""
 				}
 			]
 		},
@@ -358,6 +834,132 @@
 					"path": "src/registry/lib/utils/index.ts",
 					"type": "registry:lib",
 					"target": "lib/utils.ts"
+				}
+			]
+		},
+		{
+			"name": "text-text-scramble",
+			"type": "registry:ui",
+			"description": "A text scrambling animation effect component",
+			"dependencies": [],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/text/text-scramble/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/text/text-scramble.tsx"
+				}
+			]
+		},
+		{
+			"name": "text-text-typing",
+			"type": "registry:ui",
+			"description": "A typing animation effect component",
+			"dependencies": ["motion"],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/text/text-typing/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/text/text-typing.tsx"
+				}
+			]
+		},
+		{
+			"name": "ui-accordion",
+			"type": "registry:ui",
+			"description": "A raw implementation of accordion component",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/ui/accordion/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/ui/accordion.tsx"
+				}
+			]
+		},
+		{
+			"name": "ui-dialog",
+			"type": "registry:ui",
+			"description": "A dialog/modal component with animations",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/ib-utils"],
+			"files": [
+				{
+					"path": "src/registry/ui/dialog/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/ui/dialog.tsx"
+				}
+			]
+		},
+		{
+			"name": "ui-drawer",
+			"type": "registry:ui",
+			"description": "A drawer/slide-out panel component",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/ui/drawer/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/ui/drawer.tsx"
+				}
+			]
+		},
+		{
+			"name": "ui-select",
+			"type": "registry:ui",
+			"description": "A custom select dropdown component",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/ui/select/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/ui/select.tsx"
+				}
+			]
+		},
+		{
+			"name": "ui-stepper",
+			"type": "registry:ui",
+			"description": "A stepper/wizard component",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/ui/stepper/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/headless/ui/stepper.tsx"
+				}
+			]
+		},
+		{
+			"name": "ui-tabs",
+			"type": "registry:ui",
+			"description": "A tabs component with animations",
+			"dependencies": ["motion"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/ui/tabs/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/ui/tabs.tsx"
+				}
+			]
+		},
+		{
+			"name": "ui-timeline",
+			"type": "registry:ui",
+			"description": "A timeline component with vertical and horizontal variants",
+			"dependencies": ["class-variance-authority"],
+			"registryDependencies": ["@craftui/lib-utils"],
+			"files": [
+				{
+					"path": "src/registry/ui/timeline/index.tsx",
+					"type": "registry:ui",
+					"target": "components/craftui/headless/ui/timeline.tsx"
 				}
 			]
 		}

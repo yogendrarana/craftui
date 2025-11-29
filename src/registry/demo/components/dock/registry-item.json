@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-components-dock",
+	"type": "registry:block",
+	"description": "Basic dock demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/components-dock"],
+	"files": [
+		{
+			"path": "src/registry/demo/components/dock/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

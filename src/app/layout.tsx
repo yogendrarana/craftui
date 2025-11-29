@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import "@/styles/globals.css";
 import { siteConfig } from "@/config/site";
-import { Provider } from "@/components/website/provider";
+import { Provider } from "@/components/provider";
 
 // metadata
 export const metadata: Metadata = {
@@ -15,13 +15,7 @@ export const metadata: Metadata = {
 	authors: [
 		{ name: siteConfig.author.name, url: siteConfig.author.links.twitter },
 	],
-	keywords: [
-		"React",
-		"Next.js",
-		"Tailwind CSS",
-		"Motion",
-		"UI Components",
-	],
+	keywords: ["React", "Next.js", "Tailwind CSS", "Motion", "UI Components"],
 };
 
 // font

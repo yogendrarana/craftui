@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-dialog",
+	"type": "registry:block",
+	"description": "Basic dialog demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-dialog"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/dialog/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

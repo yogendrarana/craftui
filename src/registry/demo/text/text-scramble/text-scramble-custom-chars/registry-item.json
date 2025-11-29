@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-text-text-scramble-custom-chars",
+	"type": "registry:block",
+	"description": "Text scramble with custom characters demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/text-text-scramble"],
+	"files": [
+		{
+			"path": "src/registry/demo/text/text-scramble/text-scramble-custom-chars/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

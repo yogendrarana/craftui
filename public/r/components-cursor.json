@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "components-cursor",
+	"type": "registry:component",
+	"description": "A custom cursor component",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/lib-utils"],
+	"files": [
+		{
+			"path": "src/registry/components/cursor/index.tsx",
+			"content": "\"use client\";\n\nimport type React from \"react\";\nimport { useState, useEffect, useRef } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\ninterface CursorProps {\n\tchildren: React.ReactNode;\n\tcursor: string | React.ReactNode;\n\tclassName?: string;\n}\n\nexport default function Cursor({ children, cursor, className }: CursorProps) {\n\tconst containerRef = useRef<HTMLDivElement>(null);\n\tconst [isHovering, setIsHovering] = useState(false);\n\tconst [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });\n\n\tuseEffect(() => {\n\t\tconst updateCursorPosition = (e: MouseEvent) => {\n\t\t\tif (isHovering) {\n\t\t\t\tconst rect = containerRef.current?.getBoundingClientRect();\n\t\t\t\tif (rect) {\n\t\t\t\t\tsetCursorPosition({\n\t\t\t\t\t\tx: e.clientX - rect.left,\n\t\t\t\t\t\ty: e.clientY - rect.top,\n\t\t\t\t\t});\n\t\t\t\t}\n\t\t\t}\n\t\t};\n\n\t\tdocument.addEventListener(\"mousemove\", updateCursorPosition);\n\n\t\treturn () => {\n\t\t\tdocument.removeEventListener(\"mousemove\", updateCursorPosition);\n\t\t};\n\t}, [isHovering]);\n\n\tconst handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {\n\t\tconst rect = containerRef.current?.getBoundingClientRect();\n\t\tif (rect) {\n\t\t\tconst entryX = e.clientX - rect.left;\n\t\t\tconst entryY = e.clientY - rect.top;\n\t\t\tsetCursorPosition({ x: entryX, y: entryY });\n\t\t}\n\t\tsetIsHovering(true);\n\t};\n\n\tconst handleMouseLeave = () => setIsHovering(false);\n\n\treturn (\n\t\t<div\n\t\t\tref={containerRef}\n\t\t\tonMouseEnter={handleMouseEnter}\n\t\t\tonMouseLeave={handleMouseLeave}\n\t\t\tclassName={cn(\"relative\", className)}\n\t\t\tstyle={{ cursor: isHovering ? \"none\" : \"default\" }}\n\t\t>\n\t\t\t{children}\n\t\t\t{isHovering && (\n\t\t\t\t<div\n\t\t\t\t\tclassName=\"absolute pointer-events-none z-50, whitespace-nowrap\"\n\t\t\t\t\tstyle={{\n\t\t\t\t\t\tleft: cursorPosition.x,\n\t\t\t\t\t\ttop: cursorPosition.y,\n\t\t\t\t\t\ttransform: \"translate(-50%, -50%)\",\n\t\t\t\t\t\ttransformOrigin: \"left center\",\n\t\t\t\t\t}}\n\t\t\t\t>\n\t\t\t\t\t{cursor}\n\t\t\t\t</div>\n\t\t\t)}\n\t\t</div>\n\t);\n}\n",
+			"type": "registry:component",
+			"target": "components/craftui/components/cursor.tsx"
+		}
+	]
+}

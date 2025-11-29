@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-select-creatable",
+	"type": "registry:block",
+	"description": "Creatable select demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-select"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/select/select-creatable/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

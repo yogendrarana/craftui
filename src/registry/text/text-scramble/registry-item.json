@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "text-text-scramble",
+	"type": "registry:ui",
+	"description": "A text scrambling animation effect component",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/lib-utils"],
+	"files": [
+		{
+			"path": "src/registry/text/text-scramble/index.tsx",
+			"type": "registry:ui",
+			"target": "components/craftui/text/text-scramble.tsx"
+		}
+	]
+}

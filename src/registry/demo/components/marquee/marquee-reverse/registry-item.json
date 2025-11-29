@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-components-marquee-reverse",
+	"type": "registry:block",
+	"description": "Reverse marquee demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/components-marquee"],
+	"files": [
+		{
+			"path": "src/registry/demo/components/marquee/marquee-reverse/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-components-cursor",
+	"type": "registry:block",
+	"description": "Basic cursor demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/components-cursor"],
+	"files": [
+		{
+			"path": "src/registry/demo/components/cursor/index.tsx",
+			"content": "\"use client\";\n\nimport CustomCursor from \"@/components/craftui/components/cursor\";\n\nexport default function CustomCursorBasic() {\n\treturn (\n\t\t<CustomCursor\n\t\t\tcursor={<span>👋</span>}\n\t\t\tclassName=\"h-[400px] w-full flex items-center justify-center\"\n\t\t>\n\t\t\tEmoji Cursor\n\t\t</CustomCursor>\n\t);\n}\n",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

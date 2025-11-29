@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "components-animated-tooltip",
+	"type": "registry:component",
+	"description": "An animated tooltip component",
+	"dependencies": ["motion"],
+	"registryDependencies": ["@craftui/lib-utils"],
+	"files": [
+		{
+			"path": "src/registry/components/animated-tooltip/index.tsx",
+			"content": "\"use client\";\n\nimport React, { useState } from \"react\";\nimport { motion, useMotionValue, useSpring, useTransform } from \"motion/react\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport interface AnimatedTooltipProps {\n\tchildren: React.ReactNode;\n\tlabel: string;\n\tonClick?: () => void;\n\tclassName?: string;\n\tdelay?: number;\n}\n\nexport function AnimatedTooltip({\n\tchildren,\n\tlabel,\n\tonClick,\n\tclassName,\n\tdelay = 100,\n\t...props\n}: AnimatedTooltipProps) {\n\tconst [isHovered, setIsHovered] = useState(false);\n\n\tconst x = useMotionValue(0);\n\tconst springConfig = { stiffness: 200, damping: 10 };\n\tconst rotate = useSpring(\n\t\tuseTransform(x, [-50, 50], [-25, 25]),\n\t\tspringConfig,\n\t);\n\tconst translateX = useSpring(\n\t\tuseTransform(x, [-50, 50], [-10, 10]),\n\t\tspringConfig,\n\t);\n\n\tlet showTimeout: ReturnType<typeof setTimeout> | undefined;\n\n\tconst handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {\n\t\tconst rect = event.currentTarget.getBoundingClientRect();\n\t\tconst centerX = rect.left + rect.width / 2;\n\t\tx.set(event.clientX - centerX);\n\t};\n\n\tconst handleMouseEnter = () => {\n\t\tshowTimeout = setTimeout(() => setIsHovered(true), delay);\n\t};\n\n\tconst handleMouseLeave = () => {\n\t\tsetIsHovered(false);\n\t\tx.set(0);\n\t\tif (showTimeout) {\n\t\t\tclearTimeout(showTimeout);\n\t\t}\n\t};\n\n\tReact.useEffect(() => {\n\t\treturn () => {\n\t\t\tif (showTimeout) {\n\t\t\t\tclearTimeout(showTimeout);\n\t\t\t}\n\t\t};\n\t}, [showTimeout]);\n\n\treturn (\n\t\t<motion.div\n\t\t\tonMouseEnter={handleMouseEnter}\n\t\t\tonMouseLeave={handleMouseLeave}\n\t\t\tonMouseMove={handleMouseMove}\n\t\t\twhileHover={{\n\t\t\t\ttransition: { type: \"spring\", stiffness: 300, damping: 20 },\n\t\t\t}}\n\t\t\twhileTap={{ scale: 0.9 }}\n\t\t\tclassName={cn(\n\t\t\t\t\"w-12 h-12 relative flex items-center justify-center rounded-full shadow-md cursor-pointer border bg-neutral-100 dark:bg-neutral-900 hover:shadow-lg\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\tonClick={onClick}\n\t\t\t{...props}\n\t\t>\n\t\t\t{children}\n\t\t\t{isHovered && (\n\t\t\t\t<motion.div\n\t\t\t\t\tinitial={{ opacity: 0, y: 10, scale: 0.75 }}\n\t\t\t\t\tanimate={{ opacity: 1, y: 0, scale: 1.2 }}\n\t\t\t\t\texit={{ opacity: 0, y: 10, scale: 0.75 }}\n\t\t\t\t\tstyle={{\n\t\t\t\t\t\trotate,\n\t\t\t\t\t\ttranslateX,\n\t\t\t\t\t\ttransformOrigin: \"center center\",\n\t\t\t\t\t}}\n\t\t\t\t\tclassName=\"absolute bottom-full mb-2 px-2 py-1 bg-black/75 text-white dark:bg-white dark:text-black text-xs rounded shadow-lg\"\n\t\t\t\t>\n\t\t\t\t\t{label}\n\t\t\t\t</motion.div>\n\t\t\t)}\n\t\t</motion.div>\n\t);\n}\n",
+			"type": "registry:component",
+			"target": "components/craftui/components/animated-tooltip.tsx"
+		}
+	]
+}

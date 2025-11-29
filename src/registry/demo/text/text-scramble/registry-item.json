@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-text-text-scramble",
+	"type": "registry:block",
+	"description": "Basic text scramble demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/text-text-scramble"],
+	"files": [
+		{
+			"path": "src/registry/demo/text/text-scramble/index.tsx",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}

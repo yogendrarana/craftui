@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-ui-accordion-default-open",
+	"type": "registry:block",
+	"description": "Accordion with default open item",
+	"dependencies": [],
+	"registryDependencies": ["@craftui/ui-accordion"],
+	"files": [
+		{
+			"path": "src/registry/demo/ui/accordion/accordion-default-open/index.tsx",
+			"content": "\"use client\";\n\nimport React from \"react\";\nimport {\n\tAccordion,\n\tAccordionItem,\n\tAccordionTrigger,\n\tAccordionContent,\n} from \"@/components/craftui/ui/accordion\";\nimport { ChevronDown } from \"lucide-react\";\n\nexport default function AccordionDefaultOpen() {\n\treturn (\n\t\t<Accordion defaultOpen={[\"item-2\"]} className=\"w-full md:w-[500px]\">\n\t\t\t<AccordionItem id=\"item-1\">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhat is React?\n\t\t\t\t\t<ChevronDown className=\"mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180\" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tReact is a JavaScript library for building user interfaces.\n\t\t\t\t\tIt lets you create reusable UI components.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem id=\"item-2\">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhat is Tailwind CSS?\n\t\t\t\t\t<ChevronDown className=\"mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180\" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tTailwind CSS is a utility-first CSS framework packed with\n\t\t\t\t\tclasses like flex, pt-4, text-center and rotate-90 that can\n\t\t\t\t\tbe composed to build any design, directly in your markup.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem id=\"item-3\">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhy use Framer Motion?\n\t\t\t\t\t<ChevronDown className=\"mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180\" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tFramer Motion is a motion library for React. It provides a\n\t\t\t\t\tdeclarative, flexible API to add smooth animations and\n\t\t\t\t\tgestures to your components.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t</Accordion>\n\t);\n}\n",
+			"type": "registry:block",
+			"target": ""
+		}
+	]
+}
