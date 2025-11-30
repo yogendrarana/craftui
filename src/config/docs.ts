@@ -52,6 +52,10 @@ export const docsNavItems: Array<DocsNavItem> = [
 				href: "/docs/components/animated-tooltip",
 			},
 			{
+				title: "Confetti",
+				href: "/docs/components/confetti",
+			},
+			{
 				title: "Cursor",
 				href: "/docs/components/cursor",
 			},

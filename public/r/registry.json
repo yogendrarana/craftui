@@ -100,6 +100,17 @@
 			]
 		},
 		{
+			"name": "demo-components-confetti",
+			"type": "registry:block",
+			"registryDependencies": ["hooks-use-confetti"],
+			"files": [
+				{
+					"path": "src/registry/demo/components/confetti/index.tsx",
+					"type": "registry:block"
+				}
+			]
+		},
+		{
 			"name": "demo-components-cursor-complex",
 			"type": "registry:block",
 			"description": "Complex cursor demo",
@@ -714,6 +725,21 @@
 					"path": "src/registry/hooks/use-click-outside/index.ts",
 					"type": "registry:hook",
 					"target": "hooks/use-auto-height.tsx"
+				}
+			]
+		},
+		{
+			"name": "hooks-use-confetti",
+			"type": "registry:hook",
+			"description": "A hook to trigger confetti animation",
+			"dependencies": [],
+			"devDependencies": [],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/registry/hooks/use-confetti/index.tsx",
+					"type": "registry:hook",
+					"target": "hooks/use-confetti.tsx"
 				}
 			]
 		},
