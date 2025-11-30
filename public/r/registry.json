@@ -883,7 +883,7 @@
 			"name": "ui-dialog",
 			"type": "registry:ui",
 			"description": "A dialog/modal component with animations",
-			"dependencies": ["motion"],
+			"dependencies": ["motion", "lucide-react"],
 			"registryDependencies": ["@craftui/ib-utils"],
 			"files": [
 				{
@@ -897,7 +897,7 @@
 			"name": "ui-drawer",
 			"type": "registry:ui",
 			"description": "A drawer/slide-out panel component",
-			"dependencies": ["motion"],
+			"dependencies": ["motion", "lucide-react"],
 			"registryDependencies": ["@craftui/lib-utils"],
 			"files": [
 				{
@@ -911,7 +911,7 @@
 			"name": "ui-select",
 			"type": "registry:ui",
 			"description": "A custom select dropdown component",
-			"dependencies": ["motion"],
+			"dependencies": ["motion", "lucide-react"],
 			"registryDependencies": ["@craftui/lib-utils"],
 			"files": [
 				{
@@ -925,7 +925,7 @@
 			"name": "ui-stepper",
 			"type": "registry:ui",
 			"description": "A stepper/wizard component",
-			"dependencies": ["motion"],
+			"dependencies": ["motion", "lucide-react"],
 			"registryDependencies": ["@craftui/lib-utils"],
 			"files": [
 				{

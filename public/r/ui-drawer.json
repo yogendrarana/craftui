@@ -3,7 +3,7 @@
 	"name": "ui-drawer",
 	"type": "registry:ui",
 	"description": "A drawer/slide-out panel component",
-	"dependencies": ["motion"],
+	"dependencies": ["motion", "lucide-react"],
 	"registryDependencies": ["@craftui/lib-utils"],
 	"files": [
 		{

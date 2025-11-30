@@ -3,7 +3,7 @@
 	"name": "ui-dialog",
 	"type": "registry:ui",
 	"description": "A dialog/modal component with animations",
-	"dependencies": ["motion"],
+	"dependencies": ["motion", "lucide-react"],
 	"registryDependencies": ["@craftui/ib-utils"],
 	"files": [
 		{

@@ -3,7 +3,7 @@
 	"name": "ui-stepper",
 	"type": "registry:ui",
 	"description": "A stepper/wizard component",
-	"dependencies": ["motion"],
+	"dependencies": ["motion", "lucide-react"],
 	"registryDependencies": ["@craftui/lib-utils"],
 	"files": [
 		{
