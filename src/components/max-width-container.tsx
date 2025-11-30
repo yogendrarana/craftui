@@ -18,4 +18,3 @@ export const MaxWidthContainer: React.FC<ContainerProps> = ({
 		</Comp>
 	);
 };
-

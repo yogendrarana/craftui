@@ -13,7 +13,6 @@ type ComponentPreviewProps = {
 };
 
 export function ComponentPreview({
-	component,
 	hasReTrigger = false,
 	className,
 	name,
@@ -24,14 +23,7 @@ export function ComponentPreview({
 		setReTriggerKey(Date.now());
 	};
 
-	const renderContent = () => {
-		// If a direct component is provided, use it
-		if (component) {
-			return hasReTrigger
-				? React.cloneElement(component, { key: reTriggerKey })
-				: component;
-		}
-
+	const renderComponent = () => {
 		// If name and category are provided, try to get component from registry or previews
 		if (name) {
 			// Try Registry first
@@ -55,16 +47,6 @@ export function ComponentPreview({
 					</React.Suspense>
 				);
 			}
-
-			// Fallback to Previews for examples
-			if (registryItem?.component) {
-				const Component = registryItem.component;
-				return hasReTrigger ? (
-					<Component key={reTriggerKey} />
-				) : (
-					<Component />
-				);
-			}
 		}
 
 		// Fallback for when component is not found
@@ -82,7 +64,7 @@ export function ComponentPreview({
 	return (
 		<div
 			className={cn(
-				"relative w-full flex items-center justify-center rounded-sm h-full bg-[#fafafa] dark:bg-zinc-800",
+				"relative w-full p-8 flex items-center justify-center rounded-sm h-full bg-[#fafafa] dark:bg-zinc-800",
 				className,
 			)}
 		>
@@ -95,7 +77,7 @@ export function ComponentPreview({
 					<RotateCw className="h-4 w-4 text-zinc-500" />
 				</button>
 			)}
-			{renderContent()}
+			{renderComponent()}
 		</div>
 	);
 }

@@ -8,6 +8,7 @@ import { Registry } from "@/__registry__";
 import { Button } from "@/components/ui/button";
 import { CodeRenderer } from "@/components/mdx/code-renderer";
 import { InstallCommandDropdown } from "./install-command";
+import { ComponentPreview } from "./component-preview";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
 	name: string;
@@ -77,47 +78,19 @@ export function ComponentCodePreview({
 
 				<div className="flex items-center gap-2">
 					<InstallCommandDropdown pkg={registryItem.command} />
-
-					{hasReTrigger && (
-						<Button
-							variant="outline"
-							size="icon"
-							onClick={() => setKey((prev) => prev + 1)}
-							className="h-8 w-8 border rounded-md"
-						>
-							<RotateCwIcon />
-						</Button>
-					)}
 				</div>
 			</div>
 
 			{/* component and code */}
 			<div className="relative min-h-[400px] w-full border border-dashed rounded-md flex items-center justify-center p-1.5">
 				{mode === "preview" ? (
-					<React.Suspense
-						fallback={
-							<div className="flex items-center justify-center text-sm text-muted-foreground">
-								Loading preview...
-							</div>
-						}
-					>
-						{(() => {
-							if (registryItem?.component) {
-								const Component = registryItem.component;
-								return (
-									<div className="h-[400px] flex justify-center items-center">
-										<Component key={key} />
-									</div>
-								);
-							}
-							return (
-								<p className="h-[400px] flex justify-center items-center text-xs">
-									<code className="mx-1">{name}</code> (404
-									NOT FOUND)
-								</p>
-							);
-						})()}
-					</React.Suspense>
+					<div className="h-[400px] w-full flex justify-center items-center border rounded-md">
+						<ComponentPreview
+							name={name}
+							key={key}
+							hasReTrigger={hasReTrigger}
+						/>
+					</div>
 				) : (
 					<CodeRenderer className="h-[400px]" code={Code} />
 				)}

@@ -8,47 +8,33 @@ category: text
 ---
 
 #### Basic Text Scramble
-<ComponentCodePreview name="demo-text-text-scramble" category="demo" hasReTrigger />
+
+<ComponentCodePreview name="demo-text-text-scramble" hasReTrigger />
 
 #### Text Scramble on Hover
-<ComponentCodePreview name="demo-text-text-scramble-custom-trigger" category="demo" />
+
+<ComponentCodePreview name="demo-text-text-scramble-custom-trigger" />
 
 #### Text Scramble with Custom Chars
-<ComponentCodePreview name="demo-text-text-scramble-custom-chars" category="demo" hasReTrigger />
 
+<ComponentCodePreview
+  name="demo-text-text-scramble-custom-chars"
+  hasReTrigger
+/>
 
-## Usage Guide
+## Installation
 
-Install the **clsx** and **tailwind-merge** packages:
-```bash
-npm install clsx tw-merge
-```
-
-Next, add [**cn**](https://github.com/yogendrarana/craftui/blob/master/src/lib/utils.ts) utility function in your project:
-```jsx
-import { twMerge } from "tailwind-merge";
-import { clsx, type ClassValue } from "clsx";
-
-export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}
-```
-
-Copy and paste the following component source.
-
-<ComponentSource name="text-text-scramble" />
+<Installation name="text-text-scramble" />
 
 ## Props
 
-| Prop             | Type      | Description                                 | Default            |
-|------------------|-----------|---------------------------------------------|--------------------|
-| children         | string    | The text to display                         | "Hello, World!"    |
-| duration         | number    | Duration of the scrambling animation (s).   | 3                  |
-| speed            | number    | The speed at which scrambling happens (ms). | 50                 |
-| trigger          | boolean   | Trigger the animation.                      | true               |
-| characterSet     | string    | Custom characters used for scrambling.      | [A-Za-z0-9]        |
-| className        | string    | Additional class names for styling.         | _                  |
-| as               | string    | HTML tag name to wrap the text inside       | _                  |
-| onScrambleEnd    | function  | Function to run after the scrambling ends   | _                  |
-
-
+| Prop          | Type     | Description                                 | Default         |
+| ------------- | -------- | ------------------------------------------- | --------------- |
+| children      | string   | The text to display                         | "Hello, World!" |
+| duration      | number   | Duration of the scrambling animation (s).   | 3               |
+| speed         | number   | The speed at which scrambling happens (ms). | 50              |
+| trigger       | boolean  | Trigger the animation.                      | true            |
+| characterSet  | string   | Custom characters used for scrambling.      | [A-Za-z0-9]     |
+| className     | string   | Additional class names for styling.         | \_              |
+| as            | string   | HTML tag name to wrap the text inside       | \_              |
+| onScrambleEnd | function | Function to run after the scrambling ends   | \_              |
