@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Registry } from "@/__registry__";
 import { ComponentSource } from "./component-source";
 import { InstallCommandTabs } from "./install-command";
+import { PackageInstallTabs } from "./package-install-command";
 
 interface PropType {
 	name: string;
@@ -63,20 +64,22 @@ export function Installation({ name, className }: PropType) {
 
 				{mode === "manual" && (
 					<div className="flex flex-col gap-4 text-sm">
-						<div>
-							<h3 className="font-medium mb-1">
-								1. Install Required Packages
-							</h3>
-							<InstallCommandTabs
-								pkg={(registryItem.dependencies || []).join(
-									" ",
-								)}
-							/>
-						</div>
+						{registryItem.dependencies.length > 0 && (
+							<div>
+								<h3 className="font-medium mb-1">
+									Install Required Packages
+								</h3>
+								<PackageInstallTabs
+									pkg={(registryItem.dependencies || []).join(
+										" ",
+									)}
+								/>
+							</div>
+						)}
 
 						<div>
 							<h3 className="font-medium mb-1">
-								2. Install Registry Dependencies
+								Install Registry Dependencies
 							</h3>
 							<InstallCommandTabs
 								pkg={(
@@ -87,7 +90,7 @@ export function Installation({ name, className }: PropType) {
 
 						<div>
 							<h3 className="font-medium mb-1">
-								3. Copy Component Code
+								Copy Component Code
 							</h3>
 
 							<ComponentSource name={registryItem.name} />

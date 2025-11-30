@@ -64,4 +64,3 @@ export const GithubStars = ({ className }: PropTypes) => {
 		</Link>
 	);
 };
-

@@ -6,116 +6,98 @@ published: true
 date: 2024-11-30T00:00:00.000Z
 author:
   name: Yogendra Rana
-  twitter: 'https://twitter.com/yoogendra_rana'
+  twitter: "https://twitter.com/yoogendra_rana"
 category: ui
 ---
 
 #### Basic Stepper
-<ComponentCodePreview name="demo-ui-stepper" category="demo" />
+
+<ComponentCodePreview name="demo-ui-stepper" />
 
 #### Stepper with progress indicator
-<ComponentCodePreview name="demo-ui-stepper-indicator-progress" category="demo" />
+
+<ComponentCodePreview name="demo-ui-stepper-indicator-progress" />
 
 #### Controlled stepper with numbers indicator
-<ComponentCodePreview name="demo-ui-stepper-indicator-numbers" category="demo" />
+
+<ComponentCodePreview name="demo-ui-stepper-indicator-numbers" />
 
 #### Controlled stepper with fraction indicator
-<ComponentCodePreview name="demo-ui-stepper-indicator-fraction" category="demo" />
+
+<ComponentCodePreview name="demo-ui-stepper-indicator-fraction" />
 
 #### Controlled stepper with text indicator
-<ComponentCodePreview name="demo-ui-stepper-indicator-text" category="demo" />
 
-## Usage Guide
+<ComponentCodePreview name="demo-ui-stepper-indicator-text" />
 
-Install the **clsx** and **tailwind-merge** packages:
-```bash
-npm install clsx tw-merge framer-motion
-```
+## Installation
 
-Next, add [**cn**](https://github.com/yogendrarana/craftui/blob/master/src/lib/utils.ts) utility:
-```jsx
-import { twMerge } from "tailwind-merge";
-import { clsx, type ClassValue } from "clsx";
-
-export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}
-```
-
-Copy and paste the following component source.
-<ComponentSource name="ui-stepper" />
+<Installation name="ui-stepper" />
 
 ## Props
 
 ### Stepper
 
-| Prop           | Type                       | Description                                                                                      | Default         |
-| -------------  | -------------------------- | ------------------------------------------------------------------------------------------------ | --------------- |
-| children       | ReactNode                  | The content to be rendered inside Stepper component                                              | _               |
-| totalSteps     | number                     | The total number of steps in the Stepper. Determines the range of valid steps.                   | _               |
-| className?     | string                     | Additional class names to style the Stepper component                                            | ""              |
-| activeStep?    | number                     | The current active step (0-based index). Use this prop to control the Stepper externally.        | _               |
-| onStepChange?  |(step: number) => void;     | A callback function invoked whenever the active step changes.  Use it for controlled behaviour.  | _               |
-
+| Prop          | Type                    | Description                                                                                    | Default |
+| ------------- | ----------------------- | ---------------------------------------------------------------------------------------------- | ------- |
+| children      | ReactNode               | The content to be rendered inside Stepper component                                            | \_      |
+| totalSteps    | number                  | The total number of steps in the Stepper. Determines the range of valid steps.                 | \_      |
+| className?    | string                  | Additional class names to style the Stepper component                                          | ""      |
+| activeStep?   | number                  | The current active step (0-based index). Use this prop to control the Stepper externally.      | \_      |
+| onStepChange? | (step: number) => void; | A callback function invoked whenever the active step changes. Use it for controlled behaviour. | \_      |
 
 ### StepperContent
 
-| Prop         | Type              | Description                                                                                     | Default    |
-| -----------  | ----------------- | ----------------------------------------------------------------------------------------------- | ---------- |
-| children     | ReactNode         | The content to be rendered inside the Stepper component, typically steps or custom elements.    | _          |
-| className?   | string            | Additional class names to style the StepperContent                                              | ""         |
-
+| Prop       | Type      | Description                                                                                  | Default |
+| ---------- | --------- | -------------------------------------------------------------------------------------------- | ------- |
+| children   | ReactNode | The content to be rendered inside the Stepper component, typically steps or custom elements. | \_      |
+| className? | string    | Additional class names to style the StepperContent                                           | ""      |
 
 ### Step
 
-| Prop                 | Type          | Description                                                              | Default     |
-| -------------------  | ------------- | ------------------------------------------------------------------------ | ----------- |
-| step                 | number        | The step number representing the position of this step in the Stepper.   | _           |
-| children             | ReactNode     | The content to be displayed inside the Step component                    | _           |
-| className?           | string        | Additional class names to style the Step component                       | ""          |
-
+| Prop       | Type      | Description                                                            | Default |
+| ---------- | --------- | ---------------------------------------------------------------------- | ------- |
+| step       | number    | The step number representing the position of this step in the Stepper. | \_      |
+| children   | ReactNode | The content to be displayed inside the Step component                  | \_      |
+| className? | string    | Additional class names to style the Step component                     | ""      |
 
 ### StepTitle
 
-| Prop         | Type              | Description                                                     | Default |
-| -----------  | ----------------- | --------------------------------------------------------------- | ------- |
-| children     | ReactNode         | The content to be displayed inside the StepTitle component      | _       |
-| className?   | string            | Additional class names to style the StepTitle component         | ""      |
-
+| Prop       | Type      | Description                                                | Default |
+| ---------- | --------- | ---------------------------------------------------------- | ------- |
+| children   | ReactNode | The content to be displayed inside the StepTitle component | \_      |
+| className? | string    | Additional class names to style the StepTitle component    | ""      |
 
 ### StepDescription
 
-| Prop         | Type              | Description                                                           | Default |
-| -----------  | ----------------- | --------------------------------------------------------------------- | ------- |
-| children     | ReactNode         | The content to be displayed inside the StepDescription component      | _       |
-| className?   | string            | Additional class names to style the StepDescription component         | ""      |
-
+| Prop       | Type      | Description                                                      | Default |
+| ---------- | --------- | ---------------------------------------------------------------- | ------- |
+| children   | ReactNode | The content to be displayed inside the StepDescription component | \_      |
+| className? | string    | Additional class names to style the StepDescription component    | ""      |
 
 ### PrevStep
 
-| Prop         | Type              | Description                                             | Default |
-| -----------  | ----------------- | ------------------------------------------------------- | ------- |
-| className?   | string            | Additional class names to style the PrevStep            | ""      |
-
+| Prop       | Type   | Description                                  | Default |
+| ---------- | ------ | -------------------------------------------- | ------- |
+| className? | string | Additional class names to style the PrevStep | ""      |
 
 ### NextStep
 
-| Prop         | Type              | Description                                                                                              | Default |
-| -----------  | ----------------- | -------------------------------------------------------------------------------------------------------- | ------- |
-| onFinish?    | () => void        | Callback function triggered when the final step is completed. Use it to handle finishing logic.          | ""      |
-| className?   | string            | Additional class names to style the NextStep button                                                      | ""      |
-
+| Prop       | Type       | Description                                                                                     | Default |
+| ---------- | ---------- | ----------------------------------------------------------------------------------------------- | ------- |
+| onFinish?  | () => void | Callback function triggered when the final step is completed. Use it to handle finishing logic. | ""      |
+| className? | string     | Additional class names to style the NextStep button                                             | ""      |
 
 ### StepIndicator
-| Prop         | Type              | Description                                                                                                                          | Default |
-| -----------  | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| variant?     | string            | Determines the style of the step indicator (allowed variants are **dots**, **fraction**, **progress8*, **numbers**, **text**).       |	"dots"  |
-| className?   | string            | Additional CSS classes to style the StepIndicator component.                                                                         | ""      |
 
+| Prop       | Type   | Description                                                                                                                       | Default |
+| ---------- | ------ | --------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| variant?   | string | Determines the style of the step indicator (allowed variants are **dots**, **fraction**, **progress8\*, **numbers**, **text\*\*). | "dots"  |
+| className? | string | Additional CSS classes to style the StepIndicator component.                                                                      | ""      |
 
 ### StepperNavigation
 
-| Prop         | Type              | Description                                                                                              | Default |
-| -----------  | ----------------- | -------------------------------------------------------------------------------------------------------- | ------- |
-| onFinish?    | () => void        | Callback function triggered when the final step is completed. Use it to handle finishing logic.          | ""      |
-| className?   | string            | Additional class names to style the StepperNavigation button                                             | ""      |
+| Prop       | Type       | Description                                                                                     | Default |
+| ---------- | ---------- | ----------------------------------------------------------------------------------------------- | ------- |
+| onFinish?  | () => void | Callback function triggered when the final step is completed. Use it to handle finishing logic. | ""      |
+| className? | string     | Additional class names to style the StepperNavigation button                                    | ""      |

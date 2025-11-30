@@ -74,7 +74,7 @@ const Icons = {
 
 export default function MagneticNavbarItems() {
 	return (
-		<div className="w-full flex items-center justify-around">
+		<div className="w-full flex items-center justify-between">
 			<div className="flex items-center">
 				<div className="flex gap-8 items-center">
 					{navMenu.map((nav, index) => (

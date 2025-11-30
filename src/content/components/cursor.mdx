@@ -6,44 +6,31 @@ published: true
 date: 2024-11-23T00:00:00.000Z
 author:
   name: Yogendra Rana
-  twitter: 'https://twitter.com/yoogendra_rana'
+  twitter: "https://twitter.com/yoogendra_rana"
 category: Headless
 subCategory: Effects
 ---
 
 #### Emoji Cursor
+
 <ComponentCodePreview name="demo-components-cursor" />
 
 #### Text Cursor
+
 <ComponentCodePreview name="demo-components-cursor-text" />
 
 #### Custom Cursor
+
 <ComponentCodePreview name="demo-components-cursor-complex" />
 
-## Usage Guide
+## Installation
 
-Install the **clsx** and **tailwind-merge** packages:
-```bash
-npm install clsx tw-merge
-```
-
-Next, add [**cn**](https://github.com/yogendrarana/craftui/blob/master/src/lib/utils.ts) utility:
-```jsx
-import { twMerge } from "tailwind-merge";
-import { clsx, type ClassValue } from "clsx";
-
-export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}
-```
-
-Copy and paste the following core component source for custom cursor:
-<ComponentSource category="components" name="cursor" />
+<Installation name="components-cursor" />
 
 ## Props
 
-| Prop         | Type              | Description                                             | Default |
-| -----------  | ----------------- | ------------------------------------------------------- | ------- |
-| children     | ReactNode         | The content to be rendered inside the component         | _       |
-| cursor       | ReactNode         | A component to be shown as cursor                       | _       |
-| className    | string            | String of class                                         | _       |
+| Prop      | Type      | Description                                     | Default |
+| --------- | --------- | ----------------------------------------------- | ------- |
+| children  | ReactNode | The content to be rendered inside the component | \_      |
+| cursor    | ReactNode | A component to be shown as cursor               | \_      |
+| className | string    | String of class                                 | \_      |
