@@ -7,12 +7,6 @@ date: 2025-01-26T00:00:00.000Z
 category: hooks
 ---
 
-## Installation
-
-```bash
-npx craftui add hooks-use-query-string
-```
-
 ## Usage
 
 ```tsx
@@ -39,13 +33,15 @@ function FilterComponent() {
       <button onClick={() => updateFilter("category", "electronics")}>
         Filter by Electronics
       </button>
-      <button onClick={() => removeFilter("category")}>
-        Clear Filter
-      </button>
+      <button onClick={() => removeFilter("category")}>Clear Filter</button>
     </div>
   );
 }
 ```
+
+## Installation
+
+<Installation name="hooks-use-query-string" />
 
 ## API Reference
 
@@ -53,21 +49,17 @@ function FilterComponent() {
 
 A hook that helps build updated URL query strings.
 
-| Parameter | Type | Description |
-| --------- | ---- | ----------- |
+| Parameter    | Type            | Description                   |
+| ------------ | --------------- | ----------------------------- |
 | searchParams | URLSearchParams | Current URL search parameters |
-
-**Returns:** `{ createQueryString: (params: QueryParams) => string }`
 
 ### createQueryString
 
 Creates a new query string by merging or removing parameters.
 
-| Parameter | Type | Description |
-| --------- | ---- | ----------- |
+| Parameter | Type                                       | Description                                                |
+| --------- | ------------------------------------------ | ---------------------------------------------------------- |
 | params    | Record\<string, string \| number \| null\> | Parameters to merge or remove (null removes the parameter) |
-
-**Returns:** `string` - The updated query string
 
 ## Examples
 
@@ -84,7 +76,3 @@ createQueryString({ filter: null });
 createQueryString({ page: 1, oldParam: null, newParam: "value" });
 // Result: "page=1&newParam=value" (oldParam removed)
 ```
-
-## Source Code
-
-<ComponentSource name="hooks-use-query-string" />

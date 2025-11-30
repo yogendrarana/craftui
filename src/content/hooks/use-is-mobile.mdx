@@ -7,12 +7,6 @@ date: 2025-01-26T00:00:00.000Z
 category: hooks
 ---
 
-## Installation
-
-```bash
-npx craftui add hooks-use-is-mobile
-```
-
 ## Usage
 
 ```tsx
@@ -21,26 +15,16 @@ import { useIsMobile } from "@/hooks/use-is-mobile";
 function ResponsiveComponent() {
   const isMobile = useIsMobile();
 
-  return (
-    <div>
-      {isMobile ? (
-        <MobileView />
-      ) : (
-        <DesktopView />
-      )}
-    </div>
-  );
+  return <div>{isMobile ? <MobileView /> : <DesktopView />}</div>;
 }
 ```
+
+## Installation
+
+<Installation name="hooks-use-is-mobile" />
 
 ## API Reference
 
 ### useIsMobile
 
 A hook that detects whether the current viewport width is below the mobile breakpoint (768px).
-
-**Returns:** `boolean` - `true` if viewport width is below 768px, `false` otherwise
-
-## Source Code
-
-<ComponentSource name="hooks-use-is-mobile" />

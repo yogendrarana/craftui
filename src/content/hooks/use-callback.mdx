@@ -7,12 +7,6 @@ date: 2025-01-26T00:00:00.000Z
 category: hooks
 ---
 
-## Installation
-
-```bash
-npx craftui add hooks-use-callback
-```
-
 ## Usage
 
 ```tsx
@@ -27,18 +21,16 @@ function MyComponent() {
 }
 ```
 
+## Installation
+
+<Installation name="hooks-use-callback" />
+
 ## API Reference
 
 ### useCallbackRef
 
 A hook that provides a stable callback reference while always invoking the latest version of the provided function.
 
-| Parameter | Type | Description |
-| --------- | ---- | ----------- |
+| Parameter | Type           | Description                            |
+| --------- | -------------- | -------------------------------------- |
 | callback  | T \| undefined | The callback function to be referenced |
-
-**Returns:** `T` - A stable callback reference
-
-## Source Code
-
-<ComponentSource name="hooks-use-callback" />

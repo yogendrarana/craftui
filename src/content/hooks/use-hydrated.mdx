@@ -7,12 +7,6 @@ date: 2025-01-26T00:00:00.000Z
 category: hooks
 ---
 
-## Installation
-
-```bash
-npx craftui add hooks-use-hydrated
-```
-
 ## Usage
 
 ```tsx
@@ -34,20 +28,18 @@ function ClientOnlyComponent() {
 }
 ```
 
+## Installation
+
+<Installation name="hooks-use-hydrated" />
+
 ## API Reference
 
 ### useHydrated
 
 A hook that returns whether the component has hydrated on the client to avoid hydration mismatches.
 
-**Returns:** `boolean` - `true` if the component has hydrated, `false` otherwise
-
 ## Use Cases
 
 - Preventing hydration mismatches when using client-only APIs
 - Conditionally rendering content that depends on browser APIs
 - Avoiding SSR/CSR inconsistencies
-
-## Source Code
-
-<ComponentSource name="hooks-use-hydrated" />

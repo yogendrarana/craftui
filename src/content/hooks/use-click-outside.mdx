@@ -7,12 +7,6 @@ date: 2025-01-26T00:00:00.000Z
 category: hooks
 ---
 
-## Installation
-
-```bash
-npx craftui add hooks-use-click-outside
-```
-
 ## Usage
 
 ```tsx
@@ -35,19 +29,17 @@ function Dropdown() {
 }
 ```
 
+## Installation
+
+<Installation name="hooks-use-click-outside" />
+
 ## API Reference
 
 ### useClickOutside
 
 A hook to detect clicks outside of a specified element.
 
-| Parameter | Type | Description |
-| --------- | ---- | ----------- |
-| ref       | RefObject\<T\> | Reference to the element to detect clicks outside of |
+| Parameter | Type                                      | Description                                                 |
+| --------- | ----------------------------------------- | ----------------------------------------------------------- |
+| ref       | RefObject\<T\>                            | Reference to the element to detect clicks outside of        |
 | handler   | (event: MouseEvent \| TouchEvent) => void | Callback function to execute when click outside is detected |
-
-**Returns:** `void`
-
-## Source Code
-
-<ComponentSource name="hooks-use-click-outside" />
