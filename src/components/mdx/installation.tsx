@@ -77,6 +77,7 @@ export function Installation({ name, className }: PropType) {
 							</div>
 						)}
 
+					{registryItem.registryDependencies.length > 0 && (
 						<div>
 							<h3 className="font-medium mb-1">
 								Install Registry Dependencies
@@ -86,7 +87,7 @@ export function Installation({ name, className }: PropType) {
 									registryItem.registryDependencies || []
 								).join(" ")}
 							/>
-						</div>
+						</div>)}
 
 						<div>
 							<h3 className="font-medium mb-1">
