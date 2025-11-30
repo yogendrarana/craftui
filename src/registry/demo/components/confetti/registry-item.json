@@ -1,0 +1,12 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "demo-components-confetti",
+	"type": "registry:block",
+	"registryDependencies": ["hooks-use-confetti"],
+	"files": [
+		{
+			"path": "src/registry/demo/components/confetti/index.tsx",
+			"type": "registry:block"
+		}
+	]
+}

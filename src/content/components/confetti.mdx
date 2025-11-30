@@ -1,6 +1,6 @@
 ---
 title: Confetti
-description: A confetti component.
+description: A confetti hook for triggering confetti animations.
 slug: /components/confetti
 published: true
 date: 2024-12-16T00:00:00.000Z
@@ -17,17 +17,21 @@ subCategory: Effects
 
 ## Installation
 
-<Installation name="confetti.ts" />
+<Installation name="hooks-use-confetti" />
 
-## Props
+## API Reference
 
-The above code exports **triggerConfetti()** function which can be used to trigger confetti animation. The function accepts the following props:
+### useConfetti
+
+Returns a function to trigger confetti animations.
+
+### ConfettiOptions
 
 | Prop          | Type   | Description                                                                            | Default |
 | ------------- | ------ | -------------------------------------------------------------------------------------- | ------- |
-| particleCount | number | The number of confetto and sequin you want                                             | 50      |
+| particleCount | number | The number of confetti and sequin particles                                            | 50      |
 | origin        | string | top \| bottom \| left \| right \| top-left \| top-right \| bottom-left \| bottom-right | center  |
-| duration      | number | Determines when the canvas will be removed after the confetti effect has finished      | 3000    |
+| duration      | number | Duration in milliseconds before the canvas is removed                                  | 3000    |
 
 ## Credits
 
