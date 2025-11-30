@@ -3,6 +3,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
+import Link from "next/link";
 
 interface TocItem {
 	title: string;
@@ -39,7 +40,6 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
 
 	return (
 		<div className="space-y-2">
-			<p className="font-medium">On This Page</p>
 			<Tree tree={toc} activeItem={activeHeading} />
 		</div>
 	);
@@ -92,17 +92,17 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
 			{tree.map((item, index) => {
 				return (
 					<li key={index} className="mt-0 pt-2">
-						<a
+						<Link
 							href={item.url}
 							className={cn(
-								"inline-block no-underline transition-colors hover:text-foreground",
+								"text-sm inline-block no-underline transition-colors hover:text-foreground",
 								item.url === `#${activeItem}`
-									? "font-medium text-foreground"
+									? "text-foreground"
 									: "text-muted-foreground",
 							)}
 						>
 							{item.title}
-						</a>
+						</Link>
 						{item.items?.length ? (
 							<Tree
 								tree={item.items}
