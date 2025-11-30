@@ -92,7 +92,6 @@ const Timeline = React.forwardRef<HTMLUListElement, TimelineProps>(
 						aria-hidden="true"
 					/>
 					{children}
-					{children}
 				</ul>
 			</TimelineContext.Provider>
 		);
