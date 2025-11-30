@@ -7,12 +7,6 @@ date: 2025-01-26T00:00:00.000Z
 category: hooks
 ---
 
-## Installation
-
-```bash
-npx craftui add hooks-use-optimistic
-```
-
 ## Usage
 
 ```tsx
@@ -30,7 +24,7 @@ function TodoList({ initialTodos }: { initialTodos: Todo[] }) {
   const addTodo = async (title: string) => {
     const newTodo = { id: crypto.randomUUID(), title, completed: false };
     setOptimisticTodos({ action: "add", item: newTodo });
-    
+
     // Make API call
     await fetch("/api/todos", {
       method: "POST",
@@ -40,7 +34,7 @@ function TodoList({ initialTodos }: { initialTodos: Todo[] }) {
 
   const updateTodo = async (todo: Todo) => {
     setOptimisticTodos({ action: "update", item: todo });
-    
+
     await fetch(`/api/todos/${todo.id}`, {
       method: "PUT",
       body: JSON.stringify(todo),
@@ -49,7 +43,7 @@ function TodoList({ initialTodos }: { initialTodos: Todo[] }) {
 
   const deleteTodo = async (todo: Todo) => {
     setOptimisticTodos({ action: "delete", item: todo });
-    
+
     await fetch(`/api/todos/${todo.id}`, {
       method: "DELETE",
     });
@@ -68,17 +62,19 @@ function TodoList({ initialTodos }: { initialTodos: Todo[] }) {
 }
 ```
 
+## Installation
+
+<Installation name="hooks-use-optimistic" />
+
 ## API Reference
 
 ### useOptimistic
 
 A hook that wraps React.useOptimistic to manage optimistic updates for lists.
 
-| Parameter | Type | Description |
-| --------- | ---- | ----------- |
+| Parameter | Type    | Description                                           |
+| --------- | ------- | ----------------------------------------------------- |
 | data      | TData[] | Initial data array (items must have an `id` property) |
-
-**Returns:** `[TData[], (action: { action: "add" \| "update" \| "delete", item: TData }) => void]`
 
 - First element: The optimistic data array
 - Second element: Function to update the optimistic state
@@ -88,7 +84,3 @@ A hook that wraps React.useOptimistic to manage optimistic updates for lists.
 - **add**: Adds a new item to the list
 - **update**: Updates an existing item (matched by `id`)
 - **delete**: Removes an item from the list (matched by `id`)
-
-## Source Code
-
-<ComponentSource name="hooks-use-optimistic" />

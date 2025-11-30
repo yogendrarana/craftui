@@ -7,12 +7,6 @@ date: 2025-01-26T00:00:00.000Z
 category: hooks
 ---
 
-## Installation
-
-```bash
-npx craftui add hooks-use-media-query
-```
-
 ## Usage
 
 ```tsx
@@ -33,17 +27,19 @@ function ResponsiveComponent() {
 }
 ```
 
+## Installation
+
+<Installation name="hooks-use-media-query" />
+
 ## API Reference
 
 ### useMediaQuery
 
 A hook for responsive breakpoint detection using media queries.
 
-| Parameter | Type | Description |
-| --------- | ---- | ----------- |
+| Parameter | Type   | Description            |
+| --------- | ------ | ---------------------- |
 | query     | string | CSS media query string |
-
-**Returns:** `boolean` - `true` if the media query matches, `false` otherwise
 
 ## Common Media Queries
 
@@ -60,7 +56,3 @@ const isLandscape = useMediaQuery("(orientation: landscape)");
 // Dark mode
 const prefersDark = useMediaQuery("(prefers-color-scheme: dark)");
 ```
-
-## Source Code
-
-<ComponentSource name="hooks-use-media-query" />

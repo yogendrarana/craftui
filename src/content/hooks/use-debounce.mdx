@@ -7,12 +7,6 @@ date: 2025-01-26T00:00:00.000Z
 category: hooks
 ---
 
-## Installation
-
-```bash
-npx craftui add hooks-use-debounce
-```
-
 ## Usage
 
 ```tsx
@@ -42,19 +36,17 @@ function SearchInput() {
 }
 ```
 
+## Installation
+
+<Installation name="hooks-use-debounce" />
+
 ## API Reference
 
 ### useDebounce
 
 A hook to debounce rapidly changing values.
 
-| Parameter | Type | Description | Default |
-| --------- | ---- | ----------- | ------- |
-| value     | T    | The value to debounce | - |
-| delay     | number | Delay in milliseconds | 500 |
-
-**Returns:** `T` - The debounced value
-
-## Source Code
-
-<ComponentSource name="hooks-use-debounce" />
+| Parameter | Type   | Description           | Default |
+| --------- | ------ | --------------------- | ------- |
+| value     | T      | The value to debounce | -       |
+| delay     | number | Delay in milliseconds | 500     |

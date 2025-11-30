@@ -236,6 +236,12 @@ const components = {
 			{...props}
 		/>
 	),
+	strong: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
+		<strong className={cn("font-semibold", className)} {...props} />
+	),
+	em: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
+		<em className={cn("italic", className)} {...props} />
+	),
 	LinkedCard: ({
 		className,
 		...props
