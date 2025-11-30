@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
-import type { NavItem } from "@/types";
+import type { NavItem } from "@/types/registry";
 import { docsNavItems } from "@/config/docs";
 
 interface DocsSidebarNavProps {

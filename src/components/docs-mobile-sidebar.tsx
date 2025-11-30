@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import type { DocsNavItem } from "@/config/docs";
+import type { NavItem } from "@/types/registry";
 
 interface DocsMobileSidebarProps {
 	items: DocsNavItem[];
@@ -72,8 +73,6 @@ export default function DocsMobileSidebar({ items }: DocsMobileSidebarProps) {
 		</Drawer.Root>
 	);
 }
-
-import type { NavItem } from "@/types";
 
 function MobileNavItems({
 	items,
