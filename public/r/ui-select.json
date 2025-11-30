@@ -3,7 +3,7 @@
 	"name": "ui-select",
 	"type": "registry:ui",
 	"description": "A custom select dropdown component",
-	"dependencies": ["motion"],
+	"dependencies": ["motion", "lucide-react"],
 	"registryDependencies": ["@craftui/lib-utils"],
 	"files": [
 		{
