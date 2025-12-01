@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import {
 	Drawer,
 	DrawerTrigger,
@@ -28,13 +27,16 @@ export default function DrawerDemo() {
 				</DrawerHeader>
 
 				{/* your content */}
-				<div className="py-4 flex-grow overflow-auto">
+				<div className="py-4 grow overflow-auto">
 					<p>The content of the drawer goes here.</p>
 				</div>
 
 				<DrawerFooter className="flex gap-2 justify-end">
 					<DrawerClose className="px-5 py-0.5">Close</DrawerClose>
-					<button className="px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm">
+					<button
+						type="button"
+						className="px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm"
+					>
 						Save
 					</button>
 				</DrawerFooter>
