@@ -22,8 +22,12 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
 				? toc
 						.flatMap((item) => [
 							item.url,
-							item.items?.map((item) => item.url),
+							item.items?.flatMap((subItem) => [
+								subItem.url,
+								subItem.items?.map((nestedItem) => nestedItem.url),
+							]),
 						])
+						.flat()
 						.flat()
 						.filter(Boolean)
 						.map((id) => id?.split("#")[1])
@@ -39,12 +43,16 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
 	}
 
 	return (
-		<div className="space-y-2">
-			<Tree tree={toc} activeItem={activeHeading} />
+		<div>
+			<div className="px-4 py-3 border-b border-border border-dashed text-sm">On this page</div>
+			<div className="p-4">
+				<Tree tree={toc} activeItem={activeHeading} />
+			</div>
 		</div>
 	);
 }
 
+// use active item hook
 function useActiveItem(itemIds: string[]) {
 	const [activeId, setActiveId] = React.useState<string | null>(null);
 
@@ -80,6 +88,8 @@ function useActiveItem(itemIds: string[]) {
 	return activeId;
 }
 
+// Tree component
+
 interface TreeProps {
 	tree: TocItem[];
 	level?: number;
@@ -87,17 +97,33 @@ interface TreeProps {
 }
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
-	return tree?.length && level < 3 ? (
-		<ul className={cn("m-0 list-none", { "pl-4": level !== 1 })}>
+	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+		e.preventDefault();
+		const id = url.split("#")[1];
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth", block: "start" });
+			// Update URL without scrolling
+			window.history.pushState(null, "", url);
+		}
+	};
+
+	return tree?.length && level < 4 ? (
+		<ul
+			className={cn("m-0 list-none space-y-2", {
+				"pl-3 mt-2": level !== 1,
+			})}
+		>
 			{tree.map((item, index) => {
 				return (
-					<li key={index} className="mt-0 pt-2">
+					<li key={index}>
 						<Link
 							href={item.url}
+							onClick={(e) => handleClick(e, item.url)}
 							className={cn(
 								"text-sm inline-block no-underline transition-colors hover:text-foreground",
 								item.url === `#${activeItem}`
-									? "text-foreground"
+									? "text-foreground font-medium"
 									: "text-muted-foreground",
 							)}
 						>

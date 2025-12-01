@@ -2,6 +2,10 @@
 @plugin "tailwindcss-animate";
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   scroll-behavior: smooth;
   letter-spacing: var(--tracking-normal);

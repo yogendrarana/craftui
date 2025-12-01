@@ -7,6 +7,12 @@ date: 2025-12-04T00:00:00.000Z
 category: ui
 ---
 
+## Installation
+
+<Installation name="ui-select" />
+
+## Demo
+
 #### Single Select
 
 <ComponentCodePreview name="demo-ui-select" />
@@ -35,13 +41,9 @@ category: ui
 
 <ComponentCodePreview name="demo-ui-select-controlled" />
 
-## Installation
-
-<Installation name="ui-select" />
-
 ## Props
 
-### Select
+#### Select
 
 | Prop            | Type                          | Description                                                                                      | Default |
 | --------------- | ----------------------------- | ------------------------------------------------------------------------------------------------ | ------- |
@@ -62,20 +64,20 @@ category: ui
 | open?           | boolean                       | Controlled state for whether the dropdown is open or closed                                      | \_      |
 | onOpenChange?   | (open: boolean) => void       | Callback function that runs when the open state changes                                          | \_      |
 
-### SelectTrigger
+#### SelectTrigger
 
 | Prop       | Type      | Description                                                   | Default |
 | ---------- | --------- | ------------------------------------------------------------- | ------- |
 | children   | ReactNode | The content to be rendered inside the SelectTrigger component | \_      |
 | className? | string    | Additional class names to style SelectTrigger component       | \_      |
 
-### SelectValue
+#### SelectValue
 
 | Prop         | Type   | Description                                                          | Default                |
 | ------------ | ------ | -------------------------------------------------------------------- | ---------------------- |
 | placeholder? | string | The placeholder value that will be shown on the SelectTrigger button | "Select an option ..." |
 
-### SelectContent
+#### SelectContent
 
 | Prop            | Type      | Description                                                   | Default |
 | --------------- | --------- | ------------------------------------------------------------- | ------- |
@@ -83,7 +85,7 @@ category: ui
 | className?      | string    | Additional class names to style SelectContent component       | \_      |
 | scrollbarWidth? | boolean   | The width of scrollbar. Can be **auto**, **none**, **thin**   | none    |
 
-### SelectOption
+#### SelectOption
 
 | Prop         | Type       | Description                                            | Default |
 | ------------ | ---------- | ------------------------------------------------------ | ------- |
@@ -94,7 +96,7 @@ category: ui
 | disabled?    | boolean    | If true, the option is disable and cannote be selected | false   |
 | onSelect?    | () => void | a function you want to run when an option is selected  | false   |
 
-### SelectGroup
+#### SelectGroup
 
 | Prop       | Type      | Description                                                 | Default |
 | ---------- | --------- | ----------------------------------------------------------- | ------- |

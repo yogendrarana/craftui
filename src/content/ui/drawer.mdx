@@ -7,6 +7,12 @@ date: 2024-12-21T00:00:00.000Z
 category: ui
 ---
 
+## Installation
+
+<Installation name="ui-drawer" />
+
+## Demo
+
 #### Default Drawer
 
 <ComponentCodePreview name="demo-ui-drawer" />
@@ -23,13 +29,9 @@ category: ui
 
 <ComponentCodePreview name="demo-ui-drawer-custom-background" />
 
-## Installation
-
-<Installation name="ui-drawer" />
-
 ## Props
 
-### Drawer
+#### Drawer
 
 | Prop          | Type                      | Description                                                                | Default   |
 | ------------- | ------------------------- | -------------------------------------------------------------------------- | --------- |
@@ -41,7 +43,7 @@ category: ui
 | open?         | boolean                   | Controls whether the dawer is open or closed.                              | undefined |
 | onOpenChange? | (isOpen: boolean) => void | Callback function triggered whenever the open state of the drawer changes. | undefined |
 
-### DrawerTrigger
+#### DrawerTrigger
 
 | Prop       | Type      | Description                                          | Default |
 | ---------- | --------- | ---------------------------------------------------- | ------- |
@@ -49,7 +51,7 @@ category: ui
 | className? | string    | Additional class names to style the DrawerTrigger    | \_      |
 | asChild?   | boolean   | If false, returns button other wise returns children | false   |
 
-### DrawerContent
+#### DrawerContent
 
 | Prop               | Type                 | Description                                            | Default   |
 | ------------------ | -------------------- | ------------------------------------------------------ | --------- |
@@ -58,28 +60,28 @@ category: ui
 | backdropClassName? | string               | Additional class names to style the backdrop of drawer | \_        |
 | onClose?           | onClose?: () => void | Function to run when drawer closes                     | undefined |
 
-### DrawerHeader
+#### DrawerHeader
 
 | Prop       | Type      | Description                                        | Default |
 | ---------- | --------- | -------------------------------------------------- | ------- |
 | children   | ReactNode | The content to be rendered inside the DrawerHeader | \_      |
 | className? | string    | Additional class names to style the DrawerHeader   | \_      |
 
-### DrawerTitle
+#### DrawerTitle
 
 | Prop       | Type      | Description                                       | Default |
 | ---------- | --------- | ------------------------------------------------- | ------- |
 | children   | ReactNode | The content to be rendered inside the DrawerTitle | \_      |
 | className? | string    | Additional class names to style the DrawerTitle   | \_      |
 
-### DrawerDescription
+#### DrawerDescription
 
 | Prop       | Type      | Description                                             | Default |
 | ---------- | --------- | ------------------------------------------------------- | ------- |
 | children   | ReactNode | The content to be rendered inside the DrawerDescription | \_      |
 | className? | string    | Additional class names to style the DrawerDescription   | \_      |
 
-### DrawerClose
+#### DrawerClose
 
 | Prop       | Type      | Description                                          | Default |
 | ---------- | --------- | ---------------------------------------------------- | ------- |

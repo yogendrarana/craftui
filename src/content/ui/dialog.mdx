@@ -10,6 +10,12 @@ author:
 category: ui
 ---
 
+## Installation
+
+<Installation name="ui-dialog" />
+
+## Demo
+
 #### Basic dialog
 
 <ComponentCodePreview name="demo-ui-dialog" />
@@ -26,13 +32,9 @@ category: ui
 
 <ComponentCodePreview name="demo-ui-dialog-controlled" />
 
-## Installation
-
-<Installation name="ui-dialog" />
-
 ## Props
 
-### Dialog
+#### Dialog
 
 | Prop         | Type                      | Description                                                                | Default   |
 | ------------ | ------------------------- | -------------------------------------------------------------------------- | --------- |
@@ -43,7 +45,7 @@ category: ui
 | open         | boolean                   | Controls whether the dialog is open or closed.                             | undefined |
 | onOpenChange | (isOpen: boolean) => void | Callback function triggered whenever the open state of the dialog changes. | undefined |
 
-### DialogTrigger
+#### DialogTrigger
 
 | Prop      | Type      | Description                                          | Default |
 | --------- | --------- | ---------------------------------------------------- | ------- |
@@ -51,14 +53,14 @@ category: ui
 | className | string    | String of class                                      | \_      |
 | asChild   | boolean   | If false, returns button other wise returns children | false   |
 
-### DialogHeader
+#### DialogHeader
 
 | Prop      | Type      | Description                                     | Default |
 | --------- | --------- | ----------------------------------------------- | ------- |
 | children  | ReactNode | The content to be rendered inside the component | \_      |
 | className | string    | String of class                                 | \_      |
 
-### DialogContent
+#### DialogContent
 
 | Prop              | Type                 | Description                                          | Default   |
 | ----------------- | -------------------- | ---------------------------------------------------- | --------- |
@@ -67,21 +69,21 @@ category: ui
 | backdropClassName | string               | String of class for dialog background                | \_        |
 | onClose           | onClose?: () => void | If false, returns button other wise returns children | undefined |
 
-### DialogTitle
+#### DialogTitle
 
 | Prop      | Type      | Description                                     | Default |
 | --------- | --------- | ----------------------------------------------- | ------- |
 | children  | ReactNode | The content to be rendered inside the component | \_      |
 | className | string    | String of class                                 | \_      |
 
-### DialogDesciption
+#### DialogDesciption
 
 | Prop      | Type      | Description                                     | Default |
 | --------- | --------- | ----------------------------------------------- | ------- |
 | children  | ReactNode | The content to be rendered inside the component | \_      |
 | className | string    | String of class                                 | \_      |
 
-### DialogClose
+#### DialogClose
 
 | Prop      | Type      | Description                                          | Default |
 | --------- | --------- | ---------------------------------------------------- | ------- |

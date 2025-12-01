@@ -11,10 +11,9 @@ category: lib
 
 <Installation name="lib-utils" />
 
-
 ## Usage
 
-### cn Function
+#### cn Function
 
 The `cn` function is a utility for conditionally joining classNames together. It combines the power of `clsx` for conditional class names with `tailwind-merge` to intelligently merge Tailwind CSS classes.
 
@@ -28,7 +27,8 @@ function Button({ className, variant = "default" }) {
         "px-4 py-2 rounded-md font-medium transition-colors",
         {
           "bg-blue-500 text-white hover:bg-blue-600": variant === "default",
-          "bg-gray-200 text-gray-900 hover:bg-gray-300": variant === "secondary",
+          "bg-gray-200 text-gray-900 hover:bg-gray-300":
+            variant === "secondary",
         },
         className
       )}
@@ -41,11 +41,10 @@ function Button({ className, variant = "default" }) {
 
 ## API Reference
 
-### cn
+#### cn
 
 Merges class names using `clsx` and `tailwind-merge`.
 
-| Parameter | Type | Description |
-| --------- | ---- | ----------- |
+| Parameter | Type         | Description                                           |
+| --------- | ------------ | ----------------------------------------------------- |
 | ...inputs | ClassValue[] | Class names to merge (strings, objects, arrays, etc.) |
-

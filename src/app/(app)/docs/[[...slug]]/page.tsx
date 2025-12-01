@@ -34,14 +34,14 @@ export default async function DocsLayout({ params }: PageProps) {
 		<div className="min-h-screen flex flex-col">
 			<Header />
 
-			<MaxWidthContainer className="border-b sm:border-l sm:border-r border-dashed">
+			<MaxWidthContainer className="border-b sm:border-l sm:border-r border-dashed px-0">
 				<div
 					className={cn(
 						"flex-1 items-start overflow-hidden md:overflow-visible",
 						"md:grid md:grid-cols-[275px_minmax(0,1fr)_275px]",
 					)}
 				>
-					<div className="h-[calc(100vh-5rem)] py-2 pr-2 hidden md:block md:sticky md:top-20">
+					<div className="h-[calc(100vh-5rem)] p-2 hidden md:block md:sticky md:top-20">
 						<ScrollArea
 							hideScrollbar
 							scrollHideDelay={1}
@@ -70,7 +70,7 @@ export default async function DocsLayout({ params }: PageProps) {
 						<Mdx code={doc.body.code} />
 					</div>
 
-					<div className="p-4 hidden md:block md:sticky md:top-20">
+					<div className="hidden md:block md:sticky md:top-20">
 						<TableOfContents toc={doc.toc} />
 					</div>
 				</div>
