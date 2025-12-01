@@ -9,7 +9,7 @@
 		{
 			"path": "src/registry/demo/ui/stepper/stepper-indicator-progress/index.tsx",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/ui/stepper-indicator-progress.tsx"
 		}
 	]
 }

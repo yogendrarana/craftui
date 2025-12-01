@@ -10,7 +10,7 @@
 			"path": "src/registry/demo/ui/select/index.tsx",
 			"content": "\"use client\";\n\nimport React from \"react\";\nimport {\n\tSelect,\n\tSelectTrigger,\n\tSelectContent,\n\tSelectOption,\n\tSelectValue,\n} from \"@/components/craftui/ui/select\";\n\nexport default function SelectDemo() {\n\tconst [fruit, setFruit] = React.useState<string | null>(\"apple\");\n\n\treturn (\n\t\t<Select defaultValue={fruit} onValueChange={(v: string) => setFruit(v)}>\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue placeholder=\"Select fruits ...\" />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectContent>\n\t\t\t\t<SelectOption value=\"apple\">Apple</SelectOption>\n\t\t\t\t<SelectOption value=\"banana\">Banana</SelectOption>\n\t\t\t\t<SelectOption value=\"orange\">Orange</SelectOption>\n\t\t\t\t<SelectOption value=\"mango\">Mango</SelectOption>\n\t\t\t</SelectContent>\n\t\t</Select>\n\t);\n}\n",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/ui/select.tsx"
 		}
 	]
 }

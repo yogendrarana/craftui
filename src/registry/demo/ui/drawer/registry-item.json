@@ -9,7 +9,7 @@
 		{
 			"path": "src/registry/demo/ui/drawer/index.tsx",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/ui/drawer.tsx"
 		}
 	]
 }

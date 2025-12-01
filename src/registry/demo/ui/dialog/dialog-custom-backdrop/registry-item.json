@@ -9,7 +9,7 @@
 		{
 			"path": "src/registry/demo/ui/dialog/dialog-custom-backdrop/index.tsx",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/ui/dialog-custom-backdrop.tsx"
 		}
 	]
 }

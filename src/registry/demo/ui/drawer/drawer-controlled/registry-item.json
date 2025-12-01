@@ -9,7 +9,7 @@
 		{
 			"path": "src/registry/demo/ui/drawer/drawer-controlled/index.tsx",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/ui/drawer-controlled.tsx"
 		}
 	]
 }

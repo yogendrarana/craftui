@@ -7,7 +7,8 @@
 		{
 			"path": "src/registry/demo/components/confetti/index.tsx",
 			"content": "\"use client\";\n\nimport React from \"react\";\nimport { useConfetti } from \"@/hooks/use-confetti\";\n\nexport default function ConfettiDemo() {\n\tconst triggerConfetti = useConfetti();\n\n\tconst origins = [\n\t\t\"top\",\n\t\t\"bottom\",\n\t\t\"left\",\n\t\t\"right\",\n\t\t\"center\",\n\t\t\"top-left\",\n\t\t\"top-right\",\n\t\t\"bottom-left\",\n\t\t\"bottom-right\",\n\t] as const;\n\n\treturn (\n\t\t<div className=\"flex justify-center flex-wrap gap-4 dark:text-white\">\n\t\t\t{origins.map((origin) => (\n\t\t\t\t<button\n\t\t\t\t\tkey={origin}\n\t\t\t\t\ttype=\"button\"\n\t\t\t\t\tonClick={() => {\n\t\t\t\t\t\ttriggerConfetti({\n\t\t\t\t\t\t\tparticleCount: 50,\n\t\t\t\t\t\t\torigin,\n\t\t\t\t\t\t\tduration: 5000,\n\t\t\t\t\t\t});\n\t\t\t\t\t}}\n\t\t\t\t\tclassName=\"px-4 py-2 rounded bg-gray-200 dark:bg-zinc-800 hover:bg-gray-300 dark:hover:bg-zinc-600 transition\"\n\t\t\t\t>\n\t\t\t\t\t{origin.charAt(0).toUpperCase() +\n\t\t\t\t\t\torigin.slice(1).replace(\"-\", \" \")}\n\t\t\t\t</button>\n\t\t\t))}\n\t\t</div>\n\t);\n}\n",
-			"type": "registry:block"
+			"type": "registry:block",
+			"target": "components/craftui/demo/components/confetti.tsx"
 		}
 	]
 }

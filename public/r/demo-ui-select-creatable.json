@@ -10,7 +10,7 @@
 			"path": "src/registry/demo/ui/select/select-creatable/index.tsx",
 			"content": "\"use client\";\n\nimport React from \"react\";\nimport {\n\tSelect,\n\tSelectTrigger,\n\tSelectContent,\n\tSelectOption,\n\tSelectValue,\n} from \"@/components/craftui/ui/select\";\n\nexport default function SelectCreatable() {\n\treturn (\n\t\t<Select\n\t\t\tsearchable\n\t\t\tcreatable\n\t\t\tonCreateOption={(value) =>\n\t\t\t\talert(\n\t\t\t\t\t`Do something to create  ${value}. Like sending a request to the server or open a form modal.`,\n\t\t\t\t)\n\t\t\t}\n\t\t>\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue placeholder=\"Select a fruit ...\" />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectContent>\n\t\t\t\t<SelectOption value=\"mango\">Mango</SelectOption>\n\t\t\t\t<SelectOption value=\"apple\">Apple</SelectOption>\n\t\t\t\t<SelectOption value=\"banana\">Banana</SelectOption>\n\t\t\t\t<SelectOption value=\"orange\">Orange</SelectOption>\n\t\t\t\t<SelectOption value=\"coconut\">Coconut</SelectOption>\n\t\t\t</SelectContent>\n\t\t</Select>\n\t);\n}\n",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/ui/select-creatable.tsx"
 		}
 	]
 }
