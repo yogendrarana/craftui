@@ -25,7 +25,10 @@ export function CopyButton({ value, className, ...props }: CopyButtonProps) {
 	return (
 		<button
 			size="icon"
-			className={cn("relative z-10 p-2 border rounded-md cursor-pointer", className)}
+			className={cn(
+				"relative z-10 p-2 border rounded-md cursor-pointer",
+				className,
+			)}
 			onClick={() => {
 				navigator.clipboard.writeText(value);
 				setHasCopied(true);
