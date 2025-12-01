@@ -206,36 +206,63 @@ const components = {
 	Spacer: ({ height = "1rem" }) => (
 		<div style={{ height }} aria-hidden="true" />
 	),
-	pre: (props: React.HTMLProps<HTMLPreElement>) => {
-		const { children } = props;
+	pre: ({
+		className,
+		children,
+		...props
+	}: React.HTMLProps<HTMLPreElement>) => {
 		const codeText = String(
 			(children as any)?.props?.children ?? children ?? "",
 		).trim();
 
 		return (
-			<div className="relative mx-auto">
+			<div className="relative mx-auto ">
 				<pre
-					className="px-2 py-3 overflow-x-auto rounded-lg bg-black"
+					className={cn(
+						"px-4 py-3 bg-muted border border-border rounded text-sm overflow-x-auto",
+						className,
+					)}
 					{...props}
 				>
 					{children}
 				</pre>
+
 				<CopyButton
 					value={codeText}
-					className="absolute top-2 right-2"
+					className="absolute top-2 right-2 cursor-pointer"
 				/>
 			</div>
 		);
 	},
-	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-		<code
-			className={cn(
-				"block text-white px-2 py-[0.2rem] font-mono text-sm",
-				className,
-			)}
-			{...props}
-		/>
-	),
+
+	code: ({
+		className,
+		children,
+		...props
+	}: React.HTMLAttributes<HTMLElement>) => {
+		const isInline = !String(className).includes("language-");
+
+		if (!isInline) {
+			return (
+				<code className={className} {...props}>
+					{children}
+				</code>
+			);
+		}
+
+		return (
+			<code
+				className={cn(
+					"px-1.5 py-1 rounded font-mono text-sm bg-muted",
+					className,
+				)}
+				{...props}
+			>
+				{children}
+			</code>
+		);
+	},
+
 	strong: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 		<strong className={cn("font-semibold", className)} {...props} />
 	),
