@@ -1,4 +1,4 @@
-import { NavItem } from "@/types/registry";
+import type { NavItem } from "@/types/registry";
 
 export type DocsNavItem = {
 	title: string;
@@ -12,6 +12,10 @@ export const docsNavItems: Array<DocsNavItem> = [
 			{
 				title: "Introduction",
 				href: "/docs/getting-started/introduction",
+			},
+			{
+				title: "Installation",
+				href: "/docs/getting-started/installation",
 			},
 		],
 	},

@@ -5,6 +5,7 @@ import { CheckIcon, CopyIcon, Terminal } from "lucide-react";
 import type { PackageManager } from "@/types";
 import { cn } from "@/registry/lib/utils";
 import { packageInstallCommands } from "@/constants";
+import { CopyButton } from "./copy-button";
 
 function usePackageInstallCommand(pkg: string) {
 	const [hasCopied, setHasCopied] = React.useState(false);
@@ -81,7 +82,7 @@ export function PackageInstallTabs({
 			</div>
 
 			{/* Command Row */}
-			<div className="px-3 py-2 bg-background rounded-md border font-mono overflow-x-auto text-sm flex justify-between items-center">
+			<div className="px-3 py-2 rounded-md border font-mono overflow-x-auto text-sm flex justify-between items-center">
 				{installCommand}
 
 				<button
@@ -95,6 +96,7 @@ export function PackageInstallTabs({
 						<CopyIcon size={16} />
 					)}
 				</button>
+				<CopyButton value={installCommand} />
 			</div>
 		</div>
 	);

@@ -1,15 +1,17 @@
 "use client";
 
 import React from "react";
-import { CheckIcon, CopyIcon, Terminal } from "lucide-react";
+import { Terminal } from "lucide-react";
 import {
 	DropdownMenu,
 	DropdownMenuTrigger,
 	DropdownMenuContent,
 	DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-import type { PackageManager } from "@/types";
+
 import { cn } from "@/registry/lib/utils";
+import { CopyButton } from "./copy-button";
+import type { PackageManager } from "@/types";
 import { packageManagerCommands } from "@/constants";
 
 function useInstallCommand(pkg: string) {
@@ -61,11 +63,6 @@ export function InstallCommandDropdown({ pkg }: { pkg: string }) {
 				<span className="text-muted-foreground">
 					{hasCopied ? "Copied!" : installCommand}
 				</span>
-				{hasCopied ? (
-					<CheckIcon className="h-3.5 w-3.5 text-green-500" />
-				) : (
-					<CopyIcon className="h-3.5 w-3.5" />
-				)}
 			</button>
 
 			<DropdownMenu>
@@ -104,13 +101,8 @@ export function InstallCommandTabs({
 	pkg: string;
 	className?: string;
 }) {
-	const {
-		hasCopied,
-		packageManager,
-		setPackageManager,
-		installCommand,
-		onCopy,
-	} = useInstallCommand(pkg);
+	const { packageManager, setPackageManager, installCommand } =
+		useInstallCommand(pkg);
 
 	return (
 		<div className={cn("p-1 rounded-md border bg-muted", className)}>
@@ -146,18 +138,7 @@ export function InstallCommandTabs({
 			{/* Command Row */}
 			<div className="px-3 py-2 bg-background rounded-md border font-mono overflow-x-auto text-sm flex justify-between items-center">
 				{installCommand}
-
-				<button
-					type="button"
-					onClick={onCopy}
-					className="text-gray-400 transition-colors cursor-pointer"
-				>
-					{hasCopied ? (
-						<CheckIcon size={16} />
-					) : (
-						<CopyIcon size={16} />
-					)}
-				</button>
+				<CopyButton value={installCommand} />
 			</div>
 		</div>
 	);

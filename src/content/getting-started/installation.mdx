@@ -1,0 +1,82 @@
+---
+published: true
+title: Installation
+description: Step-by-step guide to install and configure Craft UI in your project using the Shadcn CLI.
+---
+
+### Prerequisites
+
+Before you can use Craft UI components, you need to set up **Tailwind CSS** and **Shadcn UI** in your project. Craft UI is built on top of these technologies and uses the Shadcn CLI for component installation.
+
+### Step 1: Install Tailwind CSS
+
+---
+
+If you haven't already set up Tailwind CSS in your project, follow the official installation guide of [Tailwind CSS](https://tailwindcss.com/docs/installation)
+
+### Step 2: Install Shadcn UI
+
+---
+
+Craft UI uses the Shadcn CLI to install components. Set up Shadcn UI in your project by following their official documentation [Shadcn UI](https://ui.shadcn.com/docs/installation)
+
+This will create a `components.json` file in your project root with the default Shadcn configuration.
+
+### Step 3: Add Craft UI Registry
+
+---
+
+Since Craft UI is not yet included in the default Shadcn registries, you need to manually add it to your `components.json` file.
+
+Open your `components.json` file and add the Craft UI registry to the `registries` object:
+
+```json {18-20}
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.ts",
+    "css": "src/styles/globals.css",
+    "baseColor": "slate",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils"
+  },
+  "registries": {
+    "@craftui": "https://craft-dot-ui.vercel.app/r/{name}.json"
+  }
+}
+```
+
+**Note:** If you don't see a `registries` object in your `components.json`, simply add it as shown above.
+
+### Step 4: Install Components
+
+---
+
+Once you've added the Craft UI registry, you can install any component using the Shadcn CLI with the `@craftui` prefix:
+
+```bash
+npx shadcn@latest add @craftui/component-name
+```
+
+For example, to install a button component:
+
+```bash
+npx shadcn@latest add @craftui/accordion
+```
+
+### What's Next?
+
+---
+
+You're all set! Browse the [components](/docs/components), [hooks](/docs/hooks), and [elements](/docs/elements) sections to discover what you can build with Craft UI.
+
+If you have any questions or need help, feel free to reach out on [Twitter](https://twitter.com/yooogendra_rana).
+
+#### Happy building! 🚀
