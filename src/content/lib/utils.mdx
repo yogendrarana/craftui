@@ -9,13 +9,8 @@ category: lib
 
 ## Installation
 
-```bash
-npx craftui add lib-utils
-```
+<Installation name="lib-utils" />
 
-This will install the required dependencies:
-- `clsx`
-- `tailwind-merge`
 
 ## Usage
 
@@ -54,80 +49,3 @@ Merges class names using `clsx` and `tailwind-merge`.
 | --------- | ---- | ----------- |
 | ...inputs | ClassValue[] | Class names to merge (strings, objects, arrays, etc.) |
 
-**Returns:** `string` - Merged class names
-
-## Features
-
-### Conditional Classes
-
-```tsx
-cn("base-class", {
-  "active-class": isActive,
-  "disabled-class": isDisabled,
-});
-```
-
-### Array Support
-
-```tsx
-cn(["class1", "class2"], "class3");
-```
-
-### Tailwind Conflict Resolution
-
-```tsx
-// Without cn: both classes applied, causing conflicts
-<div className="px-4 px-2" /> // ❌ Both paddings applied
-
-// With cn: intelligently merges, keeping only the last one
-<div className={cn("px-4", "px-2")} /> // ✅ Only px-2 applied
-```
-
-### Complex Example
-
-```tsx
-function Card({ className, variant, size, disabled }) {
-  return (
-    <div
-      className={cn(
-        // Base styles
-        "rounded-lg border shadow-sm",
-        
-        // Variant styles
-        {
-          "bg-white border-gray-200": variant === "default",
-          "bg-blue-50 border-blue-200": variant === "primary",
-          "bg-red-50 border-red-200": variant === "danger",
-        },
-        
-        // Size styles
-        {
-          "p-4": size === "sm",
-          "p-6": size === "md",
-          "p-8": size === "lg",
-        },
-        
-        // State styles
-        disabled && "opacity-50 cursor-not-allowed",
-        
-        // Custom className from props
-        className
-      )}
-    >
-      Card content
-    </div>
-  );
-}
-```
-
-## Why Use cn?
-
-1. **Conditional Classes**: Easily apply classes based on conditions
-2. **Tailwind Conflict Resolution**: Automatically resolves conflicting Tailwind classes
-3. **Type Safety**: Full TypeScript support with `ClassValue` type
-4. **Clean Code**: More readable than string concatenation
-5. **Performance**: Optimized for production use
-
-## Source Code
-
-<ComponentSource name="lib-utils" />

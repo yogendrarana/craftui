@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 import { Registry } from "@/__registry__";
 import { ComponentSource } from "./component-source";
 import { InstallCommandTabs } from "./install-command";
-import { PackageInstallTabs } from "./package-install-command";
 
 interface PropType {
 	name: string;
@@ -69,7 +68,7 @@ export function Installation({ name, className }: PropType) {
 								<h3 className="font-medium mb-1">
 									Install Required Packages
 								</h3>
-								<PackageInstallTabs
+								<InstallCommandTabs
 									pkg={(registryItem.dependencies || []).join(
 										" ",
 									)}
