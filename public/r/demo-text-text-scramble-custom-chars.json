@@ -10,7 +10,7 @@
 			"path": "src/registry/demo/text/text-scramble/text-scramble-custom-chars/index.tsx",
 			"content": "\"use client\";\n\nimport React from \"react\";\nimport TextScramble from \"@/components/craftui/text/text-scramble\";\n\nexport default function TextScrambleCustomChars() {\n\treturn (\n\t\t<TextScramble speed={50} characterSet=\".\">\n\t\t\tCustom Scramble\n\t\t</TextScramble>\n\t);\n}\n",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/text/text-scramble-custom-chars.tsx"
 		}
 	]
 }

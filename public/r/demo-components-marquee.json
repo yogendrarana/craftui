@@ -10,7 +10,7 @@
 			"path": "src/registry/demo/components/marquee/index.tsx",
 			"content": "\"use client\";\n\nimport { Icons } from \"@/components/icons\";\nimport Marquee from \"@/components/craftui/components/marquee\";\n\nconst data = [\n\t{\n\t\tname: \"React\",\n\t\ticon: Icons.react,\n\t},\n\t{\n\t\tname: \"Next\",\n\t\ticon: Icons.next,\n\t},\n\t{\n\t\tname: \"Remix\",\n\t\ticon: Icons.remix,\n\t},\n\t{\n\t\tname: \"Svelte\",\n\t\ticon: Icons.svelte,\n\t},\n\t{\n\t\tname: \"Vue\",\n\t\ticon: Icons.vue,\n\t},\n\t{\n\t\tname: \"Nuxt\",\n\t\ticon: Icons.nuxt,\n\t},\n\t{\n\t\tname: \"Astro\",\n\t\ticon: Icons.astro,\n\t},\n];\n\nexport default function MarqueeBasic() {\n\treturn (\n\t\t<Marquee\n\t\t\tduration={20}\n\t\t\trepeat={2}\n\t\t\tdirection=\"left\"\n\t\t\tpauseOnHover\n\t\t\tclassName=\"w-[500px]\"\n\t\t>\n\t\t\t{data.map((item, index) => (\n\t\t\t\t<div\n\t\t\t\t\tkey={`${item.name}-${index}`}\n\t\t\t\t\tclassName=\"flex flex-col items-center\"\n\t\t\t\t>\n\t\t\t\t\t<item.icon className=\"h-14 w-14 px-4 dark:invert\" />\n\t\t\t\t</div>\n\t\t\t))}\n\t\t</Marquee>\n\t);\n}\n",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/components/marquee.tsx"
 		}
 	]
 }

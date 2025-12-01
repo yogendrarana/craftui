@@ -9,7 +9,7 @@
 		{
 			"path": "src/registry/demo/components/animated-tooltip/index.tsx",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/components/animated-tooltip.tsx"
 		}
 	]
 }

@@ -9,7 +9,7 @@
 		{
 			"path": "src/registry/demo/text/text-scramble/index.tsx",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/text/text-scramble.tsx"
 		}
 	]
 }

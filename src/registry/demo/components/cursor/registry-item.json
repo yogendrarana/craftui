@@ -9,7 +9,7 @@
 		{
 			"path": "src/registry/demo/components/cursor/index.tsx",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/components/cursor.tsx"
 		}
 	]
 }

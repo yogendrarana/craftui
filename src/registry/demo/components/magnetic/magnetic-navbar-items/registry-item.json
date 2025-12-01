@@ -9,7 +9,7 @@
 		{
 			"path": "src/registry/demo/components/magnetic/magnetic-navbar-items/index.tsx",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/components/magnetic-navbar-items.tsx"
 		}
 	]
 }

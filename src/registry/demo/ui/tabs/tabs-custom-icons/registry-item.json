@@ -9,7 +9,7 @@
 		{
 			"path": "src/registry/demo/ui/tabs/tabs-custom-icons/index.tsx",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/ui/tabs-custom-icons.tsx"
 		}
 	]
 }

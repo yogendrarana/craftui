@@ -6,7 +6,8 @@
 	"files": [
 		{
 			"path": "src/registry/demo/components/confetti/index.tsx",
-			"type": "registry:block"
+			"type": "registry:block",
+			"target": "components/craftui/demo/components/confetti.tsx"
 		}
 	]
 }

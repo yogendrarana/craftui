@@ -279,7 +279,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/components/animated-tooltip/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/components/animated-tooltip.tsx",
 				content:
 					'"use client";\n\nimport { AnimatedTooltip } from "@/components/craftui/components/animated-tooltip";\nimport { Home, Settings, Mail, Calendar, Music, ImageIcon } from "lucide-react";\n\nexport default function AnimatedTooltipDemo() {\n\tconst tooltips = [\n\t\t{\n\t\t\tid: "1",\n\t\t\ticon: <Home className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Home",\n\t\t},\n\t\t{\n\t\t\tid: "2",\n\t\t\ticon: <Settings className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Settings",\n\t\t},\n\t\t{\n\t\t\tid: "3",\n\t\t\ticon: <Mail className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Mail",\n\t\t},\n\t\t{\n\t\t\tid: "4",\n\t\t\ticon: <Calendar className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Calendar",\n\t\t},\n\t\t{\n\t\t\tid: "5",\n\t\t\ticon: <ImageIcon className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Photos",\n\t\t},\n\t\t{\n\t\t\tid: "6",\n\t\t\ticon: <Music className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Music",\n\t\t},\n\t];\n\n\treturn (\n\t\t<div className="flex gap-2">\n\t\t\t{tooltips.map(({ id, icon, label }) => (\n\t\t\t\t<AnimatedTooltip key={id} label={label}>\n\t\t\t\t\t{icon}\n\t\t\t\t</AnimatedTooltip>\n\t\t\t))}\n\t\t</div>\n\t);\n}',
 			},
@@ -328,6 +328,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/components/confetti/index.tsx",
 				type: "registry:block",
+				target: "components/craftui/demo/components/confetti.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport { useConfetti } from "@/hooks/use-confetti";\n\nexport default function ConfettiDemo() {\n\tconst triggerConfetti = useConfetti();\n\n\tconst origins = [\n\t\t"top",\n\t\t"bottom",\n\t\t"left",\n\t\t"right",\n\t\t"center",\n\t\t"top-left",\n\t\t"top-right",\n\t\t"bottom-left",\n\t\t"bottom-right",\n\t] as const;\n\n\treturn (\n\t\t<div className="flex justify-center flex-wrap gap-4 dark:text-white">\n\t\t\t{origins.map((origin) => (\n\t\t\t\t<button\n\t\t\t\t\tkey={origin}\n\t\t\t\t\ttype="button"\n\t\t\t\t\tonClick={() => {\n\t\t\t\t\t\ttriggerConfetti({\n\t\t\t\t\t\t\tparticleCount: 50,\n\t\t\t\t\t\t\torigin,\n\t\t\t\t\t\t\tduration: 5000,\n\t\t\t\t\t\t});\n\t\t\t\t\t}}\n\t\t\t\t\tclassName="px-4 py-2 rounded bg-gray-200 dark:bg-zinc-800 hover:bg-gray-300 dark:hover:bg-zinc-600 transition"\n\t\t\t\t>\n\t\t\t\t\t{origin.charAt(0).toUpperCase() +\n\t\t\t\t\t\torigin.slice(1).replace("-", " ")}\n\t\t\t\t</button>\n\t\t\t))}\n\t\t</div>\n\t);\n}',
 			},
@@ -376,7 +377,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/components/cursor/cursor-complex/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/components/cursor-complex.tsx",
 				content:
 					'"use client";\n\nimport { ArrowRight, Sparkles } from "lucide-react";\nimport CustomCursor from "@/components/craftui/components/cursor";\n\nexport default function CustomCursorComplex() {\n\treturn (\n\t\t<CustomCursor\n\t\t\tcursor={\n\t\t\t\t<div className="flex items-center space-x-2 bg-yellow-300 px-3 py-1 rounded-full shadow-lg">\n\t\t\t\t\t<Sparkles className="w-4 h-4 text-yellow-600" />\n\t\t\t\t\t<span className="text-sm font-semibold text-yellow-800">\n\t\t\t\t\t\tClick Here!\n\t\t\t\t\t</span>\n\t\t\t\t\t<ArrowRight className="w-4 h-4 text-yellow-600" />\n\t\t\t\t</div>\n\t\t\t}\n\t\t\tclassName="h-[400px] w-full flex items-center justify-center"\n\t\t>\n\t\t\t<div className="text-center">\n\t\t\t\t<h2 className="text-xl font-semibold mb-2">Custom Cursor</h2>\n\t\t\t\t<p>Hover over this area to see a custom cursor</p>\n\t\t\t</div>\n\t\t</CustomCursor>\n\t);\n}',
 			},
@@ -425,7 +426,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/components/cursor/cursor-text/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/components/cursor-text.tsx",
 				content:
 					'"use client";\n\nimport CustomCursor from "@/components/craftui/components/cursor";\n\nexport default function CursorChangerText() {\n\treturn (\n\t\t<CustomCursor\n\t\t\tcursor={\n\t\t\t\t<span className="text-sm border bg-white text-black px-2 py-1 rounded shadow">\n\t\t\t\t\tHello, World!\n\t\t\t\t</span>\n\t\t\t}\n\t\t\tclassName="h-[400px] w-full flex items-center justify-center"\n\t\t>\n\t\t\t<div className="text-center">\n\t\t\t\t<h2 className="text-xl font-semibold mb-2">Text Cursor</h2>\n\t\t\t\t<p>Hover over this area to see a text cursor</p>\n\t\t\t</div>\n\t\t</CustomCursor>\n\t);\n}',
 			},
@@ -474,7 +475,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/components/cursor/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/components/cursor.tsx",
 				content:
 					'"use client";\n\nimport CustomCursor from "@/components/craftui/components/cursor";\n\nexport default function CustomCursorBasic() {\n\treturn (\n\t\t<CustomCursor\n\t\t\tcursor={<span>👋</span>}\n\t\t\tclassName="h-[400px] w-full flex items-center justify-center"\n\t\t>\n\t\t\tEmoji Cursor\n\t\t</CustomCursor>\n\t);\n}',
 			},
@@ -523,7 +524,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/components/dock/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/components/dock.tsx",
 				content:
 					'"use client";\n\nimport { Dock, DockItem } from "@/components/craftui/components/dock";\nimport { Home, Settings, Mail, Calendar, Music, ImageIcon } from "lucide-react";\n\nexport default function DockBasic() {\n\tconst dockItems = [\n\t\t{\n\t\t\tid: "1",\n\t\t\ticon: <Home className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Home",\n\t\t},\n\t\t{\n\t\t\tid: "2",\n\t\t\ticon: <Settings className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Settings",\n\t\t},\n\t\t{\n\t\t\tid: "3",\n\t\t\ticon: <Mail className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Mail",\n\t\t},\n\t\t{\n\t\t\tid: "4",\n\t\t\ticon: <Calendar className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Calendar",\n\t\t},\n\t\t{\n\t\t\tid: "5",\n\t\t\ticon: <ImageIcon className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Photos",\n\t\t},\n\t\t{\n\t\t\tid: "6",\n\t\t\ticon: <Music className="w-4 h-4 text-gray-500" />,\n\t\t\tlabel: "Music",\n\t\t},\n\t];\n\n\treturn (\n\t\t<Dock>\n\t\t\t{dockItems.map(({ id, icon, label }) => (\n\t\t\t\t<DockItem key={id} icon={icon} label={label} />\n\t\t\t))}\n\t\t</Dock>\n\t);\n}',
 			},
@@ -572,7 +573,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/components/magnetic/magnetic-navbar-items/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/components/magnetic-navbar-items.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport Magnetic from "@/components/craftui/components/magnetic";\n\n// nav items\nconst navMenu = [\n\t{\n\t\tname: "Home",\n\t\tlink: "#",\n\t},\n\t{\n\t\tname: "About",\n\t\tlink: "#",\n\t},\n\t{\n\t\tname: "Services",\n\t\tlink: "#",\n\t},\n\t{\n\t\tname: "Contact",\n\t\tlink: "#",\n\t},\n];\n\n// Icons\ntype IconProps = React.HTMLAttributes<SVGElement>;\nconst Icons = {\n\tGitHub: (props: IconProps) => (\n\t\t<svg\n\t\t\tviewBox="0 0 256 250"\n\t\t\twidth="256"\n\t\t\theight="250"\n\t\t\tfill="#24292f"\n\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\tpreserveAspectRatio="xMidYMid"\n\t\t\t{...props}\n\t\t>\n\t\t\t<path d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z" />\n\t\t</svg>\n\t),\n\tLinkedIn: (props: IconProps) => (\n\t\t<svg\n\t\t\twidth="256"\n\t\t\theight="256"\n\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\tpreserveAspectRatio="xMidYMid"\n\t\t\tviewBox="0 0 256 256"\n\t\t\tfill="#0077b5"\n\t\t\t{...props}\n\t\t>\n\t\t\t<path\n\t\t\t\td="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"\n\t\t\t\tfill="#0A66C2"\n\t\t\t/>\n\t\t</svg>\n\t),\n\tX: (props: IconProps) => (\n\t\t<svg\n\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\twidth="1200"\n\t\t\theight="1227"\n\t\t\tfill="none"\n\t\t\tviewBox="0 0 1200 1227"\n\t\t\t{...props}\n\t\t>\n\t\t\t<path\n\t\t\t\tfill="#000"\n\t\t\t\td="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"\n\t\t\t/>\n\t\t</svg>\n\t),\n};\n\nexport default function MagneticNavbarItems() {\n\treturn (\n\t\t<div className="w-full flex items-center justify-between">\n\t\t\t<div className="flex items-center">\n\t\t\t\t<div className="flex gap-8 items-center">\n\t\t\t\t\t{navMenu.map((nav, index) => (\n\t\t\t\t\t\t<Magnetic key={index}>\n\t\t\t\t\t\t\t<div className="group relative">\n\t\t\t\t\t\t\t\t<div className="cursor-pointer">{nav.name}</div>\n\t\t\t\t\t\t\t\t<div className="h-2 w-2 bg-black dark:bg-white rounded-full absolute -bottom-4 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all ease duration-300"></div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</Magnetic>\n\t\t\t\t\t))}\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div className="mr-[2rem] flex gap-6">\n\t\t\t\t<Magnetic>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<Icons.GitHub className="h-4 w-4 cursor-pointer" />\n\t\t\t\t\t</div>\n\t\t\t\t</Magnetic>\n\t\t\t\t<Magnetic>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<Icons.LinkedIn className="h-4 w-4 cursor-pointer" />\n\t\t\t\t\t</div>\n\t\t\t\t</Magnetic>\n\t\t\t\t<Magnetic>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<Icons.X className="h-4 w-4 cursor-pointer" />\n\t\t\t\t\t</div>\n\t\t\t\t</Magnetic>\n\t\t\t</div>\n\t\t</div>\n\t);\n}',
 			},
@@ -621,7 +622,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/components/magnetic/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/components/magnetic.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport Magnetic from "@/components/craftui/components/magnetic";\n\nexport default function MagneticBasic() {\n\treturn (\n\t\t<Magnetic>\n\t\t\t<button className="px-4 py-2 cursor-pointer border rounded shadow">\n\t\t\t\tHover Me\n\t\t\t</button>\n\t\t</Magnetic>\n\t);\n}',
 			},
@@ -670,7 +671,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/components/marquee/marquee-reverse/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/components/marquee-reverse.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport Marquee from "@/components/craftui/components/marquee";\n\nconst team = [\n\t{\n\t\tname: "Jack Thompson",\n\t\trole: "Product Designer",\n\t\tid: 1,\n\t},\n\t{\n\t\tname: "Maria Rodriguez",\n\t\trole: "Marketing Director",\n\t\tid: 2,\n\t},\n\t{\n\t\tname: "Alex Chen",\n\t\trole: "Tech Lead",\n\t\tid: 3,\n\t},\n\t{\n\t\tname: "Sarah Wilson",\n\t\trole: "Startup Founder",\n\t\tid: 4,\n\t},\n\t{\n\t\tname: "David Lee",\n\t\trole: "Creative Director",\n\t\tid: 5,\n\t},\n\t{\n\t\tname: "Nina Patel",\n\t\trole: "UX Researcher",\n\t\tid: 6,\n\t},\n];\n\nexport default function TestimonialsMarquee() {\n\treturn (\n\t\t<Marquee\n\t\t\tduration={35}\n\t\t\trepeat={2}\n\t\t\tdirection="right"\n\t\t\tgap={12}\n\t\t\tclassName="w-[1000px] py-8"\n\t\t\tpauseOnHover\n\t\t>\n\t\t\t{team.map((item) => (\n\t\t\t\t<div\n\t\t\t\t\tkey={item.id}\n\t\t\t\t\tclassName="border rounded-md p-6 flex flex-col items-center justify-center"\n\t\t\t\t>\n\t\t\t\t\t<span className="text-gray-500 text-sm text-center">\n\t\t\t\t\t\t{item.name}\n\t\t\t\t\t</span>\n\t\t\t\t\t<span className="mt-1 text-sm text-center">\n\t\t\t\t\t\t{item.role}\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t))}\n\t\t</Marquee>\n\t);\n}',
 			},
@@ -719,7 +720,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/components/marquee/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/components/marquee.tsx",
 				content:
 					'"use client";\n\nimport { Icons } from "@/components/icons";\nimport Marquee from "@/components/craftui/components/marquee";\n\nconst data = [\n\t{\n\t\tname: "React",\n\t\ticon: Icons.react,\n\t},\n\t{\n\t\tname: "Next",\n\t\ticon: Icons.next,\n\t},\n\t{\n\t\tname: "Remix",\n\t\ticon: Icons.remix,\n\t},\n\t{\n\t\tname: "Svelte",\n\t\ticon: Icons.svelte,\n\t},\n\t{\n\t\tname: "Vue",\n\t\ticon: Icons.vue,\n\t},\n\t{\n\t\tname: "Nuxt",\n\t\ticon: Icons.nuxt,\n\t},\n\t{\n\t\tname: "Astro",\n\t\ticon: Icons.astro,\n\t},\n];\n\nexport default function MarqueeBasic() {\n\treturn (\n\t\t<Marquee\n\t\t\tduration={20}\n\t\t\trepeat={2}\n\t\t\tdirection="left"\n\t\t\tpauseOnHover\n\t\t\tclassName="w-[500px]"\n\t\t>\n\t\t\t{data.map((item, index) => (\n\t\t\t\t<div\n\t\t\t\t\tkey={`${item.name}-${index}`}\n\t\t\t\t\tclassName="flex flex-col items-center"\n\t\t\t\t>\n\t\t\t\t\t<item.icon className="h-14 w-14 px-4 dark:invert" />\n\t\t\t\t</div>\n\t\t\t))}\n\t\t</Marquee>\n\t);\n}',
 			},
@@ -768,7 +769,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/text/text-scramble/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/text/text-scramble.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport TextScramble from "@/components/craftui/text/text-scramble";\n\nexport default function TextScrambleBasic() {\n\treturn <TextScramble speed={50}>Welcome to Text Scramble!</TextScramble>;\n}',
 			},
@@ -817,7 +818,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/text/text-scramble/text-scramble-custom-chars/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/text/text-scramble-custom-chars.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport TextScramble from "@/components/craftui/text/text-scramble";\n\nexport default function TextScrambleCustomChars() {\n\treturn (\n\t\t<TextScramble speed={50} characterSet=".">\n\t\t\tCustom Scramble\n\t\t</TextScramble>\n\t);\n}',
 			},
@@ -866,7 +867,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/text/text-scramble/text-scramble-custom-trigger/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/text/text-scramble-custom-trigger.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport TextScramble from "@/components/craftui/text/text-scramble";\n\nexport default function TextScrambleCustomTrigger() {\n\tconst [triggerScramble, setTriggerScramble] = React.useState(false);\n\treturn (\n\t\t<div\n\t\t\tonMouseEnter={() => setTriggerScramble(true)}\n\t\t\tonMouseLeave={() => setTriggerScramble(false)}\n\t\t>\n\t\t\t<TextScramble\n\t\t\t\tspeed={50}\n\t\t\t\tclassName="cursor-pointer uppercase"\n\t\t\t\ttrigger={triggerScramble}\n\t\t\t>\n\t\t\t\tHover to scramble this text!\n\t\t\t</TextScramble>\n\t\t</div>\n\t);\n}',
 			},
@@ -913,9 +914,9 @@ export const Registry: Record<string, any> = {
 		registryDependencies: ["@craftui/text-typing-effect"],
 		files: [
 			{
-				path: "src/registry/demo/text/typing-effect/index.tsx",
+				path: "src/registry/demo/text/text-typing/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/text/text-typing.tsx",
 				content:
 					'"use client";\n\nimport TextTyping from "@/components/craftui/text/text-typing";\n\nexport default function Home() {\n\treturn (\n\t\t<TextTyping typingSpeed={100}>This is typing effect demo!</TextTyping>\n\t);\n}',
 			},
@@ -925,7 +926,7 @@ export const Registry: Record<string, any> = {
 		component: (() => {
 			const LazyComp = React.lazy(async () => {
 				const mod = await import(
-					"@/registry/demo/text/typing-effect/index.tsx"
+					"@/registry/demo/text/text-typing/index.tsx"
 				);
 				let Comp = mod.default;
 
@@ -964,7 +965,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/accordion/accordion-custom-icons/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/accordion-custom-icons.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tAccordion,\n\tAccordionItem,\n\tAccordionTrigger,\n\tAccordionContent,\n} from "@/components/craftui/ui/accordion";\nimport { Plus } from "lucide-react";\n\nexport default function AccordionCustomIcons() {\n\treturn (\n\t\t<Accordion className="w-full md:w-[500px]">\n\t\t\t<AccordionItem id="item-1">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhat is React?\n\t\t\t\t\t<Plus className="size-4 shrink-0 transition-all ease-out group-data-[state=open]:rotate-45" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tReact is a JavaScript library for building user interfaces.\n\t\t\t\t\tIt lets you create reusable UI components.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem id="item-2">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\t<span>What is Tailwind CSS?</span>\n\t\t\t\t\t<Plus className="size-4 shrink-0 transition-all ease-out group-data-[state=open]:rotate-45" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tTailwind CSS is a utility-first CSS framework packed with\n\t\t\t\t\tclasses like flex, pt-4, text-center and rotate-90 that can\n\t\t\t\t\tbe composed to build any design, directly in your markup.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\n\t\t\t<AccordionItem id="item-3">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhy use Framer Motion?\n\t\t\t\t\t<Plus className="size-4 shrink-0 transition-all ease-out group-data-[state=open]:rotate-45" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tFramer Motion is a motion library for React. It provides a\n\t\t\t\t\tdeclarative, flexible API to add smooth animations and\n\t\t\t\t\tgestures to your components.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t</Accordion>\n\t);\n}',
 			},
@@ -1013,7 +1014,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/accordion/accordion-default-open/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/accordion-default-open.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tAccordion,\n\tAccordionItem,\n\tAccordionTrigger,\n\tAccordionContent,\n} from "@/components/craftui/ui/accordion";\nimport { ChevronDown } from "lucide-react";\n\nexport default function AccordionDefaultOpen() {\n\treturn (\n\t\t<Accordion defaultOpen={["item-2"]} className="w-full md:w-[500px]">\n\t\t\t<AccordionItem id="item-1">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhat is React?\n\t\t\t\t\t<ChevronDown className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tReact is a JavaScript library for building user interfaces.\n\t\t\t\t\tIt lets you create reusable UI components.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem id="item-2">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhat is Tailwind CSS?\n\t\t\t\t\t<ChevronDown className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tTailwind CSS is a utility-first CSS framework packed with\n\t\t\t\t\tclasses like flex, pt-4, text-center and rotate-90 that can\n\t\t\t\t\tbe composed to build any design, directly in your markup.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem id="item-3">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhy use Framer Motion?\n\t\t\t\t\t<ChevronDown className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tFramer Motion is a motion library for React. It provides a\n\t\t\t\t\tdeclarative, flexible API to add smooth animations and\n\t\t\t\t\tgestures to your components.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t</Accordion>\n\t);\n}',
 			},
@@ -1062,7 +1063,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/accordion/accordion-multiple-open/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/accordion-multiple-open.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tAccordion,\n\tAccordionItem,\n\tAccordionTrigger,\n\tAccordionContent,\n} from "@/components/craftui/ui/accordion";\nimport { ChevronDown } from "lucide-react";\n\nexport default function AccordionMultipleOpen() {\n\treturn (\n\t\t<Accordion allowMultipleOpen className="w-full md:w-[500px]">\n\t\t\t<AccordionItem id="item-1">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhat is React?\n\t\t\t\t\t<ChevronDown className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tReact is a JavaScript library for building user interfaces.\n\t\t\t\t\tIt lets you create reusable UI components.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem id="item-2">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhat is Tailwind CSS?\n\t\t\t\t\t<ChevronDown className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tTailwind CSS is a utility-first CSS framework packed with\n\t\t\t\t\tclasses like flex, pt-4, text-center and rotate-90 that can\n\t\t\t\t\tbe composed to build any design, directly in your markup.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem id="item-3">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhy use Framer Motion?\n\t\t\t\t\t<ChevronDown className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tFramer Motion is a motion library for React. It provides a\n\t\t\t\t\tdeclarative, flexible API to add smooth animations and\n\t\t\t\t\tgestures to your components.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t</Accordion>\n\t);\n}',
 			},
@@ -1111,7 +1112,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/accordion/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/accordion.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tAccordion,\n\tAccordionItem,\n\tAccordionTrigger,\n\tAccordionContent,\n} from "@/components/craftui/ui/accordion";\nimport { ChevronDown } from "lucide-react";\n\nexport default function AccordionDemo() {\n\treturn (\n\t\t<Accordion className="w-full md:w-[500px]">\n\t\t\t<AccordionItem id="item-1">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhat is React?\n\t\t\t\t\t<ChevronDown className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tReact is a JavaScript library for building user interfaces.\n\t\t\t\t\tIt lets you create reusable UI components.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem id="item-2">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhat is Tailwind CSS?\n\t\t\t\t\t<ChevronDown className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tTailwind CSS is a utility-first CSS framework packed with\n\t\t\t\t\tclasses like flex, pt-4, text-center and rotate-90 that can\n\t\t\t\t\tbe composed to build any design, directly in your markup.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t\t<AccordionItem id="item-3">\n\t\t\t\t<AccordionTrigger>\n\t\t\t\t\tWhy use Framer Motion?\n\t\t\t\t\t<ChevronDown className="mr-2 size-3 shrink-0 transition-all ease-out group-data-[state=open]:rotate-180" />\n\t\t\t\t</AccordionTrigger>\n\t\t\t\t<AccordionContent>\n\t\t\t\t\tFramer Motion is a motion library for React. It provides a\n\t\t\t\t\tdeclarative, flexible API to add smooth animations and\n\t\t\t\t\tgestures to your components.\n\t\t\t\t</AccordionContent>\n\t\t\t</AccordionItem>\n\t\t</Accordion>\n\t);\n}',
 			},
@@ -1160,7 +1161,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/dialog/dialog-controlled/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/dialog-controlled.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tDialog,\n\tDialogContent,\n\tDialogHeader,\n\tDialogTitle,\n\tDialogDescription,\n\tDialogClose,\n} from "@/components/craftui/ui/dialog";\n\nexport default function DialogControlled() {\n\tconst [isOpen, setIsOpen] = React.useState(false);\n\n\treturn (\n\t\t<Dialog open={isOpen} onOpenChange={setIsOpen}>\n\t\t\t<button\n\t\t\t\tclassName="px-4 py-2 bg-gray-200 rounded dark:bg-zinc-800 dark:text-white"\n\t\t\t\tonClick={() => setIsOpen(!isOpen)}\n\t\t\t>\n\t\t\t\tOpen Dialog\n\t\t\t</button>\n\t\t\t<DialogContent>\n\t\t\t\t<DialogHeader>\n\t\t\t\t\t<DialogTitle>Dialog Title</DialogTitle>\n\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\tThis is a dialog description.\n\t\t\t\t\t</DialogDescription>\n\t\t\t\t\t<DialogClose className="absolute top-4 right-4 p-1 rounded-md" />\n\t\t\t\t</DialogHeader>\n\t\t\t\t<p>This is the main content of the dialog.</p>\n\t\t\t\t<div className="mt-6 flex justify-end gap-2">\n\t\t\t\t\t<DialogClose className="px-5 py-0.5">Cancel</DialogClose>\n\t\t\t\t\t<button className="px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm">\n\t\t\t\t\t\tConfirm\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</DialogContent>\n\t\t</Dialog>\n\t);\n}',
 			},
@@ -1209,7 +1210,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/dialog/dialog-custom-backdrop/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/dialog-custom-backdrop.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tDialog,\n\tDialogTrigger,\n\tDialogContent,\n\tDialogHeader,\n\tDialogTitle,\n\tDialogDescription,\n\tDialogClose,\n} from "@/components/craftui/ui/dialog";\n\nexport default function DialogCustomBackdrop() {\n\treturn (\n\t\t<Dialog>\n\t\t\t<DialogTrigger asChild>Open Dialog</DialogTrigger>\n\t\t\t<DialogContent\n\t\t\t\tbackdropClassName="bg-white/70 dark:bg-black/70"\n\t\t\t\tclassName="border shadow-[0_0_5px_rgba(0,0,0,0.1)]"\n\t\t\t>\n\t\t\t\t<DialogHeader>\n\t\t\t\t\t<DialogTitle>Dialog Title</DialogTitle>\n\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\tThis is a dialog description.\n\t\t\t\t\t</DialogDescription>\n\t\t\t\t\t<DialogClose className="absolute top-4 right-4 p-1 rounded-md" />\n\t\t\t\t</DialogHeader>\n\t\t\t\t<p>This is the main content of the dialog.</p>\n\t\t\t\t<div className="mt-6 flex justify-end gap-2">\n\t\t\t\t\t<DialogClose className="px-5 py-0.5">Cancel</DialogClose>\n\t\t\t\t\t<button className="px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm">\n\t\t\t\t\t\tConfirm\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</DialogContent>\n\t\t</Dialog>\n\t);\n}',
 			},
@@ -1258,7 +1259,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/dialog/dialog-custom-variant-transition/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/dialog-custom-variant-transition.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tDialog,\n\tDialogTrigger,\n\tDialogContent,\n\tDialogHeader,\n\tDialogTitle,\n\tDialogDescription,\n\tDialogClose,\n} from "@/components/craftui/ui/dialog";\nimport { Variants, Transition } from "motion/react";\n\nconst customVariants: Variants = {\n\tinitial: { opacity: 0, y: "100%" },\n\tanimate: { opacity: 1, y: "0%" },\n\texit: { opacity: 0, transition: { duration: 0.3 } },\n};\n\nconst customTransition: Transition = {\n\ttype: "spring",\n\tdamping: 30,\n\tstiffness: 300,\n};\n\nexport default function DialogCustomVariantTransion() {\n\treturn (\n\t\t<Dialog variants={customVariants} transition={customTransition}>\n\t\t\t<DialogTrigger asChild>Open Dialog</DialogTrigger>\n\t\t\t<DialogContent>\n\t\t\t\t<DialogHeader>\n\t\t\t\t\t<DialogTitle>Dialog Title</DialogTitle>\n\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\tThis is a dialog description.\n\t\t\t\t\t</DialogDescription>\n\t\t\t\t\t<DialogClose className="absolute top-4 right-4 p-1 rounded-md" />\n\t\t\t\t</DialogHeader>\n\t\t\t\t<p>This is the main content of the dialog.</p>\n\t\t\t\t<div className="mt-6 flex justify-end gap-2">\n\t\t\t\t\t<DialogClose className="px-5 py-0.5">Cancel</DialogClose>\n\t\t\t\t\t<button className="px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm">\n\t\t\t\t\t\tConfirm\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</DialogContent>\n\t\t</Dialog>\n\t);\n}',
 			},
@@ -1307,7 +1308,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/dialog/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/dialog.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tDialog,\n\tDialogTrigger,\n\tDialogContent,\n\tDialogHeader,\n\tDialogTitle,\n\tDialogDescription,\n\tDialogClose,\n} from "@/components/craftui/ui/dialog";\n\nexport default function DialogBasic() {\n\treturn (\n\t\t<Dialog>\n\t\t\t<DialogTrigger>Open Dialog</DialogTrigger>\n\t\t\t<DialogContent>\n\t\t\t\t<DialogHeader>\n\t\t\t\t\t<DialogTitle>Dialog Title</DialogTitle>\n\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\tThis is a dialog description.\n\t\t\t\t\t</DialogDescription>\n\t\t\t\t\t<DialogClose className="absolute top-4 right-4 p-1 rounded-md" />\n\t\t\t\t</DialogHeader>\n\t\t\t\t<p>This is the main content of the dialog.</p>\n\t\t\t\t<div className="mt-6 flex justify-end gap-2">\n\t\t\t\t\t<DialogClose className="px-5 py-0.5">Cancel</DialogClose>\n\t\t\t\t\t<button className="px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm">\n\t\t\t\t\t\tConfirm\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</DialogContent>\n\t\t</Dialog>\n\t);\n}',
 			},
@@ -1354,7 +1355,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/drawer/drawer-controlled/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/drawer-controlled.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tDrawer,\n\tDrawerTrigger,\n\tDrawerContent,\n\tDrawerHeader,\n\tDrawerFooter,\n\tDrawerTitle,\n\tDrawerClose,\n\tDrawerDescription,\n} from "@/components/craftui/ui/drawer";\n\nexport default function DrawerControlled() {\n\tconst [open, setOpen] = React.useState(false);\n\treturn (\n\t\t<Drawer open={open} onOpenChange={setOpen}>\n\t\t\t<DrawerTrigger>Open Drawer</DrawerTrigger>\n\t\t\t<DrawerContent className="flex flex-col h-full">\n\t\t\t\t<DrawerHeader className="flex justify-between items-center">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<DrawerTitle>Title</DrawerTitle>\n\t\t\t\t\t\t<DrawerDescription>\n\t\t\t\t\t\t\tThis is the description of the drawer\n\t\t\t\t\t\t</DrawerDescription>\n\t\t\t\t\t</div>\n\t\t\t\t\t<DrawerClose className="p-2 rounded-xl" />\n\t\t\t\t</DrawerHeader>\n\n\t\t\t\t{/* your content */}\n\t\t\t\t<div className="py-4 flex-grow overflow-auto">\n\t\t\t\t\t<p>The content of the drawer goes here.</p>\n\t\t\t\t</div>\n\n\t\t\t\t<DrawerFooter className="flex gap-2 justify-end">\n\t\t\t\t\t<DrawerClose className="px-5 py-0.5 border">\n\t\t\t\t\t\tClose\n\t\t\t\t\t</DrawerClose>\n\t\t\t\t\t<button className="px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm">\n\t\t\t\t\t\tSave\n\t\t\t\t\t</button>\n\t\t\t\t</DrawerFooter>\n\t\t\t</DrawerContent>\n\t\t</Drawer>\n\t);\n}',
 			},
@@ -1403,7 +1404,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/drawer/drawer-custom-background/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/drawer-custom-background.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tDrawer,\n\tDrawerTrigger,\n\tDrawerContent,\n\tDrawerHeader,\n\tDrawerFooter,\n\tDrawerTitle,\n\tDrawerClose,\n\tDrawerDescription,\n} from "@/components/craftui/ui/drawer";\n\nexport default function DrawerCustomBackground() {\n\treturn (\n\t\t<Drawer>\n\t\t\t<DrawerTrigger>Open Drawer</DrawerTrigger>\n\n\t\t\t<DrawerContent\n\t\t\t\tclassName="flex flex-col h-full border shadow-[0_0_5px_rgba(0,0,0,0.1)]"\n\t\t\t\tbackdropClassName="bg-white/20"\n\t\t\t>\n\t\t\t\t<DrawerHeader className="flex justify-between items-center">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<DrawerTitle>Title</DrawerTitle>\n\t\t\t\t\t\t<DrawerDescription>\n\t\t\t\t\t\t\tThis is the description of the drawer\n\t\t\t\t\t\t</DrawerDescription>\n\t\t\t\t\t</div>\n\t\t\t\t\t<DrawerClose className="p-2 rounded-xl" />{" "}\n\t\t\t\t</DrawerHeader>\n\n\t\t\t\t{/* your content */}\n\t\t\t\t<div className="py-4 flex-grow overflow-auto">\n\t\t\t\t\t<p>The content of the drawer goes here.</p>\n\t\t\t\t</div>\n\n\t\t\t\t<DrawerFooter className="flex gap-2 justify-end">\n\t\t\t\t\t<DrawerClose className="px-5 py-0.5 border">\n\t\t\t\t\t\tClose\n\t\t\t\t\t</DrawerClose>\n\t\t\t\t\t<button className="px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm">\n\t\t\t\t\t\tSave\n\t\t\t\t\t</button>\n\t\t\t\t</DrawerFooter>\n\t\t\t</DrawerContent>\n\t\t</Drawer>\n\t);\n}',
 			},
@@ -1452,7 +1453,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/drawer/drawer-origins/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/drawer-origins.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tDrawer,\n\tDrawerTrigger,\n\tDrawerContent,\n\tDrawerHeader,\n\tDrawerFooter,\n\tDrawerTitle,\n\tDrawerClose,\n\tDrawerDescription,\n} from "@/components/craftui/ui/drawer";\n\nexport default function DrawerOrigins() {\n\treturn (\n\t\t<div className="grid grid-cols-2 gap-2">\n\t\t\t<Drawer origin="left">\n\t\t\t\t<DrawerTrigger>Left</DrawerTrigger>\n\t\t\t\t<DrawerContent className="flex flex-col">\n\t\t\t\t\t<DrawerHeader className="flex justify-between items-center">\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<DrawerTitle>Title</DrawerTitle>\n\t\t\t\t\t\t\t<DrawerDescription>\n\t\t\t\t\t\t\t\tThis is the description of the drawer\n\t\t\t\t\t\t\t</DrawerDescription>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<DrawerClose className="p-2 rounded-xl" />{" "}\n\t\t\t\t\t</DrawerHeader>\n\n\t\t\t\t\t{/* your content */}\n\t\t\t\t\t<div className="py-4 flex-grow overflow-auto">\n\t\t\t\t\t\t<p>The content of the drawer goes here.</p>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<DrawerFooter className="flex gap-2 justify-end">\n\t\t\t\t\t\t<button className="px-5 py-1.5 text-sm border rounded-sm shadow-sm hover:bg-accent">\n\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t</button>\n\t\t\t\t\t\t<button className="px-5 py-1.5 text-sm bg-black text-white border rounded-sm">\n\t\t\t\t\t\t\tSave\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</DrawerFooter>\n\t\t\t\t</DrawerContent>\n\t\t\t</Drawer>\n\n\t\t\t<Drawer origin="right">\n\t\t\t\t<DrawerTrigger>Right</DrawerTrigger>\n\t\t\t\t<DrawerContent className="flex flex-col">\n\t\t\t\t\t<DrawerHeader className="flex justify-between items-center">\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<DrawerTitle>Title</DrawerTitle>\n\t\t\t\t\t\t\t<DrawerDescription>\n\t\t\t\t\t\t\t\tThis is the description of the drawer\n\t\t\t\t\t\t\t</DrawerDescription>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<DrawerClose className="p-2 rounded-xl" />{" "}\n\t\t\t\t\t</DrawerHeader>\n\n\t\t\t\t\t{/* your content */}\n\t\t\t\t\t<div className="py-4 flex-grow overflow-auto">\n\t\t\t\t\t\t<p>The content of the drawer goes here.</p>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<DrawerFooter className="flex gap-2 justify-end">\n\t\t\t\t\t\t<button className="px-5 py-1.5 text-sm border rounded-sm shadow-sm hover:bg-accent">\n\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t</button>\n\t\t\t\t\t\t<button className="px-5 py-1.5 text-sm bg-black text-white border rounded-sm">\n\t\t\t\t\t\t\tSave\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</DrawerFooter>\n\t\t\t\t</DrawerContent>\n\t\t\t</Drawer>\n\n\t\t\t<Drawer origin="top">\n\t\t\t\t<DrawerTrigger>Top</DrawerTrigger>\n\t\t\t\t<DrawerContent className="flex flex-col">\n\t\t\t\t\t<DrawerHeader className="flex justify-between items-center">\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<DrawerTitle>Title</DrawerTitle>\n\t\t\t\t\t\t\t<DrawerDescription>\n\t\t\t\t\t\t\t\tThis is the description of the drawer\n\t\t\t\t\t\t\t</DrawerDescription>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<DrawerClose className="p-2 rounded-xl" />{" "}\n\t\t\t\t\t</DrawerHeader>\n\n\t\t\t\t\t{/* your content */}\n\t\t\t\t\t<div className="py-4 flex-grow overflow-auto">\n\t\t\t\t\t\t<p>The content of the drawer goes here.</p>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<DrawerFooter className="flex gap-2 justify-end">\n\t\t\t\t\t\t<button className="px-5 py-1.5 text-sm border rounded-sm shadow-sm hover:bg-accent">\n\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t</button>\n\t\t\t\t\t\t<button className="px-5 py-1.5 text-sm bg-black text-white border rounded-sm">\n\t\t\t\t\t\t\tSave\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</DrawerFooter>\n\t\t\t\t</DrawerContent>\n\t\t\t</Drawer>\n\n\t\t\t<Drawer origin="bottom">\n\t\t\t\t<DrawerTrigger>Bottom</DrawerTrigger>\n\t\t\t\t<DrawerContent className="flex flex-col">\n\t\t\t\t\t<DrawerHeader className="flex justify-between items-center">\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<DrawerTitle>Title</DrawerTitle>\n\t\t\t\t\t\t\t<DrawerDescription>\n\t\t\t\t\t\t\t\tThis is the description of the drawer\n\t\t\t\t\t\t\t</DrawerDescription>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<DrawerClose className="p-2 rounded-xl" />{" "}\n\t\t\t\t\t</DrawerHeader>\n\n\t\t\t\t\t{/* your content */}\n\t\t\t\t\t<div className="py-4 flex-grow overflow-auto">\n\t\t\t\t\t\t<p>The content of the drawer goes here.</p>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<DrawerFooter className="flex gap-2 justify-end">\n\t\t\t\t\t\t<DrawerClose className="px-5 py-0.5 border">\n\t\t\t\t\t\t\tClose\n\t\t\t\t\t\t</DrawerClose>\n\t\t\t\t\t\t<button className="px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm">\n\t\t\t\t\t\t\tSave\n\t\t\t\t\t\t</button>\n\t\t\t\t\t</DrawerFooter>\n\t\t\t\t</DrawerContent>\n\t\t\t</Drawer>\n\t\t</div>\n\t);\n}',
 			},
@@ -1501,7 +1502,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/drawer/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/drawer.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tDrawer,\n\tDrawerTrigger,\n\tDrawerContent,\n\tDrawerHeader,\n\tDrawerFooter,\n\tDrawerTitle,\n\tDrawerClose,\n\tDrawerDescription,\n} from "@/components/craftui/ui/drawer";\n\nexport default function DrawerDemo() {\n\treturn (\n\t\t<Drawer>\n\t\t\t<DrawerTrigger asChild>Open Drawer</DrawerTrigger>\n\t\t\t<DrawerContent className="flex flex-col h-full">\n\t\t\t\t<DrawerHeader className="flex justify-between items-center">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<DrawerTitle>Title</DrawerTitle>\n\t\t\t\t\t\t<DrawerDescription>\n\t\t\t\t\t\t\tThis is the description of the drawer\n\t\t\t\t\t\t</DrawerDescription>\n\t\t\t\t\t</div>\n\t\t\t\t\t<DrawerClose className="p-2 rounded-xl" />\n\t\t\t\t</DrawerHeader>\n\n\t\t\t\t{/* your content */}\n\t\t\t\t<div className="py-4 flex-grow overflow-auto">\n\t\t\t\t\t<p>The content of the drawer goes here.</p>\n\t\t\t\t</div>\n\n\t\t\t\t<DrawerFooter className="flex gap-2 justify-end">\n\t\t\t\t\t<DrawerClose className="px-5 py-0.5">Close</DrawerClose>\n\t\t\t\t\t<button className="px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm">\n\t\t\t\t\t\tSave\n\t\t\t\t\t</button>\n\t\t\t\t</DrawerFooter>\n\t\t\t</DrawerContent>\n\t\t</Drawer>\n\t);\n}',
 			},
@@ -1548,7 +1549,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/select/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/select.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tSelect,\n\tSelectTrigger,\n\tSelectContent,\n\tSelectOption,\n\tSelectValue,\n} from "@/components/craftui/ui/select";\n\nexport default function SelectDemo() {\n\tconst [fruit, setFruit] = React.useState<string | null>("apple");\n\n\treturn (\n\t\t<Select defaultValue={fruit} onValueChange={(v: string) => setFruit(v)}>\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue placeholder="Select fruits ..." />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectContent>\n\t\t\t\t<SelectOption value="apple">Apple</SelectOption>\n\t\t\t\t<SelectOption value="banana">Banana</SelectOption>\n\t\t\t\t<SelectOption value="orange">Orange</SelectOption>\n\t\t\t\t<SelectOption value="mango">Mango</SelectOption>\n\t\t\t</SelectContent>\n\t\t</Select>\n\t);\n}',
 			},
@@ -1595,7 +1596,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/select/select-controlled/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/select-controlled.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tSelect,\n\tSelectTrigger,\n\tSelectContent,\n\tSelectOption,\n\tSelectGroup,\n\tSelectValue,\n} from "@/components/craftui/ui/select";\n\nexport default function SelectControlled() {\n\tconst [open, setOpen] = React.useState(false);\n\n\treturn (\n\t\t<Select open={open} onOpenChange={setOpen}>\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectContent>\n\t\t\t\t<SelectGroup label="Frontend">\n\t\t\t\t\t<SelectOption value="react">React</SelectOption>\n\t\t\t\t\t<SelectOption value="vue">Vue</SelectOption>\n\t\t\t\t\t<SelectOption value="svelte">Svelte</SelectOption>\n\t\t\t\t</SelectGroup>\n\t\t\t\t<SelectGroup label="Backend">\n\t\t\t\t\t<SelectOption value="node">Node</SelectOption>\n\t\t\t\t\t<SelectOption value="deno">Deno</SelectOption>\n\t\t\t\t\t<SelectOption value="bun">Bun</SelectOption>\n\t\t\t\t\t<SelectOption value="laravel" disabled>\n\t\t\t\t\t\tLaravel\n\t\t\t\t\t</SelectOption>\n\t\t\t\t</SelectGroup>\n\t\t\t</SelectContent>\n\t\t</Select>\n\t);\n}',
 			},
@@ -1644,7 +1645,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/select/select-creatable/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/select-creatable.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tSelect,\n\tSelectTrigger,\n\tSelectContent,\n\tSelectOption,\n\tSelectValue,\n} from "@/components/craftui/ui/select";\n\nexport default function SelectCreatable() {\n\treturn (\n\t\t<Select\n\t\t\tsearchable\n\t\t\tcreatable\n\t\t\tonCreateOption={(value) =>\n\t\t\t\talert(\n\t\t\t\t\t`Do something to create  ${value}. Like sending a request to the server or open a form modal.`,\n\t\t\t\t)\n\t\t\t}\n\t\t>\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue placeholder="Select a fruit ..." />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectContent>\n\t\t\t\t<SelectOption value="mango">Mango</SelectOption>\n\t\t\t\t<SelectOption value="apple">Apple</SelectOption>\n\t\t\t\t<SelectOption value="banana">Banana</SelectOption>\n\t\t\t\t<SelectOption value="orange">Orange</SelectOption>\n\t\t\t\t<SelectOption value="coconut">Coconut</SelectOption>\n\t\t\t</SelectContent>\n\t\t</Select>\n\t);\n}',
 			},
@@ -1693,7 +1694,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/select/select-groups/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/select-groups.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tSelect,\n\tSelectTrigger,\n\tSelectContent,\n\tSelectOption,\n\tSelectGroup,\n\tSelectValue,\n} from "@/components/craftui/ui/select";\n\nexport default function SelectGroups() {\n\treturn (\n\t\t<Select>\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectContent>\n\t\t\t\t<SelectGroup label="Frontend">\n\t\t\t\t\t<SelectOption value="react">React</SelectOption>\n\t\t\t\t\t<SelectOption value="vue">Vue</SelectOption>\n\t\t\t\t\t<SelectOption value="svelte">Svelte</SelectOption>\n\t\t\t\t</SelectGroup>\n\t\t\t\t<SelectGroup label="Backend">\n\t\t\t\t\t<SelectOption value="node">Node</SelectOption>\n\t\t\t\t\t<SelectOption value="deno">Deno</SelectOption>\n\t\t\t\t\t<SelectOption value="bun">Bun</SelectOption>\n\t\t\t\t\t<SelectOption value="laravel" disabled>\n\t\t\t\t\t\tLaravel\n\t\t\t\t\t</SelectOption>\n\t\t\t\t</SelectGroup>\n\t\t\t</SelectContent>\n\t\t</Select>\n\t);\n}',
 			},
@@ -1742,7 +1743,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/select/select-loading-async/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/select-loading-async.tsx",
 				content:
 					'"use client";\n\nimport React, { useState } from "react";\nimport {\n\tSelect,\n\tSelectTrigger,\n\tSelectContent,\n\tSelectOption,\n\tSelectValue,\n} from "@/components/craftui/ui/select";\n\nexport default function SelectLoadingAsync() {\n\tconst [users, setUsers] = useState([]);\n\tconst [loading, setLoading] = useState(false);\n\tconst [, setSelected] = useState<{ id: number; name: string } | null>(null);\n\n\tReact.useEffect(() => {\n\t\t(async () => {\n\t\t\ttry {\n\t\t\t\tsetLoading(true);\n\t\t\t\tawait new Promise((resolve) => setTimeout(resolve, 5000)); // Simulate loading\n\t\t\t\tconst res = await fetch(\n\t\t\t\t\t"https://jsonplaceholder.typicode.com/users",\n\t\t\t\t);\n\t\t\t\tconst data = await res.json();\n\t\t\t\tsetUsers(data);\n\t\t\t} catch (error: any) {\n\t\t\t\tconsole.error(error.message);\n\t\t\t} finally {\n\t\t\t\tsetLoading(false);\n\t\t\t}\n\t\t})();\n\t}, []);\n\n\treturn (\n\t\t<Select\n\t\t\tsearchable\n\t\t\tloading={loading}\n\t\t\tonValueChange={(v: string) => {\n\t\t\t\tconst user = users.find((u: any) => u.name === v);\n\t\t\t\tsetSelected(user || null);\n\t\t\t}}\n\t\t>\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectContent>\n\t\t\t\t{users.map((user: any, idx) => (\n\t\t\t\t\t<SelectOption key={idx} value={user.name}>\n\t\t\t\t\t\t{`${user.name} (ID: ${user.id})`}\n\t\t\t\t\t</SelectOption>\n\t\t\t\t))}\n\t\t\t</SelectContent>\n\t\t</Select>\n\t);\n}',
 			},
@@ -1791,7 +1792,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/select/select-multiple/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/select-multiple.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tSelect,\n\tSelectTrigger,\n\tSelectContent,\n\tSelectOption,\n\tSelectValue,\n} from "@/components/craftui/ui/select";\n\nexport default function SelectMultiple() {\n\tconst [value, setValue] = React.useState<string[]>([]);\n\n\tReact.useEffect(() => {\n\t\tconsole.log(value);\n\t}, [value]);\n\n\treturn (\n\t\t<Select multiple onValueChange={setValue} defaultValue={value}>\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue placeholder="Select fruits ..." />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectContent>\n\t\t\t\t<SelectOption value="apple">Apple</SelectOption>\n\t\t\t\t<SelectOption value="banana">Banana</SelectOption>\n\t\t\t\t<SelectOption value="orange">Orange</SelectOption>\n\t\t\t\t<SelectOption value="mango">Mango</SelectOption>\n\t\t\t</SelectContent>\n\t\t</Select>\n\t);\n}',
 			},
@@ -1840,7 +1841,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/select/select-searchable/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/select-searchable.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tSelect,\n\tSelectTrigger,\n\tSelectContent,\n\tSelectOption,\n\tSelectValue,\n} from "@/components/craftui/ui/select";\n\nconst countries = [\n\t{ label: "Australia", value: "AU" },\n\t{ label: "China", value: "CN" },\n\t{ label: "Canada", value: "CA" },\n\t{ label: "Spain", value: "ES" },\n\t{ label: "France", value: "FR" },\n\t{ label: "Germany", value: "DE" },\n\t{ label: "Italy", value: "IT" },\n\t{ label: "Japan", value: "JP" },\n\t{ label: "United Kingdom", value: "UK" },\n\t{ label: "United States", value: "US" },\n];\n\nexport default function SelectSearchable() {\n\treturn (\n\t\t<Select searchable>\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue placeholder="Select country ..." />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectContent>\n\t\t\t\t{countries.map((country) => (\n\t\t\t\t\t<SelectOption key={country.value} value={country.value}>\n\t\t\t\t\t\t{country.label}\n\t\t\t\t\t</SelectOption>\n\t\t\t\t))}\n\t\t\t</SelectContent>\n\t\t</Select>\n\t);\n}',
 			},
@@ -1889,7 +1890,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/stepper/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/stepper.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tStepper,\n\tStep,\n\tStepTitle,\n\tStepDescription,\n\tStepIndicator,\n\tStepperContent,\n\tPrevStep,\n\tNextStep,\n} from "@/components/craftui/ui/stepper";\n\nconst StepperPreview = () => {\n\treturn (\n\t\t<div className="border rounded-md">\n\t\t\t<Stepper totalSteps={4}>\n\t\t\t\t<StepperContent>\n\t\t\t\t\t<Step step={1}>\n\t\t\t\t\t\t<StepTitle>Step 1</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 1 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={2}>\n\t\t\t\t\t\t<StepTitle>Step 2</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 2 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={3}>\n\t\t\t\t\t\t<StepTitle>Step 3</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 3 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={4}>\n\t\t\t\t\t\t<StepTitle>Step 4</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 4 Description</StepDescription>\n\t\t\t\t\t</Step>\n\t\t\t\t</StepperContent>\n\n\t\t\t\t<div className="flex justify-between items-center">\n\t\t\t\t\t<PrevStep />\n\t\t\t\t\t<StepIndicator />\n\t\t\t\t\t<NextStep onFinish={() => alert("This is the end!")} />\n\t\t\t\t</div>\n\t\t\t</Stepper>\n\t\t</div>\n\t);\n};\n\nexport default StepperPreview;',
 			},
@@ -1938,7 +1939,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/stepper/stepper-indicator-fraction/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/stepper-indicator-fraction.tsx",
 				content:
 					'"use client";\n\nimport React, { useState } from "react";\nimport {\n\tStepper,\n\tStep,\n\tStepTitle,\n\tStepDescription,\n\tStepIndicator,\n\tStepperNavigation,\n\tStepperContent,\n} from "@/components/craftui/ui/stepper";\n\nconst StepperPreview = () => {\n\tconst [activeStep, setActiveStep] = useState(0);\n\n\treturn (\n\t\t<div className="border rounded-md">\n\t\t\t<Stepper\n\t\t\t\tactiveStep={activeStep}\n\t\t\t\ttotalSteps={4}\n\t\t\t\tonStepChange={setActiveStep}\n\t\t\t>\n\t\t\t\t<StepIndicator variant="fraction" />\n\n\t\t\t\t<StepperContent>\n\t\t\t\t\t<Step step={1}>\n\t\t\t\t\t\t<StepTitle>Step 1</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 1 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={2}>\n\t\t\t\t\t\t<StepTitle>Step 2</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 2 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={3}>\n\t\t\t\t\t\t<StepTitle>Step 3</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 3 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={4}>\n\t\t\t\t\t\t<StepTitle>Step 4</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 4 Description</StepDescription>\n\t\t\t\t\t</Step>\n\t\t\t\t</StepperContent>\n\n\t\t\t\t<StepperNavigation onFinish={() => alert("This is the end!")} />\n\t\t\t</Stepper>\n\t\t</div>\n\t);\n};\n\nexport default StepperPreview;',
 			},
@@ -1987,7 +1988,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/stepper/stepper-indicator-numbers/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/stepper-indicator-numbers.tsx",
 				content:
 					'"use client";\n\nimport React, { useState } from "react";\nimport {\n\tStepper,\n\tStep,\n\tStepTitle,\n\tStepDescription,\n\tStepIndicator,\n\tStepperNavigation,\n\tStepperContent,\n} from "@/components/craftui/ui/stepper";\n\nconst StepperPreview = () => {\n\tconst [activeStep, setActiveStep] = useState(0);\n\n\treturn (\n\t\t<div className="border rounded-md">\n\t\t\t<Stepper\n\t\t\t\tactiveStep={activeStep}\n\t\t\t\ttotalSteps={4}\n\t\t\t\tonStepChange={setActiveStep}\n\t\t\t>\n\t\t\t\t<StepIndicator variant="numbers" />\n\n\t\t\t\t<StepperContent>\n\t\t\t\t\t<Step step={1}>\n\t\t\t\t\t\t<StepTitle>Step 1</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 1 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={2}>\n\t\t\t\t\t\t<StepTitle>Step 2</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 2 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={3}>\n\t\t\t\t\t\t<StepTitle>Step 3</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 3 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={4}>\n\t\t\t\t\t\t<StepTitle>Step 4</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 4 Description</StepDescription>\n\t\t\t\t\t</Step>\n\t\t\t\t</StepperContent>\n\n\t\t\t\t<StepperNavigation onFinish={() => alert("This is the end!")} />\n\t\t\t</Stepper>\n\t\t</div>\n\t);\n};\n\nexport default StepperPreview;',
 			},
@@ -2036,7 +2037,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/stepper/stepper-indicator-progress/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/stepper-indicator-progress.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tStepper,\n\tStep,\n\tStepTitle,\n\tStepDescription,\n\tStepIndicator,\n\tStepperContent,\n\tPrevStep,\n\tNextStep,\n} from "@/components/craftui/ui/stepper";\n\nconst StepperPreview = () => {\n\treturn (\n\t\t<div className="border rounded-md">\n\t\t\t<Stepper totalSteps={4}>\n\t\t\t\t<StepperContent>\n\t\t\t\t\t<Step step={1}>\n\t\t\t\t\t\t<StepTitle>Step 1</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 1 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={2}>\n\t\t\t\t\t\t<StepTitle>Step 2</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 2 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={3}>\n\t\t\t\t\t\t<StepTitle>Step 3</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 3 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={4}>\n\t\t\t\t\t\t<StepTitle>Step 4</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 4 Description</StepDescription>\n\t\t\t\t\t</Step>\n\t\t\t\t</StepperContent>\n\n\t\t\t\t<div className="flex justify-between items-center gap-8">\n\t\t\t\t\t<PrevStep />\n\t\t\t\t\t<StepIndicator variant="progress" />\n\t\t\t\t\t<NextStep onFinish={() => alert("This is the end!")} />\n\t\t\t\t</div>\n\t\t\t</Stepper>\n\t\t</div>\n\t);\n};\n\nexport default StepperPreview;',
 			},
@@ -2085,7 +2086,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/stepper/stepper-indicator-text/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/stepper-indicator-text.tsx",
 				content:
 					'"use client";\n\nimport React, { useState } from "react";\nimport {\n\tStepper,\n\tStep,\n\tStepTitle,\n\tStepDescription,\n\tStepIndicator,\n\tStepperNavigation,\n\tStepperContent,\n} from "@/components/craftui/ui/stepper";\n\nconst StepperPreview = () => {\n\tconst [activeStep, setActiveStep] = useState(0);\n\n\treturn (\n\t\t<div className="border rounded-md">\n\t\t\t<Stepper\n\t\t\t\tactiveStep={activeStep}\n\t\t\t\ttotalSteps={4}\n\t\t\t\tonStepChange={setActiveStep}\n\t\t\t>\n\t\t\t\t<StepIndicator variant="text" />\n\n\t\t\t\t<StepperContent>\n\t\t\t\t\t<Step step={1}>\n\t\t\t\t\t\t<StepTitle>Step 1</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 1 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={2}>\n\t\t\t\t\t\t<StepTitle>Step 2</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 2 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={3}>\n\t\t\t\t\t\t<StepTitle>Step 3</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 3 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={4}>\n\t\t\t\t\t\t<StepTitle>Step 4</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 4 Description</StepDescription>\n\t\t\t\t\t</Step>\n\t\t\t\t</StepperContent>\n\n\t\t\t\t<StepperNavigation onFinish={() => alert("This is the end!")} />\n\t\t\t</Stepper>\n\t\t</div>\n\t);\n};\n\nexport default StepperPreview;',
 			},
@@ -2134,7 +2135,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/tabs/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/tabs.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport { Tabs, TabList, Tab, TabPanels, TabPanel } from "@/components/craftui/ui/tabs";\n\nexport default function TabsDemo() {\n\treturn (\n\t\t<div>\n\t\t\t<Tabs defaultTab="tab1" instanceId="tabs-basic">\n\t\t\t\t<TabList>\n\t\t\t\t\t<Tab value="tab1">First Tab</Tab>\n\t\t\t\t\t<Tab value="tab2">Second Tab</Tab>\n\t\t\t\t\t<Tab value="tab3">Third Tab</Tab>\n\t\t\t\t\t<Tab value="tab4">Fourth Tab</Tab>\n\t\t\t\t</TabList>\n\n\t\t\t\t<TabPanels>\n\t\t\t\t\t<TabPanel value="tab1">\n\t\t\t\t\t\t<div className="h-20 text-sm">\n\t\t\t\t\t\t\tContent for first tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel value="tab2">\n\t\t\t\t\t\t<div className="h-20 text-sm">\n\t\t\t\t\t\t\tContent for second tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel value="tab3">\n\t\t\t\t\t\t<div className="h-20 text-sm">\n\t\t\t\t\t\t\tContent for third tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel value="tab4">\n\t\t\t\t\t\t<div className="h-20 text-sm">\n\t\t\t\t\t\t\tContent for fourth tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t</TabPanels>\n\t\t\t</Tabs>\n\t\t</div>\n\t);\n}',
 			},
@@ -2181,7 +2182,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/tabs/tabs-custom-icons/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/tabs-custom-icons.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport { Bell, Home, Settings, User } from "lucide-react";\nimport { Tabs, TabList, Tab, TabPanels, TabPanel } from "@/components/craftui/ui/tabs";\nimport { type Transition } from "motion/react";\n\nexport default function TabsCustomIcons() {\n\tconst variants = {\n\t\tinitial: { opacity: 0, scale: 0.95 },\n\t\tanimate: { opacity: 1, scale: 1 },\n\t\texit: { opacity: 0, scale: 0.95 },\n\t};\n\n\tconst transition: Transition = { duration: 0.25, ease: "easeInOut" };\n\n\treturn (\n\t\t<div>\n\t\t\t<Tabs defaultTab="home" instanceId="tabs-custom-icons">\n\t\t\t\t<TabList>\n\t\t\t\t\t<Tab value="home" icon={<Home className="h-4 w-4" />}>\n\t\t\t\t\t\tHome\n\t\t\t\t\t</Tab>\n\t\t\t\t\t<Tab value="profile" icon={<User className="h-4 w-4" />}>\n\t\t\t\t\t\tProfile\n\t\t\t\t\t</Tab>\n\t\t\t\t\t<Tab\n\t\t\t\t\t\tvalue="notifications"\n\t\t\t\t\t\ticon={<Bell className="h-4 w-4" />}\n\t\t\t\t\t>\n\t\t\t\t\t\tNotifications\n\t\t\t\t\t</Tab>\n\t\t\t\t\t<Tab\n\t\t\t\t\t\tvalue="settings"\n\t\t\t\t\t\ticon={<Settings className="h-4 w-4" />}\n\t\t\t\t\t>\n\t\t\t\t\t\tSettings\n\t\t\t\t\t</Tab>\n\t\t\t\t</TabList>\n\t\t\t\t<TabPanels>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue="home"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className="h-20 text-sm">Home content</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue="profile"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className="h-20 text-sm">Profile content</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue="notifications"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className="h-20 text-sm">\n\t\t\t\t\t\t\tNotifications content\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue="settings"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className="h-20 text-sm">Settings content</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t</TabPanels>\n\t\t\t</Tabs>\n\t\t</div>\n\t);\n}',
 			},
@@ -2230,7 +2231,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/tabs/tabs-custom-variants/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/tabs-custom-variants.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport { Tabs, TabList, Tab, TabPanels, TabPanel } from "@/components/craftui/ui/tabs";\nimport { Transition } from "motion/react";\n\nexport default function TabsCustomVariants() {\n\tconst variants = {\n\t\tinitial: { opacity: 0, y: -20 },\n\t\tanimate: { opacity: 1, y: 0 },\n\t\texit: { opacity: 0, y: -20 },\n\t};\n\n\tconst transition: Transition = { duration: 0.25, ease: "easeInOut" };\n\n\treturn (\n\t\t<div>\n\t\t\t<Tabs\n\t\t\t\tdefaultTab="tab1"\n\t\t\t\tinstanceId="tabs-custom-variants-transition"\n\t\t\t>\n\t\t\t\t<TabList>\n\t\t\t\t\t<Tab value="tab1">First Tab</Tab>\n\t\t\t\t\t<Tab value="tab2">Second Tab</Tab>\n\t\t\t\t\t<Tab value="tab3">Third Tab</Tab>\n\t\t\t\t\t<Tab value="tab4">Fourth Tab</Tab>\n\t\t\t\t</TabList>\n\n\t\t\t\t<TabPanels>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue="tab1"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className="h-20 text-sm">\n\t\t\t\t\t\t\tContent for first tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue="tab2"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className="h-20 text-sm">\n\t\t\t\t\t\t\tContent for second tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue="tab3"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className="h-20 text-sm">\n\t\t\t\t\t\t\tContent for third tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue="tab4"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className="h-20 text-sm">\n\t\t\t\t\t\t\tContent for fourth tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t</TabPanels>\n\t\t\t</Tabs>\n\t\t</div>\n\t);\n}',
 			},
@@ -2279,7 +2280,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/timeline/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/timeline.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tTimeline,\n\tTimelineItem,\n\tTimelineMarker,\n\tTimelineContent,\n\tTimelineTitle,\n\tTimelineDescription,\n} from "@/components/craftui/ui/timeline";\n\nexport default function TimelineDemo() {\n\treturn (\n\t\t<Timeline variant="vertical" className="max-w-md mx-auto">\n\t\t\t<TimelineItem>\n\t\t\t\t<TimelineMarker />\n\t\t\t\t<TimelineContent>\n\t\t\t\t\t<TimelineTitle>Step 1</TimelineTitle>\n\t\t\t\t\t<TimelineDescription>\n\t\t\t\t\t\tThis is the first step of the process.\n\t\t\t\t\t</TimelineDescription>\n\t\t\t\t</TimelineContent>\n\t\t\t</TimelineItem>\n\n\t\t\t<TimelineItem>\n\t\t\t\t<TimelineMarker />\n\t\t\t\t<TimelineContent>\n\t\t\t\t\t<TimelineTitle>Step 2</TimelineTitle>\n\t\t\t\t\t<TimelineDescription>\n\t\t\t\t\t\tIntermediate stage of the timeline.\n\t\t\t\t\t</TimelineDescription>\n\t\t\t\t</TimelineContent>\n\t\t\t</TimelineItem>\n\n\t\t\t<TimelineItem>\n\t\t\t\t<TimelineMarker />\n\t\t\t\t<TimelineContent>\n\t\t\t\t\t<TimelineTitle>Final Step</TimelineTitle>\n\t\t\t\t\t<TimelineDescription>\n\t\t\t\t\t\tCongratulations! You’ve completed the journey.\n\t\t\t\t\t</TimelineDescription>\n\t\t\t\t</TimelineContent>\n\t\t\t</TimelineItem>\n\t\t</Timeline>\n\t);\n}',
 			},
@@ -2328,7 +2329,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/timeline/timeline-fill-marker/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/timeline-fill-marker.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tTimeline,\n\tTimelineItem,\n\tTimelineMarker,\n\tTimelineContent,\n\tTimelineTitle,\n\tTimelineDescription,\n} from "@/components/craftui/ui/timeline";\n\nexport default function TimelineFillMarker() {\n\treturn (\n\t\t<Timeline variant="vertical" className="max-w-md mx-auto">\n\t\t\t<TimelineItem>\n\t\t\t\t<TimelineMarker variant="fill" />\n\t\t\t\t<TimelineContent>\n\t\t\t\t\t<TimelineTitle>Step 1</TimelineTitle>\n\t\t\t\t\t<TimelineDescription>\n\t\t\t\t\t\tThis is the first step of the process.\n\t\t\t\t\t</TimelineDescription>\n\t\t\t\t</TimelineContent>\n\t\t\t</TimelineItem>\n\n\t\t\t<TimelineItem>\n\t\t\t\t<TimelineMarker variant="fill" />\n\n\t\t\t\t<TimelineContent>\n\t\t\t\t\t<TimelineTitle>Step 2</TimelineTitle>\n\t\t\t\t\t<TimelineDescription>\n\t\t\t\t\t\tIntermediate stage of the timeline.\n\t\t\t\t\t</TimelineDescription>\n\t\t\t\t</TimelineContent>\n\t\t\t</TimelineItem>\n\n\t\t\t<TimelineItem>\n\t\t\t\t<TimelineMarker variant="fill" />\n\n\t\t\t\t<TimelineContent>\n\t\t\t\t\t<TimelineTitle>Final Step</TimelineTitle>\n\t\t\t\t\t<TimelineDescription>\n\t\t\t\t\t\tCongratulations! You’ve completed the journey.\n\t\t\t\t\t</TimelineDescription>\n\t\t\t\t</TimelineContent>\n\t\t\t</TimelineItem>\n\t\t</Timeline>\n\t);\n}',
 			},
@@ -2377,7 +2378,7 @@ export const Registry: Record<string, any> = {
 			{
 				path: "src/registry/demo/ui/timeline/timeline-horizontal/index.tsx",
 				type: "registry:block",
-				target: "",
+				target: "components/craftui/demo/ui/timeline-horizontal.tsx",
 				content:
 					'"use client";\n\nimport React from "react";\nimport {\n\tTimeline,\n\tTimelineItem,\n\tTimelineMarker,\n\tTimelineContent,\n\tTimelineTitle,\n\tTimelineDescription,\n} from "@/components/craftui/ui/timeline";\n\nexport default function TimelineHorizontal() {\n\treturn (\n\t\t<Timeline variant="horizontal">\n\t\t\t<TimelineItem>\n\t\t\t\t<TimelineMarker variant="fill" />\n\t\t\t\t<TimelineContent>\n\t\t\t\t\t<TimelineTitle>2022</TimelineTitle>\n\t\t\t\t\t<TimelineDescription>Company Founded</TimelineDescription>\n\t\t\t\t</TimelineContent>\n\t\t\t</TimelineItem>\n\t\t\t<TimelineItem>\n\t\t\t\t<TimelineMarker variant="fill" />\n\t\t\t\t<TimelineContent>\n\t\t\t\t\t<TimelineTitle>2023</TimelineTitle>\n\t\t\t\t\t<TimelineDescription>\n\t\t\t\t\t\tFirst Major Client\n\t\t\t\t\t</TimelineDescription>\n\t\t\t\t</TimelineContent>\n\t\t\t</TimelineItem>\n\t\t\t<TimelineItem>\n\t\t\t\t<TimelineMarker variant="fill" />\n\t\t\t\t<TimelineContent>\n\t\t\t\t\t<TimelineTitle>2024</TimelineTitle>\n\t\t\t\t\t<TimelineDescription>\n\t\t\t\t\t\tExpanded to 50 Employees\n\t\t\t\t\t</TimelineDescription>\n\t\t\t\t</TimelineContent>\n\t\t\t</TimelineItem>\n\t\t\t<TimelineItem>\n\t\t\t\t<TimelineMarker variant="empty" />\n\t\t\t\t<TimelineContent>\n\t\t\t\t\t<TimelineTitle>2025</TimelineTitle>\n\t\t\t\t\t<TimelineDescription>\n\t\t\t\t\t\tInternational Expansion\n\t\t\t\t\t</TimelineDescription>\n\t\t\t\t</TimelineContent>\n\t\t\t</TimelineItem>\n\t\t</Timeline>\n\t);\n}',
 			},

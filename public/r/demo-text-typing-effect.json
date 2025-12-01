@@ -7,10 +7,10 @@
 	"registryDependencies": ["@craftui/text-typing-effect"],
 	"files": [
 		{
-			"path": "src/registry/demo/text/typing-effect/index.tsx",
+			"path": "src/registry/demo/text/text-typing/index.tsx",
 			"content": "\"use client\";\n\nimport TextTyping from \"@/components/craftui/text/text-typing\";\n\nexport default function Home() {\n\treturn (\n\t\t<TextTyping typingSpeed={100}>This is typing effect demo!</TextTyping>\n\t);\n}\n",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/text/text-typing.tsx"
 		}
 	]
 }

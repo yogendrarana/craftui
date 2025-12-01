@@ -10,7 +10,7 @@
 			"path": "src/registry/demo/ui/dialog/dialog-custom-variant-transition/index.tsx",
 			"content": "\"use client\";\n\nimport React from \"react\";\nimport {\n\tDialog,\n\tDialogTrigger,\n\tDialogContent,\n\tDialogHeader,\n\tDialogTitle,\n\tDialogDescription,\n\tDialogClose,\n} from \"@/components/craftui/ui/dialog\";\nimport { Variants, Transition } from \"motion/react\";\n\nconst customVariants: Variants = {\n\tinitial: { opacity: 0, y: \"100%\" },\n\tanimate: { opacity: 1, y: \"0%\" },\n\texit: { opacity: 0, transition: { duration: 0.3 } },\n};\n\nconst customTransition: Transition = {\n\ttype: \"spring\",\n\tdamping: 30,\n\tstiffness: 300,\n};\n\nexport default function DialogCustomVariantTransion() {\n\treturn (\n\t\t<Dialog variants={customVariants} transition={customTransition}>\n\t\t\t<DialogTrigger asChild>Open Dialog</DialogTrigger>\n\t\t\t<DialogContent>\n\t\t\t\t<DialogHeader>\n\t\t\t\t\t<DialogTitle>Dialog Title</DialogTitle>\n\t\t\t\t\t<DialogDescription>\n\t\t\t\t\t\tThis is a dialog description.\n\t\t\t\t\t</DialogDescription>\n\t\t\t\t\t<DialogClose className=\"absolute top-4 right-4 p-1 rounded-md\" />\n\t\t\t\t</DialogHeader>\n\t\t\t\t<p>This is the main content of the dialog.</p>\n\t\t\t\t<div className=\"mt-6 flex justify-end gap-2\">\n\t\t\t\t\t<DialogClose className=\"px-5 py-0.5\">Cancel</DialogClose>\n\t\t\t\t\t<button className=\"px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm\">\n\t\t\t\t\t\tConfirm\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</DialogContent>\n\t\t</Dialog>\n\t);\n}\n",
 			"type": "registry:block",
-			"target": ""
+			"target": "components/craftui/demo/ui/dialog-custom-variant-transition.tsx"
 		}
 	]
 }
