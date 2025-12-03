@@ -105,16 +105,10 @@ export function InstallCommandTabs({
 		useInstallCommand(pkg);
 
 	return (
-		<div className={cn("p-1 rounded-md border bg-muted", className)}>
+		<div className={cn("rounded-md border text-sm", className)}>
 			{/* Header */}
-			<div className="p-1 flex items-center justify-between">
-				<div className="flex items-center gap-2">
-					<span className="text-gray-400 text-sm">
-						<Terminal size={16} />
-					</span>
-				</div>
-
-				<div className="flex">
+			<div className="p-3 flex items-center justify-between">
+				<div className="flex gap-5">
 					{(
 						Object.keys(packageManagerCommands) as PackageManager[]
 					).map((pm) => (
@@ -123,22 +117,23 @@ export function InstallCommandTabs({
 							key={pm}
 							onClick={() => setPackageManager(pm)}
 							className={cn(
-								"px-3 py-1 cursor-pointer text-sm transition-colors relative flex",
+								"cursor-pointer",
 								pm === packageManager
-									? "font-semibold"
-									: "font-light",
+									? "text-foreground font-semibold"
+									: "text-muted-foreground font-light",
 							)}
 						>
 							{pm}
 						</button>
 					))}
 				</div>
+
+				<CopyButton value={installCommand} />
 			</div>
 
 			{/* Command Row */}
-			<div className="px-3 py-2 bg-background rounded-md border font-mono overflow-x-auto text-sm flex justify-between items-center">
+			<div className="p-3 border-t flex justify-between items-center">
 				{installCommand}
-				<CopyButton value={installCommand} />
 			</div>
 		</div>
 	);

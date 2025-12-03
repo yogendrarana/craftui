@@ -58,6 +58,9 @@ function DocsSidebarNavItems({
 							"py-1.5 px-2 group relative flex w-full items-center rounded-md transition-colors",
 							"hover:bg-muted/50",
 							item.disabled && "cursor-not-allowed opacity-60",
+							pathname === item.href
+								? "text-foreground"
+								: "text-muted-foreground",
 						)}
 						target={item.external ? "_blank" : ""}
 						rel={item.external ? "noreferrer" : ""}
