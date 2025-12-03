@@ -40,8 +40,7 @@ export default function Marquee({
 						className={cn(
 							"w-max md:w-full flex shrink-0 items-center justify-around text-foreground dark:text-foreground",
 							{
-								"group-hover:paused":
-									pauseOnHover,
+								"group-hover:paused": pauseOnHover,
 							},
 						)}
 						style={{

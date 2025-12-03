@@ -1,11 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Check, Clipboard } from "lucide-react";
+import { CopyButton } from "./copy-button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 type CodeRendererProps = {
 	code: string;
@@ -13,48 +10,14 @@ type CodeRendererProps = {
 };
 
 export function CodeRenderer({ code, className }: CodeRendererProps) {
-	const [hasCopied, setHasCopied] = useState(false);
-
-	const onCopy = () => {
-		navigator.clipboard.writeText(code);
-		setHasCopied(true);
-
-		setTimeout(() => {
-			setHasCopied(false);
-		}, 1000);
-	};
-
 	return (
 		<ScrollArea
-			className={cn(
-				"h-full w-full rounded-lg overflow-hidden relative",
-				className,
-			)}
+			className={cn("h-full w-full overflow-hidden relative", className)}
 		>
-			<button
-				type="button"
-				onClick={onCopy}
-				className="absolute top-6 right-6 cursor-pointer z-50"
-			>
-				{hasCopied ? (
-					<Check className="h-4 w-4 text-zinc-50" />
-				) : (
-					<Clipboard className="h-4 w-4 text-zinc-50" />
-				)}
-			</button>
-
-			<SyntaxHighlighter
-				language="tsx"
-				style={a11yDark}
-				customStyle={{
-					margin: 0,
-					backgroundColor: "black",
-					height: "100%",
-					fontSize: "14px",
-				}}
-			>
-				{code}
-			</SyntaxHighlighter>
+			<div className={cn("absolute top-4 right-4 cursor-pointer z-50")}>
+				<CopyButton value={code} />
+			</div>
+			<pre className="p-4 text-xs overflow-x-auto">{code}</pre>
 
 			<ScrollBar orientation="horizontal" />
 			<ScrollBar orientation="vertical" />

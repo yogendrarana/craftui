@@ -48,7 +48,11 @@ const docs = defineCollection({
 interface TocSection {
 	title: string;
 	url: string;
-	items: { title: string; url: string; items?: { title: string; url: string }[] }[];
+	items: {
+		title: string;
+		url: string;
+		items?: { title: string; url: string }[];
+	}[];
 }
 
 async function getTableOfContents(content: string) {
@@ -72,7 +76,7 @@ async function getTableOfContents(content: string) {
 				.toLowerCase()
 				.replace(/[^\w\s-]/g, "")
 				.replace(/\s+/g, "-");
-			
+
 			// If we have a currentSection, add as item to section
 			if (currentSection) {
 				currentSection.items.push({ title, url: `#${slug}` });

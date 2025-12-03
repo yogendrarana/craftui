@@ -1,11 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { RotateCwIcon, EyeIcon, Code2Icon } from "lucide-react";
+import { EyeIcon, Code2Icon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Registry } from "@/__registry__";
-import { Button } from "@/components/ui/button";
 import { CodeRenderer } from "@/components/mdx/code-renderer";
 import { InstallCommandDropdown } from "./install-command";
 import { ComponentPreview } from "./component-preview";
@@ -23,7 +22,7 @@ export function ComponentCodePreview({
 	hasReTrigger = false,
 	...props
 }: ComponentPreviewProps) {
-	const [key, setKey] = React.useState(0);
+	const [key, _] = React.useState(0);
 	const [mode, setMode] = React.useState<"preview" | "code">("preview");
 
 	// Try to get from Registry first
@@ -92,7 +91,10 @@ export function ComponentCodePreview({
 						/>
 					</div>
 				) : (
-					<CodeRenderer className="h-[400px]" code={Code} />
+					<CodeRenderer
+						className="h-[400px] w-full border rounded-md bg-[#fafafa] dark:bg-black"
+						code={Code}
+					/>
 				)}
 			</div>
 		</div>

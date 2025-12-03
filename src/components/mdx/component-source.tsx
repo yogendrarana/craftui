@@ -9,7 +9,6 @@ import {
 
 import { cn } from "@/lib/utils";
 import { Registry } from "@/__registry__";
-import { Button } from "@/components/ui/button";
 import { CodeRenderer } from "@/components/mdx/code-renderer";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
@@ -21,7 +20,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function ComponentSource({
-	expandButtonTitle = "View Code",
+	expandButtonTitle = "Expand",
 	className,
 	name,
 	code: directCode,
@@ -79,7 +78,7 @@ export function ComponentSource({
 	return (
 		<div
 			className={cn(
-				"h-full w-full relative overflow-hidden rounded-sm",
+				"h-full w-full relative overflow-hidden rounded-md border bg-[#fafafa] dark:bg-black",
 				className,
 			)}
 		>
@@ -93,19 +92,12 @@ export function ComponentSource({
 
 				<div
 					className={cn(
-						"absolute p-2 flex items-center justify-center bg-black/40",
-						isOpened
-							? "inset-x-0 bottom-0 h-12 from-gray-900/30"
-							: "inset-0",
+						"absolute inset-x-0 bottom-0",
+						"bg-accent/60 border-t flex items-center justify-center",
 					)}
 				>
-					<CollapsibleTrigger asChild>
-						<Button
-							variant="secondary"
-							className={cn("text-sm", isOpened && "mb-8")}
-						>
-							{isOpened ? "Collapse" : expandButtonTitle}
-						</Button>
+					<CollapsibleTrigger className="w-full py-3 cursor-pointer">
+						{isOpened ? "Collapse" : expandButtonTitle}
 					</CollapsibleTrigger>
 				</div>
 			</Collapsible>

@@ -24,7 +24,9 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
 							item.url,
 							item.items?.flatMap((subItem) => [
 								subItem.url,
-								subItem.items?.map((nestedItem) => nestedItem.url),
+								subItem.items?.map(
+									(nestedItem) => nestedItem.url,
+								),
 							]),
 						])
 						.flat()
@@ -44,7 +46,9 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
 
 	return (
 		<div>
-			<div className="px-4 py-3 border-b border-border border-dashed text-sm">On this page</div>
+			<div className="px-4 py-3 border-b border-border border-dashed text-sm">
+				On this page
+			</div>
 			<div className="p-4">
 				<Tree tree={toc} activeItem={activeHeading} />
 			</div>
@@ -97,7 +101,10 @@ interface TreeProps {
 }
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
-	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+	const handleClick = (
+		e: React.MouseEvent<HTMLAnchorElement>,
+		url: string,
+	) => {
 		e.preventDefault();
 		const id = url.split("#")[1];
 		const element = document.getElementById(id);

@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/suspicious/noExplicitAny: <no_explanation> */
+
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
