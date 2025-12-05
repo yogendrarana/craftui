@@ -36,7 +36,7 @@ const team = [
 	},
 ];
 
-export default function TestimonialsMarquee() {
+export default function MarqueeReverse() {
 	return (
 		<Marquee
 			duration={35}
@@ -49,7 +49,7 @@ export default function TestimonialsMarquee() {
 			{team.map((item) => (
 				<div
 					key={item.id}
-					className="border rounded-md p-6 flex flex-col items-center justify-center"
+					className="h-40 w-40 border rounded-md p-2 flex flex-col items-center justify-center"
 				>
 					<span className="text-gray-500 text-sm text-center">
 						{item.name}

@@ -26,9 +26,7 @@ export default function Marquee({
 		<div
 			className={cn(
 				"group relative flex overflow-hidden",
-				"before:content-[''] before:absolute before:top-0 before:bottom-0 before:left-0 before:w-[50px] before:bg-linear-to-r before:from-background before:to-transparent before:z-10",
-				"after:content-[''] after:absolute after:top-0 after:bottom-0 after:right-0 after:w-[50px] before:bg-linear-to-l after:from-background after:to-transparent after:z-10",
-				"dark:before:from-background dark:after:from-background",
+
 				className,
 			)}
 		>
@@ -54,6 +52,28 @@ export default function Marquee({
 						{children}
 					</div>
 				))}
+
+			<style>
+				{`
+					@keyframes marquee-left {
+						0% { transform: translateX(0); }
+						100% { transform: translateX(-100%); }
+					}
+
+					@keyframes marquee-right {
+						0% { transform: translateX(-100%); }
+						100% { transform: translateX(0); }
+					}
+
+					.paused {
+						animation-play-state: paused !important;
+					}
+
+					.group:hover .group-hover\\\\:paused {
+						animation-play-state: paused !important;
+					}
+				`}
+			</style>
 		</div>
 	);
 }
