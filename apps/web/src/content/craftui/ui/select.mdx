@@ -1,0 +1,105 @@
+---
+title: Select
+description: A component that allows users to select one or more options from a list.
+slug: /craftui/ui/select
+published: true
+date: 2025-12-04T00:00:00.000Z
+author:
+  name: Yogendra Rana
+  twitter: "https://twitter.com/yooogendra_rana"
+---
+
+<ComponentCodePreview name="craftui-particles-select" />
+
+## Installation
+
+<Installation name="craftui-select" />
+
+## Demo
+
+#### Multiple Select
+
+<ComponentCodePreview name="craftui-particles-select-multiple" />
+
+#### Select with groups and disabled options
+
+<ComponentCodePreview name="craftui-particles-select-groups" />
+
+#### Searchable Select
+
+<ComponentCodePreview name="craftui-particles-select-searchable" />
+
+#### Select which shows create new option if search value does not match any option
+
+<ComponentCodePreview name="craftui-particles-select-creatable" />
+
+#### Loading async options
+
+<ComponentCodePreview name="craftui-particles-select-loading-async" hasReTrigger />
+
+#### Controlled select
+
+<ComponentCodePreview name="craftui-particles-select-controlled" />
+
+## Props
+
+#### Select
+
+| Prop            | Type                          | Description                                                                                      | Default |
+| --------------- | ----------------------------- | ------------------------------------------------------------------------------------------------ | ------- |
+| children        | ReactNode                     | The content to be rendered inside Select component                                               | \_      |
+| defaultValue?   | ValueType                     | The initial value(s) before any user interaction. Can be a **string**, **string[]**, or **null** | null    |
+| onValueChange?  | (value: ValueType) => void    | Callback function that runs when the selected value changes                                      | \_      |
+| className?      | string                        | Optional className to style the Select component                                                 | \_      |
+| loadOptions?    | () => Promise                 | Function to fetch options asynchronously from the server                                         | \_      |
+| getOptionLabel? | (option: Option) => string    | Function to get the label for each option from the loadOptions result                            | \_      |
+| onCreateOption? | (searchValue: string) => void | Function to run when user clickes on create new button                                           | \_      |
+| multiple?       | boolean                       | If true, allows selecting multiple options                                                       | false   |
+| searchable?     | boolean                       | If true, enables the search input for filtering options                                          | false   |
+| loading?        | boolean                       | Indicates whether the component is in a loading state                                            | false   |
+| disabled?       | boolean                       | If true, disables whole select component                                                         | false   |
+| creatable?      | boolean                       | If true, shows an extra option to create a new item if no match is found                         | false   |
+| clearable?      | boolean                       | If true, allows clearing the selected value(s)                                                   | true    |
+| maxSelected?    | number                        | Max number options that can be selectd in a multiple select                                      | \_      |
+| open?           | boolean                       | Controlled state for whether the dropdown is open or closed                                      | \_      |
+| onOpenChange?   | (open: boolean) => void       | Callback function that runs when the open state changes                                          | \_      |
+
+#### SelectTrigger
+
+| Prop       | Type      | Description                                                   | Default |
+| ---------- | --------- | ------------------------------------------------------------- | ------- |
+| children   | ReactNode | The content to be rendered inside the SelectTrigger component | \_      |
+| className? | string    | Additional class names to style SelectTrigger component       | \_      |
+
+#### SelectValue
+
+| Prop         | Type   | Description                                                          | Default                |
+| ------------ | ------ | -------------------------------------------------------------------- | ---------------------- |
+| placeholder? | string | The placeholder value that will be shown on the SelectTrigger button | "Select an option ..." |
+
+#### SelectContent
+
+| Prop            | Type      | Description                                                   | Default |
+| --------------- | --------- | ------------------------------------------------------------- | ------- |
+| children        | ReactNode | The content to be rendered inside the SelectContent component | \_      |
+| className?      | string    | Additional class names to style SelectContent component       | \_      |
+| scrollbarWidth? | boolean   | The width of scrollbar. Can be **auto**, **none**, **thin**   | none    |
+
+#### SelectOption
+
+| Prop         | Type       | Description                                            | Default |
+| ------------ | ---------- | ------------------------------------------------------ | ------- |
+| children     | string     | The label of option passed as child                    | \_      |
+| value        | string     | The value of the option                                | \_      |
+| className?   | string     | Additional class names to style SelectOption component | \_      |
+| highlighted? | boolean    | If true, the option will be visually highlighted       | \_      |
+| disabled?    | boolean    | If true, the option is disable and cannote be selected | false   |
+| onSelect?    | () => void | a function you want to run when an option is selected  | false   |
+
+#### SelectGroup
+
+| Prop       | Type      | Description                                                 | Default |
+| ---------- | --------- | ----------------------------------------------------------- | ------- |
+| children   | ReactNode | The content to be rendered inside the SelectGroup component | \_      |
+| label      | string    | The display text for each group                             | \_      |
+| className? | string    | Additional class names to style SelectContent component     | \_      |

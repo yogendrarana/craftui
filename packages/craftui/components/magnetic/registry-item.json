@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-magnetic",
+	"type": "registry:component",
+	"description": "A magnetic hover effect component",
+	"dependencies": ["gsap"],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "packages/craftui/components/magnetic/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/components/magnetic.tsx"
+		}
+	]
+}

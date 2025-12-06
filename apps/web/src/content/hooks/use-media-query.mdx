@@ -1,0 +1,57 @@
+---
+title: useMediaQuery
+description: A hook for responsive breakpoint detection using media queries
+slug: /hooks/use-media-query
+published: true
+date: 2025-01-26T00:00:00.000Z
+---
+
+## Installation
+
+<Installation name="use-media-query" />
+
+## Usage
+
+```tsx
+import { useMediaQuery } from "@/hooks/use-media-query";
+
+function ResponsiveComponent() {
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
+  const isTablet = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
+  const isMobile = useMediaQuery("(max-width: 767px)");
+
+  return (
+    <div>
+      {isDesktop && <p>Desktop View</p>}
+      {isTablet && <p>Tablet View</p>}
+      {isMobile && <p>Mobile View</p>}
+    </div>
+  );
+}
+```
+
+## API Reference
+
+#### useMediaQuery
+
+A hook for responsive breakpoint detection using media queries.
+
+| Parameter | Type   | Description            |
+| --------- | ------ | ---------------------- |
+| query     | string | CSS media query string |
+
+## Common Media Queries
+
+```tsx
+// Breakpoints
+const isMobile = useMediaQuery("(max-width: 767px)");
+const isTablet = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
+const isDesktop = useMediaQuery("(min-width: 1024px)");
+
+// Orientation
+const isPortrait = useMediaQuery("(orientation: portrait)");
+const isLandscape = useMediaQuery("(orientation: landscape)");
+
+// Dark mode
+const prefersDark = useMediaQuery("(prefers-color-scheme: dark)");
+```

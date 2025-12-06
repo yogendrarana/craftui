@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-select-multiple",
+	"type": "registry:component",
+	"description": "Select with multiple selection demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-select"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/select/select-multiple/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/select-multiple.tsx"
+		}
+	]
+}

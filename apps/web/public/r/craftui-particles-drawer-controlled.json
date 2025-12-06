@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-drawer-controlled",
+	"type": "registry:component",
+	"description": "Controlled drawer demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-drawer"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/drawer/drawer-controlled/index.tsx",
+			"content": "\"use client\";\n\nimport React from \"react\";\nimport {\n\tDrawer,\n\tDrawerTrigger,\n\tDrawerContent,\n\tDrawerHeader,\n\tDrawerFooter,\n\tDrawerTitle,\n\tDrawerClose,\n\tDrawerDescription,\n} from \"@/components/craftui/ui/drawer\";\n\nexport default function DrawerControlled() {\n\tconst [open, setOpen] = React.useState(false);\n\treturn (\n\t\t<Drawer open={open} onOpenChange={setOpen}>\n\t\t\t<DrawerTrigger>Open Drawer</DrawerTrigger>\n\t\t\t<DrawerContent className=\"flex flex-col h-full\">\n\t\t\t\t<DrawerHeader className=\"flex justify-between items-center\">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<DrawerTitle>Title</DrawerTitle>\n\t\t\t\t\t\t<DrawerDescription>\n\t\t\t\t\t\t\tThis is the description of the drawer\n\t\t\t\t\t\t</DrawerDescription>\n\t\t\t\t\t</div>\n\t\t\t\t\t<DrawerClose className=\"p-2 rounded-xl\" />\n\t\t\t\t</DrawerHeader>\n\n\t\t\t\t{/* your content */}\n\t\t\t\t<div className=\"py-4 grow overflow-auto\">\n\t\t\t\t\t<p>The content of the drawer goes here.</p>\n\t\t\t\t</div>\n\n\t\t\t\t<DrawerFooter className=\"flex gap-2 justify-end\">\n\t\t\t\t\t<DrawerClose className=\"px-5 py-0.5 border\">\n\t\t\t\t\t\tClose\n\t\t\t\t\t</DrawerClose>\n\t\t\t\t\t<button\n\t\t\t\t\t\ttype=\"button\"\n\t\t\t\t\t\tclassName=\"px-5 py-1.5 text-sm bg-black dark:bg-white text-white dark:text-black border rounded-sm\"\n\t\t\t\t\t>\n\t\t\t\t\t\tSave\n\t\t\t\t\t</button>\n\t\t\t\t</DrawerFooter>\n\t\t\t</DrawerContent>\n\t\t</Drawer>\n\t);\n}\n",
+			"type": "registry:component",
+			"target": "components/craftui/particles/drawer-controlled.tsx"
+		}
+	]
+}

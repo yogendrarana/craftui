@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-text-typing",
+	"type": "registry:component",
+	"description": "Basic typing effect demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-text-typing"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/text-typing/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/text-typing.tsx"
+		}
+	]
+}

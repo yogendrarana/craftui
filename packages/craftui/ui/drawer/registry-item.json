@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-drawer",
+	"type": "registry:ui",
+	"description": "A drawer/slide-out panel component",
+	"dependencies": ["motion", "lucide-react"],
+	"registryDependencies": ["@craftdotui/utils"],
+	"files": [
+		{
+			"path": "packages/craftui/ui/drawer/index.tsx",
+			"type": "registry:ui",
+			"target": "components/craftui/ui/drawer.tsx"
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-marquee",
+	"type": "registry:component",
+	"description": "A marquee component for scrolling content horizontally",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/utils"],
+	"files": [
+		{
+			"path": "packages/craftui/components/marquee/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/components/marquee.tsx"
+		}
+	]
+}

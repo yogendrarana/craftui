@@ -1,0 +1,44 @@
+---
+title: useHydrated
+description: A hook that returns whether the component has hydrated on the client to avoid hydration mismatches.
+slug: /hooks/use-hydrated
+published: true
+date: 2025-01-26T00:00:00.000Z
+---
+
+## Installation
+
+<Installation name="use-hydrated" />
+
+## Usage
+
+```tsx
+import { useHydrated } from "@/hooks/use-hydrated";
+
+function ClientOnlyComponent() {
+  const isHydrated = useHydrated();
+
+  if (!isHydrated) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      <p>This content is only rendered on the client</p>
+      <p>Current time: {new Date().toLocaleTimeString()}</p>
+    </div>
+  );
+}
+```
+
+## API Reference
+
+#### useHydrated
+
+A hook that returns whether the component has hydrated on the client to avoid hydration mismatches.
+
+## Use Cases
+
+- Preventing hydration mismatches when using client-only APIs
+- Conditionally rendering content that depends on browser APIs
+- Avoiding SSR/CSR inconsistencies

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-tabs",
+	"type": "registry:ui",
+	"description": "A tabs component with animations",
+	"dependencies": ["motion"],
+	"registryDependencies": ["@craftdotui/utils"],
+	"files": [
+		{
+			"path": "packages/craftui/ui/tabs/index.tsx",
+			"type": "registry:ui",
+			"target": "components/craftui/ui/tabs.tsx"
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "use-query-string",
+	"type": "registry:hook",
+	"description": "A hook that helps build updated URL query strings by merging or removing parameters from existing search params.",
+	"dependencies": [],
+	"devDependencies": [],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "packages/hooks/use-query-string/index.ts",
+			"content": "import * as React from \"react\";\n\ntype QueryParams = Record<string, string | number | null>;\n\nexport function useQueryString(searchParams: URLSearchParams) {\n\tconst createQueryString = React.useCallback(\n\t\t(params: QueryParams) => {\n\t\t\tconst newSearchParams = new URLSearchParams(\n\t\t\t\tsearchParams?.toString(),\n\t\t\t);\n\n\t\t\tfor (const [key, value] of Object.entries(params)) {\n\t\t\t\tif (value === null) {\n\t\t\t\t\tnewSearchParams.delete(key);\n\t\t\t\t} else {\n\t\t\t\t\tnewSearchParams.set(key, String(value));\n\t\t\t\t}\n\t\t\t}\n\n\t\t\treturn newSearchParams.toString();\n\t\t},\n\t\t[searchParams],\n\t);\n\n\treturn { createQueryString };\n}\n",
+			"type": "registry:hook",
+			"target": "hooks/use-query-string.ts"
+		}
+	]
+}

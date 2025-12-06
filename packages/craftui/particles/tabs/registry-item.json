@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-tabs",
+	"type": "registry:component",
+	"description": "Basic tabs demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-tabs"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/tabs/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/tabs.tsx"
+		}
+	]
+}

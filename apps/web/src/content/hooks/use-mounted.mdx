@@ -1,0 +1,43 @@
+---
+title: useMounted
+description: A hook that returns whether the component is currently mounted, updating on mount and unmount.
+slug: /hooks/use-mounted
+published: true
+date: 2025-01-26T00:00:00.000Z
+---
+
+## Installation
+
+<Installation name="use-mounted" />
+
+## Usage
+
+```tsx
+import { useMounted } from "@/hooks/use-mounted";
+
+function ClientComponent() {
+  const mounted = useMounted();
+
+  if (!mounted) {
+    return null;
+  }
+
+  return (
+    <div>
+      <p>Component is mounted</p>
+    </div>
+  );
+}
+```
+
+## API Reference
+
+#### useMounted
+
+A hook that returns whether the component is currently mounted.
+
+## Use Cases
+
+- Preventing SSR/CSR mismatches
+- Conditional rendering based on mount state
+- Cleanup logic that depends on mount state

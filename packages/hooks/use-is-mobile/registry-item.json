@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "use-is-mobile",
+	"type": "registry:hook",
+	"description": "A hook that detects whether the current viewport width is below the mobile breakpoint.",
+	"dependencies": [],
+	"devDependencies": [],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "packages/hooks/use-is-mobile/index.ts",
+			"type": "registry:hook",
+			"target": "hooks/use-is-mobile.ts"
+		}
+	]
+}

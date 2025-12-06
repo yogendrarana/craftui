@@ -1,0 +1,72 @@
+---
+title: Tabs
+description: A tab component for switching between different content.
+slug: /craftui/ui/tabs
+published: true
+date: 2024-12-23T00:00:00.000Z
+author:
+  name: Yogendra Rana
+  twitter: "https://twitter.com/yooogendra_rana"
+---
+
+<ComponentCodePreview name="craftui-particles-tabs" hasReTrigger />
+
+
+## Installation
+
+<Installation name="craftui-tabs" />
+
+## Demo
+
+#### Tabs with custom icons
+
+<ComponentCodePreview name="craftui-particles-tabs-custom-icons" hasReTrigger />
+
+#### Tabs with custom variants and transition
+
+<ComponentCodePreview name="craftui-particles-tabs-custom-variants" hasReTrigger />
+
+## Props
+
+#### Tabs
+
+| Prop           | Type      | Description                                                     | Default |
+| -------------- | --------- | --------------------------------------------------------------- | ------- |
+| children       | ReactNode | The content to be rendered inside it                            | \_      |
+| defaultTab     | string    | Initial active tab value when the component mounts              | \_      |
+| className?     | string    | Optional class names to style the Tabs component                | \_      |
+| animationType? | Variants  | Animation style for the active tab indicator                    | \_      |
+| instanceId?    | string    | Unique identifier for the tabs instance for animation isolation | \_      |
+
+#### Tablist
+
+| Prop       | Type      | Description                                   | Default |
+| ---------- | --------- | --------------------------------------------- | ------- |
+| children   | ReactNode | The content to be rendered inside the Tablist | \_      |
+| className? | string    | Optional class names to style the Tablist     | \_      |
+
+#### Tab
+
+| Prop       | Type      | Description                                                     | Default |
+| ---------- | --------- | --------------------------------------------------------------- | ------- |
+| children   | ReactNode | Content displayed as the tab button label                       | \_      |
+| value      | string    | Unique identifier that maps this tab to its corresponding panel | \_      |
+| className? | string    | Optional class names to style the Tab                           | \_      |
+| icon?      | ReactNode | Optional icon element rendered before the tab label             | \_      |
+
+#### TabPanels
+
+| Prop       | Type      | Description                                 | Default |
+| ---------- | --------- | ------------------------------------------- | ------- |
+| children?  | ReactNode | The content to be rendered inside TabPanels | \_      |
+| className? | string    | Optional class names to style TabPanels     | \_      |
+
+#### TabPanel
+
+| Prop         | Type       | Description                                | Default |
+| ------------ | ---------- | ------------------------------------------ | ------- |
+| children     | ReactNode  | The content to be rendered inside TabPanel | \_      |
+| value        | string     | Unique value to distinguish the panel      | \_      |
+| className?   | string     | Optional class names to style the TabPanel | \_      |
+| variants?    | Variants   | Framer motion variants                     | \_      |
+| transition?? | Transition | Framer motion transition                   | \_      |

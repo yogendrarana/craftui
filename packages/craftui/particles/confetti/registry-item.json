@@ -1,0 +1,13 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-confetti",
+	"type": "registry:component",
+	"registryDependencies": ["@craftdotui/use-confetti"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/confetti/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/confetti.tsx"
+		}
+	]
+}

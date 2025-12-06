@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-text-scramble",
+	"type": "registry:component",
+	"description": "Basic text scramble demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-text-scramble"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/text-scramble/index.tsx",
+			"content": "\"use client\";\n\nimport TextScramble from \"../../components/text-scramble\";\n\nexport default function TextScrambleBasic() {\n\treturn <TextScramble speed={50}>Welcome to Text Scramble!</TextScramble>;\n}\n",
+			"type": "registry:component",
+			"target": "components/craftui/particles/text-scramble.tsx"
+		}
+	]
+}

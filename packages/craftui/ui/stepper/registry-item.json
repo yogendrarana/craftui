@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-ui-stepper",
+	"type": "registry:ui",
+	"description": "A stepper/wizard component",
+	"dependencies": ["motion", "lucide-react"],
+	"registryDependencies": ["@craftdotui/utils"],
+	"files": [
+		{
+			"path": "packages/craftui/ui/stepper/index.tsx",
+			"type": "registry:ui",
+			"target": "components/craftui/ui/stepper.tsx"
+		}
+	]
+}

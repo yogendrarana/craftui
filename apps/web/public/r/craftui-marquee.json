@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-marquee",
+	"type": "registry:component",
+	"description": "A marquee component for scrolling content horizontally",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/utils"],
+	"files": [
+		{
+			"path": "packages/craftui/components/marquee/index.tsx",
+			"content": "\"use client\";\n\nimport type React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface MarqueeProps {\n\tduration?: number;\n\trepeat?: number;\n\tclassName?: string;\n\tpauseOnHover?: boolean;\n\tchildren: React.ReactNode;\n\tdirection?: \"left\" | \"right\";\n\tgap?: number;\n}\n\nexport default function Marquee({\n\tchildren,\n\tclassName,\n\tduration = 20,\n\trepeat = 2,\n\tdirection = \"left\",\n\tpauseOnHover = true,\n\tgap = 0,\n}: MarqueeProps) {\n\treturn (\n\t\t<div\n\t\t\tclassName={cn(\n\t\t\t\t\"group relative flex overflow-hidden\",\n\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t>\n\t\t\t{Array(repeat)\n\t\t\t\t.fill(0)\n\t\t\t\t.map((_, index) => (\n\t\t\t\t\t<div\n\t\t\t\t\t\tkey={index}\n\t\t\t\t\t\tclassName={cn(\n\t\t\t\t\t\t\t\"w-max md:w-full flex shrink-0 items-center justify-around text-foreground dark:text-foreground\",\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"group-hover:paused\": pauseOnHover,\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t)}\n\t\t\t\t\t\tstyle={{\n\t\t\t\t\t\t\tgap: `${gap}px`,\n\t\t\t\t\t\t\tanimation: `marquee-${direction} ${duration}s linear infinite`,\n\t\t\t\t\t\t\t...(index === 1 && direction === \"left\"\n\t\t\t\t\t\t\t\t? { marginLeft: `${gap}px` }\n\t\t\t\t\t\t\t\t: { marginRight: `${gap}px` }),\n\t\t\t\t\t\t}}\n\t\t\t\t\t>\n\t\t\t\t\t\t{children}\n\t\t\t\t\t</div>\n\t\t\t\t))}\n\n\t\t\t<style>\n\t\t\t\t{`\n\t\t\t\t\t@keyframes marquee-left {\n\t\t\t\t\t\t0% { transform: translateX(0); }\n\t\t\t\t\t\t100% { transform: translateX(-100%); }\n\t\t\t\t\t}\n\n\t\t\t\t\t@keyframes marquee-right {\n\t\t\t\t\t\t0% { transform: translateX(-100%); }\n\t\t\t\t\t\t100% { transform: translateX(0); }\n\t\t\t\t\t}\n\n\t\t\t\t\t.paused {\n\t\t\t\t\t\tanimation-play-state: paused !important;\n\t\t\t\t\t}\n\n\t\t\t\t\t.group:hover .group-hover\\\\\\\\:paused {\n\t\t\t\t\t\tanimation-play-state: paused !important;\n\t\t\t\t\t}\n\t\t\t\t`}\n\t\t\t</style>\n\t\t</div>\n\t);\n}\n",
+			"type": "registry:component",
+			"target": "components/craftui/components/marquee.tsx"
+		}
+	]
+}

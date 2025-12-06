@@ -1,0 +1,17 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "use-callback",
+	"type": "registry:hook",
+	"description": "A hook that provides a stable callback reference while always invoking the latest version of the provided function.",
+	"dependencies": [],
+	"devDependencies": [],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "packages/hooks/use-callback/index.ts",
+			"content": "import * as React from \"react\";\n\nfunction useCallbackRef<T extends (...args: never[]) => unknown>(\n\tcallback: T | undefined,\n): T {\n\tconst callbackRef = React.useRef(callback);\n\n\tReact.useEffect(() => {\n\t\tcallbackRef.current = callback;\n\t});\n\n\treturn React.useMemo(\n\t\t() => ((...args) => callbackRef.current?.(...args)) as T,\n\t\t[],\n\t);\n}\n\nexport { useCallbackRef };\n",
+			"type": "registry:hook",
+			"target": "hooks/use-callback.tsx"
+		}
+	]
+}
