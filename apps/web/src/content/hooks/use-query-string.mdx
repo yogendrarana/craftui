@@ -1,0 +1,77 @@
+---
+title: useQueryString
+description: A hook that helps build updated URL query strings by merging or removing parameters from existing search params.
+slug: /hooks/use-query-string
+published: true
+date: 2025-01-26T00:00:00.000Z
+---
+
+## Installation
+
+<Installation name="use-query-string" />
+
+## Usage
+
+```tsx
+import { useSearchParams, useRouter } from "next/navigation";
+import { useQueryString } from "@/hooks/use-query-string";
+
+function FilterComponent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const { createQueryString } = useQueryString(searchParams);
+
+  const updateFilter = (key: string, value: string) => {
+    const newQueryString = createQueryString({ [key]: value });
+    router.push(`?${newQueryString}`);
+  };
+
+  const removeFilter = (key: string) => {
+    const newQueryString = createQueryString({ [key]: null });
+    router.push(`?${newQueryString}`);
+  };
+
+  return (
+    <div>
+      <button onClick={() => updateFilter("category", "electronics")}>
+        Filter by Electronics
+      </button>
+      <button onClick={() => removeFilter("category")}>Clear Filter</button>
+    </div>
+  );
+}
+```
+
+## API Reference
+
+#### useQueryString
+
+A hook that helps build updated URL query strings.
+
+| Parameter    | Type            | Description                   |
+| ------------ | --------------- | ----------------------------- |
+| searchParams | URLSearchParams | Current URL search parameters |
+
+#### createQueryString
+
+Creates a new query string by merging or removing parameters.
+
+| Parameter | Type                                       | Description                                                |
+| --------- | ------------------------------------------ | ---------------------------------------------------------- |
+| params    | Record\<string, string \| number \| null\> | Parameters to merge or remove (null removes the parameter) |
+
+## Examples
+
+```tsx
+// Add or update parameters
+createQueryString({ page: 2, sort: "name" });
+// Result: "page=2&sort=name"
+
+// Remove a parameter (set to null)
+createQueryString({ filter: null });
+// Result: removes 'filter' from query string
+
+// Mix of add and remove
+createQueryString({ page: 1, oldParam: null, newParam: "value" });
+// Result: "page=1&newParam=value" (oldParam removed)
+```

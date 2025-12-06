@@ -1,0 +1,29 @@
+---
+title: useIsMobile
+description: A hook that detects whether the current viewport width is below the mobile breakpoint.
+slug: /hooks/use-is-mobile
+published: true
+date: 2025-01-26T00:00:00.000Z
+---
+
+## Installation
+
+<Installation name="use-is-mobile" />
+
+## Usage
+
+```tsx
+import { useIsMobile } from "@/hooks/use-is-mobile";
+
+function ResponsiveComponent() {
+  const isMobile = useIsMobile();
+
+  return <div>{isMobile ? <MobileView /> : <DesktopView />}</div>;
+}
+```
+
+## API Reference
+
+#### useIsMobile
+
+A hook that detects whether the current viewport width is below the mobile breakpoint (768px).

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-drawer",
+	"type": "registry:component",
+	"description": "Basic drawer demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-drawer"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/drawer/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/drawer.tsx"
+		}
+	]
+}

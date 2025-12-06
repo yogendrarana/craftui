@@ -1,0 +1,51 @@
+---
+title: useDebounce
+description: A hook to debounce rapidly changing values
+slug: /hooks/use-debounce
+published: true
+date: 2025-01-26T00:00:00.000Z
+---
+
+## Installation
+
+<Installation name="use-debounce" />
+
+## Usage
+
+```tsx
+import { useState } from "react";
+import { useDebounce } from "@/hooks/use-debounce";
+
+function SearchInput() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
+  // Use debouncedSearchTerm for API calls
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      // Perform search with debouncedSearchTerm
+      console.log("Searching for:", debouncedSearchTerm);
+    }
+  }, [debouncedSearchTerm]);
+
+  return (
+    <input
+      type="text"
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      placeholder="Search..."
+    />
+  );
+}
+```
+
+## API Reference
+
+#### useDebounce
+
+A hook to debounce rapidly changing values.
+
+| Parameter | Type   | Description           | Default |
+| --------- | ------ | --------------------- | ------- |
+| value     | T      | The value to debounce | -       |
+| delay     | number | Delay in milliseconds | 500     |

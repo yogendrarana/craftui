@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "use-click-outside",
+	"type": "registry:hook",
+	"description": "A hook to detect clicks outside of a specified element",
+	"dependencies": [],
+	"devDependencies": [],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "packages/hooks/use-click-outside/index.ts",
+			"type": "registry:hook",
+			"target": "hooks/use-clink-outside.tsx"
+		}
+	]
+}

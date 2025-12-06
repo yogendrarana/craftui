@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-dialog",
+	"type": "registry:component",
+	"description": "Basic dialog demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-dialog"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/dialog/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/dialog.tsx"
+		}
+	]
+}

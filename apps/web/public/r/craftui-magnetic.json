@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-magnetic",
+	"type": "registry:component",
+	"description": "A magnetic hover effect component",
+	"dependencies": ["gsap"],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "packages/craftui/components/magnetic/index.tsx",
+			"content": "\"use client\";\n\nimport gsap from \"gsap\";\nimport { useEffect, useRef } from \"react\";\n\ntype PropType = {\n\tchildren: React.ReactNode;\n};\n\nexport default function Magnetic({ children }: PropType) {\n\tconst ref = useRef<HTMLDivElement>(null);\n\n\tuseEffect(() => {\n\t\tconst xTo = gsap.quickTo(ref.current, \"x\", {\n\t\t\tduration: 1,\n\t\t\tease: \"elastic.out(1, 0.3)\",\n\t\t});\n\t\tconst yTo = gsap.quickTo(ref.current, \"y\", {\n\t\t\tduration: 1,\n\t\t\tease: \"elastic.out(1, 0.3)\",\n\t\t});\n\n\t\t// mouse move event\n\t\tconst handleMouseMove = (e: MouseEvent) => {\n\t\t\tconst { clientX, clientY } = e;\n\t\t\tconst rect = ref.current?.getBoundingClientRect();\n\n\t\t\tif (rect) {\n\t\t\t\tconst x = clientX - (rect.left + rect.width / 2);\n\t\t\t\tconst y = clientY - (rect.top + rect.height / 2);\n\n\t\t\t\txTo(x);\n\t\t\t\tyTo(y);\n\t\t\t}\n\t\t};\n\n\t\tconst handleMouseLeave = () => {\n\t\t\txTo(0);\n\t\t\tyTo(0);\n\t\t};\n\n\t\tref.current?.addEventListener(\"mousemove\", handleMouseMove);\n\t\tref.current?.addEventListener(\"mouseleave\", handleMouseLeave);\n\n\t\treturn () => {\n\t\t\tref.current?.removeEventListener(\"mousemove\", handleMouseMove);\n\t\t\tref.current?.removeEventListener(\"mouseleave\", handleMouseLeave);\n\t\t};\n\t}, []);\n\n\treturn (\n\t\t<div ref={ref} style={{ display: \"inline-block\" }}>\n\t\t\t{children}\n\t\t</div>\n\t);\n}\n",
+			"type": "registry:component",
+			"target": "components/craftui/components/magnetic.tsx"
+		}
+	]
+}

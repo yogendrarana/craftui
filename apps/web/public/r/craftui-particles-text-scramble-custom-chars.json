@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-text-scramble-custom-chars",
+	"type": "registry:component",
+	"description": "Text scramble with custom characters demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-text-scramble"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/text-scramble/text-scramble-custom-chars/index.tsx",
+			"content": "\"use client\";\n\nimport TextScramble from \"../../../components/text-scramble\";\n\nexport default function TextScramblePreview() {\n\treturn (\n\t\t<TextScramble speed={50} characterSet=\"*\">\n\t\t\tCustom Scramble\n\t\t</TextScramble>\n\t);\n}\n",
+			"type": "registry:component",
+			"target": "components/craftui/particles/text-scramble-custom-chars.tsx"
+		}
+	]
+}

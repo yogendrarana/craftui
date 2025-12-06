@@ -1,0 +1,9 @@
+{
+	"extends": "./base.json",
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"declaration": true,
+		"declarationMap": true
+	},
+	"exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
+}

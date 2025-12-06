@@ -1,0 +1,23 @@
+{
+	"extends": "@craftdotui/tsconfig/nextjs.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"],
+			"@/__registry__": ["./__registry__"],
+			"content-collections": ["./.content-collections/generated"],
+			"@craftdotui/craftui/*": ["../../packages/craftui/*"],
+			"@craftdotui/hooks/*": ["../../packages/hooks/*"],
+			"@craftdotui/lib/*": ["../../packages/lib/*"]
+		}
+	},
+	"include": [
+		"next-env.d.ts",
+		"next.config.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		".next/dev/types/**/*.ts"
+	],
+	"exclude": ["node_modules"]
+}

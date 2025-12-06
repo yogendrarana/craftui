@@ -6,10 +6,12 @@ import type {
 	RegistryItem,
 	RegistryItemFile,
 	RegistryJson,
-} from "./../src/types/registry";
+} from "../apps/web/src/types/registry";
 
 const REGISTRY_JSON_PATH = path.join(
 	process.cwd(),
+	"apps",
+	"web",
 	"public",
 	"r",
 	"registry.json",
@@ -27,13 +29,29 @@ async function buildRegistryFile() {
 
 	const registryData: RegistryJson = {
 		$schema: "https://ui.shadcn.com/schema/registry.json",
-		name: "craftui",
-		homepage: "https://craft-ui.vercel.app",
+		name: "craftdotui",
+		homepage: "https://craftdotui.vercel.app",
 		items: [],
 	};
 
-	const registryFolderPath = path.join(process.cwd(), "src", "registry");
-	const newItems = await getRegistryItemsFromFolder(registryFolderPath);
+	// Collect registry items from all packages
+	const packagePaths = [
+		path.join(process.cwd(), "packages", "craftui"),
+		path.join(process.cwd(), "packages", "hooks"),
+		path.join(process.cwd(), "packages", "lib"),
+	];
+
+	const newItems: RegistryItem[] = [];
+
+	for (const pkgPath of packagePaths) {
+		try {
+			const items = await getRegistryItemsFromFolder(pkgPath);
+			newItems.push(...items);
+		} catch (error) {
+			// Skip if directory doesn't exist
+			console.warn(`Skipping ${pkgPath}: ${error}`);
+		}
+	}
 
 	registryData.items = [
 		{
@@ -88,30 +106,6 @@ async function getRegistryItemsFromFolder(registryDirPath: string) {
 }
 
 /**
- * Replace registry paths with component paths.
- * @param inputStr - The input string to process.
- * @returns The processed string with registry paths replaced.
- */
-function replaceRegistryPathsFromImport(inputStr: string): string {
-	return inputStr.replace(/(['"])([\s\S]*?)\1/g, (match, quote, content) => {
-		if (content.startsWith("@/registry/")) {
-			const rest = content.slice("@/registry/".length);
-
-			if (rest.startsWith("lib/") || rest.startsWith("hooks/")) {
-				return `${quote}@/${rest}${quote}`;
-			}
-
-			return `${quote}@/components/craftui/${rest}${quote}`;
-		} else if (content.startsWith("@craftui/ui/")) {
-			const rest = content.slice("@craftui/ui/".length);
-			return `${quote}@/${rest}${quote}`;
-		}
-
-		return match;
-	});
-}
-
-/**
  * Function to build the registry index file.
  * This function reads the registry.json items and builds a dynamic index file.
  */
@@ -143,11 +137,29 @@ async function buildRegistryIndex() {
 		// skip items without files
 		if (!item.files) continue;
 
-		console.log("Processing item:", item.name);
+		console.log("Processing:", item.name);
 
 		// define the component path from the first file if exists
 		const componentPath = item.files[0]?.path
-			? `@/${item.files[0].path.replace(/^src\//, "")}`
+			? (() => {
+					const filePath = item.files[0].path;
+					// For workspace packages, use workspace imports
+					if (filePath.startsWith("packages/craftui/")) {
+						return `@craftdotui/craftui/${filePath.replace(
+							"packages/craftui/",
+							"",
+						)}`;
+					} else if (filePath.startsWith("packages/hooks/")) {
+						return `@craftdotui/hooks/${filePath.replace(
+							"packages/hooks/",
+							"",
+						)}`;
+					} else if (filePath.startsWith("packages/lib/")) {
+						return `@craftdotui/lib/${filePath.replace("packages/lib/", "")}`;
+					}
+					// Fallback
+					return `@/${filePath}`;
+				})()
 			: "";
 
 		// read files and add content preserving newlines
@@ -162,8 +174,7 @@ async function buildRegistryIndex() {
 						resolvedFilePath,
 						"utf-8",
 					);
-					const processedContent =
-						replaceRegistryPathsFromImport(content).trim();
+					const processedContent = rewriteImports(content).trim();
 
 					return {
 						path: filePath,
@@ -193,7 +204,7 @@ async function buildRegistryIndex() {
             registryDependencies: ${JSON.stringify(item.registryDependencies)},
             files: ${JSON.stringify(filesWithContent, null, 2)},
             keywords: ${JSON.stringify(item.meta?.keywords ?? [])},
-            command: '@craftui/${item.name}',
+            command: '@craftdotui/${item.name}',
             component: ${
 				componentPath
 					? `(() => {
@@ -228,8 +239,13 @@ async function buildRegistryIndex() {
 
 	index += `}`;
 
-	// Ensure __registry__ directory exists
-	const registryIndexDir = path.join(process.cwd(), "__registry__");
+	// Ensure __registry__ directory exists in apps/web
+	const registryIndexDir = path.join(
+		process.cwd(),
+		"apps",
+		"web",
+		"__registry__",
+	);
 	await fs.mkdir(registryIndexDir, { recursive: true });
 
 	// Remove the previous registry index file and write the new one.
@@ -239,20 +255,49 @@ async function buildRegistryIndex() {
 }
 
 /**
+ * Replace registry paths with component paths.
+ * @param inputStr - The input string to process.
+ * @returns The processed string with registry paths replaced.
+ */
+function rewriteImports(inputStr: string): string {
+	return inputStr.replace(/(['"])([\s\S]*?)\1/g, (match, quote, content) => {
+		// Transform workspace package imports to user-facing imports
+		if (content.startsWith("@craftdotui/lib/")) {
+			const rest = content.slice("@craftdotui/lib/".length);
+			return `${quote}@/lib/${rest}${quote}`;
+		} else if (content.startsWith("@craftdotui/hooks/")) {
+			const rest = content.slice("@craftdotui/hooks/".length);
+			return `${quote}@/hooks/${rest}${quote}`;
+		} else if (content.startsWith("@craftdotui/craftui/ui/")) {
+			const rest = content.slice("@craftdotui/craftui/ui/".length);
+			return `${quote}@/components/craftui/ui/${rest}${quote}`;
+		} else if (content.startsWith("@craftdotui/craftui/components/")) {
+			const rest = content.slice(
+				"@craftdotui/craftui/components/".length,
+			);
+			return `${quote}@/components/craftui/components/${rest}${quote}`;
+		}
+
+		return match;
+	});
+}
+
+/**
  * Function to build the registry.
  * It clears the previous registry directory, builds the registry files,
  * and replaces specific path strings in the generated files.
  */
 async function buildRegistry() {
-	// ensure 'public/r' exists
-	await fs.mkdir("public/r", { recursive: true });
+	// ensure 'apps/web/public/r' exists
+	const publicRDir = path.join(process.cwd(), "apps", "web", "public", "r");
+	await fs.mkdir(publicRDir, { recursive: true });
 
 	// remove everything except registry.json
-	const entries = await fs.readdir("public/r");
+	const entries = await fs.readdir(publicRDir);
 	await Promise.all(
 		entries.map(async (entry) => {
 			if (entry === "registry.json") return;
-			const entryPath = path.join("public/r", entry);
+			const entryPath = path.join(publicRDir, entry);
 			await fs.rm(entryPath, { recursive: true, force: true });
 		}),
 	);
@@ -260,7 +305,7 @@ async function buildRegistry() {
 	// build the registry using the shadcn build command
 	await new Promise((resolve, reject) => {
 		const process = exec(
-			`bunx shadcn@latest build public/r/registry.json --output ./public/r/`,
+			`bunx shadcn@latest build apps/web/public/r/registry.json --output ./apps/web/public/r/`,
 			(error, stdout, stderr) => {
 				if (error) {
 					console.error(`Error executing shadcn build: ${error}`);
@@ -282,14 +327,24 @@ async function buildRegistry() {
 		}, 30000);
 	});
 
-	// replace `@/registry/craftui/` with `@/components/craftui/` in all files
-	const files = await fs.readdir(path.join(process.cwd(), "public/r"));
+	// replace workspace package imports with user-facing imports in all files
+	const files = await fs.readdir(
+		path.join(process.cwd(), "apps", "web", "public", "r"),
+	);
 
 	await Promise.all(
 		files.map(async (file) => {
 			if (file === "registry.json") return; // Skip the main registry file
 
-			const filePath = path.join(process.cwd(), "public/r", file);
+			const filePath = path.join(
+				process.cwd(),
+				"apps",
+				"web",
+				"public",
+				"r",
+				file,
+			);
+
 			const content = await fs.readFile(filePath, "utf-8");
 
 			try {
@@ -298,13 +353,8 @@ async function buildRegistry() {
 				// Replace `@/registry` in file contents
 				registryItem.files = registryItem.files?.map(
 					(file: RegistryItemFile) => {
-						if (
-							file.content?.includes("@/registry") ||
-							file.content?.includes("@workspace/ui/")
-						) {
-							file.content = replaceRegistryPathsFromImport(
-								file.content,
-							);
+						if (file.content?.includes("@craftdotui/")) {
+							file.content = rewriteImports(file.content);
 						}
 						return file;
 					},
@@ -328,16 +378,16 @@ async function buildRegistry() {
 // 3. Build the registry.
 async function main() {
 	try {
-		console.log("1. Building merged registry file...");
+		console.log("1. Building merged registry file...\n");
 		await buildRegistryFile();
 
-		console.log("2. Building registry/__index__.tsx...");
+		console.log("2. Building registry/__index__.tsx...\n");
 		await buildRegistryIndex();
 
-		console.log("3. Building registry...");
+		console.log("3. Building registry with shadcn build...\n");
 		await buildRegistry();
 
-		console.log("Registry build completed successfully!");
+		console.log("Registry build completed successfully!\n");
 
 		// Exit cleanly after success
 		process.exit(0);

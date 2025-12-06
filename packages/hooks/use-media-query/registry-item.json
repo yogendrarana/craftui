@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "use-media-query",
+	"type": "registry:hook",
+	"description": "A hook for responsive breakpoint detection using media queries",
+	"dependencies": [],
+	"devDependencies": [],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "packages/hooks/use-media-query/index.ts",
+			"type": "registry:hook",
+			"target": "hooks/use-auto-height.tsx"
+		}
+	]
+}

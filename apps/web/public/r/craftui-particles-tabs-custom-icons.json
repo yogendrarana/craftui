@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-tabs-custom-icons",
+	"type": "registry:component",
+	"description": "Tabs with custom icons demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-tabs"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/tabs/tabs-custom-icons/index.tsx",
+			"content": "\"use client\";\n\nimport { Bell, Home, Settings, User } from \"lucide-react\";\nimport {\n\tTabs,\n\tTabList,\n\tTab,\n\tTabPanels,\n\tTabPanel,\n} from \"@/components/craftui/ui/tabs\";\nimport type { Transition } from \"motion/react\";\n\nexport default function TabsCustomIcons() {\n\tconst variants = {\n\t\tinitial: { opacity: 0, scale: 0.95 },\n\t\tanimate: { opacity: 1, scale: 1 },\n\t\texit: { opacity: 0, scale: 0.95 },\n\t};\n\n\tconst transition: Transition = { duration: 0.25, ease: \"easeInOut\" };\n\n\treturn (\n\t\t<div>\n\t\t\t<Tabs defaultTab=\"home\" instanceId=\"tabs-custom-icons\">\n\t\t\t\t<TabList>\n\t\t\t\t\t<Tab value=\"home\" icon={<Home className=\"h-4 w-4\" />}>\n\t\t\t\t\t\tHome\n\t\t\t\t\t</Tab>\n\t\t\t\t\t<Tab value=\"profile\" icon={<User className=\"h-4 w-4\" />}>\n\t\t\t\t\t\tProfile\n\t\t\t\t\t</Tab>\n\t\t\t\t\t<Tab\n\t\t\t\t\t\tvalue=\"notifications\"\n\t\t\t\t\t\ticon={<Bell className=\"h-4 w-4\" />}\n\t\t\t\t\t>\n\t\t\t\t\t\tNotifications\n\t\t\t\t\t</Tab>\n\t\t\t\t\t<Tab\n\t\t\t\t\t\tvalue=\"settings\"\n\t\t\t\t\t\ticon={<Settings className=\"h-4 w-4\" />}\n\t\t\t\t\t>\n\t\t\t\t\t\tSettings\n\t\t\t\t\t</Tab>\n\t\t\t\t</TabList>\n\t\t\t\t<TabPanels>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue=\"home\"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">Home content</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue=\"profile\"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">Profile content</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue=\"notifications\"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">\n\t\t\t\t\t\t\tNotifications content\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel\n\t\t\t\t\t\tvalue=\"settings\"\n\t\t\t\t\t\tvariants={variants}\n\t\t\t\t\t\ttransition={transition}\n\t\t\t\t\t>\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">Settings content</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t</TabPanels>\n\t\t\t</Tabs>\n\t\t</div>\n\t);\n}\n",
+			"type": "registry:component",
+			"target": "components/craftui/particles/tabs-custom-icons.tsx"
+		}
+	]
+}

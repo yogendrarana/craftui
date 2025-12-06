@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-text-scramble",
+	"type": "registry:component",
+	"description": "Basic text scramble demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-text-scramble"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/text-scramble/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/text-scramble.tsx"
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-accordion",
+	"type": "registry:block",
+	"description": "Basic accordion demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-accordion"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/accordion/index.tsx",
+			"type": "registry:block",
+			"target": "components/craftui/particles/accordion.tsx"
+		}
+	]
+}

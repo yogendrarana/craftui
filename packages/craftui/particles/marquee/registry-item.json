@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-marquee",
+	"type": "registry:component",
+	"description": "Basic marquee demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-marquee"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/marquee/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/marquee.tsx"
+		}
+	]
+}

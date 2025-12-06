@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-tabs",
+	"type": "registry:component",
+	"description": "Basic tabs demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-tabs"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/tabs/index.tsx",
+			"content": "\"use client\";\n\nimport {\n\tTabs,\n\tTabList,\n\tTab,\n\tTabPanels,\n\tTabPanel,\n} from \"@/components/craftui/ui/tabs\";\n\nexport default function TabsDemo() {\n\treturn (\n\t\t<div>\n\t\t\t<Tabs defaultTab=\"tab1\" instanceId=\"tabs-basic\">\n\t\t\t\t<TabList>\n\t\t\t\t\t<Tab value=\"tab1\">First Tab</Tab>\n\t\t\t\t\t<Tab value=\"tab2\">Second Tab</Tab>\n\t\t\t\t\t<Tab value=\"tab3\">Third Tab</Tab>\n\t\t\t\t\t<Tab value=\"tab4\">Fourth Tab</Tab>\n\t\t\t\t</TabList>\n\n\t\t\t\t<TabPanels>\n\t\t\t\t\t<TabPanel value=\"tab1\">\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">\n\t\t\t\t\t\t\tContent for first tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel value=\"tab2\">\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">\n\t\t\t\t\t\t\tContent for second tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel value=\"tab3\">\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">\n\t\t\t\t\t\t\tContent for third tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t\t<TabPanel value=\"tab4\">\n\t\t\t\t\t\t<div className=\"h-20 text-sm\">\n\t\t\t\t\t\t\tContent for fourth tab\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</TabPanel>\n\t\t\t\t</TabPanels>\n\t\t\t</Tabs>\n\t\t</div>\n\t);\n}\n",
+			"type": "registry:component",
+			"target": "components/craftui/particles/tabs.tsx"
+		}
+	]
+}

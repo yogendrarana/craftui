@@ -1,0 +1,85 @@
+---
+title: useOptimistic
+description: A hook that wraps React.useOptimistic to manage optimistic updates for lists, supporting add, update, and delete actions.
+slug: /hooks/use-optimistic
+published: true
+date: 2025-01-26T00:00:00.000Z
+---
+
+## Installation
+
+<Installation name="use-optimistic" />
+
+## Usage
+
+```tsx
+import { useOptimistic } from "@/hooks/use-optimistic";
+
+interface Todo {
+  id: string;
+  title: string;
+  completed: boolean;
+}
+
+function TodoList({ initialTodos }: { initialTodos: Todo[] }) {
+  const [optimisticTodos, setOptimisticTodos] = useOptimistic(initialTodos);
+
+  const addTodo = async (title: string) => {
+    const newTodo = { id: crypto.randomUUID(), title, completed: false };
+    setOptimisticTodos({ action: "add", item: newTodo });
+
+    // Make API call
+    await fetch("/api/todos", {
+      method: "POST",
+      body: JSON.stringify(newTodo),
+    });
+  };
+
+  const updateTodo = async (todo: Todo) => {
+    setOptimisticTodos({ action: "update", item: todo });
+
+    await fetch(`/api/todos/${todo.id}`, {
+      method: "PUT",
+      body: JSON.stringify(todo),
+    });
+  };
+
+  const deleteTodo = async (todo: Todo) => {
+    setOptimisticTodos({ action: "delete", item: todo });
+
+    await fetch(`/api/todos/${todo.id}`, {
+      method: "DELETE",
+    });
+  };
+
+  return (
+    <ul>
+      {optimisticTodos.map((todo) => (
+        <li key={todo.id}>
+          {todo.title}
+          <button onClick={() => deleteTodo(todo)}>Delete</button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+```
+
+## API Reference
+
+#### useOptimistic
+
+A hook that wraps React.useOptimistic to manage optimistic updates for lists.
+
+| Parameter | Type    | Description                                           |
+| --------- | ------- | ----------------------------------------------------- |
+| data      | TData[] | Initial data array (items must have an `id` property) |
+
+- First element: The optimistic data array
+- Second element: Function to update the optimistic state
+
+## Actions
+
+- **add**: Adds a new item to the list
+- **update**: Updates an existing item (matched by `id`)
+- **delete**: Removes an item from the list (matched by `id`)

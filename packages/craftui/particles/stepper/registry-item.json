@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-stepper",
+	"type": "registry:block",
+	"description": "Basic stepper demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-stepper"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/stepper/index.tsx",
+			"type": "registry:block",
+			"target": "components/craftui/particles/stepper.tsx"
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-dialog",
+	"type": "registry:ui",
+	"description": "A dialog/modal component with animations",
+	"dependencies": ["motion", "lucide-react"],
+	"registryDependencies": ["@craftdotui/utils"],
+	"files": [
+		{
+			"path": "packages/craftui/ui/dialog/index.tsx",
+			"type": "registry:ui",
+			"target": "components/craftui/ui/dialog.tsx"
+		}
+	]
+}

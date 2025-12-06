@@ -1,0 +1,22 @@
+{
+	"extends": "../tsconfig/react-library.json",
+	"compilerOptions": {
+		"rootDir": ".",
+		"outDir": "./dist"
+	},
+	"include": [
+		"registry/**/*",
+		"index.ts",
+		"use-callback",
+		"use-click-outside",
+		"use-confetti",
+		"use-debounce",
+		"use-hydrated",
+		"use-is-mobile",
+		"use-media-query",
+		"use-mounted",
+		"use-optimistic",
+		"use-query-string"
+	],
+	"exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,44 @@
+---
+title: useClickOutside
+description: A hook to detect clicks outside of a specified element
+slug: /hooks/use-click-outside
+published: true
+date: 2025-01-26T00:00:00.000Z
+---
+
+## Installation
+
+<Installation name="use-click-outside" />
+
+## Usage
+
+```tsx
+import { useRef } from "react";
+import { useClickOutside } from "@/hooks/use-click-outside";
+
+function Dropdown() {
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useClickOutside(dropdownRef, () => {
+    console.log("Clicked outside!");
+    // Close dropdown logic here
+  });
+
+  return (
+    <div ref={dropdownRef}>
+      <p>Click outside this element</p>
+    </div>
+  );
+}
+```
+
+## API Reference
+
+#### useClickOutside
+
+A hook to detect clicks outside of a specified element.
+
+| Parameter | Type                                      | Description                                                 |
+| --------- | ----------------------------------------- | ----------------------------------------------------------- |
+| ref       | RefObject\<T\>                            | Reference to the element to detect clicks outside of        |
+| handler   | (event: MouseEvent \| TouchEvent) => void | Callback function to execute when click outside is detected |

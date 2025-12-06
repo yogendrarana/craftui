@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-select-groups",
+	"type": "registry:component",
+	"description": "Select with groups demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-select"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/select/select-groups/index.tsx",
+			"content": "\"use client\";\n\nimport React from \"react\";\nimport {\n\tSelect,\n\tSelectTrigger,\n\tSelectContent,\n\tSelectOption,\n\tSelectGroup,\n\tSelectValue,\n} from \"@/components/craftui/ui/select\";\n\nexport default function SelectGroups() {\n\treturn (\n\t\t<Select>\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectContent>\n\t\t\t\t<SelectGroup label=\"Frontend\">\n\t\t\t\t\t<SelectOption value=\"react\">React</SelectOption>\n\t\t\t\t\t<SelectOption value=\"vue\">Vue</SelectOption>\n\t\t\t\t\t<SelectOption value=\"svelte\">Svelte</SelectOption>\n\t\t\t\t</SelectGroup>\n\t\t\t\t<SelectGroup label=\"Backend\">\n\t\t\t\t\t<SelectOption value=\"node\">Node</SelectOption>\n\t\t\t\t\t<SelectOption value=\"deno\">Deno</SelectOption>\n\t\t\t\t\t<SelectOption value=\"bun\">Bun</SelectOption>\n\t\t\t\t\t<SelectOption value=\"laravel\" disabled>\n\t\t\t\t\t\tLaravel\n\t\t\t\t\t</SelectOption>\n\t\t\t\t</SelectGroup>\n\t\t\t</SelectContent>\n\t\t</Select>\n\t);\n}\n",
+			"type": "registry:component",
+			"target": "components/craftui/particles/select-groups.tsx"
+		}
+	]
+}
