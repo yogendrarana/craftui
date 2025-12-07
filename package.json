@@ -22,6 +22,7 @@
 		"@shadcn/ui": "^0.0.4",
 		"@types/node": "^24.9.1",
 		"rimraf": "^6.1.2",
+		"tailwindcss-animate": "^1.0.7",
 		"tsx": "^4.20.6",
 		"typescript": "^5.9.3"
 	}
