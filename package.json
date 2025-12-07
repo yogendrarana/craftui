@@ -18,12 +18,17 @@
 		"build:registry": "tsx ./scripts/build-registry.mts && bun format"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.7",
+		"@biomejs/biome": "2.3.8",
 		"@shadcn/ui": "^0.0.4",
-		"@types/node": "^24.9.1",
+		"@types/node": "^24.10.1",
 		"rimraf": "^6.1.2",
 		"tailwindcss-animate": "^1.0.7",
-		"tsx": "^4.20.6",
+		"tsx": "^4.21.0",
 		"typescript": "^5.9.3"
+	},
+	"dependencies": {
+		"next": "^16.0.7",
+		"react": "^19.2.1",
+		"react-dom": "^19.2.1"
 	}
 }
