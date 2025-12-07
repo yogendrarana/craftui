@@ -1,19 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Github } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { useStarStore } from "@/store/use-star-store";
 
 interface PropTypes {
 	className?: string;
 }
 
 export const GithubStars = ({ className }: PropTypes) => {
-	const { stars, setStars } = useStarStore();
+	const [stars, setStars] = useState(0);
 
 	useEffect(() => {
 		const fetchStars = async () => {
@@ -45,7 +44,7 @@ export const GithubStars = ({ className }: PropTypes) => {
 		};
 
 		fetchStars();
-	}, [stars, setStars]);
+	}, [stars]);
 
 	return (
 		<Link
