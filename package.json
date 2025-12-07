@@ -1,13 +1,13 @@
 {
 	"name": "craftdotui",
 	"version": "0.1.0",
-	"private": true,
+	"devDependencies": {
+		"@biomejs/biome": "2.3.8",
+		"tsx": "^4.21.0",
+		"typescript": "^5.9.3"
+	},
 	"license": "MIT",
-	"type": "module",
-	"workspaces": [
-		"apps/*",
-		"packages/*"
-	],
+	"private": true,
 	"scripts": {
 		"dev": "cd apps/web && bun run dev",
 		"build": "cd apps/web && bun run build",
@@ -17,18 +17,9 @@
 		"check": "bunx biome check --write",
 		"build:registry": "tsx ./scripts/build-registry.mts && bun format"
 	},
-	"devDependencies": {
-		"@biomejs/biome": "2.3.8",
-		"@shadcn/ui": "^0.0.4",
-		"@types/node": "^24.10.1",
-		"rimraf": "^6.1.2",
-		"tailwindcss-animate": "^1.0.7",
-		"tsx": "^4.21.0",
-		"typescript": "^5.9.3"
-	},
-	"dependencies": {
-		"next": "^16.0.7",
-		"react": "^19.2.1",
-		"react-dom": "^19.2.1"
-	}
+	"type": "module",
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	]
 }
