@@ -1,4 +1,3 @@
-import type React from "react";
 import { notFound } from "next/navigation";
 import { allDocs } from "content-collections";
 
@@ -12,7 +11,6 @@ import { DocsSidebar } from "@/components/docs-sidebar";
 import { MaxWidthContainer } from "@/components/max-width-container";
 
 interface PageProps {
-	children: React.ReactNode;
 	params: Promise<{ slug?: string[] }>;
 }
 
