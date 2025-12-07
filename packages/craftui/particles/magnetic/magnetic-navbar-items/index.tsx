@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import Magnetic from "../../../components/magnetic";
+import Magnetic from "@craftdotui/craftui/components/magnetic";
 
 // nav items
 const navMenu = [

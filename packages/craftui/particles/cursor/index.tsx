@@ -1,11 +1,11 @@
 "use client";
 
 import { ArrowRight, Sparkles } from "lucide-react";
-import CustomCursor from "../../components/cursor";
+import Cursor from "@craftdotui/craftui/components/cursor";
 
-export default function CustomCursorComplex() {
+export default function CursorPreview() {
 	return (
-		<CustomCursor
+		<Cursor
 			cursor={
 				<div className="flex items-center space-x-2 bg-yellow-300 px-3 py-1 rounded-full shadow-lg">
 					<Sparkles className="w-4 h-4 text-yellow-600" />
@@ -20,6 +20,6 @@ export default function CustomCursorComplex() {
 			<div className="text-center">
 				<p>Hover over this area to see a custom cursor</p>
 			</div>
-		</CustomCursor>
+		</Cursor>
 	);
 }

@@ -8,7 +8,7 @@
 	"files": [
 		{
 			"path": "packages/craftui/particles/text-typing/index.tsx",
-			"content": "\"use client\";\n\nimport TextTyping from \"../../components/text-typing\";\n\nexport default function Home() {\n\treturn (\n\t\t<TextTyping typingSpeed={100}>This is typing effect demo!</TextTyping>\n\t);\n}\n",
+			"content": "\"use client\";\n\nimport TextTyping from \"@/components/craftui/components/text-typing\";\n\nexport default function Home() {\n\treturn (\n\t\t<TextTyping typingSpeed={100}>This is typing effect demo!</TextTyping>\n\t);\n}\n",
 			"type": "registry:component",
 			"target": "components/craftui/particles/text-typing.tsx"
 		}

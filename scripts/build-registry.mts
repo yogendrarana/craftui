@@ -106,6 +106,34 @@ async function getRegistryItemsFromFolder(registryDirPath: string) {
 }
 
 /**
+ * Replace registry paths with component paths.
+ * @param inputStr - The input string to process.
+ * @returns The processed string with registry paths replaced.
+ */
+function rewriteImports(inputStr: string): string {
+	return inputStr.replace(/(['"])([\s\S]*?)\1/g, (match, quote, content) => {
+		// Transform workspace package imports to user-facing imports
+		if (content.startsWith("@craftdotui/lib/")) {
+			const rest = content.slice("@craftdotui/lib/".length);
+			return `${quote}@/lib/${rest}${quote}`;
+		} else if (content.startsWith("@craftdotui/hooks/")) {
+			const rest = content.slice("@craftdotui/hooks/".length);
+			return `${quote}@/hooks/${rest}${quote}`;
+		} else if (content.startsWith("@craftdotui/craftui/ui/")) {
+			const rest = content.slice("@craftdotui/craftui/ui/".length);
+			return `${quote}@/components/craftui/ui/${rest}${quote}`;
+		} else if (content.startsWith("@craftdotui/craftui/components/")) {
+			const rest = content.slice(
+				"@craftdotui/craftui/components/".length,
+			);
+			return `${quote}@/components/craftui/components/${rest}${quote}`;
+		}
+
+		return match;
+	});
+}
+
+/**
  * Function to build the registry index file.
  * This function reads the registry.json items and builds a dynamic index file.
  */
@@ -252,34 +280,6 @@ async function buildRegistryIndex() {
 	const registryIndexPath = path.join(registryIndexDir, "index.tsx");
 	rimraf.sync(registryIndexPath);
 	await fs.writeFile(registryIndexPath, index);
-}
-
-/**
- * Replace registry paths with component paths.
- * @param inputStr - The input string to process.
- * @returns The processed string with registry paths replaced.
- */
-function rewriteImports(inputStr: string): string {
-	return inputStr.replace(/(['"])([\s\S]*?)\1/g, (match, quote, content) => {
-		// Transform workspace package imports to user-facing imports
-		if (content.startsWith("@craftdotui/lib/")) {
-			const rest = content.slice("@craftdotui/lib/".length);
-			return `${quote}@/lib/${rest}${quote}`;
-		} else if (content.startsWith("@craftdotui/hooks/")) {
-			const rest = content.slice("@craftdotui/hooks/".length);
-			return `${quote}@/hooks/${rest}${quote}`;
-		} else if (content.startsWith("@craftdotui/craftui/ui/")) {
-			const rest = content.slice("@craftdotui/craftui/ui/".length);
-			return `${quote}@/components/craftui/ui/${rest}${quote}`;
-		} else if (content.startsWith("@craftdotui/craftui/components/")) {
-			const rest = content.slice(
-				"@craftdotui/craftui/components/".length,
-			);
-			return `${quote}@/components/craftui/components/${rest}${quote}`;
-		}
-
-		return match;
-	});
 }
 
 /**

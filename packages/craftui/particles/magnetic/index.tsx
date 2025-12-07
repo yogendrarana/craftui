@@ -1,6 +1,6 @@
 "use client";
 
-import Magnetic from "../../components/magnetic";
+import Magnetic from "@craftdotui/craftui/components/magnetic";
 
 export default function MagneticBasic() {
 	return (

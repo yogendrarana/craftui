@@ -1,6 +1,6 @@
 "use client";
 
-import Marquee from "../../components/marquee";
+import Marquee from "@craftdotui/craftui/components/marquee";
 
 type IconProps = React.HTMLAttributes<SVGElement>;
 export const Icons = {

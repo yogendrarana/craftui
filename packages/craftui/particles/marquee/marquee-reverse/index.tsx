@@ -1,6 +1,6 @@
 "use client";
 
-import Marquee from "../../../components/marquee";
+import Marquee from "@craftdotui/craftui/components/marquee";
 
 const team = [
 	{

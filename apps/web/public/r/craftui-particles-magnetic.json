@@ -8,7 +8,7 @@
 	"files": [
 		{
 			"path": "packages/craftui/particles/magnetic/index.tsx",
-			"content": "\"use client\";\n\nimport Magnetic from \"../../components/magnetic\";\n\nexport default function MagneticBasic() {\n\treturn (\n\t\t<Magnetic>\n\t\t\t<button\n\t\t\t\ttype=\"button\"\n\t\t\t\tclassName=\"px-4 py-2 cursor-pointer border rounded shadow\"\n\t\t\t>\n\t\t\t\tHover Me\n\t\t\t</button>\n\t\t</Magnetic>\n\t);\n}\n",
+			"content": "\"use client\";\n\nimport Magnetic from \"@/components/craftui/components/magnetic\";\n\nexport default function MagneticBasic() {\n\treturn (\n\t\t<Magnetic>\n\t\t\t<button\n\t\t\t\ttype=\"button\"\n\t\t\t\tclassName=\"px-4 py-2 cursor-pointer border rounded shadow\"\n\t\t\t>\n\t\t\t\tHover Me\n\t\t\t</button>\n\t\t</Magnetic>\n\t);\n}\n",
 			"type": "registry:component",
 			"target": "components/craftui/particles/magnetic.tsx"
 		}

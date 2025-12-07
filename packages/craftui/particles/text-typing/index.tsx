@@ -1,6 +1,6 @@
 "use client";
 
-import TextTyping from "../../components/text-typing";
+import TextTyping from "@craftdotui/craftui/components/text-typing";
 
 export default function Home() {
 	return (

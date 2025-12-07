@@ -8,7 +8,7 @@ import {
 	AnimatePresence,
 } from "motion/react";
 
-import { cn } from "@craftdotui/lib";
+import { cn } from "@craftdotui/lib/utils";
 
 type AnimationType = "line" | "none";
 

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 
-import { cn } from "@craftdotui/lib";
+import { cn } from "@craftdotui/lib/utils";
 
 export interface AnimatedTooltipProps {
 	children: React.ReactNode;

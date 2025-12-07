@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import TextScramble from "../../../components/text-scramble";
+import TextScramble from "@craftdotui/craftui/components/text-scramble";
 
 export default function TextScramblePreview() {
 	const [triggerScramble, setTriggerScramble] = React.useState(false);
