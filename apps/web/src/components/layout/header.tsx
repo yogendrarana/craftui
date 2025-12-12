@@ -15,7 +15,7 @@ export function Header() {
 
 	const navLinks = [
 		{ href: "/docs/getting-started/introduction", label: "Docs" },
-		{ href: "/craftui/ui/accordion", label: "UI" },
+		{ href: "/docs/craftui/ui/accordion", label: "UI" },
 		{
 			href: "/docs/craftui/components/animated-tooltip",
 			label: "Components",
