@@ -5,7 +5,7 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 	AccordionContent,
-} from "@craftdotui/craftui/ui/accordion";
+} from "@craftdotui/craftui/components/accordion";
 import { ChevronDown } from "lucide-react";
 
 export default function AccordionDemo() {

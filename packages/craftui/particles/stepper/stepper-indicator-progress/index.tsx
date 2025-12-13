@@ -9,7 +9,7 @@ import {
 	StepperContent,
 	PrevStep,
 	NextStep,
-} from "@craftdotui/craftui/ui/stepper";
+} from "@craftdotui/craftui/components/stepper";
 
 const StepperPreview = () => {
 	return (

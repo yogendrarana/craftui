@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "craftui-particles-text-scramble-custom-trigger",
-	"type": "registry:component",
 	"description": "Text scramble with custom trigger demo",
 	"dependencies": [],
 	"registryDependencies": ["@craftdotui/craftui-text-scramble"],
@@ -12,5 +11,6 @@
 			"type": "registry:component",
 			"target": "components/craftui/particles/text-scramble-custom-trigger.tsx"
 		}
-	]
+	],
+	"type": "registry:component"
 }

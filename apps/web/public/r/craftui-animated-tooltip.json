@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "craftui-animated-tooltip",
-	"type": "registry:component",
 	"description": "An animated tooltip component",
 	"dependencies": ["motion"],
 	"registryDependencies": ["@craftdotui/utils"],
@@ -12,5 +11,6 @@
 			"type": "registry:component",
 			"target": "components/craftui/components/animated-tooltip.tsx"
 		}
-	]
+	],
+	"type": "registry:component"
 }

@@ -6,7 +6,7 @@ import {
 	Tab,
 	TabPanels,
 	TabPanel,
-} from "@craftdotui/craftui/ui/tabs";
+} from "@craftdotui/craftui/components/tabs";
 import type { Transition } from "motion/react";
 
 export default function TabsCustomVariants() {

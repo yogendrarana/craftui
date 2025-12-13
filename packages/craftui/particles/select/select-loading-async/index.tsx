@@ -7,7 +7,7 @@ import {
 	SelectContent,
 	SelectOption,
 	SelectValue,
-} from "@craftdotui/craftui/ui/select";
+} from "@craftdotui/craftui/components/select";
 
 export default function SelectLoadingAsync() {
 	const [users, setUsers] = useState([]);

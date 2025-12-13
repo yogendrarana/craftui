@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "craftui-dock",
-	"type": "registry:component",
 	"description": "A dock component",
 	"dependencies": ["motion"],
 	"registryDependencies": ["@craftdotui/utils"],
@@ -12,5 +11,6 @@
 			"type": "registry:component",
 			"target": "components/craftui/components/dock.tsx"
 		}
-	]
+	],
+	"type": "registry:component"
 }

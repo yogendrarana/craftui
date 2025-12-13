@@ -7,7 +7,7 @@ import {
 	SelectOption,
 	SelectGroup,
 	SelectValue,
-} from "@craftdotui/craftui/ui/select";
+} from "@craftdotui/craftui/components/select";
 
 export default function SelectGroups() {
 	return (

@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "craftui-particles-marquee-reverse",
-	"type": "registry:component",
 	"description": "Reverse marquee demo",
 	"dependencies": [],
 	"registryDependencies": ["@craftdotui/craftui-marquee"],
@@ -12,5 +11,6 @@
 			"type": "registry:component",
 			"target": "components/craftui/particles/marquee-reverse.tsx"
 		}
-	]
+	],
+	"type": "registry:component"
 }

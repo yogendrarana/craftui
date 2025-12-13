@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "craftui-particles-dock",
-	"type": "registry:component",
 	"description": "Basic dock demo",
 	"dependencies": [],
 	"registryDependencies": ["@craftdotui/craftui-dock"],
@@ -12,5 +11,6 @@
 			"type": "registry:component",
 			"target": "components/craftui/particles/dock.tsx"
 		}
-	]
+	],
+	"type": "registry:component"
 }

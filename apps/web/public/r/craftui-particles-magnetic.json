@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "craftui-particles-magnetic",
-	"type": "registry:component",
 	"description": "Basic magnetic demo",
 	"dependencies": [],
 	"registryDependencies": ["@craftdotui/craftui-magnetic"],
@@ -12,5 +11,6 @@
 			"type": "registry:component",
 			"target": "components/craftui/particles/magnetic.tsx"
 		}
-	]
+	],
+	"type": "registry:component"
 }

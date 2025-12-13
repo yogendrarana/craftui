@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "use-confetti",
-	"type": "registry:hook",
 	"description": "A hook to trigger confetti animation",
 	"dependencies": [],
 	"devDependencies": [],
@@ -13,5 +12,6 @@
 			"type": "registry:hook",
 			"target": "hooks/use-confetti.tsx"
 		}
-	]
+	],
+	"type": "registry:hook"
 }

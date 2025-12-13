@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "craftui-particles-cursor",
-	"type": "registry:component",
 	"description": "Basic cursor demo",
 	"dependencies": ["lucide-react"],
 	"registryDependencies": ["@craftdotui/craftui-cursor"],
@@ -12,5 +11,6 @@
 			"type": "registry:component",
 			"target": "components/craftui/particles/cursor.tsx"
 		}
-	]
+	],
+	"type": "registry:component"
 }

@@ -8,7 +8,7 @@ import {
 	DialogTitle,
 	DialogDescription,
 	DialogClose,
-} from "@craftdotui/craftui/ui/dialog";
+} from "@craftdotui/craftui/components/dialog";
 
 export default function DialogBasic() {
 	return (

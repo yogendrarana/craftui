@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "craftui-particles-cursor-text",
-	"type": "registry:component",
 	"description": "Text cursor demo",
 	"dependencies": [],
 	"registryDependencies": ["@craftdotui/craftui-cursor"],
@@ -12,5 +11,6 @@
 			"type": "registry:component",
 			"target": "components/craftui/particles/cursor-text.tsx"
 		}
-	]
+	],
+	"type": "registry:component"
 }

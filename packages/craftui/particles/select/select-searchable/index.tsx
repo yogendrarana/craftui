@@ -6,7 +6,7 @@ import {
 	SelectContent,
 	SelectOption,
 	SelectValue,
-} from "@craftdotui/craftui/ui/select";
+} from "@craftdotui/craftui/components/select";
 
 const countries = [
 	{ label: "Australia", value: "AU" },

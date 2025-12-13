@@ -9,7 +9,7 @@ import {
 	DrawerTitle,
 	DrawerClose,
 	DrawerDescription,
-} from "@craftdotui/craftui/ui/drawer";
+} from "@craftdotui/craftui/components/drawer";
 
 export default function DrawerDemo() {
 	return (

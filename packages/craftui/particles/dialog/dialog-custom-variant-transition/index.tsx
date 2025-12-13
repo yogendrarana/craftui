@@ -8,7 +8,7 @@ import {
 	DialogTitle,
 	DialogDescription,
 	DialogClose,
-} from "@craftdotui/craftui/ui/dialog";
+} from "@craftdotui/craftui/components/dialog";
 import type { Variants, Transition } from "motion/react";
 
 const customVariants: Variants = {

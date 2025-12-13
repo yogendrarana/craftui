@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "use-hydrated",
-	"type": "registry:hook",
 	"description": "A hook that returns whether the component has hydrated on the client to avoid hydration mismatches.",
 	"dependencies": [],
 	"devDependencies": [],
@@ -13,5 +12,6 @@
 			"type": "registry:hook",
 			"target": "hooks/use-hydrated.ts"
 		}
-	]
+	],
+	"type": "registry:hook"
 }

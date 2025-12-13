@@ -7,7 +7,7 @@ import {
 	TimelineContent,
 	TimelineTitle,
 	TimelineDescription,
-} from "@craftdotui/craftui/ui/timeline";
+} from "@craftdotui/craftui/components/timeline";
 
 export default function TimelineFillMarker() {
 	return (

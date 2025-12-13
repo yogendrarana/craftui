@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-drawer",
+	"type": "registry:component",
+	"description": "A raw implementation of drawer component",
+	"dependencies": ["motion"],
+	"registryDependencies": ["@craftdotui/utils"],
+	"files": [
+		{
+			"path": "packages/craftui/components/drawer/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/components/drawer.tsx"
+		}
+	]
+}

@@ -8,7 +8,7 @@ import {
 	SelectOption,
 	SelectGroup,
 	SelectValue,
-} from "@craftdotui/craftui/ui/select";
+} from "@craftdotui/craftui/components/select";
 
 export default function SelectControlled() {
 	const [open, setOpen] = React.useState(false);

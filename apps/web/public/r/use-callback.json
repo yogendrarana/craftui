@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "use-callback",
-	"type": "registry:hook",
 	"description": "A hook that provides a stable callback reference while always invoking the latest version of the provided function.",
 	"dependencies": [],
 	"devDependencies": [],
@@ -13,5 +12,6 @@
 			"type": "registry:hook",
 			"target": "hooks/use-callback.tsx"
 		}
-	]
+	],
+	"type": "registry:hook"
 }

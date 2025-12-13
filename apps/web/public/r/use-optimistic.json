@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "use-optimistic",
-	"type": "registry:hook",
 	"description": "A hook that wraps React.useOptimistic to manage optimistic updates for lists, supporting add, update, and delete actions.",
 	"dependencies": [],
 	"devDependencies": [],
@@ -13,5 +12,6 @@
 			"type": "registry:hook",
 			"target": "hooks/use-optimistic.ts"
 		}
-	]
+	],
+	"type": "registry:hook"
 }

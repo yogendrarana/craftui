@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "use-query-string",
-	"type": "registry:hook",
 	"description": "A hook that helps build updated URL query strings by merging or removing parameters from existing search params.",
 	"dependencies": [],
 	"devDependencies": [],
@@ -13,5 +12,6 @@
 			"type": "registry:hook",
 			"target": "hooks/use-query-string.ts"
 		}
-	]
+	],
+	"type": "registry:hook"
 }

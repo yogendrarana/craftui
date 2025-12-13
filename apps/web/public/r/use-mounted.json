@@ -1,7 +1,6 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "use-mounted",
-	"type": "registry:hook",
 	"description": "A hook that returns whether the component is currently mounted, updating on mount and unmount.",
 	"dependencies": [],
 	"devDependencies": [],
@@ -13,5 +12,6 @@
 			"type": "registry:hook",
 			"target": "hooks/use-mounted.ts"
 		}
-	]
+	],
+	"type": "registry:hook"
 }

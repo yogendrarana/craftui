@@ -1,15 +1,15 @@
 {
 	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
 	"name": "craftui-accordion",
-	"type": "registry:ui",
+	"type": "registry:component",
 	"description": "A raw implementation of accordion component",
 	"dependencies": ["motion"],
 	"registryDependencies": ["@craftdotui/utils"],
 	"files": [
 		{
-			"path": "packages/craftui/ui/accordion/index.tsx",
-			"type": "registry:ui",
-			"target": "components/craftui/ui/accordion.tsx"
+			"path": "packages/craftui/components/accordion/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/components/accordion.tsx"
 		}
 	]
 }

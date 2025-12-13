@@ -9,7 +9,7 @@ import {
 	StepIndicator,
 	StepperNavigation,
 	StepperContent,
-} from "@craftdotui/craftui/ui/stepper";
+} from "@craftdotui/craftui/components/stepper";
 
 const StepperPreview = () => {
 	const [activeStep, setActiveStep] = useState(0);
