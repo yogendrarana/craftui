@@ -7,7 +7,7 @@ export const siteConfig = {
 		"A collection of beautiful, interactive UI components built with React.js, Tailwind CSS, and Framer Motion.",
 	url: "https://craftdotui.vercel.app",
 	projectLinks: {
-		twitter: "https://twitter.com/yoogendra_rana",
+		twitter: "https://twitter.com/yooogendra_rana",
 		github: "https://github.com/yogendrarana/craftui.git",
 	},
 	author: {
@@ -15,7 +15,7 @@ export const siteConfig = {
 		email: "yogendrarana.mail@gmail.com",
 		links: {
 			website: "https://yogendrarana.com.np",
-			twitter: "https://twitter.com/yoogendra_rana",
+			twitter: "https://twitter.com/yooogendra_rana",
 			github: "https://github.com/yogendrarana",
 		},
 	},
