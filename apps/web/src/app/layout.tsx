@@ -24,13 +24,12 @@ export const metadata: Metadata = {
 		siteName: "Craft UI",
 		images: [
 			{
-				url: "/og-image.png",
+				url: `${siteConfig.url}/og-image.png`,
 				width: 1200,
 				height: 630,
 				alt: "Craft UI Open Graph Image",
 			},
 		],
-		locale: "en_US",
 		type: "website",
 	},
 	twitter: {
