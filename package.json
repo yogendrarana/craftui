@@ -9,9 +9,9 @@
 	"license": "MIT",
 	"private": true,
 	"scripts": {
-		"dev:web": "cd apps/web && bun run dev",
-		"build:web": "cd apps/web && bun run build",
-		"start:web": "cd apps/web && bun run start",
+		"dev": "cd apps/web && bun run dev",
+		"build": "cd apps/web && bun run build",
+		"start": "cd apps/web && bun run start",
 		"lint": "bunx biome lint --write",
 		"format": "bunx biome format --write",
 		"check": "bunx biome check --write",
