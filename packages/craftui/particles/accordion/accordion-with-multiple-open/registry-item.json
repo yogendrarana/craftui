@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-accordion-with-multiple-open",
+	"type": "registry:component",
+	"description": "Accordion with multiple items open",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-accordion"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/accordion/accordion-with-multiple-open/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/accordion-with-multiple-open.tsx"
+		}
+	]
+}

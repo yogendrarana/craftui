@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-stepper-with-text-indicator",
+	"description": "Stepper with text indicator demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-stepper"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/stepper/stepper-with-text-indicator/index.tsx",
+			"content": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n\tStepper,\n\tStep,\n\tStepTitle,\n\tStepDescription,\n\tStepIndicator,\n\tStepperNavigation,\n\tStepperContent,\n} from \"@/components/craftui/components/stepper\";\n\nconst StepperPreview = () => {\n\tconst [activeStep, setActiveStep] = useState(0);\n\n\treturn (\n\t\t<div className=\"border rounded-md\">\n\t\t\t<Stepper\n\t\t\t\tactiveStep={activeStep}\n\t\t\t\ttotalSteps={4}\n\t\t\t\tonStepChange={setActiveStep}\n\t\t\t>\n\t\t\t\t<StepIndicator variant=\"text\" />\n\n\t\t\t\t<StepperContent>\n\t\t\t\t\t<Step step={1}>\n\t\t\t\t\t\t<StepTitle>Step 1</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 1 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={2}>\n\t\t\t\t\t\t<StepTitle>Step 2</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 2 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={3}>\n\t\t\t\t\t\t<StepTitle>Step 3</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 3 Description</StepDescription>\n\t\t\t\t\t</Step>\n\n\t\t\t\t\t<Step step={4}>\n\t\t\t\t\t\t<StepTitle>Step 4</StepTitle>\n\t\t\t\t\t\t<StepDescription>Step 4 Description</StepDescription>\n\t\t\t\t\t</Step>\n\t\t\t\t</StepperContent>\n\n\t\t\t\t<StepperNavigation onFinish={() => alert(\"This is the end!\")} />\n\t\t\t</Stepper>\n\t\t</div>\n\t);\n};\n\nexport default StepperPreview;\n",
+			"type": "registry:component",
+			"target": "components/craftui/particles/stepper-with-text-indicator.tsx"
+		}
+	],
+	"type": "registry:component"
+}

@@ -1,0 +1,16 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-select-with-search",
+	"description": "Searchable select demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-select"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/select/select-with-search/index.tsx",
+			"content": "\"use client\";\n\nimport {\n\tSelect,\n\tSelectTrigger,\n\tSelectContent,\n\tSelectOption,\n\tSelectValue,\n} from \"@/components/craftui/components/select\";\n\nconst countries = [\n\t{ label: \"Australia\", value: \"AU\" },\n\t{ label: \"China\", value: \"CN\" },\n\t{ label: \"Canada\", value: \"CA\" },\n\t{ label: \"Spain\", value: \"ES\" },\n\t{ label: \"France\", value: \"FR\" },\n\t{ label: \"Germany\", value: \"DE\" },\n\t{ label: \"Italy\", value: \"IT\" },\n\t{ label: \"Japan\", value: \"JP\" },\n\t{ label: \"United Kingdom\", value: \"UK\" },\n\t{ label: \"United States\", value: \"US\" },\n];\n\nexport default function Particle() {\n\treturn (\n\t\t<Select searchable>\n\t\t\t<SelectTrigger>\n\t\t\t\t<SelectValue placeholder=\"Select country ...\" />\n\t\t\t</SelectTrigger>\n\t\t\t<SelectContent>\n\t\t\t\t{countries.map((country) => (\n\t\t\t\t\t<SelectOption key={country.value} value={country.value}>\n\t\t\t\t\t\t{country.label}\n\t\t\t\t\t</SelectOption>\n\t\t\t\t))}\n\t\t\t</SelectContent>\n\t\t</Select>\n\t);\n}\n",
+			"type": "registry:component",
+			"target": "components/craftui/particles/select-with-search.tsx"
+		}
+	],
+	"type": "registry:component"
+}

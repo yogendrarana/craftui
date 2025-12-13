@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-drawer-with-controlled-state",
+	"type": "registry:component",
+	"description": "Controlled drawer demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-drawer"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/drawer/drawer-with-controlled-state/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/drawer-with-controlled-state.tsx"
+		}
+	]
+}

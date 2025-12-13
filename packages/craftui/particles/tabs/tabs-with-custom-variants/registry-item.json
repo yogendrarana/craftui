@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-tabs-with-custom-variants",
+	"type": "registry:block",
+	"description": "Tabs with custom variants demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-tabs"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/tabs/tabs-with-custom-variants/index.tsx",
+			"type": "registry:block",
+			"target": "components/craftui/particles/tabs-with-custom-variants.tsx"
+		}
+	]
+}

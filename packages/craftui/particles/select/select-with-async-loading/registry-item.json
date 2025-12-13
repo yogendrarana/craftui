@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-select-with-async-loading",
+	"type": "registry:component",
+	"description": "Select with async loading demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-select"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/select/select-with-async-loading/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/select-with-async-loading.tsx"
+		}
+	]
+}

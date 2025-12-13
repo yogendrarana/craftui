@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-timeline-with-horizontal-layout",
+	"type": "registry:component",
+	"description": "Horizontal timeline demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-timeline"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/timeline/timeline-with-horizontal-layout/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/timeline-with-horizontal-layout.tsx"
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-drawer-with-different-origins",
+	"type": "registry:component",
+	"description": "Drawer with different origins demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-drawer"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/drawer/drawer-with-different-origins/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/demo/particles/drawer-with-different-origins.tsx"
+		}
+	]
+}

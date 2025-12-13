@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-select-with-option-groups",
+	"type": "registry:component",
+	"description": "Select with groups demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-select"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/select/select-with-option-groups/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/select-with-option-groups.tsx"
+		}
+	]
+}

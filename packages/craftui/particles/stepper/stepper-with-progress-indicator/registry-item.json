@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-stepper-with-progress-indicator",
+	"type": "registry:component",
+	"description": "Stepper with progress indicator demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-stepper"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/stepper/stepper-with-progress-indicator/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/stepper-with-progress-indicator.tsx"
+		}
+	]
+}

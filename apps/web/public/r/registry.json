@@ -212,44 +212,44 @@
 			]
 		},
 		{
-			"name": "craftui-particles-accordion-custom-icons",
+			"name": "craftui-particles-accordion-with-custom-icons",
 			"type": "registry:component",
 			"description": "Accordion with custom icons",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-accordion"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/accordion/accordion-custom-icons/index.tsx",
+					"path": "packages/craftui/particles/accordion/accordion-with-custom-icons/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/accordion-custom-icons.tsx"
+					"target": "components/craftui/particles/accordion-with-custom-icons.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-accordion-default-open",
+			"name": "craftui-particles-accordion-with-default-open",
 			"type": "registry:component",
 			"description": "Accordion with default open item",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-accordion"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/accordion/accordion-default-open/index.tsx",
+					"path": "packages/craftui/particles/accordion/accordion-with-default-open/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/accordion-default-open.tsx"
+					"target": "components/craftui/particles/accordion-with-default-open.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-accordion-multiple-open",
+			"name": "craftui-particles-accordion-with-multiple-open",
 			"type": "registry:component",
 			"description": "Accordion with multiple items open",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-accordion"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/accordion/accordion-multiple-open/index.tsx",
+					"path": "packages/craftui/particles/accordion/accordion-with-multiple-open/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/accordion-multiple-open.tsx"
+					"target": "components/craftui/particles/accordion-with-multiple-open.tsx"
 				}
 			]
 		},
@@ -294,16 +294,16 @@
 			]
 		},
 		{
-			"name": "craftui-particles-cursor-text",
+			"name": "craftui-particles-cursor-with-text-trail",
 			"type": "registry:component",
 			"description": "Text cursor demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-cursor"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/cursor/cursor-text/index.tsx",
+					"path": "packages/craftui/particles/cursor/cursor-with-text-trail/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/cursor-text.tsx"
+					"target": "components/craftui/particles/cursor-with-text-trail.tsx"
 				}
 			]
 		},
@@ -322,44 +322,44 @@
 			]
 		},
 		{
-			"name": "craftui-particles-dialog-controlled",
+			"name": "craftui-particles-dialog-with-controlled-state",
 			"type": "registry:component",
 			"description": "Controlled dialog demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-dialog"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/dialog/dialog-controlled/index.tsx",
+					"path": "packages/craftui/particles/dialog/dialog-with-controlled-state/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/dialog-controlled.tsx"
+					"target": "components/craftui/particles/dialog-with-controlled-state.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-dialog-custom-backdrop",
+			"name": "craftui-particles-dialog-with-custom-backdrop",
 			"type": "registry:component",
 			"description": "Dialog with custom backdrop demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-dialog"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/dialog/dialog-custom-backdrop/index.tsx",
+					"path": "packages/craftui/particles/dialog/dialog-with-custom-backdrop/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/dialog-custom-backdrop.tsx"
+					"target": "components/craftui/particles/dialog-with-custom-backdrop.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-dialog-custom-variant-transition",
+			"name": "craftui-particles-dialog-with-custom-transition",
 			"type": "registry:component",
 			"description": "Dialog with custom variant and transition demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-dialog"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/dialog/dialog-custom-variant-transition/index.tsx",
+					"path": "packages/craftui/particles/dialog/dialog-with-custom-transition/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/dialog-custom-variant-transition.tsx"
+					"target": "components/craftui/particles/dialog-with-custom-transition.tsx"
 				}
 			]
 		},
@@ -392,44 +392,44 @@
 			]
 		},
 		{
-			"name": "craftui-particles-drawer-controlled",
+			"name": "craftui-particles-drawer-with-controlled-state",
 			"type": "registry:component",
 			"description": "Controlled drawer demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-drawer"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/drawer/drawer-controlled/index.tsx",
+					"path": "packages/craftui/particles/drawer/drawer-with-controlled-state/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/drawer-controlled.tsx"
+					"target": "components/craftui/particles/drawer-with-controlled-state.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-drawer-custom-background",
+			"name": "craftui-particles-drawer-with-custom-background",
 			"type": "registry:component",
 			"description": "Drawer with custom background demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-drawer"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/drawer/drawer-custom-background/index.tsx",
+					"path": "packages/craftui/particles/drawer/drawer-with-custom-background/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/drawer-custom-background.tsx"
+					"target": "components/craftui/particles/drawer-with-custom-background.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-drawer-origins",
+			"name": "craftui-particles-drawer-with-different-origins",
 			"type": "registry:component",
 			"description": "Drawer with different origins demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-drawer"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/drawer/drawer-origins/index.tsx",
+					"path": "packages/craftui/particles/drawer/drawer-with-different-origins/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/demo/particles/drawer-origins.tsx"
+					"target": "components/craftui/demo/particles/drawer-with-different-origins.tsx"
 				}
 			]
 		},
@@ -448,16 +448,16 @@
 			]
 		},
 		{
-			"name": "craftui-particles-magnetic-navbar-items",
+			"name": "craftui-particles-magnetic-with-navbar-items",
 			"type": "registry:component",
 			"description": "Magnetic navbar items demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-magnetic"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/magnetic/magnetic-navbar-items/index.tsx",
+					"path": "packages/craftui/particles/magnetic/magnetic-with-navbar-items/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/magnetic-navbar-items.tsx"
+					"target": "components/craftui/particles/magnetic-with-navbar-items.tsx"
 				}
 			]
 		},
@@ -476,16 +476,16 @@
 			]
 		},
 		{
-			"name": "craftui-particles-marquee-reverse",
+			"name": "craftui-particles-marquee-with-reverse-direction",
 			"type": "registry:component",
 			"description": "Reverse marquee demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-marquee"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/marquee/marquee-reverse/index.tsx",
+					"path": "packages/craftui/particles/marquee/marquee-with-reverse-direction/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/marquee-reverse.tsx"
+					"target": "components/craftui/particles/marquee-with-reverse-direction.tsx"
 				}
 			]
 		},
@@ -518,86 +518,86 @@
 			]
 		},
 		{
-			"name": "craftui-particles-select-controlled",
-			"type": "registry:component",
-			"description": "Controlled select demo",
-			"dependencies": [],
-			"registryDependencies": ["@craftdotui/craftui-select"],
-			"files": [
-				{
-					"path": "packages/craftui/particles/select/select-controlled/index.tsx",
-					"type": "registry:component",
-					"target": "components/craftui/particles/select-controlled.tsx"
-				}
-			]
-		},
-		{
-			"name": "craftui-particles-select-creatable",
-			"type": "registry:component",
-			"description": "Creatable select demo",
-			"dependencies": [],
-			"registryDependencies": ["@craftdotui/craftui-select"],
-			"files": [
-				{
-					"path": "packages/craftui/particles/select/select-creatable/index.tsx",
-					"type": "registry:component",
-					"target": "components/craftui/particles/select-creatable.tsx"
-				}
-			]
-		},
-		{
-			"name": "craftui-particles-select-groups",
-			"type": "registry:component",
-			"description": "Select with groups demo",
-			"dependencies": [],
-			"registryDependencies": ["@craftdotui/craftui-select"],
-			"files": [
-				{
-					"path": "packages/craftui/particles/select/select-groups/index.tsx",
-					"type": "registry:component",
-					"target": "components/craftui/particles/select-groups.tsx"
-				}
-			]
-		},
-		{
-			"name": "craftui-particles-select-loading-async",
+			"name": "craftui-particles-select-with-async-loading",
 			"type": "registry:component",
 			"description": "Select with async loading demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-select"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/select/select-loading-async/index.tsx",
+					"path": "packages/craftui/particles/select/select-with-async-loading/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/select-loading-async.tsx"
+					"target": "components/craftui/particles/select-with-async-loading.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-select-multiple",
+			"name": "craftui-particles-select-with-controlled-state",
+			"type": "registry:component",
+			"description": "Controlled select demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftdotui/craftui-select"],
+			"files": [
+				{
+					"path": "packages/craftui/particles/select/select-with-controlled-state/index.tsx",
+					"type": "registry:component",
+					"target": "components/craftui/particles/select-with-controlled-state.tsx"
+				}
+			]
+		},
+		{
+			"name": "craftui-particles-select-with-creatable-options",
+			"type": "registry:component",
+			"description": "Creatable select demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftdotui/craftui-select"],
+			"files": [
+				{
+					"path": "packages/craftui/particles/select/select-with-creatable-options/index.tsx",
+					"type": "registry:component",
+					"target": "components/craftui/particles/select-with-creatable-options.tsx"
+				}
+			]
+		},
+		{
+			"name": "craftui-particles-select-with-multiple-selection",
 			"type": "registry:component",
 			"description": "Select with multiple selection demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-select"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/select/select-multiple/index.tsx",
+					"path": "packages/craftui/particles/select/select-with-multiple-selection/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/select-multiple.tsx"
+					"target": "components/craftui/particles/select-with-multiple-selection.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-select-searchable",
+			"name": "craftui-particles-select-with-option-groups",
+			"type": "registry:component",
+			"description": "Select with groups demo",
+			"dependencies": [],
+			"registryDependencies": ["@craftdotui/craftui-select"],
+			"files": [
+				{
+					"path": "packages/craftui/particles/select/select-with-option-groups/index.tsx",
+					"type": "registry:component",
+					"target": "components/craftui/particles/select-with-option-groups.tsx"
+				}
+			]
+		},
+		{
+			"name": "craftui-particles-select-with-search",
 			"type": "registry:component",
 			"description": "Searchable select demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-select"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/select/select-searchable/index.tsx",
+					"path": "packages/craftui/particles/select/select-with-search/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/select-searchable.tsx"
+					"target": "components/craftui/particles/select-with-search.tsx"
 				}
 			]
 		},
@@ -616,58 +616,58 @@
 			]
 		},
 		{
-			"name": "craftui-particles-stepper-indicator-fraction",
+			"name": "craftui-particles-stepper-with-fraction-indicator",
 			"type": "registry:component",
 			"description": "Stepper with fraction indicator demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-stepper"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/stepper/stepper-indicator-fraction/index.tsx",
+					"path": "packages/craftui/particles/stepper/stepper-with-fraction-indicator/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/stepper-indicator-fraction.tsx"
+					"target": "components/craftui/particles/stepper-with-fraction-indicator.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-stepper-indicator-numbers",
+			"name": "craftui-particles-stepper-with-number-indicators",
 			"type": "registry:component",
 			"description": "Stepper with numbers indicator demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-stepper"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/stepper/stepper-indicator-numbers/index.tsx",
+					"path": "packages/craftui/particles/stepper/stepper-with-number-indicators/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/stepper-indicator-numbers.tsx"
+					"target": "components/craftui/particles/stepper-with-number-indicators.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-stepper-indicator-progress",
+			"name": "craftui-particles-stepper-with-progress-indicator",
 			"type": "registry:component",
 			"description": "Stepper with progress indicator demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-stepper"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/stepper/stepper-indicator-progress/index.tsx",
+					"path": "packages/craftui/particles/stepper/stepper-with-progress-indicator/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/stepper-indicator-progress.tsx"
+					"target": "components/craftui/particles/stepper-with-progress-indicator.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-stepper-indicator-text",
+			"name": "craftui-particles-stepper-with-text-indicator",
 			"type": "registry:component",
 			"description": "Stepper with text indicator demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-stepper"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/stepper/stepper-indicator-text/index.tsx",
+					"path": "packages/craftui/particles/stepper/stepper-with-text-indicator/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/stepper-indicator-text.tsx"
+					"target": "components/craftui/particles/stepper-with-text-indicator.tsx"
 				}
 			]
 		},
@@ -686,30 +686,30 @@
 			]
 		},
 		{
-			"name": "craftui-particles-tabs-custom-icons",
+			"name": "craftui-particles-tabs-with-custom-icons",
 			"type": "registry:component",
 			"description": "Tabs with custom icons demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-tabs"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/tabs/tabs-custom-icons/index.tsx",
+					"path": "packages/craftui/particles/tabs/tabs-with-custom-icons/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/tabs-custom-icons.tsx"
+					"target": "components/craftui/particles/tabs-with-custom-icons.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-tabs-custom-variants",
+			"name": "craftui-particles-tabs-with-custom-variants",
 			"type": "registry:block",
 			"description": "Tabs with custom variants demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-tabs"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/tabs/tabs-custom-variants/index.tsx",
+					"path": "packages/craftui/particles/tabs/tabs-with-custom-variants/index.tsx",
 					"type": "registry:block",
-					"target": "components/craftui/particles/tabs-custom-variants.tsx"
+					"target": "components/craftui/particles/tabs-with-custom-variants.tsx"
 				}
 			]
 		},
@@ -728,30 +728,30 @@
 			]
 		},
 		{
-			"name": "craftui-particles-text-scramble-custom-chars",
+			"name": "craftui-particles-text-scramble-with-custom-characters",
 			"type": "registry:component",
 			"description": "Text scramble with custom characters demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-text-scramble"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/text-scramble/text-scramble-custom-chars/index.tsx",
+					"path": "packages/craftui/particles/text-scramble/text-scramble-with-custom-characters/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/text-scramble-custom-chars.tsx"
+					"target": "components/craftui/particles/text-scramble-with-custom-characters.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-text-scramble-custom-trigger",
+			"name": "craftui-particles-text-scramble-with-custom-trigger",
 			"type": "registry:component",
 			"description": "Text scramble with custom trigger demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-text-scramble"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/text-scramble/text-scramble-custom-trigger/index.tsx",
+					"path": "packages/craftui/particles/text-scramble/text-scramble-with-custom-trigger/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/text-scramble-custom-trigger.tsx"
+					"target": "components/craftui/particles/text-scramble-with-custom-trigger.tsx"
 				}
 			]
 		},
@@ -784,30 +784,30 @@
 			]
 		},
 		{
-			"name": "craftui-particles-timeline-fill-marker",
+			"name": "craftui-particles-timeline-with-filled-markers",
 			"type": "registry:component",
 			"description": "Timeline with filled markers demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-timeline"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/timeline/timeline-fill-marker/index.tsx",
+					"path": "packages/craftui/particles/timeline/timeline-with-filled-markers/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/timeline-fill-marker.tsx"
+					"target": "components/craftui/particles/timeline-with-filled-markers.tsx"
 				}
 			]
 		},
 		{
-			"name": "craftui-particles-timeline-horizontal",
+			"name": "craftui-particles-timeline-with-horizontal-layout",
 			"type": "registry:component",
 			"description": "Horizontal timeline demo",
 			"dependencies": [],
 			"registryDependencies": ["@craftdotui/craftui-timeline"],
 			"files": [
 				{
-					"path": "packages/craftui/particles/timeline/timeline-horizontal/index.tsx",
+					"path": "packages/craftui/particles/timeline/timeline-with-horizontal-layout/index.tsx",
 					"type": "registry:component",
-					"target": "components/craftui/particles/timeline-horizontal.tsx"
+					"target": "components/craftui/particles/timeline-with-horizontal-layout.tsx"
 				}
 			]
 		},

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-tabs-with-custom-icons",
+	"type": "registry:component",
+	"description": "Tabs with custom icons demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-tabs"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/tabs/tabs-with-custom-icons/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/tabs-with-custom-icons.tsx"
+		}
+	]
+}

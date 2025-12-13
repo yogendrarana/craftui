@@ -1,0 +1,114 @@
+---
+title: useConfetti
+description: A hook to trigger confetti animations with customizable particle count, origin position, and duration.
+slug: /hooks/use-confetti
+published: true
+date: 2025-01-26T00:00:00.000Z
+---
+
+## Installation
+
+<Installation name="use-confetti" />
+
+## Usage
+
+```tsx
+import { useConfetti } from "@/hooks/use-confetti";
+
+function MyComponent() {
+  const triggerConfetti = useConfetti();
+
+  return <button onClick={() => triggerConfetti()}>Celebrate! 🎉</button>;
+}
+```
+
+## Examples
+
+### Basic Confetti
+
+```tsx
+import { useConfetti } from "@/hooks/use-confetti";
+
+function BasicExample() {
+  const triggerConfetti = useConfetti();
+
+  return <button onClick={() => triggerConfetti()}>Trigger Confetti</button>;
+}
+```
+
+### Custom Particle Count
+
+```tsx
+import { useConfetti } from "@/hooks/use-confetti";
+
+function CustomParticleCount() {
+  const triggerConfetti = useConfetti();
+
+  return (
+    <button onClick={() => triggerConfetti({ particleCount: 100 })}>
+      More Confetti!
+    </button>
+  );
+}
+```
+
+### Different Origins
+
+```tsx
+import { useConfetti } from "@/hooks/use-confetti";
+
+function DifferentOrigins() {
+  const triggerConfetti = useConfetti();
+
+  return (
+    <div className="flex gap-4">
+      <button onClick={() => triggerConfetti({ origin: "top" })}>
+        From Top
+      </button>
+      <button onClick={() => triggerConfetti({ origin: "bottom" })}>
+        From Bottom
+      </button>
+      <button onClick={() => triggerConfetti({ origin: "left" })}>
+        From Left
+      </button>
+      <button onClick={() => triggerConfetti({ origin: "right" })}>
+        From Right
+      </button>
+    </div>
+  );
+}
+```
+
+### Custom Duration
+
+```tsx
+import { useConfetti } from "@/hooks/use-confetti";
+
+function CustomDuration() {
+  const triggerConfetti = useConfetti();
+
+  return (
+    <button onClick={() => triggerConfetti({ duration: 5000 })}>
+      Long Celebration (5s)
+    </button>
+  );
+}
+```
+
+## API Reference
+
+### useConfetti
+
+A hook that returns a function to trigger confetti animations. The confetti is rendered on a canvas element that is automatically created and removed.
+
+**Returns:** `(options?: ConfettiOptions) => void`
+
+### ConfettiOptions
+
+Configuration options for the confetti animation.
+
+| Parameter     | Type                                                                                                               | Description                              | Default  |
+| ------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------- | -------- |
+| particleCount | number                                                                                                             | Number of confetti particles to generate | 50       |
+| origin        | "top" \| "bottom" \| "left" \| "right" \| "center" \| "top-left" \| "top-right" \| "bottom-left" \| "bottom-right" | Starting position for the confetti       | "center" |
+| duration      | number                                                                                                             | Duration in milliseconds before cleanup  | 3000     |

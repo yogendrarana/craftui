@@ -1,0 +1,15 @@
+{
+	"$schema": "https://ui.shadcn.com/schema/registry-item.json",
+	"name": "craftui-particles-select-with-search",
+	"type": "registry:component",
+	"description": "Searchable select demo",
+	"dependencies": [],
+	"registryDependencies": ["@craftdotui/craftui-select"],
+	"files": [
+		{
+			"path": "packages/craftui/particles/select/select-with-search/index.tsx",
+			"type": "registry:component",
+			"target": "components/craftui/particles/select-with-search.tsx"
+		}
+	]
+}
