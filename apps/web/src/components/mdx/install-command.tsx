@@ -59,51 +59,50 @@ export function InstallCommandDropdown({ pkg }: { pkg: string }) {
 	} = useInstallCommand(pkg);
 
 	return (
-			<div className="hidden md:flex items-center justify-between cursor-pointer border border-border border-dashed rounded-md overflow-hidden">
-				<button
-					type="button"
-					onClick={onCopy}
-					className="px-3 py-1.5 text-xs transition-colors flex items-center gap-2 cursor-pointer max-w-[300px]"
-				>
-					<Tooltip>
-						<TooltipTrigger asChild>
-							<span className="text-muted-foreground truncate">
-								{hasCopied ? "Copied!" : installCommand}
-							</span>
-						</TooltipTrigger>
-						<TooltipContent align="center" className="max-w-[600px]">
-							<code className="text-xs">{installCommand}</code>
-						</TooltipContent>
-					</Tooltip>
-				</button>
+		<div className="hidden md:flex items-center justify-between cursor-pointer border border-border border-dashed rounded-md overflow-hidden">
+			<button
+				type="button"
+				onClick={onCopy}
+				className="px-3 py-1.5 text-xs transition-colors flex items-center gap-2 cursor-pointer max-w-[300px]"
+			>
+				<Tooltip>
+					<TooltipTrigger asChild>
+						<span className="text-muted-foreground truncate">
+							{hasCopied ? "Copied!" : installCommand}
+						</span>
+					</TooltipTrigger>
+					<TooltipContent align="center" className="max-w-[600px]">
+						<code className="text-xs">{installCommand}</code>
+					</TooltipContent>
+				</Tooltip>
+			</button>
 
-				<DropdownMenu>
-					<DropdownMenuTrigger asChild>
-						<button
-							type="button"
-							className="h-full px-3 py-1.5 cursor-pointer text-xs font-medium bg-muted"
+			<DropdownMenu>
+				<DropdownMenuTrigger asChild>
+					<button
+						type="button"
+						className="h-full px-3 py-1.5 cursor-pointer text-xs font-medium bg-muted"
+					>
+						{packageManager}
+					</button>
+				</DropdownMenuTrigger>
+				<DropdownMenuContent align="end" className="w-24">
+					{["npm", "pnpm", "yarn", "bun"].map((pm) => (
+						<DropdownMenuItem
+							key={pm}
+							onClick={() =>
+								setPackageManager(pm as PackageManager)
+							}
+							className="text-xs"
 						>
-							{packageManager}
-						</button>
-					</DropdownMenuTrigger>
-					<DropdownMenuContent align="end" className="w-24">
-						{["npm", "pnpm", "yarn", "bun"].map((pm) => (
-							<DropdownMenuItem
-								key={pm}
-								onClick={() =>
-									setPackageManager(pm as PackageManager)
-								}
-								className="text-xs"
-							>
-								{pm}
-							</DropdownMenuItem>
-						))}
-					</DropdownMenuContent>
-				</DropdownMenu>
-			</div>
+							{pm}
+						</DropdownMenuItem>
+					))}
+				</DropdownMenuContent>
+			</DropdownMenu>
+		</div>
 	);
 }
-
 
 // COMPONENT 2 — TAB VERSION (Your custom UI)
 
